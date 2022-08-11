@@ -185,3 +185,30 @@ ls.add_snippets("cs", {
                 )
         ),
 })
+
+ls.add_snippets("cs", {
+        s('summary',
+            fmt(
+                [[
+                /// <summary>
+                /// {}
+                /// </summary>
+                ]],
+                { i(0) }
+                )
+        ),
+})
+
+ls.add_snippets("cs", {
+        s('response',
+            fmt(
+                [[
+                /// <response code="{}">
+                /// {}
+                /// </response>
+                {}
+                ]],
+                { i(1, "200"), i(2), i(0) }
+                )
+        ),
+})
