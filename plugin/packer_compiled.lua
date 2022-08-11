@@ -81,8 +81,14 @@ _G.packer_plugins = {
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["NeoSolarized.nvim"] = {
+    config = { "\27LJ\2\n˜\5\0\0\3\0\6\0\r6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\3\0006\0\0\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0­\4                try\n                    colorscheme NeoSolarized\n                catch /^Vim\\%((\\a\\+)\\)\\=:E18/\n                    colorscheme default\n                    set background=dark\n                endtry\n                highlight FloatBorder guibg=NONE ctermbg=NONE  \" Removes the border of float menu (LSP and Autocompletion uses it)\n                highlight link NormalFloat Normal \n                highlight NormalFloat ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE \n                highlight Pmenu ctermbg=NONE guibg=NONE \n            \bcmd\24NeoSolarized_lineNr\25NeoSolarized_italics\6g\bvim\0" },
+    loaded = true,
+    path = "/home/iz/.local/share/nvim/site/pack/packer/start/NeoSolarized.nvim",
+    url = "https://github.com/Tsuzat/NeoSolarized.nvim"
+  },
   ["cinnamon.nvim"] = {
-    config = { "\27LJ\2\në\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\v\18always_scroll\1\rcentered\2\18default_delay\3\3\16hide_cursor\2\22horizontal_scroll\2\15max_length\3ô\3\17scroll_limit\3ÿÿÿÿ\15\20default_keymaps\2\18extra_keymaps\2\21extended_keymaps\2\21override_keymaps\1\nsetup\rcinnamon\frequire\0" },
+    config = { "\27LJ\2\në\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\v\15max_length\3ô\3\17scroll_limit\3ÿÿÿÿ\15\20default_keymaps\2\18extra_keymaps\2\21extended_keymaps\2\21override_keymaps\1\18always_scroll\1\rcentered\2\18default_delay\3\3\16hide_cursor\2\22horizontal_scroll\2\nsetup\rcinnamon\frequire\0" },
     loaded = true,
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/cinnamon.nvim",
     url = "https://github.com/declancm/cinnamon.nvim"
@@ -144,7 +150,7 @@ _G.packer_plugins = {
     url = "https://github.com/beauwilliams/focus.nvim"
   },
   ["gruvbox.nvim"] = {
-    config = { "\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\21invert_selection\1\rcontrast\thard\finverse\2\nsetup\fgruvbox\frequire\0" },
+    config = { "\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\finverse\2\21invert_selection\1\rcontrast\thard\nsetup\fgruvbox\frequire\0" },
     loaded = true,
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
@@ -161,7 +167,7 @@ _G.packer_plugins = {
     url = "https://github.com/lewis6991/impatient.nvim"
   },
   ["indent-blankline.nvim"] = {
-    config = { "\27LJ\2\n¡\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\31show_current_context_start\1-indent_blankline_show_first_indent_level\1\25show_current_context\2\nsetup\21indent_blankline\frequire\0" },
+    config = { "\27LJ\2\n¡\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3-indent_blankline_show_first_indent_level\1\25show_current_context\2\31show_current_context_start\1\nsetup\21indent_blankline\frequire\0" },
     loaded = true,
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
@@ -284,13 +290,18 @@ _G.packer_plugins = {
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["oxocarbon-lua.nvim"] = {
+    loaded = true,
+    path = "/home/iz/.local/share/nvim/site/pack/packer/start/oxocarbon-lua.nvim",
+    url = "https://github.com/B4mbus/oxocarbon-lua.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   playground = {
-    config = { "\27LJ\2\nÁ\2\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\15playground\1\0\0\16keybindings\1\0\n\14show_help\6?\24toggle_query_editor\6o\21toggle_hl_groups\6i\30toggle_injected_languages\6t\27toggle_anonymous_nodes\6a\28toggle_language_display\6I\19focus_language\6f\21unfocus_language\6F\vupdate\6R\14goto_node\t<cr>\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\frequire\0" },
+    config = { "\27LJ\2\nÁ\2\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\15playground\1\0\0\16keybindings\1\0\n\28toggle_language_display\6I\19focus_language\6f\21unfocus_language\6F\vupdate\6R\14goto_node\t<cr>\14show_help\6?\24toggle_query_editor\6o\21toggle_hl_groups\6i\30toggle_injected_languages\6t\27toggle_anonymous_nodes\6a\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\frequire\0" },
     loaded = true,
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/playground",
     url = "https://github.com/nvim-treesitter/playground"
@@ -372,30 +383,98 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
--- Config for: lsp_lines.nvim
-time([[Config for lsp_lines.nvim]], true)
-try_loadstring("\27LJ\2\nr\0\0\3\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0005\2\6\0B\0\2\1K\0\1\0\1\0\1\17virtual_text\1\vconfig\15diagnostic\bvim\nsetup\14lsp_lines\frequire\0", "config", "lsp_lines.nvim")
-time([[Config for lsp_lines.nvim]], false)
--- Config for: tokyonight.nvim
-time([[Config for tokyonight.nvim]], true)
-try_loadstring("\27LJ\2\nŽ\1\0\0\3\0\a\0\r6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\4\0006\0\0\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0\27colorscheme tokyonight\bcmd\31tokyonight_italic_comments\nnight\21tokyonight_style\6g\bvim\0", "config", "tokyonight.nvim")
-time([[Config for tokyonight.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require("cfg/cmp")
-time([[Config for nvim-cmp]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require("cfg/telescope")
 time([[Config for telescope.nvim]], false)
+-- Config for: NeoSolarized.nvim
+time([[Config for NeoSolarized.nvim]], true)
+try_loadstring("\27LJ\2\n˜\5\0\0\3\0\6\0\r6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\3\0006\0\0\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0­\4                try\n                    colorscheme NeoSolarized\n                catch /^Vim\\%((\\a\\+)\\)\\=:E18/\n                    colorscheme default\n                    set background=dark\n                endtry\n                highlight FloatBorder guibg=NONE ctermbg=NONE  \" Removes the border of float menu (LSP and Autocompletion uses it)\n                highlight link NormalFloat Normal \n                highlight NormalFloat ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE \n                highlight Pmenu ctermbg=NONE guibg=NONE \n            \bcmd\24NeoSolarized_lineNr\25NeoSolarized_italics\6g\bvim\0", "config", "NeoSolarized.nvim")
+time([[Config for NeoSolarized.nvim]], false)
+-- Config for: LuaSnip
+time([[Config for LuaSnip]], true)
+require("cfg/luasnip")
+time([[Config for LuaSnip]], false)
+-- Config for: nvim-treesitter-textobjects
+time([[Config for nvim-treesitter-textobjects]], true)
+require("cfg/treesitter-textobjects")
+time([[Config for nvim-treesitter-textobjects]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+require("cfg/lspsaga")
+time([[Config for lspsaga.nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
+-- Config for: focus.nvim
+time([[Config for focus.nvim]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nfocus\frequire\0", "config", "focus.nvim")
+time([[Config for focus.nvim]], false)
+-- Config for: tokyonight.nvim
+time([[Config for tokyonight.nvim]], true)
+try_loadstring("\27LJ\2\nŽ\1\0\0\3\0\a\0\r6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\4\0006\0\0\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0\27colorscheme tokyonight\bcmd\31tokyonight_italic_comments\nnight\21tokyonight_style\6g\bvim\0", "config", "tokyonight.nvim")
+time([[Config for tokyonight.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
+-- Config for: lsp_signature.nvim
+time([[Config for lsp_signature.nvim]], true)
+require("cfg/signature")
+time([[Config for lsp_signature.nvim]], false)
+-- Config for: hydra.nvim
+time([[Config for hydra.nvim]], true)
+require("cfg/hydra")
+time([[Config for hydra.nvim]], false)
+-- Config for: true-zen.nvim
+time([[Config for true-zen.nvim]], true)
+try_loadstring("\27LJ\2\ne\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\17integrations\1\0\0\1\0\2\ttmux\2\rtwilight\2\nsetup\rtrue-zen\frequire\0", "config", "true-zen.nvim")
+time([[Config for true-zen.nvim]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+require("cfg/dap")
+time([[Config for nvim-dap]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+try_loadstring("\27LJ\2\n¡\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3-indent_blankline_show_first_indent_level\1\25show_current_context\2\31show_current_context_start\1\nsetup\21indent_blankline\frequire\0", "config", "indent-blankline.nvim")
+time([[Config for indent-blankline.nvim]], false)
+-- Config for: twilight.nvim
+time([[Config for twilight.nvim]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0", "config", "twilight.nvim")
+time([[Config for twilight.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require("cfg/cmp")
+time([[Config for nvim-cmp]], false)
+-- Config for: lsp_lines.nvim
+time([[Config for lsp_lines.nvim]], true)
+try_loadstring("\27LJ\2\nr\0\0\3\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0005\2\6\0B\0\2\1K\0\1\0\1\0\1\17virtual_text\1\vconfig\15diagnostic\bvim\nsetup\14lsp_lines\frequire\0", "config", "lsp_lines.nvim")
+time([[Config for lsp_lines.nvim]], false)
 -- Config for: playground
 time([[Config for playground]], true)
-try_loadstring("\27LJ\2\nÁ\2\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\15playground\1\0\0\16keybindings\1\0\n\14show_help\6?\24toggle_query_editor\6o\21toggle_hl_groups\6i\30toggle_injected_languages\6t\27toggle_anonymous_nodes\6a\28toggle_language_display\6I\19focus_language\6f\21unfocus_language\6F\vupdate\6R\14goto_node\t<cr>\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\frequire\0", "config", "playground")
+try_loadstring("\27LJ\2\nÁ\2\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\15playground\1\0\0\16keybindings\1\0\n\28toggle_language_display\6I\19focus_language\6f\21unfocus_language\6F\vupdate\6R\14goto_node\t<cr>\14show_help\6?\24toggle_query_editor\6o\21toggle_hl_groups\6i\30toggle_injected_languages\6t\27toggle_anonymous_nodes\6a\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\frequire\0", "config", "playground")
 time([[Config for playground]], false)
+-- Config for: nvim-dap-ui
+time([[Config for nvim-dap-ui]], true)
+require("cfg/dapui")
+time([[Config for nvim-dap-ui]], false)
+-- Config for: cinnamon.nvim
+time([[Config for cinnamon.nvim]], true)
+try_loadstring("\27LJ\2\në\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\v\15max_length\3ô\3\17scroll_limit\3ÿÿÿÿ\15\20default_keymaps\2\18extra_keymaps\2\21extended_keymaps\2\21override_keymaps\1\18always_scroll\1\rcentered\2\18default_delay\3\3\16hide_cursor\2\22horizontal_scroll\2\nsetup\rcinnamon\frequire\0", "config", "cinnamon.nvim")
+time([[Config for cinnamon.nvim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+require("cfg/trouble")
+time([[Config for trouble.nvim]], false)
 -- Config for: rest.nvim
 time([[Config for rest.nvim]], true)
 require("cfg/rest")
 time([[Config for rest.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require("cfg/lsp")
+time([[Config for nvim-lspconfig]], false)
 -- Config for: neo-tree.nvim
 time([[Config for neo-tree.nvim]], true)
 require("cfg/tree")
@@ -404,73 +483,9 @@ time([[Config for neo-tree.nvim]], false)
 time([[Config for nvim-treesitter]], true)
 require("cfg/treesitter")
 time([[Config for nvim-treesitter]], false)
--- Config for: nvim-treesitter-textobjects
-time([[Config for nvim-treesitter-textobjects]], true)
-require("cfg/treesitter-textobjects")
-time([[Config for nvim-treesitter-textobjects]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-try_loadstring("\27LJ\2\n¡\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\31show_current_context_start\1-indent_blankline_show_first_indent_level\1\25show_current_context\2\nsetup\21indent_blankline\frequire\0", "config", "indent-blankline.nvim")
-time([[Config for indent-blankline.nvim]], false)
--- Config for: nvim-dap
-time([[Config for nvim-dap]], true)
-require("cfg/dap")
-time([[Config for nvim-dap]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require("cfg/lsp")
-time([[Config for nvim-lspconfig]], false)
--- Config for: hydra.nvim
-time([[Config for hydra.nvim]], true)
-require("cfg/hydra")
-time([[Config for hydra.nvim]], false)
--- Config for: LuaSnip
-time([[Config for LuaSnip]], true)
-require("cfg/luasnip")
-time([[Config for LuaSnip]], false)
--- Config for: cinnamon.nvim
-time([[Config for cinnamon.nvim]], true)
-try_loadstring("\27LJ\2\në\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\v\18always_scroll\1\rcentered\2\18default_delay\3\3\16hide_cursor\2\22horizontal_scroll\2\15max_length\3ô\3\17scroll_limit\3ÿÿÿÿ\15\20default_keymaps\2\18extra_keymaps\2\21extended_keymaps\2\21override_keymaps\1\nsetup\rcinnamon\frequire\0", "config", "cinnamon.nvim")
-time([[Config for cinnamon.nvim]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
-time([[Config for nvim-autopairs]], false)
--- Config for: twilight.nvim
-time([[Config for twilight.nvim]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0", "config", "twilight.nvim")
-time([[Config for twilight.nvim]], false)
--- Config for: lspsaga.nvim
-time([[Config for lspsaga.nvim]], true)
-require("cfg/lspsaga")
-time([[Config for lspsaga.nvim]], false)
--- Config for: focus.nvim
-time([[Config for focus.nvim]], true)
-try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nfocus\frequire\0", "config", "focus.nvim")
-time([[Config for focus.nvim]], false)
--- Config for: true-zen.nvim
-time([[Config for true-zen.nvim]], true)
-try_loadstring("\27LJ\2\ne\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\17integrations\1\0\0\1\0\2\ttmux\2\rtwilight\2\nsetup\rtrue-zen\frequire\0", "config", "true-zen.nvim")
-time([[Config for true-zen.nvim]], false)
--- Config for: nvim-dap-ui
-time([[Config for nvim-dap-ui]], true)
-require("cfg/dapui")
-time([[Config for nvim-dap-ui]], false)
--- Config for: lsp_signature.nvim
-time([[Config for lsp_signature.nvim]], true)
-require("cfg/signature")
-time([[Config for lsp_signature.nvim]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-require("cfg/trouble")
-time([[Config for trouble.nvim]], false)
 -- Config for: gruvbox.nvim
 time([[Config for gruvbox.nvim]], true)
-try_loadstring("\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\21invert_selection\1\rcontrast\thard\finverse\2\nsetup\fgruvbox\frequire\0", "config", "gruvbox.nvim")
+try_loadstring("\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\finverse\2\21invert_selection\1\rcontrast\thard\nsetup\fgruvbox\frequire\0", "config", "gruvbox.nvim")
 time([[Config for gruvbox.nvim]], false)
 
 -- Command lazy-loads
@@ -480,10 +495,10 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> f <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "f", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> s <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "s", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> S <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "S", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> F <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "F", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> f <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "f", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> s <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "s", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
