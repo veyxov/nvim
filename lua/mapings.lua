@@ -36,3 +36,16 @@ Map("<leader>ps", Cmd "PackerSync")
 -- Tree
 Map("\\", Cmd "Neotree toggle right")
 Map("<leader>\\", Cmd "Neotree toggle show buffers right")
+
+-- Git
+Map("<leader>g", Cmd [[ua require("harpoon.tmux").sendCommand(1, "lazygit status ; exit\n")]])
+
+-- Harpoon
+Map("<leader>a", Cmd  [[lua require ("harpoon.mark").add_file()]])
+Map("<C-E>", Cmd  [[lua require("harpoon.ui").toggle_quick_menu()]])
+Map("<C-S-E>", Cmd  [[lua require("harpoon.cmd-ui").toggle_quick_menu()]])
+
+Map("1", Cmd [[lua require("harpoon.ui").nav_file(1)]])
+Map("2", Cmd [[lua require("harpoon.ui").nav_file(2)]])
+Map("3", Cmd [[lua require("harpoon.ui").nav_file(3)]])
+Map("4", Cmd [[lua require("harpoon.ui").nav_file(4)]])

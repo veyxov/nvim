@@ -199,4 +199,3 @@ window = {
         }
     })
 
-    vim.cmd([[nnoremap <C-A> :Neotree reveal<cr>]])
