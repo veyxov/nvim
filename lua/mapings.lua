@@ -5,8 +5,6 @@ Map ("<leader>y", '"+y')
 Map ("<leader>q",  Cmd "q")
 Map ("<leader>w",  Cmd "wall")
 
-Map ("<leader>g", Cmd "LazyGit")
-
 -- Lsp
 Map ("<A-Enter>",  Cmd "Lspsaga code_action")
 -- First select the region, unselect and run range_code_action
