@@ -7,24 +7,11 @@ require 'packer'.startup({ function(use)
         'nvim-lua/plenary.nvim',    'kyazdani42/nvim-web-devicons'
     }
 
-    use {
-        'ThePrimeagen/harpoon'
-    }
+    use 'ThePrimeagen/harpoon'
 
     use {
         'declancm/cinnamon.nvim',
-        config = function() require('cinnamon').setup {
-                default_keymaps = true,
-                extra_keymaps = true,
-                extended_keymaps = true,
-
-                centered = true,
-                default_delay = 3,
-                hide_cursor = true,
-                max_length = 500,
-                scroll_limit = -1,
-            }
-        end
+        config = kfg 'cinnamon'
     }
 
     use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
@@ -48,23 +35,7 @@ require 'packer'.startup({ function(use)
 
     use {
         "Tsuzat/NeoSolarized.nvim",
-        config = function ()
-            vim.g.NeoSolarized_italics = 1 -- 0 or 1
-            vim.g.NeoSolarized_lineNr = 0 -- 0 or 1 (default) -> To Show backgroung in LineNr
-
-            vim.cmd [[
-                try
-                    colorscheme NeoSolarized
-                catch /^Vim\%((\a\+)\)\=:E18/
-                    colorscheme default
-                    set background=dark
-                endtry
-                highlight FloatBorder guibg=NONE ctermbg=NONE  " Removes the border of float menu (LSP and Autocompletion uses it)
-                highlight link NormalFloat Normal 
-                highlight NormalFloat ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE 
-                highlight Pmenu ctermbg=NONE guibg=NONE 
-            ]]
-        end
+        config = kfg 'solarized'
     }
 
     use 'B4mbus/oxocarbon-lua.nvim'
@@ -73,16 +44,6 @@ require 'packer'.startup({ function(use)
     use {
         "folke/trouble.nvim",
         config = kfg 'trouble'
-    }
-
-    use {
-        "zbirenbaum/copilot.lua",
-        event = {"VimEnter"},
-        config = function()
-            vim.defer_fn(function()
-                require("copilot").setup()
-            end, 100)
-        end,
     }
 
     use {
@@ -120,39 +81,12 @@ require 'packer'.startup({ function(use)
         { 'saadparwaiz1/cmp_luasnip' },
         { 'hrsh7th/cmp-nvim-lua' },
         { 'andersevenrud/cmp-tmux' },
-        {
-            "zbirenbaum/copilot-cmp",
-            module = "copilot_cmp",
-        }
     }
 
     -- Tree-sitter
     use {
         'nvim-treesitter/nvim-treesitter',
         config = kfg 'treesitter',
-    }
-
-    use {
-        'nvim-treesitter/playground',
-        config = function()
-            require "nvim-treesitter.configs".setup {
-                playground = {
-                    enable = true,
-                    keybindings = {
-                        toggle_query_editor = 'o',
-                        toggle_hl_groups = 'i',
-                        toggle_injected_languages = 't',
-                        toggle_anonymous_nodes = 'a',
-                        toggle_language_display = 'I',
-                        focus_language = 'f',
-                        unfocus_language = 'F',
-                        update = 'R',
-                        goto_node = '<cr>',
-                        show_help = '?',
-                    },
-                }
-            }
-        end
     }
 
     use {
@@ -212,8 +146,8 @@ require 'packer'.startup({ function(use)
     -- Telescope
     use {
         'nvim-telescope/telescope.nvim',
-        config = kfg 'telescope',
-    }
+    config = kfg 'telescope',
+}
 
     -- File tree
     use {

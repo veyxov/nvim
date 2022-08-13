@@ -49,3 +49,6 @@ Map("1", Cmd [[lua require("harpoon.ui").nav_file(1)]])
 Map("2", Cmd [[lua require("harpoon.ui").nav_file(2)]])
 Map("3", Cmd [[lua require("harpoon.ui").nav_file(3)]])
 Map("4", Cmd [[lua require("harpoon.ui").nav_file(4)]])
+
+-- Twilight
+Map("<leader><cr>", Cmd "TZAtaraxis")

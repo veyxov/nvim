@@ -1,6 +1,6 @@
 local lspkind = require('lspkind')
 local cmp = require'cmp'
-local luasnip = require("luasnip")
+local luasnip = require "luasnip"
 
 cmp.setup({
     completion = {
@@ -41,36 +41,6 @@ cmp.setup({
             end
         end,
     },
-    formatting = {
-        format = function (entry, vim_item)
-            if entry.source.name == "copilot" then
-                vim_item.kind = "[] Copilot"
-                vim_item.kind_hl_group = "CmpItemKindCopilot"
-                return vim_item
-            end
-            return lspkind.cmp_format({ with_text = false, maxwidth = 50 })(entry, vim_item)
-        end
-    },
-
-    sorting = {
-        priority_weight = 2,
-        comparators = {
-            require("copilot_cmp.comparators").prioritize,
-            require("copilot_cmp.comparators").score,
-
-            -- Below is the default comparitor list and order for nvim-cmp
-            cmp.config.compare.offset,
-            -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
-            cmp.config.compare.exact,
-            cmp.config.compare.score,
-            cmp.config.compare.recently_used,
-            cmp.config.compare.locality,
-            cmp.config.compare.kind,
-            cmp.config.compare.sort_text,
-            cmp.config.compare.length,
-            cmp.config.compare.order,
-        },
-    },
 
     sources = {
         { name = "nvim_lsp" },
@@ -86,7 +56,6 @@ cmp.setup({
                 all_panes = true
             }
         },
-        { name = "copilot" }
     },
 })
 
