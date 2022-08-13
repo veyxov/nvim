@@ -38,10 +38,10 @@ Map("\\", Cmd "Neotree toggle right")
 Map("<leader>\\", Cmd "Neotree toggle show buffers right")
 
 -- Git
-Map("<leader>g", Cmd [[ua require("harpoon.tmux").sendCommand(1, "lazygit status ; exit\n")]])
+Map("<C-G>", Cmd [[lua require("harpoon.tmux").sendCommand(1, "lazygit status ; exit\n")]])
 
 -- Harpoon
-Map("<leader>a", Cmd  [[lua require ("harpoon.mark").add_file()]])
+Map("<C-A>", Cmd  [[lua require ("harpoon.mark").add_file()]])
 Map("<C-E>", Cmd  [[lua require("harpoon.ui").toggle_quick_menu()]])
 Map("<C-S-E>", Cmd  [[lua require("harpoon.cmd-ui").toggle_quick_menu()]])
 
