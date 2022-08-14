@@ -67,7 +67,7 @@ Hydra({
     name = 'Debugger',
     mode = 'n',
     hint = "Debugger",
-    body = '<C-G>',
+    body = '<leader>arst',
     config = {
         color = 'pink',
     },

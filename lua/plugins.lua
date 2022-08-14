@@ -191,6 +191,10 @@ require 'packer'.startup({ function(use)
             }
         end
     }
+
+    -- Golang
+    use { 'ray-x/go.nvim', config = function() require('go').setup() end }
+    use 'ray-x/guihua.lua'
 end,
     config = {
         git = { clone_timeout = nil }

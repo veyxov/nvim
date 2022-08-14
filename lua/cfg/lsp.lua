@@ -14,5 +14,6 @@ require'lspconfig'.omnisharp.setup {
     -- enableRoslynAnalyzers = true
 }
 
+lspconfig.gopls.setup {}
 lspconfig.sumneko_lua.setup {}
 lspconfig.rust_analyzer.setup{}

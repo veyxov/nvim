@@ -1,11 +1,5 @@
 local dap = require 'dap'
 
-dap.adapters.coreclr = {
-  type = 'executable',
-  command = '/home/iz/netcoredbg/netcoredbg',
-  args = {'--interpreter=vscode'}
-}
-
 dap.configurations.cs = {
   {
     type = "coreclr",
