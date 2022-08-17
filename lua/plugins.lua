@@ -19,8 +19,6 @@ require 'packer'.startup({ function(use)
         config = kfg 'cinnamon'
     }
 
-    use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
-
     use {
         'folke/twilight.nvim',
         config = function() require("twilight").setup { } end
