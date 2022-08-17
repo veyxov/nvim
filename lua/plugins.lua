@@ -6,6 +6,11 @@ require 'packer'.startup({ function(use)
         'lewis6991/impatient.nvim', 'wbthomason/packer.nvim',
         'nvim-lua/plenary.nvim',    'kyazdani42/nvim-web-devicons'
     }
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = kfg 'todo'
+    }
 
     use 'ThePrimeagen/harpoon'
 
@@ -146,8 +151,8 @@ require 'packer'.startup({ function(use)
     -- Telescope
     use {
         'nvim-telescope/telescope.nvim',
-    config = kfg 'telescope',
-}
+        config = kfg 'telescope',
+    }
 
     -- File tree
     use {
@@ -196,7 +201,7 @@ require 'packer'.startup({ function(use)
     use { 'ray-x/go.nvim', config = function() require('go').setup() end }
     use 'ray-x/guihua.lua'
 end,
-    config = {
-        git = { clone_timeout = nil }
-    }
+config = {
+    git = { clone_timeout = nil }
+}
 })
