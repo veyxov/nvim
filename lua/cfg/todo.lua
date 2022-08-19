@@ -14,6 +14,7 @@ require("todo-comments").setup {
         WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
         PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
         NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+        RETURNS = { icon = " ", color = "_return", alt = { "Returns" } },
     },
     merge_keywords = true, -- when true, custom keywords will be merged with the defaults
     -- highlighting of the line containing the todo comment
@@ -36,6 +37,7 @@ require("todo-comments").setup {
         warning = { "DiagnosticWarning", "WarningMsg", "#FBBF24" },
         info = { "DiagnosticInfo", "#2563EB" },
         hint = { "DiagnosticHint", "#10B981" },
+        _return = { "SpellRare", "#221143" },
         default = { "Identifier", "#7C3AED" },
     },
     search = {

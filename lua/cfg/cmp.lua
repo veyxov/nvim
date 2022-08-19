@@ -50,12 +50,12 @@ cmp.setup({
         { name = "buffer" },
         { name = "calc" },
         { name = "nvim_lua" },
-        {
-            name = 'tmux',
-            option = {
-                all_panes = true
-            }
-        },
+        -- {
+        --     name = 'tmux',
+        --     option = {
+        --         all_panes = true
+        --     }
+        -- },
     },
 })
 
