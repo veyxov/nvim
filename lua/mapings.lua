@@ -20,10 +20,6 @@ Map ("<C-K>",      Cmd "Lspsaga hover_doc")
 Map ("<C-T>",      Cmd "Lspsaga open_floaterm")
 Map ("<C-T>",      Cmd "Lspsaga close_floaterm", "t")
 
-Map ("<leader>rr", "<Plug>RestNvim")
-Map ("<leader>rp", "<Plug>RestNvimPreview")
-Map ("<leader>r.", "<Plug>RestNvimLast")
-
 Map("<C-c>", Cmd ":%y+") -- copy whole file content
 
 -- Movement between tabs

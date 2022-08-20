@@ -167,13 +167,6 @@ require 'packer'.startup({ function(use)
         end
     }
 
-    -- Rest
-    use {
-        "NTBBloodbath/rest.nvim",
-        config = kfg 'rest'
-    }
-
-
     use({
         "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
         config = function()
