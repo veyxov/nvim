@@ -11,7 +11,7 @@ require "telescope".setup {
             filesize_limit = 1,
             treesitter = false,
         },
-        layout_strategy = 'center',
+        -- layout_strategy = 'center',
     },
     extensions = {
         fzf = {

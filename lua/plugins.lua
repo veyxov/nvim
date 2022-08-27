@@ -151,6 +151,7 @@ require 'packer'.startup({ function(use)
         'nvim-telescope/telescope.nvim',
         config = kfg 'telescope',
     }
+    use 'nvim-treesitter/playground'
 
     -- File tree
     use {
@@ -177,16 +178,16 @@ require 'packer'.startup({ function(use)
         end,
     })
 
-    use {
-        "lukas-reineke/indent-blankline.nvim",
-        config = function()
-            require("indent_blankline").setup {
-                show_current_context = true,
-                show_current_context_start = false,
-                indent_blankline_show_first_indent_level = false
-            }
-        end
-    }
+    -- use {
+    --     "lukas-reineke/indent-blankline.nvim",
+    --     config = function()
+    --         require("indent_blankline").setup {
+    --             show_current_context = true,
+    --             show_current_context_start = false,
+    --             indent_blankline_show_first_indent_level = false
+    --         }
+    --     end
+    -- }
 
     -- Golang
     use { 'ray-x/go.nvim', config = function() require('go').setup() end }
