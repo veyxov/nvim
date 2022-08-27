@@ -48,3 +48,8 @@ Map("4", Cmd [[lua require("harpoon.ui").nav_file(4)]])
 
 -- Twilight
 Map("<leader><cr>", Cmd "TZAtaraxis")
+
+Map("<C-n>", "<Plug>luasnip-next-choice", "i")
+Map("<C-n>", "<Plug>luasnip-next-choice", "s")
+Map("<C-p>", "<Plug>luasnip-prev-choice", "i")
+Map("<C-p>", "<Plug>luasnip-prev-choice", "s")
