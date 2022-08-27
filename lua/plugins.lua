@@ -151,6 +151,7 @@ require 'packer'.startup({ function(use)
         'nvim-telescope/telescope.nvim',
         config = kfg 'telescope',
     }
+
     use 'nvim-treesitter/playground'
 
     -- File tree

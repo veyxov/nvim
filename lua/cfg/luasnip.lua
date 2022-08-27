@@ -2,6 +2,9 @@ local ls = require"luasnip"
 
 local s = ls.s
 local i = ls.insert_node
+local c = ls.choice_node
+local t = ls.text_node
+local f = ls.function_node
 
 local fmt = require 'luasnip.extras.fmt'.fmt
 local rep = require 'luasnip.extras'.rep
@@ -189,6 +192,35 @@ ls.add_snippets("cs", {
                 {}
                 ]],
                 { i(1, "200"), i(2), i(0) }
+                )
+        ),
+})
+
+ls.add_snippets("cs", {
+        s('func',
+            fmt(
+                [[
+                public {} Task {}({})
+                {{
+                    {}
+                }}
+                ]],
+                { c(1, { t "async", t ""}), i(2, "MethodName"), i(3), i(0) }
+                )
+        ),
+})
+
+-- Generate constructor
+ls.add_snippets("cs", {
+        s('ctor',
+            fmt(
+                [[
+                public {}()
+                {{
+
+                }}
+                ]],
+                { f(function(args) return GetClassName() end)}
                 )
         ),
 })
