@@ -57,9 +57,10 @@ Hydra({
         hint = false
     },
     heads = {
-        { 'f', ':Telescope git_files<CR>', desc = "git managed files" },
+        { 'f', ':Telescope find_files<CR>', desc = "git managed files" },
         { 'g', ':Telescope live_grep<CR>', desc = "seach inside files" },
         { 'h', ':Telescope help_tags<CR>', desc = "seach help" },
+        { 'c', ':Telescope colorscheme<CR>', desc = "choose a colorscheme" },
     }
 })
 
