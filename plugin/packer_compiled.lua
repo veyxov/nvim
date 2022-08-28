@@ -128,6 +128,12 @@ _G.packer_plugins = {
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["gitsigns.nvim"] = {
+    config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
+    loaded = true,
+    path = "/home/iz/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["go.nvim"] = {
     config = { "\27LJ\2\n0\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\ago\frequire\0" },
     loaded = true,
@@ -348,10 +354,10 @@ time([[Config for NeoSolarized.nvim]], false)
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
--- Config for: LuaSnip
-time([[Config for LuaSnip]], true)
-require("cfg/luasnip")
-time([[Config for LuaSnip]], false)
+-- Config for: gruvbox.nvim
+time([[Config for gruvbox.nvim]], true)
+try_loadstring("\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\rcontrast\thard\finverse\2\21invert_selection\1\nsetup\fgruvbox\frequire\0", "config", "gruvbox.nvim")
+time([[Config for gruvbox.nvim]], false)
 -- Config for: twilight.nvim
 time([[Config for twilight.nvim]], true)
 try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0", "config", "twilight.nvim")
@@ -364,26 +370,30 @@ time([[Config for Comment.nvim]], false)
 time([[Config for nvim-lspconfig]], true)
 require("cfg/lsp")
 time([[Config for nvim-lspconfig]], false)
--- Config for: lsp_signature.nvim
-time([[Config for lsp_signature.nvim]], true)
-require("cfg/signature")
-time([[Config for lsp_signature.nvim]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 require("cfg/trouble")
 time([[Config for trouble.nvim]], false)
--- Config for: gruvbox.nvim
-time([[Config for gruvbox.nvim]], true)
-try_loadstring("\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\rcontrast\thard\finverse\2\21invert_selection\1\nsetup\fgruvbox\frequire\0", "config", "gruvbox.nvim")
-time([[Config for gruvbox.nvim]], false)
--- Config for: lsp_lines.nvim
-time([[Config for lsp_lines.nvim]], true)
-try_loadstring("\27LJ\2\nr\0\0\3\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0005\2\6\0B\0\2\1K\0\1\0\1\0\1\17virtual_text\1\vconfig\15diagnostic\bvim\nsetup\14lsp_lines\frequire\0", "config", "lsp_lines.nvim")
-time([[Config for lsp_lines.nvim]], false)
+-- Config for: lsp_signature.nvim
+time([[Config for lsp_signature.nvim]], true)
+require("cfg/signature")
+time([[Config for lsp_signature.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require("cfg/treesitter")
 time([[Config for nvim-treesitter]], false)
+-- Config for: lsp_lines.nvim
+time([[Config for lsp_lines.nvim]], true)
+try_loadstring("\27LJ\2\nr\0\0\3\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0005\2\6\0B\0\2\1K\0\1\0\1\0\1\17virtual_text\1\vconfig\15diagnostic\bvim\nsetup\14lsp_lines\frequire\0", "config", "lsp_lines.nvim")
+time([[Config for lsp_lines.nvim]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+require("cfg/dap")
+time([[Config for nvim-dap]], false)
 -- Config for: lspsaga.nvim
 time([[Config for lspsaga.nvim]], true)
 require("cfg/lspsaga")
@@ -396,10 +406,10 @@ time([[Config for todo-comments.nvim]], false)
 time([[Config for onedark.nvim]], true)
 try_loadstring("\27LJ\2\nÿ\2\0\0\4\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\16diagnostics\1\0\3\14undercurl\2\15background\2\vdarker\2\15code_style\1\0\5\rcomments\vitalic\14variables\tnone\rkeywords\tbold\fstrings\vitalic\14functions\tnone\22toggle_style_list\1\b\0\0\tdark\vdarker\tcool\tdeep\twarm\vwarmer\nlight\1\0\6\18ending_tildes\1\21toggle_style_key\15<leader>cc\16transparent\1\nstyle\tdeep\16term_colors\2\25cmp_itemkind_reverse\1\nsetup\fonedark\frequire\0", "config", "onedark.nvim")
 time([[Config for onedark.nvim]], false)
--- Config for: nvim-dap
-time([[Config for nvim-dap]], true)
-require("cfg/dap")
-time([[Config for nvim-dap]], false)
+-- Config for: true-zen.nvim
+time([[Config for true-zen.nvim]], true)
+try_loadstring("\27LJ\2\ne\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\17integrations\1\0\0\1\0\2\rtwilight\2\ttmux\2\nsetup\rtrue-zen\frequire\0", "config", "true-zen.nvim")
+time([[Config for true-zen.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require("cfg/telescope")
@@ -424,10 +434,10 @@ time([[Config for tokyonight.nvim]], false)
 time([[Config for neo-tree.nvim]], true)
 require("cfg/tree")
 time([[Config for neo-tree.nvim]], false)
--- Config for: true-zen.nvim
-time([[Config for true-zen.nvim]], true)
-try_loadstring("\27LJ\2\ne\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\17integrations\1\0\0\1\0\2\rtwilight\2\ttmux\2\nsetup\rtrue-zen\frequire\0", "config", "true-zen.nvim")
-time([[Config for true-zen.nvim]], false)
+-- Config for: LuaSnip
+time([[Config for LuaSnip]], true)
+require("cfg/luasnip")
+time([[Config for LuaSnip]], false)
 -- Config for: hydra.nvim
 time([[Config for hydra.nvim]], true)
 require("cfg/hydra")
@@ -438,10 +448,10 @@ require("cfg/treesitter-textobjects")
 time([[Config for nvim-treesitter-textobjects]], false)
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
+vim.cmd [[noremap <silent> F <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "F", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> f <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "f", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> s <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "s", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> S <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "S", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> f <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "f", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> F <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "F", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 if should_profile then save_profiles() end
