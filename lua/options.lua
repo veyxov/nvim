@@ -25,3 +25,5 @@ opt.tabstop     = tab
 opt.shiftwidth  = tab
 opt.softtabstop = tab
 opt.expandtab   = true
+
+opt.list = true
