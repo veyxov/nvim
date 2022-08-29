@@ -27,3 +27,4 @@ opt.softtabstop = tab
 opt.expandtab   = true
 
 opt.list = true
+opt.listchars=[[tab:» ,extends:›,precedes:‹,nbsp:·,trail:·]]
