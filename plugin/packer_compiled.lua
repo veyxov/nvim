@@ -278,7 +278,7 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["onedark.nvim"] = {
-    config = { "\27LJ\2\nÿ\2\0\0\4\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\16diagnostics\1\0\3\15background\2\14undercurl\2\vdarker\2\15code_style\1\0\5\14functions\tnone\fstrings\vitalic\14variables\tnone\rcomments\vitalic\rkeywords\tbold\22toggle_style_list\1\b\0\0\tdark\vdarker\tcool\tdeep\twarm\vwarmer\nlight\1\0\6\21toggle_style_key\15<leader>cc\nstyle\tdeep\16transparent\1\16term_colors\2\18ending_tildes\1\25cmp_itemkind_reverse\1\nsetup\fonedark\frequire\0" },
+    config = { 'require("cfg/onedark")' },
     loaded = true,
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/onedark.nvim",
     url = "https://github.com/navarasu/onedark.nvim"
@@ -420,7 +420,7 @@ try_loadstring("\27LJ\2\n0\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K
 time([[Config for go.nvim]], false)
 -- Config for: onedark.nvim
 time([[Config for onedark.nvim]], true)
-try_loadstring("\27LJ\2\nÿ\2\0\0\4\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\16diagnostics\1\0\3\15background\2\14undercurl\2\vdarker\2\15code_style\1\0\5\14functions\tnone\fstrings\vitalic\14variables\tnone\rcomments\vitalic\rkeywords\tbold\22toggle_style_list\1\b\0\0\tdark\vdarker\tcool\tdeep\twarm\vwarmer\nlight\1\0\6\21toggle_style_key\15<leader>cc\nstyle\tdeep\16transparent\1\16term_colors\2\18ending_tildes\1\25cmp_itemkind_reverse\1\nsetup\fonedark\frequire\0", "config", "onedark.nvim")
+require("cfg/onedark")
 time([[Config for onedark.nvim]], false)
 -- Config for: nvim-dap
 time([[Config for nvim-dap]], true)
@@ -448,9 +448,9 @@ try_loadstring("\27LJ\2\ne\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\00
 time([[Config for true-zen.nvim]], false)
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> F <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "F", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> f <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "f", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> s <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "s", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> f <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "f", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> F <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "F", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> S <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "S", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
