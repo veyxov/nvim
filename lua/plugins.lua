@@ -13,6 +13,7 @@ require 'packer'.startup({ function(use)
     }
 
     use 'ThePrimeagen/harpoon'
+    use 'Hoffs/omnisharp-extended-lsp.nvim'
 
     use {
         'declancm/cinnamon.nvim',
@@ -158,8 +159,16 @@ require 'packer'.startup({ function(use)
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
-        config = kfg 'tree',
-        requires = "MunifTanjim/nui.nvim"
+        requires = {
+            "MunifTanjim/nui.nvim",
+            {
+                's1n7ax/nvim-window-picker',
+                tag = "v1.*",
+                config = function()
+                    require'window-picker'.setup {}
+                end,
+            }
+        },
     }
 
     use {
