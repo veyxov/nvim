@@ -158,6 +158,7 @@ require 'packer'.startup({ function(use)
     -- File tree
     use {
         "nvim-neo-tree/neo-tree.nvim",
+        config = kfg 'tree',
         branch = "v2.x",
         requires = {
             "MunifTanjim/nui.nvim",
