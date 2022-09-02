@@ -35,7 +35,7 @@ require("neo-tree").setup({
             ["c"] = {
                 "copy",
                 config = {
-                    Ishow_path = "relative" -- "none", "relative", "absolute"
+                    show_path = "relative" -- "none", "relative", "absolute"
                 }
             },
             ["m"] = "move", -- takes text input for destination, also accepts the optional config.show_path option like "add".
