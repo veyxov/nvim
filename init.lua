@@ -1,5 +1,3 @@
-require 'impatient'
-
 require 'globals'
 require 'plugins'
 require 'options'

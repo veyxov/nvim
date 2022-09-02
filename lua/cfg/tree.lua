@@ -90,4 +90,3 @@ require("neo-tree").setup({
         }
     }
 })
-vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
