@@ -31,9 +31,6 @@ require 'packer'.startup({ function(use)
 
     -- Auto completion and code analiz
     use {
-        -- Candy
-        { 'onsails/lspkind.nvim' },
-
         -- Completion and sources
         { 'hrsh7th/nvim-cmp', config = kfg 'cmp' },
         { 'hrsh7th/cmp-nvim-lsp' },
