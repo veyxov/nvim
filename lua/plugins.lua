@@ -43,6 +43,7 @@ require 'packer'.startup({ function(use)
     }
 
     -- Tree-sitter
+    use 'nvim-treesitter/playground'
     use {
         'nvim-treesitter/nvim-treesitter',
         config = kfg 'treesitter',
@@ -96,7 +97,6 @@ require 'packer'.startup({ function(use)
         config = kfg 'telescope',
     }
 
-    use 'nvim-treesitter/playground'
 
     -- File tree
     use {
@@ -109,24 +109,12 @@ require 'packer'.startup({ function(use)
                 's1n7ax/nvim-window-picker',
                 tag = "v1.*",
                 config = function()
-                    require'window-picker'.setup {}
+                    require'window-picker'.setup {
+                        selection_chars = 'arstneiodhgmywufpl',
+                    }
                 end,
             }
         },
-    }
-
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
-    }
-
-    use {
-        'lewis6991/gitsigns.nvim',
-        config = function()
-            require('gitsigns').setup()
-        end
     }
 end,
     config = { git = { clone_timeout = nil } }
