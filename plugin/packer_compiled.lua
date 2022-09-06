@@ -116,7 +116,7 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["gruvbox.nvim"] = {
-    config = { "\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\rcontrast\thard\21invert_selection\1\finverse\2\nsetup\fgruvbox\frequire\0" },
+    config = { "\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\finverse\2\rcontrast\thard\21invert_selection\1\nsetup\fgruvbox\frequire\0" },
     loaded = true,
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
@@ -151,6 +151,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
+  },
+  ["lualine.nvim"] = {
+    config = { "\27LJ\2\n}\0\0\4\0\6\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0025\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\0\1\0\2\25component_separators\5\23section_separators\5\nsetup\flualine\frequire\0" },
+    loaded = true,
+    path = "/home/iz/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -202,6 +208,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-treesitter-context"] = {
+    config = { "\27LJ\2\nÿ\4\0\0\5\0\24\0\0276\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\0035\4\t\0=\4\n\0035\4\v\0=\4\f\0035\4\r\0=\4\14\0035\4\15\0=\4\16\0035\4\17\0=\4\18\0035\4\19\0=\4\20\0035\4\21\0=\4\22\3=\3\23\2B\0\2\1K\0\1\0\rpatterns\tyaml\1\2\0\0\23block_mapping_pair\tjson\1\2\0\0\tpair\velixir\1\t\0\0\23anonymous_function\14arguments\nblock\rdo_block\tlist\bmap\ntuple\19quoted_content\rmarkdown\1\2\0\0\fsection\tvhdl\1\4\0\0\22process_statement\22architecture_body\23entity_declaration\nscala\1\2\0\0\22object_definition\trust\1\4\0\0\14impl_item\vstruct\tenum\btex\1\5\0\0\fchapter\fsection\15subsection\18subsubsection\fdefault\1\0\0\1\t\0\0\nclass\rfunction\vmethod\bfor\nwhile\aif\vswitch\tcase\1\0\5\14max_lines\3\0\15trim_scope\nouter\vzindex\3\20\tmode\vcursor\venable\2\nsetup\23treesitter-context\frequire\0" },
+    loaded = true,
+    path = "/home/iz/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
   },
   ["nvim-treesitter-textobjects"] = {
     config = { 'require("cfg/treesitter-textobjects")' },
@@ -267,46 +279,54 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for nvim-surround]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
 time([[Config for nvim-surround]], false)
+-- Config for: nvim-treesitter-context
+time([[Config for nvim-treesitter-context]], true)
+try_loadstring("\27LJ\2\nÿ\4\0\0\5\0\24\0\0276\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\0035\4\t\0=\4\n\0035\4\v\0=\4\f\0035\4\r\0=\4\14\0035\4\15\0=\4\16\0035\4\17\0=\4\18\0035\4\19\0=\4\20\0035\4\21\0=\4\22\3=\3\23\2B\0\2\1K\0\1\0\rpatterns\tyaml\1\2\0\0\23block_mapping_pair\tjson\1\2\0\0\tpair\velixir\1\t\0\0\23anonymous_function\14arguments\nblock\rdo_block\tlist\bmap\ntuple\19quoted_content\rmarkdown\1\2\0\0\fsection\tvhdl\1\4\0\0\22process_statement\22architecture_body\23entity_declaration\nscala\1\2\0\0\22object_definition\trust\1\4\0\0\14impl_item\vstruct\tenum\btex\1\5\0\0\fchapter\fsection\15subsection\18subsubsection\fdefault\1\0\0\1\t\0\0\nclass\rfunction\vmethod\bfor\nwhile\aif\vswitch\tcase\1\0\5\14max_lines\3\0\15trim_scope\nouter\vzindex\3\20\tmode\vcursor\venable\2\nsetup\23treesitter-context\frequire\0", "config", "nvim-treesitter-context")
+time([[Config for nvim-treesitter-context]], false)
 -- Config for: neo-tree.nvim
 time([[Config for neo-tree.nvim]], true)
 require("cfg/tree")
 time([[Config for neo-tree.nvim]], false)
+-- Config for: gruvbox.nvim
+time([[Config for gruvbox.nvim]], true)
+try_loadstring("\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\finverse\2\rcontrast\thard\21invert_selection\1\nsetup\fgruvbox\frequire\0", "config", "gruvbox.nvim")
+time([[Config for gruvbox.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require("cfg/treesitter")
 time([[Config for nvim-treesitter]], false)
--- Config for: tokyonight.nvim
-time([[Config for tokyonight.nvim]], true)
-try_loadstring("\27LJ\2\nc\0\0\2\0\5\0\t6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\4\0K\0\1\0\31tokyonight_italic_comments\nnight\21tokyonight_style\6g\bvim\0", "config", "tokyonight.nvim")
-time([[Config for tokyonight.nvim]], false)
--- Config for: LuaSnip
-time([[Config for LuaSnip]], true)
-require("cfg/luasnip")
-time([[Config for LuaSnip]], false)
--- Config for: gruvbox.nvim
-time([[Config for gruvbox.nvim]], true)
-try_loadstring("\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\rcontrast\thard\21invert_selection\1\finverse\2\nsetup\fgruvbox\frequire\0", "config", "gruvbox.nvim")
-time([[Config for gruvbox.nvim]], false)
--- Config for: nvim-treesitter-textobjects
-time([[Config for nvim-treesitter-textobjects]], true)
-require("cfg/treesitter-textobjects")
-time([[Config for nvim-treesitter-textobjects]], false)
 -- Config for: lspsaga.nvim
 time([[Config for lspsaga.nvim]], true)
 require("cfg/lspsaga")
 time([[Config for lspsaga.nvim]], false)
--- Config for: hydra.nvim
-time([[Config for hydra.nvim]], true)
-require("cfg/hydra")
-time([[Config for hydra.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require("cfg/cmp")
-time([[Config for nvim-cmp]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require("cfg/telescope")
 time([[Config for telescope.nvim]], false)
+-- Config for: nvim-treesitter-textobjects
+time([[Config for nvim-treesitter-textobjects]], true)
+require("cfg/treesitter-textobjects")
+time([[Config for nvim-treesitter-textobjects]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+try_loadstring("\27LJ\2\n}\0\0\4\0\6\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0025\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\0\1\0\2\25component_separators\5\23section_separators\5\nsetup\flualine\frequire\0", "config", "lualine.nvim")
+time([[Config for lualine.nvim]], false)
+-- Config for: tokyonight.nvim
+time([[Config for tokyonight.nvim]], true)
+try_loadstring("\27LJ\2\nc\0\0\2\0\5\0\t6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\4\0K\0\1\0\31tokyonight_italic_comments\nnight\21tokyonight_style\6g\bvim\0", "config", "tokyonight.nvim")
+time([[Config for tokyonight.nvim]], false)
+-- Config for: hydra.nvim
+time([[Config for hydra.nvim]], true)
+require("cfg/hydra")
+time([[Config for hydra.nvim]], false)
+-- Config for: LuaSnip
+time([[Config for LuaSnip]], true)
+require("cfg/luasnip")
+time([[Config for LuaSnip]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require("cfg/cmp")
+time([[Config for nvim-cmp]], false)
 -- Config for: nvim-window-picker
 time([[Config for nvim-window-picker]], true)
 try_loadstring("\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\20selection_chars\23arstneiodhgmywufpl\nsetup\18window-picker\frequire\0", "config", "nvim-window-picker")
@@ -314,9 +334,9 @@ time([[Config for nvim-window-picker]], false)
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
 vim.cmd [[noremap <silent> F <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "F", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> S <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "S", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> f <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "f", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> s <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "s", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> S <cmd>lua require("packer.load")({'lightspeed.nvim'}, { keys = "S", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 
