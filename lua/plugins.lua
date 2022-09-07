@@ -9,13 +9,6 @@ require 'packer'.startup({ function(use)
     }
 
     use {
-        'nvim-lualine/lualine.nvim',
-        config = function ()
-            require('lualine').setup()
-        end
-    }
-
-    use {
         'nvim-treesitter/nvim-treesitter-context',
         config = function()
             require 'treesitter-context'.setup {}
