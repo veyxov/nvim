@@ -25,10 +25,13 @@
 (("set" @keyword) (#set! conceal "ﰬ"))
 (("init" @keyword) (#set! conceal ""))
 
+(("=>" @Conceal) (#set! conceal ""))
+(("out" @Conceal) (#set! conceal ""))
+
 (((method_declaration type:(void_keyword) @keyword)) (#set! conceal "ﳠ"))
 
 (("foreach" @keyword) (#set! conceal ""))
-(("in" @keyword) (#set! conceal ""))
+(("in" @keyword) (#set! conceal ""))
 
 (((method_declaration type:(generic_name (identifier) @TStag (#eq? @TStag "Task")))) (#set! conceal "ﲆ"))
 (((method_declaration type:(generic_name (identifier) @TStag (#eq? @TStag "ErrorOr")))) (#set! conceal ""))
