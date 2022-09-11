@@ -12,7 +12,7 @@
 
 (("public" @comment) (#set! conceal ""))
 (("private" @keyword) (#set! conceal ""))
-(("partial" @keyword) (#set! conceal ""))
+(("partial" @keyword) (#set! conceal ""))
 (("protected" @keyword) (#set! conceal "ﱾ"))
 (("readonly" @keyword) (#set! conceal ""))
 (("const" @keyword) (#set! conceal ""))
@@ -52,3 +52,5 @@
 
 (((method_declaration (attribute_list (attribute name:(identifier) @debug (#eq? @debug "Authorize"))))) (#set! conceal ""))
 (((method_declaration (attribute_list (attribute name:(identifier) @debug (#eq? @debug "AllowAnonymous"))) @comment)) (#set! conceal "ﴣ"))
+
+(((class_declaration (attribute_list (attribute name:(identifier) @debug (#eq? @debug "Route"))))) (#set! conceal "數"))
