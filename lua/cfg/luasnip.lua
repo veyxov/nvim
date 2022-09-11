@@ -53,22 +53,6 @@ ls.snippets = {
 }
 
 ls.add_snippets("cs", {
-        s('api',
-            fmt(
-                [[
-                    [Http{}("{}")]
-                    public async Task<IActionResult> {}Async()
-                    {{
-                        {}
-                        return Ok();
-                    }}
-                ]],
-            { i(1, "Get"), i(2, "Test"), rep(2), i(0) }
-            )
-        ),
-})
-
-ls.add_snippets("cs", {
         s('test',
             fmt(
                 [[
@@ -265,5 +249,18 @@ ls.add_snippets("cs", {
                 ]],
                 { c(1, { t "[Authorize]", t "" }), i(2), i(3, "Todo"), c(4, { t "ApiControllerBase", t "ControllerBase"}), i(0) }
                 )
+        ),
+})
+
+ls.add_snippets("cs", {
+        s('api',
+            fmt(
+                [[
+                [Http{}({})]
+                public async Task<ActionResult<{}>> {}({}) =>
+                    await GetMediatorResult({});
+                ]],
+            { i(1, "Get"), i(2), i(3), i(4), i(5), i(6) }
+            )
         ),
 })
