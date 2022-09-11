@@ -51,3 +51,4 @@
 (((method_declaration (attribute_list (attribute name:(identifier) @debug (#eq? @debug "HttpDelete"))))) (#set! conceal ""))
 
 (((method_declaration (attribute_list (attribute name:(identifier) @debug (#eq? @debug "Authorize"))))) (#set! conceal ""))
+(((method_declaration (attribute_list (attribute name:(identifier) @debug (#eq? @debug "AllowAnonymous"))) @comment)) (#set! conceal "ﴣ"))
