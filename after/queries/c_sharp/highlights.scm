@@ -13,14 +13,19 @@
 (("public" @comment) (#set! conceal ""))
 (("private" @keyword) (#set! conceal ""))
 (("partial" @keyword) (#set! conceal ""))
-(("protected" @keyword) (#set! conceal ""))
+(("protected" @keyword) (#set! conceal "ﱾ"))
 (("readonly" @keyword) (#set! conceal ""))
 (("const" @keyword) (#set! conceal ""))
-(("static" @keyword) (#set! conceal ""))
-(("class" @keyword) (#set! conceal "更"))
-(("abstract" @keyword) (#set! conceal "擄"))
-(("new" @keyword) (#set! conceal ""))
+
 (("interface" @keyword) (#set! conceal ""))
+(("class" @keyword) (#set! conceal "更"))
+(("record" @keyword) (#set! conceal ""))
+(("struct" @keyword) (#set! conceal "ﰀ"))
+
+(("static" @keyword) (#set! conceal ""))
+(("abstract" @keyword) (#set! conceal "擄"))
+
+(("new" @keyword) (#set! conceal ""))
 (("get" @keyword) (#set! conceal "ﰵ"))
 (("set" @keyword) (#set! conceal "ﰬ"))
 (("init" @keyword) (#set! conceal ""))
@@ -38,3 +43,11 @@
 
 (("var" @keyword) (#set! conceal ""))
 (((variable_declaration type:(implicit_type) @variable) (#set! conceal "")))
+
+(((method_declaration (attribute_list (attribute name:(identifier) @debug (#eq? @debug "HttpGet"))))) (#set! conceal ""))
+(((method_declaration (attribute_list (attribute name:(identifier) @debug (#eq? @debug "HttpPut"))))) (#set! conceal ""))
+(((method_declaration (attribute_list (attribute name:(identifier) @debug (#eq? @debug "HttpPatch"))))) (#set! conceal "璘"))
+(((method_declaration (attribute_list (attribute name:(identifier) @debug (#eq? @debug "HttpPost"))))) (#set! conceal "頻"))
+(((method_declaration (attribute_list (attribute name:(identifier) @debug (#eq? @debug "HttpDelete"))))) (#set! conceal ""))
+
+(((method_declaration (attribute_list (attribute name:(identifier) @debug (#eq? @debug "Authorize"))))) (#set! conceal ""))
