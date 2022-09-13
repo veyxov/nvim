@@ -256,7 +256,7 @@ ls.add_snippets("cs", {
         s('api',
             fmt(
                 [[
-                [Http{}({})]
+                [Http{}("{}")]
                 public async Task<ActionResult<{}>> {}({}) =>
                     await GetMediatorResult({});
                 ]],
