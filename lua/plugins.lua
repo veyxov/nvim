@@ -59,6 +59,14 @@ require 'packer'.startup({ function(use)
     }
 
     use {
+        'm-demare/hlargs.nvim',
+        requires = { 'nvim-treesitter/nvim-treesitter' },
+        config = function ()
+            require('hlargs').setup()
+        end
+    }
+
+    use {
         'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async',
         config = function()
             vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
