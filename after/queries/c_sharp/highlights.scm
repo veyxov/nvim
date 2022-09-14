@@ -14,6 +14,8 @@
 (("private" @keyword) (#set! conceal ""))
 (("partial" @keyword) (#set! conceal ""))
 (("protected" @keyword) (#set! conceal "ﱾ"))
+(("virtual" @keyword) (#set! conceal ""))
+(("internal" @keyword) (#set! conceal ""))
 (("readonly" @keyword) (#set! conceal ""))
 (("const" @keyword) (#set! conceal ""))
 
