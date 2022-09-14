@@ -9,6 +9,10 @@ require 'packer'.startup({ function(use)
     }
 
     use {
+        'danth/pathfinder.vim'
+    }
+
+    use {
         'nvim-treesitter/nvim-treesitter-context',
         config = function()
             require 'treesitter-context'.setup {}
