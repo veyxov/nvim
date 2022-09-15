@@ -8,6 +8,7 @@ require 'packer'.startup({ function(use)
         'kyazdani42/nvim-web-devicons'
     }
 
+    -- Hlargs
     use {
         'm-demare/hlargs.nvim',
         config = function ()
@@ -15,6 +16,7 @@ require 'packer'.startup({ function(use)
         end
     }
 
+    -- Foldings
     use {
         'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async',
         config = function()
@@ -32,6 +34,7 @@ require 'packer'.startup({ function(use)
         end
     }
 
+    -- Treesitter-context
     use {
         'nvim-treesitter/nvim-treesitter-context',
         config = function()
@@ -39,6 +42,7 @@ require 'packer'.startup({ function(use)
         end
     }
 
+    -- Matchparen
     use {
         'monkoose/matchparen.nvim',
         config = function ()
@@ -48,9 +52,11 @@ require 'packer'.startup({ function(use)
         end
     }
 
+    -- Harpoon
     use 'ThePrimeagen/harpoon'
     use 'Hoffs/omnisharp-extended-lsp.nvim'
 
+    -- Snippets
     use {
         'L3MON4D3/LuaSnip',
         config = kfg 'luasnip'
@@ -89,16 +95,19 @@ require 'packer'.startup({ function(use)
         run = ":TSUpdate"
     }
 
+    -- Treesitter-textobjects
     use {
         'nvim-treesitter/nvim-treesitter-textobjects',
         config = kfg 'treesitter-textobjects',
     }
 
+    -- Autopairs
     use {
         'windwp/nvim-autopairs',
         config = function() require("nvim-autopairs").setup {} end
     }
 
+    -- Gruvbox
     use {
         "ellisonleao/gruvbox.nvim",
         config = function()
@@ -109,6 +118,8 @@ require 'packer'.startup({ function(use)
             })
         end
     }
+
+    -- Tokyonight
     use {
         'folke/tokyonight.nvim',
         config = function()
@@ -117,6 +128,7 @@ require 'packer'.startup({ function(use)
         end
     }
 
+    -- Lightspeed
     use {
         'ggandor/lightspeed.nvim',
         keys = { 's', 'S', 'f', 'F' },
@@ -157,10 +169,11 @@ require 'packer'.startup({ function(use)
         },
     }
 
+    -- Surround
     use {
         "kylechui/nvim-surround",
         tag = "*",
-        config = function() 
+        config = function()
             require("nvim-surround").setup({
                 keymaps = {
                     insert_line = "<C-g>S",
