@@ -9,10 +9,6 @@ require 'packer'.startup({ function(use)
     }
 
     use {
-        'tjdevries/train.nvim'
-    }
-
-    use {
         'm-demare/hlargs.nvim',
         config = function ()
             require('hlargs').setup()
