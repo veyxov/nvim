@@ -9,21 +9,11 @@ require 'packer'.startup({ function(use)
     }
 
     use {
-        "mizlan/iswap.nvim",
-        config = function ()
-            require('iswap').setup{
-                keys = 'aorisetndhywufmgq',
-            }
-        end
-    }
-
-    use {
         'tjdevries/train.nvim'
     }
 
     use {
         'm-demare/hlargs.nvim',
-        requires = { 'nvim-treesitter/nvim-treesitter' },
         config = function ()
             require('hlargs').setup()
         end
@@ -174,7 +164,7 @@ require 'packer'.startup({ function(use)
     use {
         "kylechui/nvim-surround",
         tag = "*",
-        config = function() require("nvim-surround").setup({ }) end
+        config = function() require("nvim-surround").setup({ keymaps = { normal = "k" } }) end
     }
 end,
     config = { git = { clone_timeout = nil } }
