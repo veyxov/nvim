@@ -24,8 +24,8 @@ require 'packer'.startup({ function(use)
             vim.o.foldlevelstart = 99
             vim.o.foldenable = true
 
-            vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-            vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+            vim.keymap.set('n', 'zO', require('ufo').openAllFolds)
+            vim.keymap.set('n', 'Z', require('ufo').closeAllFolds)
             require('ufo').setup({
                 provider_selector = function()
                     return {'treesitter', 'indent'}
