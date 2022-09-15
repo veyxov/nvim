@@ -164,7 +164,21 @@ require 'packer'.startup({ function(use)
     use {
         "kylechui/nvim-surround",
         tag = "*",
-        config = function() require("nvim-surround").setup({ keymaps = { normal = "k" } }) end
+        config = function() 
+            require("nvim-surround").setup({
+                keymaps = {
+                    insert_line = "<C-g>S",
+                    normal = "ks",
+                    normal_cur = "kss",
+                    normal_line = "kS",
+                    normal_cur_line = "ySS",
+                    visual = "K",
+                    visual_line = "gS",
+                    delete = "ds",
+                    change = "cs",
+                },
+            })
+        end
     }
 end,
     config = { git = { clone_timeout = nil } }
