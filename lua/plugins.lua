@@ -152,19 +152,7 @@ require 'packer'.startup({ function(use)
     use {
         "nvim-neo-tree/neo-tree.nvim",
         config = kfg 'tree',
-        branch = "v2.x",
-        requires = {
-            "MunifTanjim/nui.nvim",
-            {
-                's1n7ax/nvim-window-picker',
-                tag = "v1.*",
-                config = function()
-                    require'window-picker'.setup {
-                        selection_chars = 'arstneiodhgmywufpl',
-                    }
-                end,
-            }
-        },
+        branch = "v2.x"
     }
 
     -- Surround

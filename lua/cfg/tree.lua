@@ -12,10 +12,10 @@ require("neo-tree").setup({
                 nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use 
             },
             ["<cr>"] = "open",
-            ["S"] = "split_with_window_picker",
-            ["s"] = "vsplit_with_window_picker",
+            ["S"] = "split",
+            ["s"] = "vsplit",
             ["t"] = "open_tabnew",
-            ["w"] = "open_with_window_picker",
+            ["w"] = "open",
             --["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
             ["C"] = "close_all_nodes",
             --["Z"] = "expand_all_nodes",
