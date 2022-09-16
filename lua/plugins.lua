@@ -46,9 +46,7 @@ require 'packer'.startup({ function(use)
     use {
         'monkoose/matchparen.nvim',
         config = function ()
-            require('matchparen').setup({
-                hl_group = 'WarningMsg', -- highlight group for matched characters
-            })
+            require('matchparen').setup()
         end
     }
 
