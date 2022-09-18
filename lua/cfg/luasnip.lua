@@ -264,3 +264,11 @@ ls.add_snippets("cs", {
             )
         ),
 })
+
+ls.add_snippets("cs", {
+    s('cw',
+        fmt([[Console.WriteLine("{}");{}]],
+            { i(1, "text"), i(0) }
+        )
+    )
+})
