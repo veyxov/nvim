@@ -62,7 +62,7 @@ require 'packer'.startup({ function(use)
     }
 
     -- Tree-sitter
-    use 'nvim-treesitter/playground'
+    -- use 'nvim-treesitter/playground'
     use {
         'nvim-treesitter/nvim-treesitter',
         config = kfg 'treesitter',
