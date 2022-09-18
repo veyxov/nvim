@@ -125,7 +125,6 @@ require 'packer'.startup({ function(use)
         config = kfg 'telescope',
     }
 
-
     -- File tree
     use {
         "nvim-neo-tree/neo-tree.nvim",
@@ -155,7 +154,8 @@ require 'packer'.startup({ function(use)
                     change = "cs",
                 },
             })
-        end
+        end,
+        event = "InsertEnter"
     }
 end,
     config = { git = { clone_timeout = nil } }
