@@ -133,7 +133,7 @@ require 'packer'.startup({ function(use)
         requires = {
             "MunifTanjim/nui.nvim",
         },
-        command = "Neotree"
+        cmd = "Neotree"
     }
 
     -- Surround
