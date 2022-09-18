@@ -26,14 +26,6 @@ require 'packer'.startup({ function(use)
         end
     }
 
-    -- Matchparen
-    use {
-        'monkoose/matchparen.nvim',
-        config = function ()
-            require('matchparen').setup()
-        end
-    }
-
     -- Harpoon
     use 'ThePrimeagen/harpoon'
     use 'Hoffs/omnisharp-extended-lsp.nvim'
