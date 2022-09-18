@@ -47,7 +47,13 @@ require 'packer'.startup({ function(use)
         config = kfg 'lspsaga',
     }}
 
-    -- Auto completion and code analiz
+    -- Autopairs
+    use {
+        'windwp/nvim-autopairs',
+        config = function() require("nvim-autopairs").setup {} end,
+        event = "InsertEnter"
+    }
+
     use {
         -- Completion and sources
         { 'hrsh7th/nvim-cmp', config = kfg 'cmp' },
@@ -74,12 +80,6 @@ require 'packer'.startup({ function(use)
         config = kfg 'treesitter-textobjects',
     }
 
-    -- Autopairs
-    use {
-        'windwp/nvim-autopairs',
-        config = function() require("nvim-autopairs").setup {} end
-    }
-
     -- Gruvbox
     use {
         "ellisonleao/gruvbox.nvim",
@@ -92,15 +92,6 @@ require 'packer'.startup({ function(use)
             vim.cmd("color gruvbox")
         end,
         event = "InsertEnter"
-    }
-
-    -- Tokyonight
-    use {
-        'folke/tokyonight.nvim',
-        config = function()
-            vim.g.tokyonight_style = "night"
-            vim.g.tokyonight_italic_comments = true
-        end
     }
 
     -- Lightspeed
