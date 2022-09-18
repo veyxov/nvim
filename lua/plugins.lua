@@ -28,7 +28,6 @@ require 'packer'.startup({ function(use)
 
     -- Harpoon
     use 'ThePrimeagen/harpoon'
-    use 'Hoffs/omnisharp-extended-lsp.nvim'
 
     -- Snippets
     use {
@@ -123,6 +122,7 @@ require 'packer'.startup({ function(use)
     use {
         'nvim-telescope/telescope.nvim',
         config = kfg 'telescope',
+        cmd = "Telescope"
     }
 
     -- File tree
