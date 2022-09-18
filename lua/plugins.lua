@@ -26,14 +26,6 @@ require 'packer'.startup({ function(use)
         end
     }
 
-    -- Treesitter-context
-    use {
-        'nvim-treesitter/nvim-treesitter-context',
-        config = function()
-            require 'treesitter-context'.setup {}
-        end
-    }
-
     -- Matchparen
     use {
         'monkoose/matchparen.nvim',
