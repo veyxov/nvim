@@ -8,14 +8,6 @@ require 'packer'.startup({ function(use)
         'kyazdani42/nvim-web-devicons'
     }
 
-    -- Hlargs
-    use {
-        'm-demare/hlargs.nvim',
-        config = function ()
-            require('hlargs').setup()
-        end
-    }
-
     -- Foldings
     use {
         'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async',
