@@ -90,7 +90,9 @@ require 'packer'.startup({ function(use)
                 invert_selection = false,
                 contrast = "hard",
             })
-        end
+            vim.cmd("color gruvbox")
+        end,
+        event = "InsertEnter"
     }
 
     -- Tokyonight
