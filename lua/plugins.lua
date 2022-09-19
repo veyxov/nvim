@@ -8,33 +8,6 @@ require 'packer'.startup({ function(use)
         'kyazdani42/nvim-web-devicons'
     }
 
-    -- Foldings
-    use {
-        'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async',
-        config = function()
-            vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-            vim.o.foldlevelstart = 99
-            vim.o.foldenable = true
-
-            vim.keymap.set('n', 'zO', require('ufo').openAllFolds)
-            vim.keymap.set('n', 'Z', require('ufo').closeAllFolds)
-            require('ufo').setup({
-                provider_selector = function()
-                    return {'treesitter', 'indent'}
-                end
-            })
-        end,
-        event = "InsertEnter"
-    }
-
-    -- Harpoon
-    use 'ThePrimeagen/harpoon'
-
-    -- Snippets
-    use {
-        'L3MON4D3/LuaSnip',
-        config = kfg 'luasnip'
-    }
     -- lsp
     use {{
         'neovim/nvim-lspconfig',
@@ -46,6 +19,7 @@ require 'packer'.startup({ function(use)
     },{
         'glepnir/lspsaga.nvim',
         config = kfg 'lspsaga',
+        cmd  = "Lspsaga"
     }}
 
     -- Autopairs
@@ -57,14 +31,21 @@ require 'packer'.startup({ function(use)
 
     use {
         -- Completion and sources
-        { 'hrsh7th/nvim-cmp', config = kfg 'cmp' },
-        { 'hrsh7th/cmp-nvim-lsp' },
-        { 'hrsh7th/cmp-buffer' },
-        { 'hrsh7th/cmp-path' },
-        { 'hrsh7th/cmp-cmdline' },
-        { 'saadparwaiz1/cmp_luasnip' },
-        { 'hrsh7th/cmp-nvim-lua' },
-        { 'andersevenrud/cmp-tmux' },
+        { 'hrsh7th/nvim-cmp', config = kfg 'cmp', event = "InsertEnter" },
+        { 'hrsh7th/cmp-nvim-lsp', after = "nvim-cmp" },
+        { 'hrsh7th/cmp-buffer', after = "nvim-cmp" },
+        { 'hrsh7th/cmp-path', after = "nvim-cmp" },
+        { 'hrsh7th/cmp-cmdline', after = "nvim-cmp" },
+        { 'saadparwaiz1/cmp_luasnip', after = "nvim-cmp" },
+        { 'hrsh7th/cmp-nvim-lua', after = "nvim-cmp" },
+        { 'andersevenrud/cmp-tmux', after = "nvim-cmp" },
+    }
+
+    -- Snippets
+    use {
+        'L3MON4D3/LuaSnip',
+        config = kfg 'luasnip',
+
     }
 
     -- Tree-sitter
