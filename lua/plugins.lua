@@ -45,7 +45,7 @@ require 'packer'.startup({ function(use)
     use {
         'L3MON4D3/LuaSnip',
         config = kfg 'luasnip',
-
+        event = "InsertEnter"
     }
 
     -- Tree-sitter
