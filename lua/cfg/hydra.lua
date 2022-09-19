@@ -47,22 +47,3 @@ Hydra({
         { '<down>', 'zL', { desc = 'half screen ←/→' } },
     }
 })
-
-Hydra({
-    name = 'Debugger',
-    mode = 'n',
-    hint = "Debugger",
-    body = '<leader>arst',
-    config = {
-        color = 'pink',
-    },
-
-    heads = {
-        { 's', Cmd 'lua require "dap".continue()' },
-        { 'n', Cmd 'lua require "dap".step_over()' },
-        { 'i', Cmd 'lua require "dap".step_into()' },
-        { 'o', Cmd 'lua require "dap".step_out()' },
-        { 'b', Cmd 'lua require "dap".toggle_breakpoint()' },
-        { 'x', Cmd 'lua require "dap".disconnect()' },
-    }
-})
