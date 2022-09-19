@@ -133,7 +133,7 @@ require 'packer'.startup({ function(use)
         config = function ()
             require('nvim-ts-autotag').setup()
         end,
-        ft = "html"
+        ft = {"html", "xml"}
     }
 
     -- Surround
