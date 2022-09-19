@@ -37,16 +37,6 @@ Map("<leader>\\", Cmd "Neotree toggle show buffers right")
 -- Git
 Map("<C-G>", Cmd [[lua require("harpoon.tmux").sendCommand(1, "lazygit status ; exit\n")]])
 
--- Harpoon
-Map("<C-A>", Cmd  [[lua require ("harpoon.mark").add_file()]])
-Map("<C-E>", Cmd  [[lua require("harpoon.ui").toggle_quick_menu()]])
-Map("<C-S-E>", Cmd  [[lua require("harpoon.cmd-ui").toggle_quick_menu()]])
-
-Map("1", Cmd [[lua require("harpoon.ui").nav_file(1)]])
-Map("2", Cmd [[lua require("harpoon.ui").nav_file(2)]])
-Map("3", Cmd [[lua require("harpoon.ui").nav_file(3)]])
-Map("4", Cmd [[lua require("harpoon.ui").nav_file(4)]])
-
 -- Twilight
 Map("<leader><cr>", Cmd "TZAtaraxis")
 
