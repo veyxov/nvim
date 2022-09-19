@@ -127,6 +127,19 @@ require 'packer'.startup({ function(use)
         cmd = "Neotree"
     }
 
+    -- Html
+    use {
+        'windwp/nvim-ts-autotag',
+        config = function ()
+            require'nvim-treesitter.configs'.setup {
+                autotag = {
+                    enable = true,
+                }
+            }
+        end,
+        ft = "html"
+    }
+
     -- Surround
     use {
         "kylechui/nvim-surround",
