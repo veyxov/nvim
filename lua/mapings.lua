@@ -54,3 +54,9 @@ Map("<C-n>", "<Plug>luasnip-next-choice", "i")
 Map("<C-n>", "<Plug>luasnip-next-choice", "s")
 Map("<C-p>", "<Plug>luasnip-prev-choice", "i")
 Map("<C-p>", "<Plug>luasnip-prev-choice", "s")
+
+-- Telescope
+Map("<leader>ff", Cmd "Telescope find_files")
+Map("<leader>fg", Cmd "Telescope live_grep")
+Map("<leader>fh", Cmd "Telescope help_tags")
+Map("<leader>fc", Cmd "Telescope colorsheme")
