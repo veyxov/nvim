@@ -23,7 +23,8 @@ require 'packer'.startup({ function(use)
                     return {'treesitter', 'indent'}
                 end
             })
-        end
+        end,
+        event = "InsertEnter"
     }
 
     -- Harpoon
@@ -71,13 +72,15 @@ require 'packer'.startup({ function(use)
     use {
         'nvim-treesitter/nvim-treesitter',
         config = kfg 'treesitter',
-        run = ":TSUpdate"
+        run = ":TSUpdate",
+        event = "InsertEnter"
     }
 
     -- Treesitter-textobjects
     use {
         'nvim-treesitter/nvim-treesitter-textobjects',
         config = kfg 'treesitter-textobjects',
+        after = "nvim-treesitter"
     }
 
     -- Gruvbox
