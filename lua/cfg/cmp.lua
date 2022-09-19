@@ -59,14 +59,7 @@ cmp.setup({
         { name = "luasnip" },
         { name = "path" },
         { name = "buffer" },
-        { name = "calc" },
         { name = "nvim_lua" },
-        -- {
-        --     name = 'tmux',
-        --     option = {
-        --         all_panes = true
-        --     }
-        -- },
     },
 })
 
