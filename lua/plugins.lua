@@ -10,25 +10,32 @@ require 'packer'.startup({ function(use)
 
     -- lsp
     use {{
-        'williamboman/mason-lspconfig.nvim',
-        cmd = "LspStart" -- Manually run lsp
+        'williamboman/mason-lspconfig.nvim', -- Load on LspStart command (1.1)
+        cmd = "LspStart"
     },{
         "williamboman/mason.nvim",
-        after = "mason-lspconfig.nvim"
+        after = "mason-lspconfig.nvim" -- Load after mason-lspconfig (1.2)
     },{
-        'neovim/nvim-lspconfig',
+        'neovim/nvim-lspconfig', -- Load after mason.nvim (1.3)
         config = kfg 'lsp',
         after = "mason.nvim"
     },{
-        'glepnir/lspsaga.nvim',
+        'glepnir/lspsaga.nvim', -- Load on LspSaga command (2)
         config = kfg 'lspsaga',
         cmd  = "Lspsaga"
     }}
 
+    -- Snippets
+    use {
+        'L3MON4D3/LuaSnip',
+        config = kfg 'luasnip',
+        event = "InsertEnter"
+    }
+
     use {
         -- Completion and sources
-        { 'hrsh7th/nvim-cmp', config = kfg 'cmp', after = "nvim-lspconfig" },
-        { 'hrsh7th/cmp-nvim-lsp', after = "nvim-cmp" },
+        { 'hrsh7th/nvim-cmp', config = kfg 'cmp', after = "nvim-lspconfig" }, -- Run after 1.3 (3.1)
+        { 'hrsh7th/cmp-nvim-lsp', after = "nvim-cmp" }, -- Run all the providers after
         { 'hrsh7th/cmp-buffer', after = "nvim-cmp" },
         { 'hrsh7th/cmp-path', after = "nvim-cmp" },
         { 'hrsh7th/cmp-cmdline', after = "nvim-cmp" },
@@ -41,13 +48,6 @@ require 'packer'.startup({ function(use)
     use {
         'windwp/nvim-autopairs',
         config = function() require("nvim-autopairs").setup {} end,
-        event = "InsertEnter"
-    }
-
-    -- Snippets
-    use {
-        'L3MON4D3/LuaSnip',
-        config = kfg 'luasnip',
         event = "InsertEnter"
     }
 
