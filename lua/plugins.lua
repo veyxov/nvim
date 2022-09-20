@@ -44,13 +44,6 @@ require 'packer'.startup({ function(use)
         { 'andersevenrud/cmp-tmux', after = "nvim-cmp" },
     }
 
-    -- Autopairs
-    use {
-        'windwp/nvim-autopairs',
-        config = function() require("nvim-autopairs").setup {} end,
-        event = "InsertEnter"
-    }
-
     -- Tree-sitter
     -- use 'nvim-treesitter/playground'
     use {
