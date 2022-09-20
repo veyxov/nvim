@@ -10,12 +10,15 @@ require 'packer'.startup({ function(use)
 
     -- lsp
     use {{
+        'williamboman/mason-lspconfig.nvim',
+        cmd = "LspStart"
+    },{
+        "williamboman/mason.nvim",
+        after = "mason-lspconfig.nvim"
+    },{
         'neovim/nvim-lspconfig',
         config = kfg 'lsp',
-    },{
-        "williamboman/mason.nvim"
-    },{
-        'williamboman/mason-lspconfig.nvim'
+        after = "mason.nvim"
     },{
         'glepnir/lspsaga.nvim',
         config = kfg 'lspsaga',
