@@ -72,11 +72,26 @@ require 'packer'.startup({ function(use)
         event = "InsertEnter"
     }
 
-    -- Lightspeed
+    -- Leap
     use {
-        'ggandor/lightspeed.nvim',
-        keys = { 's', 'S', 'f', 'F' },
-        config = kfg 'speed'
+        'ggandor/leap.nvim',
+        config = function()
+            require('leap').set_default_keymaps()
+            require('leap').setup {
+                safe_labels = {'n', 'e', 'i', 'o', 'a', 'r', 's', 't', 'd', 'h', 'w', 'y', 'f', 'u'},
+                labels = {'n', 'e', 'i', 'o', 'a', 'r', 's', 't', 'd', 'h', 'w', 'y', 'f', 'u'},
+
+                special_keys = {
+                    repeat_search  = '<enter>',
+                    next_aot_match = '<enter>',
+                    next_match     = {';', '<enter>'},
+                    prev_match     = {',', '<tab>'},
+                    next_group     = '<space>',
+                    prev_group     = '<tab>',
+                },
+            }
+        end,
+        keys = { 's', 'S' }
     }
 
     -- Hydra
