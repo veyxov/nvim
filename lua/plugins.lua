@@ -11,7 +11,7 @@ require 'packer'.startup({ function(use)
     -- lsp
     use {{
         'williamboman/mason-lspconfig.nvim',
-        cmd = "LspStart"
+        cmd = "LspStart" -- Manually run lsp
     },{
         "williamboman/mason.nvim",
         after = "mason-lspconfig.nvim"
@@ -25,16 +25,9 @@ require 'packer'.startup({ function(use)
         cmd  = "Lspsaga"
     }}
 
-    -- Autopairs
-    use {
-        'windwp/nvim-autopairs',
-        config = function() require("nvim-autopairs").setup {} end,
-        event = "InsertEnter"
-    }
-
     use {
         -- Completion and sources
-        { 'hrsh7th/nvim-cmp', config = kfg 'cmp', event = "InsertEnter" },
+        { 'hrsh7th/nvim-cmp', config = kfg 'cmp', after = "nvim-lspconfig" },
         { 'hrsh7th/cmp-nvim-lsp', after = "nvim-cmp" },
         { 'hrsh7th/cmp-buffer', after = "nvim-cmp" },
         { 'hrsh7th/cmp-path', after = "nvim-cmp" },
@@ -42,6 +35,13 @@ require 'packer'.startup({ function(use)
         { 'saadparwaiz1/cmp_luasnip', after = "nvim-cmp" },
         { 'hrsh7th/cmp-nvim-lua', after = "nvim-cmp" },
         { 'andersevenrud/cmp-tmux', after = "nvim-cmp" },
+    }
+
+    -- Autopairs
+    use {
+        'windwp/nvim-autopairs',
+        config = function() require("nvim-autopairs").setup {} end,
+        event = "InsertEnter"
     }
 
     -- Snippets
