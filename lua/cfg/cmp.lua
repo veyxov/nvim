@@ -1,10 +1,5 @@
-local cmp = require'cmp'
-local luasnip = require "luasnip"
-
-local function has_words_before()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
-end
+local cmp = require 'cmp'
+local luasnip = require 'luasnip'
 
 cmp.setup({
     completion = {
@@ -33,14 +28,11 @@ cmp.setup({
                 luasnip.expand()
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
-            elseif has_words_before() then
-                cmp.complete()
             else
                 fallback()
             end
         end, {
-        "i",
-        "s",
+        "i", "s",
     }),
         ["<S-Tab>"] = function(fallback)
             if vim.fn.pumvisible() == 1 then
@@ -55,11 +47,17 @@ cmp.setup({
 
     sources = {
         { name = "nvim_lsp" },
-        { name = 'nvim_lua' },
         { name = "luasnip" },
         { name = "path" },
-        { name = "buffer" },
-        { name = "nvim_lua" },
+        {
+            name = "buffer",
+            option = {
+                keyword_length = 3,
+                get_bufnrs = function()
+                    return vim.api.nvim_list_bufs()
+                end
+            },
+        },
     },
 })
 

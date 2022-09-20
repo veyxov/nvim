@@ -36,12 +36,10 @@ require 'packer'.startup({ function(use)
         -- Completion and sources
         { 'hrsh7th/nvim-cmp', config = kfg 'cmp', after = "nvim-lspconfig" }, -- Run after 1.3 (3.1)
         { 'hrsh7th/cmp-nvim-lsp', after = "nvim-cmp" }, -- Run all the providers after
+        { 'saadparwaiz1/cmp_luasnip', after = "nvim-cmp" },
         { 'hrsh7th/cmp-buffer', after = "nvim-cmp" },
         { 'hrsh7th/cmp-path', after = "nvim-cmp" },
         { 'hrsh7th/cmp-cmdline', after = "nvim-cmp" },
-        { 'saadparwaiz1/cmp_luasnip', after = "nvim-cmp" },
-        { 'hrsh7th/cmp-nvim-lua', after = "nvim-cmp" },
-        { 'andersevenrud/cmp-tmux', after = "nvim-cmp" },
     }
 
     -- Tree-sitter
