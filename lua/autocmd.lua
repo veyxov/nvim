@@ -23,7 +23,7 @@ autocmd('TextYankPost', {
 -- Restart the keyboard configuration deamon
 autocmd('BufWritePost', {
     pattern = '*.kbd',
-    command = [[!sudo killall kmonad ; sudo kmonad -w 500 "$HOME/.config/keyboard/colex.kbd" &]],
+    command = [[!sudo killall kmonad ; sudo kmonad -w 500 "$HOME/.config/keyboard/colex.kbd" & && xset r rate 300 50]],
     group = group,
 })
 
