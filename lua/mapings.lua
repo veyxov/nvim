@@ -6,9 +6,9 @@ Map("<leader>q", Cmd "q")
 Map("<leader>w", Cmd "wall")
 
 -- Lsp
-Map("<S-Enter>", Cmd "Lspsaga code_action")
+Map("la", Cmd "Lspsaga code_action")
 -- First select the region, unselect and run range_code_action
-Map("<A-Enter>", string.format("%s %s", "<ESC>", Cmd "Lspsaga range_code_action"), "v")
+Map("la", string.format("%s %s", "<ESC>", Cmd "Lspsaga range_code_action"), "v")
 Map("li", Cmd "lua vim.lsp.buf.implementation()")
 Map("ld", Cmd "lua vim.lsp.buf.definition()")
 Map("lD", Cmd "lua vim.lsp.buf.declaration()")
