@@ -1,29 +1,29 @@
 local Map = require 'globals'.Map
 local Cmd = require 'globals'.Cmd
 
-Map ("<leader>y", '"+y')
-Map ("<leader>q",  Cmd "q")
-Map ("<leader>w",  Cmd "wall")
+Map("<leader>y", '"+y')
+Map("<leader>q", Cmd "q")
+Map("<leader>w", Cmd "wall")
 
 -- Lsp
-Map ("<S-Enter>",  Cmd "Lspsaga code_action")
+Map("<S-Enter>", Cmd "Lspsaga code_action")
 -- First select the region, unselect and run range_code_action
-Map ("<A-Enter>",  string.format("%s %s","<ESC>" ,Cmd "Lspsaga range_code_action"), "v")
-Map ("<leader>li", Cmd "lua vim.lsp.buf.implementation()")
-Map ("<leader>ld", Cmd "lua vim.lsp.buf.definition()")
-Map ("<leader>lD", Cmd "lua vim.lsp.buf.declaration()")
-Map ("<leader>lf", Cmd "Lspsaga lsp_finder")
-Map ("<leader>lF", Cmd "lua vim.lsp.buf.formatting()")
-Map ("<leader>lr", Cmd "Lspsaga rename")
-Map ("<leader>pd", Cmd "Lspsaga preview_definition")
+Map("<A-Enter>", string.format("%s %s", "<ESC>", Cmd "Lspsaga range_code_action"), "v")
+Map("li", Cmd "lua vim.lsp.buf.implementation()")
+Map("ld", Cmd "lua vim.lsp.buf.definition()")
+Map("lD", Cmd "lua vim.lsp.buf.declaration()")
+Map("lf", Cmd "Lspsaga lsp_finder")
+Map("lF", Cmd "lua vim.lsp.buf.format({async = true})")
+Map("lr", Cmd "Lspsaga rename")
+Map("pd", Cmd "Lspsaga preview_definition")
 
-Map ("<C-h>", "<C-V>")
+Map("<C-h>", "<C-V>")
 
-Map ("<C-K>",      Cmd "Lspsaga hover_doc")
-Map ("<C-T>",      Cmd "Lspsaga open_floaterm")
-Map ("<C-T>",      Cmd "Lspsaga close_floaterm", "t")
+Map("<C-K>", Cmd "Lspsaga hover_doc")
 
-Map("<C-c>", Cmd ":%y+") -- copy whole file content
+-- Toggle terminal
+Map("<C-T>", Cmd "Lspsaga open_floaterm")
+Map("<C-T>", Cmd "Lspsaga close_floaterm", "t")
 
 -- Movement between tabs
 Map("<leader>n", Cmd "tabprevious")
