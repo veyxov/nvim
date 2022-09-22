@@ -17,6 +17,8 @@ Map ("<leader>lF", Cmd "lua vim.lsp.buf.formatting()")
 Map ("<leader>lr", Cmd "Lspsaga rename")
 Map ("<leader>pd", Cmd "Lspsaga preview_definition")
 
+Map ("<C-h>", "<C-V>")
+
 Map ("<C-K>",      Cmd "Lspsaga hover_doc")
 Map ("<C-T>",      Cmd "Lspsaga open_floaterm")
 Map ("<C-T>",      Cmd "Lspsaga close_floaterm", "t")
