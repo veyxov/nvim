@@ -120,6 +120,10 @@ require 'packer'.startup({ function(use)
         cmd = "Neotree"
     }
 
+    use {
+        'vimpostor/vim-tpipeline'
+    }
+
     -- Html
     use {
         'windwp/nvim-ts-autotag',
@@ -150,6 +154,35 @@ require 'packer'.startup({ function(use)
         end,
         event = "InsertEnter"
     }
+
+    use({
+        "Pocco81/true-zen.nvim",
+        config = function()
+            require("true-zen").setup {
+                modes = { -- configurations per mode
+                    ataraxis = {
+                        backdrop = 0.5, -- percentage by which padding windows should be dimmed/brightened. Must be a number between 0 and 1. Set to 0 to keep the same background color
+                        callbacks = {
+                            open_pre = function() vim.fn.jobstart("tmux set status off")end,
+                            close_pre = function() vim.fn.jobstart("tmux set status on")end,
+                        }
+                    },
+                    minimalist = {
+                        ignored_buf_types = { "nofile" }, -- save current options from any window except ones displaying these kinds of buffers
+                        options = { -- options to be disabled when entering Minimalist mode
+                            signcolumn = "yes",
+                            laststatus = 0,
+                        },
+                        callbacks = {
+                            open_pre = function() vim.fn.jobstart("tmux set status off")end,
+                            close_pre = function() vim.fn.jobstart("tmux set status on")end,
+                        }
+                    },
+                }
+            }
+        end,
+        cmd = "TZAtaraxis"
+    })
 end,
-    config = { git = { clone_timeout = nil } }
+config = { git = { clone_timeout = nil } }
 })
