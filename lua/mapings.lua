@@ -15,7 +15,6 @@ Map("lD", Cmd "lua vim.lsp.buf.declaration()")
 Map("lf", Cmd "Lspsaga lsp_finder")
 Map("lF", Cmd "lua vim.lsp.buf.format({async = true})")
 Map("lr", Cmd "Lspsaga rename")
-Map("pd", Cmd "Lspsaga preview_definition")
 
 Map("<C-h>", "<C-V>")
 
