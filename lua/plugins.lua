@@ -9,21 +9,21 @@ require 'packer'.startup({ function(use)
     }
 
     -- lsp
-    use {{
+    use { {
         'williamboman/mason-lspconfig.nvim', -- Load on LspStart command (1.1)
         cmd = "LspStart"
-    },{
+    }, {
         "williamboman/mason.nvim",
         after = "mason-lspconfig.nvim" -- Load after mason-lspconfig (1.2)
-    },{
+    }, {
         'neovim/nvim-lspconfig', -- Load after mason.nvim (1.3)
         config = kfg 'lsp',
         after = "mason.nvim"
-    },{
+    }, {
         'glepnir/lspsaga.nvim', -- Load on LspSaga command (2)
         config = kfg 'lspsaga',
-        cmd  = "Lspsaga"
-    }}
+        cmd    = "Lspsaga"
+    } }
 
     -- Snippets
     use {
@@ -67,25 +67,66 @@ require 'packer'.startup({ function(use)
                 invert_selection = false,
                 contrast = "hard",
             })
-            vim.cmd("color gruvbox")
         end,
         event = "InsertEnter"
     }
 
-    -- Leap
+    use {
+        'folke/tokyonight.nvim',
+
+        config = function()
+            require("tokyonight").setup({
+                style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+                sidebars = { "qf", "help", "packer", "neotree" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
+                hide_inactive_statusline = true,
+                dim_inactive = true, -- dims inactive windows
+            })
+        end,
+        event = "InsertEnter"
+    }
+
+    use {
+        'bluz71/vim-moonfly-colors',
+        config = function()
+            vim.cmd('colorscheme moonfly');
+        end,
+        event = "InsertEnter"
+    }
+
+    use {
+        "catppuccin/nvim", as = "catppuccin",
+        config = function()
+            vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+
+            require("catppuccin").setup({
+                compile = {
+                    enabled = true,
+                    path = vim.fn.stdpath("cache") .. "/catppuccin",
+                },
+                dim_inactive = {
+                    enabled = true,
+                    shade = "dark",
+                    percentage = 0.15,
+                },
+            })
+        end,
+        event = "InsertEnter"
+    }
+
+
     use {
         'ggandor/leap.nvim',
         config = function()
             require('leap').set_default_keymaps()
             require('leap').setup {
-                safe_labels = {'n', 'e', 'i', 'o', 'a', 'r', 's', 't', 'd', 'h', 'w', 'y', 'f', 'u'},
-                labels = {'n', 'e', 'i', 'o', 'a', 'r', 's', 't', 'd', 'h', 'w', 'y', 'f', 'u'},
+                safe_labels = { 'n', 'e', 'i', 'o', 'a', 'r', 's', 't', 'd', 'h', 'w', 'y', 'f', 'u' },
+                labels = { 'n', 'e', 'i', 'o', 'a', 'r', 's', 't', 'd', 'h', 'w', 'y', 'f', 'u' },
 
                 special_keys = {
                     repeat_search  = '<enter>',
                     next_aot_match = '<enter>',
-                    next_match     = {';', '<enter>'},
-                    prev_match     = {',', '<tab>'},
+                    next_match     = { ';', '<enter>' },
+                    prev_match     = { ',', '<tab>' },
                     next_group     = '<space>',
                     prev_group     = '<tab>',
                 },
@@ -94,13 +135,24 @@ require 'packer'.startup({ function(use)
         keys = { 's', 'S' }
     }
 
+    use {
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            require("indent_blankline").setup {
+                -- for example, context is off by default, use this to turn it on
+                show_current_context = true,
+                show_current_context_start = false,
+            }
+        end
+    }
+
     -- Hydra
-    use {{
+    use { {
         'anuvyklack/keymap-layer.nvim',
-    },{
+    }, {
         'anuvyklack/hydra.nvim',
         config = kfg 'hydra'
-    }}
+    } }
 
     -- Telescope
     use {
@@ -127,10 +179,14 @@ require 'packer'.startup({ function(use)
     -- Html
     use {
         'windwp/nvim-ts-autotag',
-        config = function ()
+        config = function()
             require('nvim-ts-autotag').setup()
         end,
-        ft = {"html", "xml"}
+        ft = { "html", "xml", "jsx", "js", "javascriptreact" }
+    }
+
+    use {
+        'ThePrimeagen/harpoon'
     }
 
     -- Surround
@@ -163,8 +219,8 @@ require 'packer'.startup({ function(use)
                     ataraxis = {
                         backdrop = 0.5, -- percentage by which padding windows should be dimmed/brightened. Must be a number between 0 and 1. Set to 0 to keep the same background color
                         callbacks = {
-                            open_pre = function() vim.fn.jobstart("tmux set status off")end,
-                            close_pre = function() vim.fn.jobstart("tmux set status on")end,
+                            open_pre = function() vim.fn.jobstart("tmux set status off") end,
+                            close_pre = function() vim.fn.jobstart("tmux set status on") end,
                         }
                     },
                     minimalist = {
@@ -174,8 +230,8 @@ require 'packer'.startup({ function(use)
                             laststatus = 0,
                         },
                         callbacks = {
-                            open_pre = function() vim.fn.jobstart("tmux set status off")end,
-                            close_pre = function() vim.fn.jobstart("tmux set status on")end,
+                            open_pre = function() vim.fn.jobstart("tmux set status off") end,
+                            close_pre = function() vim.fn.jobstart("tmux set status on") end,
                         }
                     },
                 }
@@ -184,5 +240,5 @@ require 'packer'.startup({ function(use)
         cmd = "TZAtaraxis"
     })
 end,
-config = { git = { clone_timeout = nil } }
+    config = { git = { clone_timeout = nil } }
 })
