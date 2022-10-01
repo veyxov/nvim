@@ -17,4 +17,5 @@ require'lspconfig'.omnisharp.setup {
 lspconfig.gopls.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.sumneko_lua.setup {}
-lspconfig.rust_analyzer.setup{}
+lspconfig.rust_analyzer.setup {}
+lspconfig.tailwindcss.setup {}
