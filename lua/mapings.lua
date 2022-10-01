@@ -2,13 +2,17 @@ local Map = require 'globals'.Map
 local Cmd = require 'globals'.Cmd
 
 Map("<leader>y", '"+y')
+Map("<leader>p", '"+p')
 Map("<leader>q", Cmd "q")
+Map("<leader>Q", Cmd "qall!")
 Map("<leader>w", Cmd "wall")
 
+Map("<C-h>", "<C-V>")
+
 -- Lsp
+Map("ls", Cmd "LspStart")
 Map("la", Cmd "Lspsaga code_action")
 -- First select the region, unselect and run range_code_action
-Map("ls", Cmd "LspStart")
 Map("la", string.format("%s %s", "<ESC>", Cmd "Lspsaga range_code_action"), "v")
 Map("li", Cmd "lua vim.lsp.buf.implementation()")
 Map("ld", Cmd "lua vim.lsp.buf.definition()")
@@ -17,7 +21,6 @@ Map("lf", Cmd "Lspsaga lsp_finder")
 Map("lF", Cmd "lua vim.lsp.buf.format({async = true})")
 Map("lr", Cmd "Lspsaga rename")
 
-Map("<C-h>", "<C-V>")
 
 Map("<C-K>", Cmd "Lspsaga hover_doc")
 
@@ -25,19 +28,14 @@ Map("<C-K>", Cmd "Lspsaga hover_doc")
 Map("<C-T>", Cmd "Lspsaga open_floaterm")
 Map("<C-T>", Cmd "Lspsaga close_floaterm", "t")
 
--- Movement between tabs
-Map("<leader>n", Cmd "tabprevious")
-Map("<leader>o", Cmd "tabnext")
-
--- Packer
-Map("<leader>ps", Cmd "PackerSync")
-
 -- Tree
 Map("ff", Cmd "Neotree toggle right")
 Map("<leader>\\", Cmd "Neotree toggle show buffers right")
 
 -- Git
 Map("<C-G>", Cmd [[lua require("harpoon.tmux").sendCommand(1, "lazygit status ; exit\n")]])
+
+-- Harpoon
 Map("<C-N>", Cmd [[lua require("harpoon.mark").add_file()]])
 Map("\\", Cmd [[lua require("harpoon.ui").toggle_quick_menu()]])
 
