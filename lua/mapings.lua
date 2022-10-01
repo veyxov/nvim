@@ -8,7 +8,7 @@ Map("<leader>w", Cmd "wall")
 -- Lsp
 Map("la", Cmd "Lspsaga code_action")
 -- First select the region, unselect and run range_code_action
-Map("la", Cmd "LspStart")
+Map("ls", Cmd "LspStart")
 Map("la", string.format("%s %s", "<ESC>", Cmd "Lspsaga range_code_action"), "v")
 Map("li", Cmd "lua vim.lsp.buf.implementation()")
 Map("ld", Cmd "lua vim.lsp.buf.definition()")
@@ -33,11 +33,13 @@ Map("<leader>o", Cmd "tabnext")
 Map("<leader>ps", Cmd "PackerSync")
 
 -- Tree
-Map("\\", Cmd "Neotree toggle right")
+Map("ff", Cmd "Neotree toggle right")
 Map("<leader>\\", Cmd "Neotree toggle show buffers right")
 
 -- Git
 Map("<C-G>", Cmd [[lua require("harpoon.tmux").sendCommand(1, "lazygit status ; exit\n")]])
+Map("<C-N>", Cmd [[lua require("harpoon.mark").add_file()]])
+Map("\\", Cmd [[lua require("harpoon.ui").toggle_quick_menu()]])
 
 -- Twilight
 Map("<leader><cr>", Cmd "TZAtaraxis")
@@ -51,4 +53,4 @@ Map("<C-p>", "<Plug>luasnip-prev-choice", "s")
 Map("hf", Cmd "Telescope find_files")
 Map("hg", Cmd "Telescope live_grep")
 Map("hh", Cmd "Telescope help_tags")
-Map("hc", Cmd "Telescope colorsheme")
+Map("hc", Cmd "Telescope colorscheme")
