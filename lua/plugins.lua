@@ -143,7 +143,8 @@ require 'packer'.startup({ function(use)
                 show_current_context = true,
                 show_current_context_start = false,
             }
-        end
+        end,
+        after = "nvim-treesitter"
     }
 
     -- Hydra
@@ -204,7 +205,7 @@ require 'packer'.startup({ function(use)
                     visual = "K",
                     visual_line = "gS",
                     delete = "ds",
-                    change = "cs",
+                    change = "kc",
                 },
             })
         end,
