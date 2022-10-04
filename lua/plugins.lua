@@ -97,7 +97,6 @@ require 'packer'.startup({ function(use)
         "catppuccin/nvim", as = "catppuccin",
         config = function()
             vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-
             require("catppuccin").setup({
                 compile = {
                     enabled = true,
@@ -171,10 +170,6 @@ require 'packer'.startup({ function(use)
             "MunifTanjim/nui.nvim",
         },
         cmd = "Neotree"
-    }
-
-    use {
-        'vimpostor/vim-tpipeline'
     }
 
     -- Html
