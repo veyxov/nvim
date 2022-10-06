@@ -283,6 +283,12 @@ _G.packer_plugins = {
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["stay-centered.nvim"] = {
+    config = { "\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18stay-centered\frequire\0" },
+    loaded = true,
+    path = "/home/iz/.local/share/nvim/site/pack/packer/start/stay-centered.nvim",
+    url = "https://github.com/arnamak/stay-centered.nvim"
+  },
   ["telescope.nvim"] = {
     commands = { "Telescope" },
     config = { 'require("cfg/telescope")' },
@@ -303,6 +309,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: stay-centered.nvim
+time([[Config for stay-centered.nvim]], true)
+try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18stay-centered\frequire\0", "config", "stay-centered.nvim")
+time([[Config for stay-centered.nvim]], false)
 -- Config for: delaytrain.nvim
 time([[Config for delaytrain.nvim]], true)
 try_loadstring("\27LJ\2\n¬\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\tkeys\bnvi\1\5\0\0\v<Left>\v<Down>\t<Up>\f<Right>\anv\1\0\0\1\5\0\0\6h\6j\6k\6l\1\0\2\17grace_period\3\1\rdelay_ms\3è\a\nsetup\15delaytrain\frequire\0", "config", "delaytrain.nvim")

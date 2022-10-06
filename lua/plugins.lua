@@ -79,6 +79,13 @@ require 'packer'.startup({ function(use)
     }
 
     use {
+        "arnamak/stay-centered.nvim",
+        config = function()
+            require("stay-centered")
+        end
+    }
+
+    use {
         'numToStr/Comment.nvim',
         config = function()
             require('Comment').setup {
