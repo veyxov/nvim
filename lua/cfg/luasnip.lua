@@ -272,3 +272,31 @@ ls.add_snippets("cs", {
         )
     )
 })
+
+ls.add_snippets("javascriptreact",{
+    s('comp',
+        fmt([[
+        const {} = () => {{
+            return (<div>
+                {}
+            </div>)
+        }}
+        ]], {i(1, "Component"), i(0)}))
+})
+
+ls.add_snippets("javascriptreact",{
+    s('div',
+        fmt([[
+        <div className="{}">
+            {}
+        </div>
+        ]], {i(1, "bg-red-500"), i(0)}))
+})
+
+ls.add_snippets("javascriptreact",{
+    s('state',
+        fmt([[
+        const [{}, {}] = useState({});
+        {}
+        ]], {i(1, 'state'), rep(1), i(2), i(0)}))
+})

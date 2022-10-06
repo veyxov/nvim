@@ -3,6 +3,9 @@ local saga = require 'lspsaga'
 saga.init_lsp_saga({
     saga_winblend = 10,
     code_action_icon = "💡",
+    symbol_in_winbar = {
+        enable = true
+    },
     -- show outline
     show_outline = {
         win_position = 'right',
