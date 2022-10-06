@@ -43,7 +43,6 @@ require 'packer'.startup({ function(use)
     }
 
     -- Tree-sitter
-    -- use 'nvim-treesitter/playground'
     use {
         'nvim-treesitter/nvim-treesitter',
         config = kfg 'treesitter',
@@ -72,20 +71,6 @@ require 'packer'.startup({ function(use)
     }
 
     use {
-        'folke/tokyonight.nvim',
-
-        config = function()
-            require("tokyonight").setup({
-                style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-                sidebars = { "qf", "help", "packer", "neotree" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
-                hide_inactive_statusline = true,
-                dim_inactive = true, -- dims inactive windows
-            })
-        end,
-        event = "InsertEnter"
-    }
-
-    use {
         'bluz71/vim-moonfly-colors',
         config = function()
             vim.cmd('colorscheme moonfly');
@@ -94,24 +79,49 @@ require 'packer'.startup({ function(use)
     }
 
     use {
-        "catppuccin/nvim", as = "catppuccin",
+        'numToStr/Comment.nvim',
         config = function()
-            vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-            require("catppuccin").setup({
-                compile = {
-                    enabled = true,
-                    path = vim.fn.stdpath("cache") .. "/catppuccin",
+            require('Comment').setup {
+                ---LHS of toggle mappings in NORMAL mode
+                toggler = {
+                    ---Line-comment toggle keymap
+                    line = 'gcc',
+                    ---Block-comment toggle keymap
+                    block = 'gbc',
                 },
-                dim_inactive = {
-                    enabled = true,
-                    shade = "dark",
-                    percentage = 0.15,
+                ---LHS of operator-pending mappings in NORMAL and VISUAL mode
+                opleader = {
+                    ---Line-comment keymap
+                    line = 'gc',
+                    ---Block-comment keymap
+                    block = 'gb',
                 },
-            })
-        end,
-        event = "InsertEnter"
+                ---LHS of extra mappings
+                extra = {
+                    ---Add comment on the line above
+                    above = 'gcO',
+                    ---Add comment on the line below
+                    below = 'gco',
+                    ---Add comment at the end of line
+                    eol = 'gA',
+                },
+                ---Enable keybindings
+                ---NOTE: If given `false` then the plugin won't create any mappings
+                mappings = {
+                    ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
+                    basic = true,
+                    ---Extra mapping; `gco`, `gcO`, `gcA`
+                    extra = true,
+                    ---Extended mapping; `g>` `g<` `g>[count]{motion}` `g<[count]{motion}`
+                    extended = false,
+                },
+                ---Function to call before (un)comment
+                pre_hook = nil,
+                ---Function to call after (un)comment
+                post_hook = nil,
+            }
+        end
     }
-
 
     use {
         'ggandor/leap.nvim',
@@ -132,18 +142,6 @@ require 'packer'.startup({ function(use)
             }
         end,
         keys = { 's', 'S' }
-    }
-
-    use {
-        "lukas-reineke/indent-blankline.nvim",
-        config = function()
-            require("indent_blankline").setup {
-                -- for example, context is off by default, use this to turn it on
-                show_current_context = true,
-                show_current_context_start = false,
-            }
-        end,
-        after = "nvim-treesitter"
     }
 
     -- Hydra
@@ -172,17 +170,22 @@ require 'packer'.startup({ function(use)
         cmd = "Neotree"
     }
 
-    -- Html
     use {
-        'windwp/nvim-ts-autotag',
-        config = function()
-            require('nvim-ts-autotag').setup()
-        end,
-        ft = { "html", "xml", "jsx", "js", "javascriptreact" }
+        'ThePrimeagen/harpoon'
     }
 
     use {
-        'ThePrimeagen/harpoon'
+        'ja-ford/delaytrain.nvim',
+        config = function()
+            require('delaytrain').setup {
+                delay_ms = 1000, -- How long repeated usage of a key should be prevented
+                grace_period = 1, -- How many repeated keypresses are allowed
+                keys = { -- Which keys (in which modes) should be delayed
+                    ['nv'] = { 'h', 'j', 'k', 'l' },
+                    ['nvi'] = { '<Left>', '<Down>', '<Up>', '<Right>' },
+                },
+            }
+        end
     }
 
     -- Surround
@@ -206,35 +209,6 @@ require 'packer'.startup({ function(use)
         end,
         event = "InsertEnter"
     }
-
-    use({
-        "Pocco81/true-zen.nvim",
-        config = function()
-            require("true-zen").setup {
-                modes = { -- configurations per mode
-                    ataraxis = {
-                        backdrop = 0.5, -- percentage by which padding windows should be dimmed/brightened. Must be a number between 0 and 1. Set to 0 to keep the same background color
-                        callbacks = {
-                            open_pre = function() vim.fn.jobstart("tmux set status off") end,
-                            close_pre = function() vim.fn.jobstart("tmux set status on") end,
-                        }
-                    },
-                    minimalist = {
-                        ignored_buf_types = { "nofile" }, -- save current options from any window except ones displaying these kinds of buffers
-                        options = { -- options to be disabled when entering Minimalist mode
-                            signcolumn = "yes",
-                            laststatus = 0,
-                        },
-                        callbacks = {
-                            open_pre = function() vim.fn.jobstart("tmux set status off") end,
-                            close_pre = function() vim.fn.jobstart("tmux set status on") end,
-                        }
-                    },
-                }
-            }
-        end,
-        cmd = "TZAtaraxis"
-    })
 end,
     config = { git = { clone_timeout = nil } }
 })
