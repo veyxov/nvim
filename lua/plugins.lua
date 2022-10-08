@@ -9,7 +9,7 @@ require 'packer'.startup({ function(use)
     }
 
     -- lsp
-    use { {
+    use {{
         'williamboman/mason-lspconfig.nvim', -- Load on LspStart command (1.1)
         cmd = "LspStart"
     }, {
