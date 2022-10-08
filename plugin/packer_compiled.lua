@@ -75,7 +75,7 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["Comment.nvim"] = {
-    config = { "\27LJ\2\nﬂ\1\0\0\4\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\n\0=\3\v\2B\0\2\1K\0\1\0\rmappings\1\0\3\nextra\2\rextended\1\nbasic\2\nextra\1\0\3\nbelow\bgco\beol\agA\nabove\bgcO\ropleader\1\0\2\tline\agc\nblock\agb\ftoggler\1\0\0\1\0\2\tline\bgcc\nblock\bgbc\nsetup\fComment\frequire\0" },
+    config = { "\27LJ\2\nﬂ\1\0\0\4\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\n\0=\3\v\2B\0\2\1K\0\1\0\rmappings\1\0\3\nextra\2\nbasic\2\rextended\1\nextra\1\0\3\beol\agA\nbelow\bgco\nabove\bgcO\ropleader\1\0\2\nblock\agb\tline\agc\ftoggler\1\0\0\1\0\2\nblock\bgbc\tline\bgcc\nsetup\fComment\frequire\0" },
     loaded = true,
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
@@ -139,7 +139,7 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["delaytrain.nvim"] = {
-    config = { "\27LJ\2\n¨\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\tkeys\bnvi\1\5\0\0\v<Left>\v<Down>\t<Up>\f<Right>\anv\1\0\0\1\5\0\0\6h\6j\6k\6l\1\0\2\rdelay_ms\3Ë\a\17grace_period\3\1\nsetup\15delaytrain\frequire\0" },
+    config = { "\27LJ\2\n¨\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\tkeys\bnvi\1\5\0\0\v<Left>\v<Down>\t<Up>\f<Right>\anv\1\0\0\1\5\0\0\6h\6j\6k\6l\1\0\2\17grace_period\3\1\rdelay_ms\3–\15\nsetup\15delaytrain\frequire\0" },
     loaded = true,
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/delaytrain.nvim",
     url = "https://github.com/ja-ford/delaytrain.nvim"
@@ -150,7 +150,7 @@ _G.packer_plugins = {
     url = "https://github.com/sainnhe/everforest"
   },
   ["gruvbox.nvim"] = {
-    config = { "\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\21invert_selection\1\finverse\2\rcontrast\thard\nsetup\fgruvbox\frequire\0" },
+    config = { "\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\rcontrast\thard\21invert_selection\1\finverse\2\nsetup\fgruvbox\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -174,13 +174,23 @@ _G.packer_plugins = {
     url = "https://github.com/anuvyklack/keymap-layer.nvim"
   },
   ["leap.nvim"] = {
-    config = { "\27LJ\2\nÌ\2\0\0\5\0\15\0\0226\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\1\0B\0\2\0029\0\3\0005\2\5\0005\3\4\0=\3\6\0025\3\a\0=\3\b\0025\3\t\0005\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\2B\0\2\1K\0\1\0\17special_keys\15prev_match\1\3\0\0\6,\n<tab>\15next_match\1\3\0\0\6;\f<enter>\1\0\4\15prev_group\n<tab>\15next_group\f<space>\19next_aot_match\f<enter>\18repeat_search\f<enter>\vlabels\1\15\0\0\6n\6e\6i\6o\6a\6r\6s\6t\6d\6h\6w\6y\6f\6u\16safe_labels\1\0\0\1\15\0\0\6n\6e\6i\6o\6a\6r\6s\6t\6d\6h\6w\6y\6f\6u\nsetup\24set_default_keymaps\tleap\frequire\0" },
+    config = { "\27LJ\2\nÌ\2\0\0\5\0\15\0\0226\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\1\0B\0\2\0029\0\3\0005\2\5\0005\3\4\0=\3\6\0025\3\a\0=\3\b\0025\3\t\0005\4\n\0=\4\v\0035\4\f\0=\4\r\3=\3\14\2B\0\2\1K\0\1\0\17special_keys\15prev_match\1\3\0\0\6,\n<tab>\15next_match\1\3\0\0\6;\f<enter>\1\0\4\18repeat_search\f<enter>\15prev_group\n<tab>\15next_group\f<space>\19next_aot_match\f<enter>\vlabels\1\15\0\0\6n\6e\6i\6o\6a\6r\6s\6t\6d\6h\6w\6y\6f\6u\16safe_labels\1\0\0\1\15\0\0\6n\6e\6i\6o\6a\6r\6s\6t\6d\6h\6w\6y\6f\6u\nsetup\24set_default_keymaps\tleap\frequire\0" },
     keys = { { "", "s" }, { "", "S" } },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
     path = "/home/iz/.local/share/nvim/site/pack/packer/opt/leap.nvim",
     url = "https://github.com/ggandor/leap.nvim"
+  },
+  ["lsp_lines.nvim"] = {
+    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14lsp_lines\frequire\0" },
+    load_after = {
+      ["nvim-lspconfig"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/iz/.local/share/nvim/site/pack/packer/opt/lsp_lines.nvim",
+    url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
   },
   ["lspsaga.nvim"] = {
     commands = { "Lspsaga" },
@@ -225,7 +235,7 @@ _G.packer_plugins = {
     url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-buffer", "cmp-cmdline", "cmp-nvim-lsp", "cmp-path", "cmp_luasnip" },
+    after = { "cmp-cmdline", "cmp-nvim-lsp", "cmp-path", "cmp_luasnip", "cmp-buffer" },
     config = { 'require("cfg/cmp")' },
     load_after = {
       ["nvim-lspconfig"] = true
@@ -236,7 +246,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
-    after = { "nvim-cmp" },
+    after = { "lsp_lines.nvim", "nvim-cmp" },
     config = { 'require("cfg/lsp")' },
     load_after = {
       ["mason.nvim"] = true
@@ -247,7 +257,7 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-surround"] = {
-    config = { "\27LJ\2\n–\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\fkeymaps\1\0\0\1\0\t\vdelete\ads\vchange\akc\16visual_line\agS\vvisual\6K\20normal_cur_line\bySS\16normal_line\akS\15normal_cur\bkss\vnormal\aks\16insert_line\v<C-g>S\nsetup\18nvim-surround\frequire\0" },
+    config = { "\27LJ\2\n–\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\fkeymaps\1\0\0\1\0\t\vchange\akc\15normal_cur\bkss\vnormal\aks\16insert_line\v<C-g>S\vdelete\ads\16visual_line\agS\vvisual\6K\20normal_cur_line\bySS\16normal_line\akS\nsetup\18nvim-surround\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -314,10 +324,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\nﬂ\1\0\0\4\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\n\0=\3\v\2B\0\2\1K\0\1\0\rmappings\1\0\3\nextra\2\rextended\1\nbasic\2\nextra\1\0\3\nbelow\bgco\beol\agA\nabove\bgcO\ropleader\1\0\2\tline\agc\nblock\agb\ftoggler\1\0\0\1\0\2\tline\bgcc\nblock\bgbc\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
+-- Config for: delaytrain.nvim
+time([[Config for delaytrain.nvim]], true)
+try_loadstring("\27LJ\2\n¨\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\tkeys\bnvi\1\5\0\0\v<Left>\v<Down>\t<Up>\f<Right>\anv\1\0\0\1\5\0\0\6h\6j\6k\6l\1\0\2\17grace_period\3\1\rdelay_ms\3–\15\nsetup\15delaytrain\frequire\0", "config", "delaytrain.nvim")
+time([[Config for delaytrain.nvim]], false)
 -- Config for: stay-centered.nvim
 time([[Config for stay-centered.nvim]], true)
 try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18stay-centered\frequire\0", "config", "stay-centered.nvim")
@@ -326,17 +336,17 @@ time([[Config for stay-centered.nvim]], false)
 time([[Config for hydra.nvim]], true)
 require("cfg/hydra")
 time([[Config for hydra.nvim]], false)
--- Config for: delaytrain.nvim
-time([[Config for delaytrain.nvim]], true)
-try_loadstring("\27LJ\2\n¨\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\a\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\tkeys\bnvi\1\5\0\0\v<Left>\v<Down>\t<Up>\f<Right>\anv\1\0\0\1\5\0\0\6h\6j\6k\6l\1\0\2\rdelay_ms\3Ë\a\17grace_period\3\1\nsetup\15delaytrain\frequire\0", "config", "delaytrain.nvim")
-time([[Config for delaytrain.nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\nﬂ\1\0\0\4\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\n\0=\3\v\2B\0\2\1K\0\1\0\rmappings\1\0\3\nextra\2\nbasic\2\rextended\1\nextra\1\0\3\beol\agA\nbelow\bgco\nabove\bgcO\ropleader\1\0\2\nblock\agb\tline\agc\ftoggler\1\0\0\1\0\2\nblock\bgbc\tline\bgcc\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Lspsaga lua require("packer.load")({'lspsaga.nvim'}, { cmd = "Lspsaga", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file LspStart lua require("packer.load")({'mason-lspconfig.nvim'}, { cmd = "LspStart", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Neotree lua require("packer.load")({'neo-tree.nvim'}, { cmd = "Neotree", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Lspsaga lua require("packer.load")({'lspsaga.nvim'}, { cmd = "Lspsaga", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file LspStart lua require("packer.load")({'mason-lspconfig.nvim'}, { cmd = "LspStart", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
@@ -349,7 +359,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'LuaSnip', 'gruvbox.nvim', 'nvim-treesitter', 'vim-moonfly-colors', 'nvim-surround'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-treesitter', 'vim-moonfly-colors', 'gruvbox.nvim', 'nvim-surround', 'LuaSnip'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
