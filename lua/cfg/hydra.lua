@@ -21,10 +21,10 @@ Hydra({
         { '<right>', '<C-W>l' },
 
         -- Resizing
-        { '<s-up>', '<C-w>2+' },
-        { '<s-down>', '<C-w>2-' },
-        { '<s-left>', '<C-w>3<' },
-        { '<s-right>', '<C-w>3>' },
+        { '<m-up>', '<C-w>2+' },
+        { '<m-down>', '<C-w>2-' },
+        { '<m-left>', '<C-w>3<' },
+        { '<m-right>', '<C-w>3>' },
 
         { 'f', Cmd 'Telescope find_files' },
 
