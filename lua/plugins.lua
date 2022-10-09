@@ -33,6 +33,14 @@ require 'packer'.startup({ function(use)
     }
 
     use {
+        'ZhiyuanLck/smart-pairs',
+        event = 'InsertEnter',
+        config = function()
+            require('pairs'):setup()
+        end
+    }
+
+    use {
         -- Completion and sources
         { 'hrsh7th/nvim-cmp', config = kfg 'cmp', after = "nvim-lspconfig" }, -- Run after 1.3 (3.1)
         { 'hrsh7th/cmp-nvim-lsp', after = "nvim-cmp" }, -- Run all the providers after
@@ -139,8 +147,8 @@ require 'packer'.startup({ function(use)
         config = function()
             require('leap').set_default_keymaps()
             require('leap').setup {
-                safe_labels = { 'n', 'e', 'i', 'o', 'a', 'r', 's', 't', 'd', 'h', 'w', 'y', 'f', 'u' },
-                labels = { 'n', 'e', 'i', 'o', 'a', 'r', 's', 't', 'd', 'h', 'w', 'y', 'f', 'u' },
+                safe_labels = { 'n', 'e', 'i', 'o', 'a', 'r', 's', 't' },
+                labels = { 'n', 'e', 'i', 'o', 'a', 'r', 's', 't' },
 
                 special_keys = {
                     repeat_search  = '<enter>',
