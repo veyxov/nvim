@@ -2,6 +2,12 @@ require'nvim-treesitter.configs'.setup {
     textobjects = {
         select = {
             enable = true,
+        swap_next = {
+          ["<leader>a"] = {"@parameter.inner"},
+        },
+        swap_previous = {
+          ["<leader>A"] = {"@parameter.inner"},
+        },
 
             -- Automatically jump forward to textobj, similar to targets.vim
             lookahead = true,
