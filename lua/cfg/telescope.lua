@@ -3,15 +3,21 @@ require "telescope".setup {
         selection_caret = '\t',
         entry_prefix = '',
         prompt_prefix = '❯ ',
-        winblend = 10,
         border = false,
-        borderchars = { '', '', '', '', '', '', '', '' },
         preview = {
-            timeout = 100,
+            timeout = 10,
             filesize_limit = 1,
             treesitter = false,
         },
-        -- layout_strategy = 'center',
+        layout_config = {
+            horizontal = {
+                height = 0.99,
+                preview_cutoff = 100,
+                prompt_position = "bottom",
+                width = 0.99
+            }
+        },
+        layout_strategy = 'horizontal'
     },
     extensions = {
         fzf = {
