@@ -25,7 +25,6 @@ Map("lr", Cmd "Lspsaga rename")
 Map("<PageUp>", "<C-U>")
 Map("<PageDown>", "<C-D>")
 
-
 Map("<C-K>", Cmd "Lspsaga hover_doc")
 
 -- Toggle terminal
@@ -33,7 +32,6 @@ Map("<C-T>", Cmd "Lspsaga open_floaterm")
 Map("<C-T>", Cmd "Lspsaga close_floaterm", "t")
 
 -- Tree
-Map("ff", Cmd "Neotree toggle right")
 Map("<leader>\\", Cmd "Neotree toggle show buffers right")
 
 -- Git
@@ -42,9 +40,6 @@ Map('<C-G>', Cmd "silent !tmux neww 'lazygit; exit'")
 -- Harpoon
 Map("<C-N>", Cmd [[lua require("harpoon.mark").add_file()]])
 Map("\\", Cmd [[lua require("harpoon.ui").toggle_quick_menu()]])
-
--- Twilight
-Map("<leader><cr>", Cmd "TZAtaraxis")
 
 Map("<C-n>", "<Plug>luasnip-next-choice", "i")
 Map("<C-n>", "<Plug>luasnip-next-choice", "s")

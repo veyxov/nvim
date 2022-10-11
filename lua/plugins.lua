@@ -9,7 +9,7 @@ require 'packer'.startup({ function(use)
     }
 
     -- lsp
-    use {{
+    use { {
         'williamboman/mason-lspconfig.nvim', -- Load on LspStart command (1.1)
         cmd = "LspStart"
     }, {
@@ -79,6 +79,16 @@ require 'packer'.startup({ function(use)
     }
 
     use {
+        'smithbm2316/centerpad.nvim',
+        config = function()
+            -- or using the lua function
+            vim.api.nvim_set_keymap('n', '<leader>z',
+                "<cmd>lua require'centerpad'.toggle{ leftpad = 45, rightpad = 0 }<cr>",
+                { silent = true, noremap = true })
+        end
+    }
+
+    use {
         'bluz71/vim-moonfly-colors',
         config = function()
             vim.cmd('colorscheme moonfly');
@@ -95,6 +105,10 @@ require 'packer'.startup({ function(use)
 
     use {
         "sainnhe/everforest",
+        config = function()
+            vim.g.everforest_background = 'hard'
+            vim.cmd('color everforest')
+        end
     }
 
     use {
