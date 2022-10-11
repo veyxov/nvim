@@ -21,6 +21,10 @@ Map("lf", Cmd "Lspsaga lsp_finder")
 Map("lF", Cmd "lua vim.lsp.buf.format({async = true})")
 Map("lr", Cmd "Lspsaga rename")
 
+-- Pages
+Map("<PageUp>", "<C-U>")
+Map("<PageDown>", "<C-D>")
+
 
 Map("<C-K>", Cmd "Lspsaga hover_doc")
 
