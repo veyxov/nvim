@@ -12,6 +12,7 @@ Map("<C-h>", "<C-V>")
 -- Lsp
 Map("ls", Cmd "LspStart")
 Map("la", Cmd "Lspsaga code_action")
+
 -- First select the region, unselect and run range_code_action
 Map("la", string.format("%s %s", "<ESC>", Cmd "Lspsaga range_code_action"), "v")
 Map("li", Cmd "lua vim.lsp.buf.implementation()")
@@ -20,12 +21,11 @@ Map("lD", Cmd "lua vim.lsp.buf.declaration()")
 Map("lf", Cmd "Lspsaga lsp_finder")
 Map("lF", Cmd "lua vim.lsp.buf.format({async = true})")
 Map("lr", Cmd "Lspsaga rename")
+Map("<C-K>", Cmd "Lspsaga hover_doc")
 
 -- Pages
 Map("<PageUp>", "<C-U>")
 Map("<PageDown>", "<C-D>")
-
-Map("<C-K>", Cmd "Lspsaga hover_doc")
 
 -- Toggle terminal
 Map("<C-T>", Cmd "Lspsaga open_floaterm")
