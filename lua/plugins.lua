@@ -78,6 +78,8 @@ require 'packer'.startup({ function(use)
         event = "InsertEnter"
     }
 
+    use 'junegunn/vim-easy-align'
+
     use {
         'smithbm2316/centerpad.nvim',
         config = function()
