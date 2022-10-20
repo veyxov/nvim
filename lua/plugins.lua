@@ -79,7 +79,12 @@ require 'packer'.startup({ function(use)
     }
 
     use 'junegunn/vim-easy-align'
-
+    use { 'nagy135/typebreak.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+        config = function()
+            vim.keymap.set('n', '<leader>tb', require('typebreak').start, { desc = "Typebreak" })
+        end
+}
     use {
         'smithbm2316/centerpad.nvim',
         config = function()
