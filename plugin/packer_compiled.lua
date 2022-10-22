@@ -329,7 +329,6 @@ _G.packer_plugins = {
     url = "https://github.com/nagy135/typebreak.nvim"
   },
   ["vim-moonfly-colors"] = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme moonfly\bcmd\bvim\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
