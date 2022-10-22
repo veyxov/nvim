@@ -78,20 +78,10 @@ require 'packer'.startup({ function(use)
         event = "InsertEnter"
     }
 
-    use 'junegunn/vim-easy-align'
     use { 'nagy135/typebreak.nvim',
         requires = 'nvim-lua/plenary.nvim',
         config = function()
             vim.keymap.set('n', '<leader>tb', require('typebreak').start, { desc = "Typebreak" })
-        end
-}
-    use {
-        'smithbm2316/centerpad.nvim',
-        config = function()
-            -- or using the lua function
-            vim.api.nvim_set_keymap('n', '<leader>z',
-                "<cmd>lua require'centerpad'.toggle{ leftpad = 45, rightpad = 0 }<cr>",
-                { silent = true, noremap = true })
         end
     }
 
