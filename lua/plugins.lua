@@ -134,26 +134,58 @@ require 'packer'.startup({ function(use)
     }
 
     use {
-        'ggandor/leap.nvim',
+        'ggandor/lightspeed.nvim',
         config = function()
-            require('leap').set_default_keymaps()
-            require('leap').setup {
-                safe_labels = { 'n', 'e', 'i', 'o', 'a', 'r', 's', 't' },
-                labels = { 'n', 'e', 'i', 'o', 'a', 'r', 's', 't' },
+            -- NOTE: This is just illustration - there is no need to copy/paste the
+            -- defaults, or call `setup` at all, if you do not want to change anything.
 
+            require 'lightspeed'.setup {
+                ignore_case = false,
+                exit_after_idle_msecs = { unlabeled = nil, labeled = nil },
+                --- s/x ---
+                jump_to_unique_chars = { safety_timeout = 400 },
+                match_only_the_start_of_same_char_seqs = true,
+                force_beacons_into_match_width = false,
+                -- Display characters in a custom way in the highlighted matches.
+                substitute_chars = { ['\r'] = '¬', },
+                -- Leaving the appropriate list empty effectively disables "smart" mode,
+                -- and forces auto-jump to be on or off.
+                --             safe_labels = { 'n', 'e', 'i', 'o', 'a', 'r', 's', 't' },
+                --             labels = { 'n', 'e', 'i', 'o', 'a', 'r', 's', 't' },
+                -- These keys are captured directly by the plugin at runtime.
                 special_keys = {
-                    repeat_search  = '<enter>',
-                    next_aot_match = '<enter>',
-                    next_match     = { ';', '<enter>' },
-                    prev_match     = { ',', '<tab>' },
-                    next_group     = '<space>',
-                    prev_group     = '<tab>',
+                    next_match_group = '<space>',
+                    prev_match_group = '<tab>',
                 },
+                --- f/t ---
+                limit_ft_matches = 4,
+                repeat_ft_with_target_char = false,
             }
-        end,
-        keys = { 's', 'S' }
+        end
     }
 
+    --
+    -- use {
+    --     'ggandor/leap.nvim',
+    --     config = function()
+    --         require('leap').set_default_keymaps()
+    --         require('leap').setup {
+    --             safe_labels = { 'n', 'e', 'i', 'o', 'a', 'r', 's', 't' },
+    --             labels = { 'n', 'e', 'i', 'o', 'a', 'r', 's', 't' },
+    --
+    --             special_keys = {
+    --                 repeat_search  = '<enter>',
+    --                 next_aot_match = '<enter>',
+    --                 next_match     = { ';', '<enter>' },
+    --                 prev_match     = { ',', '<tab>' },
+    --                 next_group     = '<space>',
+    --                 prev_group     = '<tab>',
+    --             },
+    --         }
+    --     end,
+    --     keys = { 's', 'S' }
+    -- }
+    --
     -- Hydra
     use { {
         'anuvyklack/keymap-layer.nvim',
