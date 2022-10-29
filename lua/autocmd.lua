@@ -26,13 +26,3 @@ autocmd('BufWritePost', {
     command = [[!sudo killall kmonad ; sudo kmonad -w 500 "$HOME/.config/keyboard/colex.kbd" & && xset r rate 300 50]],
     group = group,
 })
-
--- Open a file from its last left off position
-autocmd("BufReadPost", {
-   callback = function()
-      if not vim.fn.expand("%:p"):match ".git" and vim.fn.line "'\"" > 1 and vim.fn.line "'\"" <= vim.fn.line "$" then
-         vim.cmd "normal! g'\""
-         vim.cmd "normal zz"
-      end
-   end,
-})
