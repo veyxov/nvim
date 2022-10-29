@@ -41,11 +41,6 @@ Map('<C-G>', Cmd "silent !tmux neww 'lazygit; exit'")
 Map("<C-N>", Cmd [[lua require("harpoon.mark").add_file()]])
 Map("\\", Cmd [[lua require("harpoon.ui").toggle_quick_menu()]])
 
-Map("<C-n>", "<Plug>luasnip-next-choice", "i")
-Map("<C-n>", "<Plug>luasnip-next-choice", "s")
-Map("<C-p>", "<Plug>luasnip-prev-choice", "i")
-Map("<C-p>", "<Plug>luasnip-prev-choice", "s")
-
 -- Telescope
 Map("hf", Cmd "Telescope find_files")
 Map("hg", Cmd "Telescope live_grep")
