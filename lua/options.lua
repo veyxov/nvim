@@ -13,8 +13,6 @@ opt.pumblend = 20
 opt.laststatus = 0
 opt.termguicolors = true
 
-opt.conceallevel = 1
-
 opt.updatetime = 250
 
 -- Searching
