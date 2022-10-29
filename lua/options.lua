@@ -4,8 +4,6 @@ vim.g.mapleader = " "
 
 opt.swapfile = false
 
-vim.o.completeopt = "menu,menuone,noselect"
-
 -- Visuals
 opt.wrap = false
 opt.cmdheight = 0
