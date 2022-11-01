@@ -175,7 +175,7 @@ _G.packer_plugins = {
     url = "https://github.com/anuvyklack/keymap-layer.nvim"
   },
   ["lightspeed.nvim"] = {
-    config = { "\27LJ\2\nî\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\17special_keys\1\0\2\21next_match_group\f<space>\21prev_match_group\n<tab>\1\0\1\16ignore_case\2\nsetup\15lightspeed\frequire\0" },
+    config = { "\27LJ\2\nﬂ\1\0\0\4\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\17special_keys\1\0\2\21next_match_group\f<space>\21prev_match_group\n<tab>\vlabels\1\t\0\0\6n\6e\6i\6o\6a\6r\6s\6t\16safe_labels\1\t\0\0\6n\6e\6i\6o\6a\6r\6s\6t\1\0\1\16ignore_case\2\nsetup\15lightspeed\frequire\0" },
     loaded = true,
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
     url = "https://github.com/ggandor/lightspeed.nvim"
@@ -357,7 +357,7 @@ try_loadstring("\27LJ\2\na\0\0\3\0\6\0\t6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\00
 time([[Config for everforest]], false)
 -- Config for: lightspeed.nvim
 time([[Config for lightspeed.nvim]], true)
-try_loadstring("\27LJ\2\nî\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\17special_keys\1\0\2\21next_match_group\f<space>\21prev_match_group\n<tab>\1\0\1\16ignore_case\2\nsetup\15lightspeed\frequire\0", "config", "lightspeed.nvim")
+try_loadstring("\27LJ\2\nﬂ\1\0\0\4\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\17special_keys\1\0\2\21next_match_group\f<space>\21prev_match_group\n<tab>\vlabels\1\t\0\0\6n\6e\6i\6o\6a\6r\6s\6t\16safe_labels\1\t\0\0\6n\6e\6i\6o\6a\6r\6s\6t\1\0\1\16ignore_case\2\nsetup\15lightspeed\frequire\0", "config", "lightspeed.nvim")
 time([[Config for lightspeed.nvim]], false)
 -- Config for: typebreak.nvim
 time([[Config for typebreak.nvim]], true)
