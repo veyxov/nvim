@@ -188,19 +188,7 @@ require 'packer'.startup({ function(use)
         after = "nvim-lspconfig"
     }
 
-    use {
-        'ja-ford/delaytrain.nvim',
-        config = function()
-            require('delaytrain').setup {
-                delay_ms = 2000, -- How long repeated usage of a key should be prevented
-                grace_period = 1, -- How many repeated keypresses are allowed
-                keys = { -- Which keys (in which modes) should be delayed
-                    ['nv'] = { 'h', 'j', 'k', 'l', 'w','b', 'e' },
-                    ['nvi'] = { '<Left>', '<Down>', '<Up>', '<Right>' },
-                },
-            }
-        end
-    }
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     -- Surround
     use {
