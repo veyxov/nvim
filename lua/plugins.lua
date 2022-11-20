@@ -133,17 +133,12 @@ require 'packer'.startup({ function(use)
     }
 
     use {
-        'ggandor/lightspeed.nvim',
+        'ggandor/leap.nvim',
         config = function()
-            require 'lightspeed'.setup {
-                ignore_case = true,
-                safe_labels = { 'n', 'e', 'i', 'o', 'a', 'r', 's', 't' },
-                labels = { 'n', 'e', 'i', 'o', 'a', 'r', 's', 't' },
-                special_keys = {
-                    next_match_group = '<space>',
-                    prev_match_group = '<tab>',
-                },
-            }
+            local leap = require 'leap'
+            leap.add_default_mappings()
+            leap.opts.safe_labels = { 'n', 'e', 'i', 'o', 's', 'a', 'r', 't' }
+            leap.opts.labels = { 'n', 'e', 'i', 'o', 's', 'a', 'r', 't' }
         end
     }
 
