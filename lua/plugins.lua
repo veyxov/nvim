@@ -167,13 +167,11 @@ require 'packer'.startup({ function(use)
         'ggandor/flit.nvim',
         config = function()
             require('flit').setup {
-                keys = { f = 'f', F = 'F', t = 't', T = 'T' },
-                -- A string like "nv", "nvo", "o", etc.
-                labeled_modes = "v",
-                multiline = true,
-                -- Like `leap`s similar argument (call-specific overrides).
-                -- E.g.: opts = { equivalence_classes = {} }
-                opts = {}
+                labeled_modes = "nvo",
+                opts = {
+                    safe_labels = { 'n', 'e', 'i', 'o', 's', 'a', 'r', 't' },
+                    labels = { 'n', 'e', 'i', 'o', 's', 'a', 'r', 't' }
+                }
             }
         end
     }
@@ -205,10 +203,6 @@ require 'packer'.startup({ function(use)
     }
 
     use {
-        'ThePrimeagen/harpoon'
-    }
-
-    use {
         "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
         config = function()
             vim.diagnostic.config({
@@ -220,6 +214,13 @@ require 'packer'.startup({ function(use)
     }
 
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
+    use {
+        "nvim-pack/nvim-spectre",
+        config = function()
+            require ('spectre').setup()
+        end
+    }
 
     -- Surround
     use {
