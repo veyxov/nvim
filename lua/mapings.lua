@@ -13,6 +13,9 @@ Map("<C-h>", "<C-V>")
 Map("ls", Cmd "LspStart")
 Map("la", Cmd "Lspsaga code_action")
 
+-- Spectre
+Map("hg", Cmd "lua require('spectre').open()")
+
 -- First select the region, unselect and run range_code_action
 Map("la", string.format("%s %s", "<ESC>", Cmd "Lspsaga range_code_action"), "v")
 Map("li", Cmd "lua vim.lsp.buf.implementation()")
@@ -40,6 +43,5 @@ Map("\\", Cmd [[lua require("harpoon.ui").toggle_quick_menu()]])
 
 -- Telescope
 Map("hf", Cmd "Telescope find_files")
-Map("hg", Cmd "Telescope live_grep")
 Map("hh", Cmd "Telescope help_tags")
 Map("hc", Cmd "Telescope colorscheme")
