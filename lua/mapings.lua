@@ -1,5 +1,11 @@
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
+vim.keymap.set('n', '<cr>w', ':wall<CR>')
+vim.keymap.set('n', '<leader>q', ':q<CR>')
+vim.keymap.set('n', '<leader>y', '"+y')
+
+vim.keymap.set('n', '<cr>g', ":silent !tmux neww 'lazygit; exit'<CR>")
+
 vim.keymap.set('n', 'ho', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
@@ -14,13 +20,11 @@ vim.keymap.set('n', 'hh', require('telescope.builtin').help_tags, { desc = '[S]e
 vim.keymap.set('n', 'hg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', 'hd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
-vim.keymap.set('n', '<leader>w', ':wall<CR>')
-
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+vim.keymap.set('n', '<leader>Q', vim.diagnostic.setloclist)
 
 local nmap = function(keys, func, desc)
     if desc then
