@@ -217,8 +217,8 @@ local on_attach = function(_, bufnr)
   nmap('lD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
   nmap('li', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
   nmap('lf', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-  nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+  nmap('lds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+  nmap('lws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
@@ -304,9 +304,9 @@ cmp.setup {
     end,
   },
   mapping = cmp.mapping.preset.insert {
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-Up>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-Down>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(true),
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
