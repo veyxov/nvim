@@ -14,6 +14,8 @@ vim.keymap.set('n', 'hh', require('telescope.builtin').help_tags, { desc = '[S]e
 vim.keymap.set('n', 'hg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', 'hd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
+vim.keymap.set('n', '<leader>w', ':wall<CR>')
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
@@ -44,10 +46,8 @@ nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
 -- Lesser used LSP functionality
 nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
-nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
-nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
-nmap('<leader>wl', function()
+nmap('lwa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
+nmap('lwr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
+nmap('lwl', function()
 			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 	end, '[W]orkspace [L]ist Folders')
-
-

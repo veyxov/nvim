@@ -10,6 +10,9 @@ vim.o.breakindent = true
 -- Don't wrap
 vim.o.wrap = false
 
+-- Disable swap
+vim.o.swapfile = false
+
 -- Save undo history
 vim.o.undofile = true
 
