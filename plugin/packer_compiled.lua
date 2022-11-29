@@ -170,18 +170,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: flit.nvim
-time([[Config for flit.nvim]], true)
-try_loadstring("\27LJ\2\né\1\0\0\5\0\t\0\f5\0\0\0006\1\1\0'\3\2\0B\1\2\0029\1\3\0015\3\4\0005\4\5\0=\0\6\4=\0\a\4=\4\b\3B\1\2\1K\0\1\0\topts\vlabels\16safe_labels\1\0\0\1\0\1\18labeled_modes\bnvo\nsetup\tflit\frequire\1\t\0\0\6n\6e\6i\6o\6s\6a\6r\6t\0", "config", "flit.nvim")
-time([[Config for flit.nvim]], false)
--- Config for: stay-centered.nvim
-time([[Config for stay-centered.nvim]], true)
-try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18stay-centered\frequire\0", "config", "stay-centered.nvim")
-time([[Config for stay-centered.nvim]], false)
 -- Config for: leap.nvim
 time([[Config for leap.nvim]], true)
 try_loadstring("\27LJ\2\nÅ\1\0\0\4\0\a\0\v6\0\0\0'\2\1\0B\0\2\0025\1\2\0009\2\3\0B\2\1\0019\2\4\0=\1\5\0029\2\4\0=\1\6\2K\0\1\0\vlabels\16safe_labels\topts\25add_default_mappings\1\t\0\0\6n\6e\6i\6o\6s\6a\6r\6t\tleap\frequire\0", "config", "leap.nvim")
 time([[Config for leap.nvim]], false)
+-- Config for: stay-centered.nvim
+time([[Config for stay-centered.nvim]], true)
+try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18stay-centered\frequire\0", "config", "stay-centered.nvim")
+time([[Config for stay-centered.nvim]], false)
+-- Config for: flit.nvim
+time([[Config for flit.nvim]], true)
+try_loadstring("\27LJ\2\né\1\0\0\5\0\t\0\f5\0\0\0006\1\1\0'\3\2\0B\1\2\0029\1\3\0015\3\4\0005\4\5\0=\0\6\4=\0\a\4=\4\b\3B\1\2\1K\0\1\0\topts\vlabels\16safe_labels\1\0\0\1\0\1\18labeled_modes\bnvo\nsetup\tflit\frequire\1\t\0\0\6n\6e\6i\6o\6s\6a\6r\6t\0", "config", "flit.nvim")
+time([[Config for flit.nvim]], false)
 -- Conditional loads
 time([[Conditional loading of telescope-fzf-native.nvim]], true)
   require("packer.load")({"telescope-fzf-native.nvim"}, {}, _G.packer_plugins)
