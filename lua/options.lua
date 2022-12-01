@@ -27,6 +27,12 @@ vim.o.smartcase = true
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'number'
 
+-- tabs settings
+local tabs = 4
+vim.o.tabstop = tabs;
+vim.o.softtabstop = tabs;
+vim.o.shiftwidth = tabs;
+
 -- Set colorscheme
 vim.o.termguicolors = true
 vim.cmd [[colorscheme onedark]]
