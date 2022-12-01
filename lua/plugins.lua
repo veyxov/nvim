@@ -63,6 +63,14 @@ require('packer').startup(function(use)
 		end
 	}
 
+	use {
+		'ThePrimeagen/harpoon',
+		config = function()
+			vim.keymap.set('n', '(', function() require("harpoon.mark").add_file() end)
+			vim.keymap.set('n', ')', function() require("harpoon.ui").toggle_quick_menu() end)
+		end
+	}
+
 	-- Better f/F
 	use {
 		'ggandor/flit.nvim',
