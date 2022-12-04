@@ -22,6 +22,7 @@ vim.o.laststatus = 0
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
+vim.o.showmode = false
 
 -- Decrease update time
 vim.o.updatetime = 250
@@ -35,7 +36,7 @@ vim.o.shiftwidth = tabs;
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme onedark]]
+vim.cmd('colorscheme tundra')
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
