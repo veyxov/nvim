@@ -46,7 +46,7 @@ nmap('lws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orks
 
 -- See `:help K` for why this keymap
 nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help)
 
 -- Lesser used LSP functionality
 nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
