@@ -116,6 +116,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason.nvim"] = {
+    config = { "\27LJ\2\n…\1\0\1\3\0\5\0\0246\1\0\0009\1\1\0019\1\2\0019\1\3\1\15\0\1\0X\2\6€6\1\0\0009\1\1\0019\1\2\0019\1\3\1B\1\1\1X\1\v€6\1\0\0009\1\1\0019\1\2\0019\1\4\1\15\0\1\0X\2\5€6\1\0\0009\1\1\0019\1\2\0019\1\4\1B\1\1\1K\0\1\0\15formatting\vformat\bbuf\blsp\bvim\127\1\2\b\0\6\0\t6\2\0\0009\2\1\0029\2\2\2\18\4\1\0'\5\3\0003\6\4\0005\a\5\0B\2\5\1K\0\1\0\1\0\1\tdesc#Format current buffer with LSP\0\vFormat!nvim_buf_create_user_command\bapi\bvim§\6\1\0\14\0/\0Y3\0\0\0006\1\1\0'\3\2\0B\1\2\0029\1\3\1B\1\1\0015\1\4\0006\2\1\0'\4\5\0B\2\2\0029\2\3\0025\4\6\0=\1\a\4B\2\2\0016\2\b\0009\2\t\0029\2\n\0029\2\v\2B\2\1\0026\3\1\0'\5\f\0B\3\2\0029\3\r\3\18\5\2\0B\3\2\2\18\2\3\0006\3\14\0\18\5\1\0B\3\2\4X\6\t€6\b\1\0'\n\15\0B\b\2\0028\b\a\b9\b\3\b5\n\16\0=\0\17\n=\2\18\nB\b\2\1E\6\3\3R\6õ\1276\3\b\0009\3\19\0036\5\20\0009\5\21\5'\6\22\0B\3\3\0026\4\23\0009\4\24\4\18\6\3\0'\a\25\0B\4\3\0016\4\23\0009\4\24\4\18\6\3\0'\a\26\0B\4\3\0016\4\1\0'\6\15\0B\4\2\0029\4\27\0049\4\3\0045\6\28\0=\0\17\6=\2\18\0065\a,\0005\b\30\0005\t\29\0=\3\21\t=\t\31\b5\t!\0005\n \0=\n\"\t=\t#\b5\t'\0006\n\b\0009\n$\n9\n%\n'\f&\0+\r\2\0B\n\3\2=\n(\t=\t)\b5\t*\0=\t+\b=\b-\a=\a.\6B\4\2\1K\0\1\0\rsettings\bLua\1\0\0\14telemetry\1\0\1\venable\1\14workspace\flibrary\1\0\0\5\26nvim_get_runtime_file\bapi\16diagnostics\fglobals\1\0\0\1\2\0\0\bvim\fruntime\1\0\0\1\0\1\fversion\vLuaJIT\1\0\0\16sumneko_lua\19lua/?/init.lua\14lua/?.lua\vinsert\ntable\6;\tpath\fpackage\nsplit\17capabilities\14on_attach\1\0\0\14lspconfig\vipairs\25default_capabilities\17cmp_nvim_lsp\29make_client_capabilities\rprotocol\blsp\bvim\21ensure_installed\1\0\0\20mason-lspconfig\1\5\0\0\18rust_analyzer\rtsserver\16sumneko_lua\14omnisharp\nsetup\nmason\frequire\0\0" },
     loaded = true,
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
@@ -210,6 +211,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-cmp]], true)
 try_loadstring("\27LJ\2\nR\0\1\3\1\2\0\f-\1\0\0009\1\0\1B\1\1\2\15\0\1\0X\2\4€-\1\0\0009\1\1\1B\1\1\1X\1\2€\18\1\0\0B\1\1\1K\0\1\0\0À\21select_next_item\fvisibleR\0\1\3\1\2\0\f-\1\0\0009\1\0\1B\1\1\2\15\0\1\0X\2\4€-\1\0\0009\1\1\1B\1\1\1X\1\2€\18\1\0\0B\1\1\1K\0\1\0\0À\21select_prev_item\fvisiblež\3\1\0\v\0\27\00026\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\24\0009\4\3\0009\4\4\0049\4\5\0045\6\a\0009\a\3\0009\a\6\a)\tüÿB\a\2\2=\a\b\0069\a\3\0009\a\6\a)\t\4\0B\a\2\2=\a\t\0069\a\3\0009\a\n\aB\a\1\2=\a\v\0069\a\3\0009\a\f\a5\t\15\0009\n\r\0009\n\14\n=\n\16\tB\a\2\2=\a\17\0069\a\3\0003\t\18\0005\n\19\0B\a\3\2=\a\20\0069\a\3\0003\t\21\0005\n\22\0B\a\3\2=\a\23\6B\4\2\2=\4\3\0034\4\3\0005\5\25\0>\5\1\4=\4\26\3B\1\2\0012\0\0€K\0\1\0\fsources\1\0\1\tname\rnvim_lsp\1\0\0\f<S-Tab>\1\3\0\0\6i\6s\0\n<Tab>\1\3\0\0\6i\6s\0\t<CR>\rbehavior\1\0\1\vselect\2\fReplace\20ConfirmBehavior\fconfirm\14<C-Space>\rcomplete\r<C-Down>\v<C-Up>\1\0\0\16scroll_docs\vinsert\vpreset\fmapping\nsetup\bcmp\frequire\0", "config", "nvim-cmp")
 time([[Config for nvim-cmp]], false)
+-- Config for: mason.nvim
+time([[Config for mason.nvim]], true)
+try_loadstring("\27LJ\2\n…\1\0\1\3\0\5\0\0246\1\0\0009\1\1\0019\1\2\0019\1\3\1\15\0\1\0X\2\6€6\1\0\0009\1\1\0019\1\2\0019\1\3\1B\1\1\1X\1\v€6\1\0\0009\1\1\0019\1\2\0019\1\4\1\15\0\1\0X\2\5€6\1\0\0009\1\1\0019\1\2\0019\1\4\1B\1\1\1K\0\1\0\15formatting\vformat\bbuf\blsp\bvim\127\1\2\b\0\6\0\t6\2\0\0009\2\1\0029\2\2\2\18\4\1\0'\5\3\0003\6\4\0005\a\5\0B\2\5\1K\0\1\0\1\0\1\tdesc#Format current buffer with LSP\0\vFormat!nvim_buf_create_user_command\bapi\bvim§\6\1\0\14\0/\0Y3\0\0\0006\1\1\0'\3\2\0B\1\2\0029\1\3\1B\1\1\0015\1\4\0006\2\1\0'\4\5\0B\2\2\0029\2\3\0025\4\6\0=\1\a\4B\2\2\0016\2\b\0009\2\t\0029\2\n\0029\2\v\2B\2\1\0026\3\1\0'\5\f\0B\3\2\0029\3\r\3\18\5\2\0B\3\2\2\18\2\3\0006\3\14\0\18\5\1\0B\3\2\4X\6\t€6\b\1\0'\n\15\0B\b\2\0028\b\a\b9\b\3\b5\n\16\0=\0\17\n=\2\18\nB\b\2\1E\6\3\3R\6õ\1276\3\b\0009\3\19\0036\5\20\0009\5\21\5'\6\22\0B\3\3\0026\4\23\0009\4\24\4\18\6\3\0'\a\25\0B\4\3\0016\4\23\0009\4\24\4\18\6\3\0'\a\26\0B\4\3\0016\4\1\0'\6\15\0B\4\2\0029\4\27\0049\4\3\0045\6\28\0=\0\17\6=\2\18\0065\a,\0005\b\30\0005\t\29\0=\3\21\t=\t\31\b5\t!\0005\n \0=\n\"\t=\t#\b5\t'\0006\n\b\0009\n$\n9\n%\n'\f&\0+\r\2\0B\n\3\2=\n(\t=\t)\b5\t*\0=\t+\b=\b-\a=\a.\6B\4\2\1K\0\1\0\rsettings\bLua\1\0\0\14telemetry\1\0\1\venable\1\14workspace\flibrary\1\0\0\5\26nvim_get_runtime_file\bapi\16diagnostics\fglobals\1\0\0\1\2\0\0\bvim\fruntime\1\0\0\1\0\1\fversion\vLuaJIT\1\0\0\16sumneko_lua\19lua/?/init.lua\14lua/?.lua\vinsert\ntable\6;\tpath\fpackage\nsplit\17capabilities\14on_attach\1\0\0\14lspconfig\vipairs\25default_capabilities\17cmp_nvim_lsp\29make_client_capabilities\rprotocol\blsp\bvim\21ensure_installed\1\0\0\20mason-lspconfig\1\5\0\0\18rust_analyzer\rtsserver\16sumneko_lua\14omnisharp\nsetup\nmason\frequire\0\0", "config", "mason.nvim")
+time([[Config for mason.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -238,11 +243,11 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> T <cmd>lua require("packer.load")({'flit.nvim'}, { keys = "T", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> t <cmd>lua require("packer.load")({'flit.nvim'}, { keys = "t", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> F <cmd>lua require("packer.load")({'flit.nvim'}, { keys = "F", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> f <cmd>lua require("packer.load")({'flit.nvim'}, { keys = "f", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> t <cmd>lua require("packer.load")({'flit.nvim'}, { keys = "t", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> T <cmd>lua require("packer.load")({'flit.nvim'}, { keys = "T", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> ) <cmd>lua require("packer.load")({'harpoon'}, { keys = ")", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> f <cmd>lua require("packer.load")({'flit.nvim'}, { keys = "f", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> ( <cmd>lua require("packer.load")({'harpoon'}, { keys = "(", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> s <cmd>lua require("packer.load")({'leap.nvim'}, { keys = "s", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> S <cmd>lua require("packer.load")({'leap.nvim'}, { keys = "S", prefix = "" }, _G.packer_plugins)<cr>]]
