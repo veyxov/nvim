@@ -130,7 +130,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
   ["nvim-tundra"] = {
-    config = { "\27LJ\2\n¢\6\0\0\5\0001\0E6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0004\4\0\0=\4\a\0034\4\0\0=\4\b\3=\3\t\0025\3\v\0005\4\n\0=\4\f\0035\4\r\0=\4\14\0034\4\0\0=\4\15\0035\4\16\0=\4\17\0034\4\0\0=\4\18\0034\4\0\0=\4\19\0034\4\0\0=\4\20\0034\4\0\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\0034\4\0\0=\4\26\0034\4\0\0=\4\27\0035\4\28\0=\4\29\3=\3\30\0025\3\31\0004\4\0\0=\4 \0034\4\0\0=\4!\0034\4\0\0=\4\"\0034\4\0\0=\4#\3=\3$\0025\3%\0=\3&\0025\3'\0004\4\0\0=\4(\0034\4\0\0=\4)\3=\3*\2B\0\2\0016\0+\0009\0,\0'\1.\0=\1-\0006\0+\0009\0/\0'\0020\0B\0\2\1K\0\1\0\23colorscheme tundra\bcmd\tdark\15background\bopt\bvim\14overwrite\15highlights\vcolors\1\0\0\fplugins\1\0\b\blsp\2\rgitsigns\1\tdbui\2\fcontext\1\bcmp\2\rnvimtree\2\14telescope\2\15treesitter\2\16diagnostics\nhints\16information\rwarnings\verrors\1\0\0\vsyntax\ntypes\1\0\1\vitalic\2\fstrings\16punctuation\14operators\1\0\1\tbold\2\fnumbers\1\0\1\tbold\2\nloops\rkeywords\14functions\vfields\14constants\1\0\1\tbold\2\17conditionals\rcomments\1\0\2\tbold\2\vitalic\2\rbooleans\1\0\0\1\0\2\tbold\2\vitalic\2\veditor\15substitute\vsearch\1\0\0\25dim_inactive_windows\1\0\1\fenabled\2\1\0\1\27transparent_background\1\nsetup\16nvim-tundra\frequire\0" },
+    config = { "\27LJ\2\n¢\6\0\0\5\0001\0E6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0004\4\0\0=\4\a\0034\4\0\0=\4\b\3=\3\t\0025\3\v\0005\4\n\0=\4\f\0035\4\r\0=\4\14\0034\4\0\0=\4\15\0035\4\16\0=\4\17\0034\4\0\0=\4\18\0034\4\0\0=\4\19\0034\4\0\0=\4\20\0034\4\0\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\0034\4\0\0=\4\26\0034\4\0\0=\4\27\0035\4\28\0=\4\29\3=\3\30\0025\3\31\0004\4\0\0=\4 \0034\4\0\0=\4!\0034\4\0\0=\4\"\0034\4\0\0=\4#\3=\3$\0025\3%\0=\3&\0025\3'\0004\4\0\0=\4(\0034\4\0\0=\4)\3=\3*\2B\0\2\0016\0+\0009\0,\0'\1.\0=\1-\0006\0+\0009\0/\0'\0020\0B\0\2\1K\0\1\0\23colorscheme tundra\bcmd\tdark\15background\bopt\bvim\14overwrite\15highlights\vcolors\1\0\0\fplugins\1\0\b\fcontext\1\bcmp\2\rnvimtree\2\14telescope\2\15treesitter\2\blsp\2\rgitsigns\1\tdbui\2\16diagnostics\nhints\16information\rwarnings\verrors\1\0\0\vsyntax\ntypes\1\0\1\vitalic\2\fstrings\16punctuation\14operators\1\0\1\tbold\2\fnumbers\1\0\1\tbold\2\nloops\rkeywords\14functions\vfields\14constants\1\0\1\tbold\2\17conditionals\rcomments\1\0\2\vitalic\2\tbold\2\rbooleans\1\0\0\1\0\2\vitalic\2\tbold\2\veditor\15substitute\vsearch\1\0\0\25dim_inactive_windows\1\0\1\fenabled\2\1\0\1\27transparent_background\1\nsetup\16nvim-tundra\frequire\0" },
     loaded = true,
     path = "/home/iz/.local/share/nvim/site/pack/packer/start/nvim-tundra",
     url = "https://github.com/sam4llis/nvim-tundra"
@@ -152,19 +152,31 @@ _G.packer_plugins = {
     url = "https://github.com/arnamak/stay-centered.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
-    loaded = true,
-    path = "/home/iz/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    after = { "telescope.nvim" },
+    commands = { "Telescope" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/iz/.local/share/nvim/site/pack/packer/opt/telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
-    config = { "\27LJ\2\nç\2\0\0\6\0\14\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\6\0005\4\4\0005\5\3\0=\5\5\4=\4\a\3=\3\t\0025\3\n\0=\3\v\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\f\0'\2\r\0B\0\2\1K\0\1\0\bfzf\19load_extension\15extensions\1\0\4\14case_mode\15smart_case\nfuzzy\2\28override_generic_sorter\2\25override_file_sorter\2\rdefaults\1\0\0\rmappings\1\0\0\6i\1\0\0\1\0\2\n<C-u>\1\n<C-d>\1\nsetup\14telescope\frequire\0" },
-    loaded = true,
-    path = "/home/iz/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    config = { "\27LJ\2\n \1\0\0\4\0\b\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\6\0'\2\a\0B\0\2\1K\0\1\0\bfzf\19load_extension\15extensions\1\0\0\1\0\4\nfuzzy\2\14case_mode\15smart_case\25override_file_sorter\2\28override_generic_sorter\2\nsetup\14telescope\frequire\0" },
+    load_after = {
+      ["telescope-fzf-native.nvim"] = true
+    },
+    loaded = false,
+    needs_bufread = true,
+    path = "/home/iz/.local/share/nvim/site/pack/packer/opt/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-tundra
+time([[Config for nvim-tundra]], true)
+try_loadstring("\27LJ\2\n¢\6\0\0\5\0001\0E6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0004\4\0\0=\4\a\0034\4\0\0=\4\b\3=\3\t\0025\3\v\0005\4\n\0=\4\f\0035\4\r\0=\4\14\0034\4\0\0=\4\15\0035\4\16\0=\4\17\0034\4\0\0=\4\18\0034\4\0\0=\4\19\0034\4\0\0=\4\20\0034\4\0\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\0034\4\0\0=\4\26\0034\4\0\0=\4\27\0035\4\28\0=\4\29\3=\3\30\0025\3\31\0004\4\0\0=\4 \0034\4\0\0=\4!\0034\4\0\0=\4\"\0034\4\0\0=\4#\3=\3$\0025\3%\0=\3&\0025\3'\0004\4\0\0=\4(\0034\4\0\0=\4)\3=\3*\2B\0\2\0016\0+\0009\0,\0'\1.\0=\1-\0006\0+\0009\0/\0'\0020\0B\0\2\1K\0\1\0\23colorscheme tundra\bcmd\tdark\15background\bopt\bvim\14overwrite\15highlights\vcolors\1\0\0\fplugins\1\0\b\fcontext\1\bcmp\2\rnvimtree\2\14telescope\2\15treesitter\2\blsp\2\rgitsigns\1\tdbui\2\16diagnostics\nhints\16information\rwarnings\verrors\1\0\0\vsyntax\ntypes\1\0\1\vitalic\2\fstrings\16punctuation\14operators\1\0\1\tbold\2\fnumbers\1\0\1\tbold\2\nloops\rkeywords\14functions\vfields\14constants\1\0\1\tbold\2\17conditionals\rcomments\1\0\2\vitalic\2\tbold\2\rbooleans\1\0\0\1\0\2\vitalic\2\tbold\2\veditor\15substitute\vsearch\1\0\0\25dim_inactive_windows\1\0\1\fenabled\2\1\0\1\27transparent_background\1\nsetup\16nvim-tundra\frequire\0", "config", "nvim-tundra")
+time([[Config for nvim-tundra]], false)
 -- Config for: flit.nvim
 time([[Config for flit.nvim]], true)
 try_loadstring("\27LJ\2\né\1\0\0\5\0\t\0\f5\0\0\0006\1\1\0'\3\2\0B\1\2\0029\1\3\0015\3\4\0005\4\5\0=\0\6\4=\0\a\4=\4\b\3B\1\2\1K\0\1\0\topts\vlabels\16safe_labels\1\0\0\1\0\1\18labeled_modes\bnvo\nsetup\tflit\frequire\1\t\0\0\6n\6e\6i\6o\6s\6a\6r\6t\0", "config", "flit.nvim")
@@ -177,14 +189,6 @@ time([[Config for harpoon]], false)
 time([[Config for stay-centered.nvim]], true)
 try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18stay-centered\frequire\0", "config", "stay-centered.nvim")
 time([[Config for stay-centered.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-try_loadstring("\27LJ\2\nç\2\0\0\6\0\14\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\6\0005\4\4\0005\5\3\0=\5\5\4=\4\a\3=\3\t\0025\3\n\0=\3\v\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\f\0'\2\r\0B\0\2\1K\0\1\0\bfzf\19load_extension\15extensions\1\0\4\14case_mode\15smart_case\nfuzzy\2\28override_generic_sorter\2\25override_file_sorter\2\rdefaults\1\0\0\rmappings\1\0\0\6i\1\0\0\1\0\2\n<C-u>\1\n<C-d>\1\nsetup\14telescope\frequire\0", "config", "telescope.nvim")
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-tundra
-time([[Config for nvim-tundra]], true)
-try_loadstring("\27LJ\2\n¢\6\0\0\5\0001\0E6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0004\4\0\0=\4\a\0034\4\0\0=\4\b\3=\3\t\0025\3\v\0005\4\n\0=\4\f\0035\4\r\0=\4\14\0034\4\0\0=\4\15\0035\4\16\0=\4\17\0034\4\0\0=\4\18\0034\4\0\0=\4\19\0034\4\0\0=\4\20\0034\4\0\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\0034\4\0\0=\4\26\0034\4\0\0=\4\27\0035\4\28\0=\4\29\3=\3\30\0025\3\31\0004\4\0\0=\4 \0034\4\0\0=\4!\0034\4\0\0=\4\"\0034\4\0\0=\4#\3=\3$\0025\3%\0=\3&\0025\3'\0004\4\0\0=\4(\0034\4\0\0=\4)\3=\3*\2B\0\2\0016\0+\0009\0,\0'\1.\0=\1-\0006\0+\0009\0/\0'\0020\0B\0\2\1K\0\1\0\23colorscheme tundra\bcmd\tdark\15background\bopt\bvim\14overwrite\15highlights\vcolors\1\0\0\fplugins\1\0\b\blsp\2\rgitsigns\1\tdbui\2\fcontext\1\bcmp\2\rnvimtree\2\14telescope\2\15treesitter\2\16diagnostics\nhints\16information\rwarnings\verrors\1\0\0\vsyntax\ntypes\1\0\1\vitalic\2\fstrings\16punctuation\14operators\1\0\1\tbold\2\fnumbers\1\0\1\tbold\2\nloops\rkeywords\14functions\vfields\14constants\1\0\1\tbold\2\17conditionals\rcomments\1\0\2\tbold\2\vitalic\2\rbooleans\1\0\0\1\0\2\tbold\2\vitalic\2\veditor\15substitute\vsearch\1\0\0\25dim_inactive_windows\1\0\1\fenabled\2\1\0\1\27transparent_background\1\nsetup\16nvim-tundra\frequire\0", "config", "nvim-tundra")
-time([[Config for nvim-tundra]], false)
 -- Config for: leap.nvim
 time([[Config for leap.nvim]], true)
 try_loadstring("\27LJ\2\nÅ\1\0\0\4\0\a\0\v6\0\0\0'\2\1\0B\0\2\0025\1\2\0009\2\3\0B\2\1\0019\2\4\0=\1\5\0029\2\4\0=\1\6\2K\0\1\0\vlabels\16safe_labels\topts\25add_default_mappings\1\t\0\0\6n\6e\6i\6o\6s\6a\6r\6t\tleap\frequire\0", "config", "leap.nvim")
@@ -194,6 +198,18 @@ time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 time([[Sequenced loading]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'Telescope', function(cmdargs)
+          require('packer.load')({'telescope-fzf-native.nvim'}, { cmd = 'Telescope', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'telescope-fzf-native.nvim'}, { cmd = 'Telescope' }, _G.packer_plugins)
+          vim.api.nvim_input('<space><bs><tab>')
+      end})
+time([[Defining lazy-load commands]], false)
+
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

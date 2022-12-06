@@ -91,14 +91,6 @@ require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim',
 		config = function()
 			require('telescope').setup {
-				defaults = {
-					mappings = {
-						i = {
-							['<C-u>'] = false,
-							['<C-d>'] = false,
-						},
-					},
-				},
 				extensions = {
 					fuzzy = true,
 					override_generic_sorter = true,
@@ -108,10 +100,15 @@ require('packer').startup(function(use)
 			}
 
 			require('telescope').load_extension('fzf')
-		end
+		end,
+		after = 'telescope-fzf-native.nvim'
 	}
 
-	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+	use {
+		'nvim-telescope/telescope-fzf-native.nvim',
+		run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
+		cmd = "Telescope"
+	}
 
 	-- Keep cursor centered
 	use {
