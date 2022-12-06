@@ -42,3 +42,13 @@ vim.o.completeopt = 'menuone,noselect'
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+-- Disable builtin plugins.
+local builtin_plugins = {
+	'gzip', 'man', 'matchparen', 'matchit', 'netrwPlugin',
+	'shada', 'tarPlugin', 'tohtml',
+	'tutor', 'zipPlugin',
+}
+for _, plugin in ipairs(builtin_plugins) do
+	vim.g['loaded_' .. plugin] = 1
+end
