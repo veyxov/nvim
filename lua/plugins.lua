@@ -81,7 +81,7 @@ require('packer').startup(function(use)
 		end
 	}
 
-	use { {
+	use {{
 		'nvim-treesitter/nvim-treesitter',
 		config = function()
 			require('nvim-treesitter.configs').setup {
@@ -125,12 +125,10 @@ require('packer').startup(function(use)
 
 		end,
 		event = "InsertEnter"
-	},
-		{
-			'nvim-treesitter/nvim-treesitter-textobjects',
-			after = 'nvim-treesitter',
-		}
-	}
+	},{
+		'nvim-treesitter/nvim-treesitter-textobjects',
+		after = 'nvim-treesitter',
+	}}
 
 	use {
 		'sam4llis/nvim-tundra',
@@ -225,29 +223,12 @@ require('packer').startup(function(use)
 		"luukvbaal/nnn.nvim",
 		config = function()
 			local cfg = {
-				explorer = {
-					cmd = "nnn", -- command overrride (-F1 flag is implied, -a flag is invalid!)
-					width = 24, -- width of the vertical split
-					side = "topleft", -- or "botright", location of the explorer window
-				},
+				explorer = { cmd = "nnn", width = 24 },
 				picker = {
-					cmd = "nnn", -- command override (-p flag is implied)
-					style = {
-						width = 1, -- percentage relative to terminal size when < 1, absolute otherwise
-						height = 1, -- ^
-						xoffset = 0, -- ^
-						yoffset = 0, -- ^
-						border = "rounded" -- border decoration for example "rounded"(:h nvim_open_win)
-					}
+					cmd = "nnn",
+					style = { width = 1, height = 1, xoffset = 0, yoffset = 0 }
 				},
-				auto_close = true,
-				mappings = {}, -- table containing mappings, see below
-				windownav = { -- window movement mappings to navigate out of nnn
-					left = "<C-w>h",
-					right = "<C-w>l",
-					next = "<C-w>w",
-					prev = "<C-w>W",
-				},
+				auto_close = true
 			}
 			require("nnn").setup(cfg)
 		end,

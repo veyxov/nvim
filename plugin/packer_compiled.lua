@@ -123,7 +123,7 @@ _G.packer_plugins = {
   },
   ["nnn.nvim"] = {
     commands = { "NnnExplorer", "NnnPicker" },
-    config = { "\27LJ\2\n¯\2\0\0\4\0\r\0\0185\0\1\0005\1\0\0=\1\2\0005\1\3\0005\2\4\0=\2\5\1=\1\6\0004\1\0\0=\1\a\0005\1\b\0=\1\t\0006\1\n\0'\3\v\0B\1\2\0029\1\f\1\18\3\0\0B\1\2\1K\0\1\0\nsetup\bnnn\frequire\14windownav\1\0\4\tleft\v<C-w>h\tnext\v<C-w>w\nright\v<C-w>l\tprev\v<C-w>W\rmappings\vpicker\nstyle\1\0\5\vheight\3\1\vborder\frounded\nwidth\3\1\fyoffset\3\0\fxoffset\3\0\1\0\1\bcmd\bnnn\rexplorer\1\0\1\15auto_close\2\1\0\3\tside\ftopleft\bcmd\bnnn\nwidth\3\24\0" },
+    config = { "\27LJ\2\n¼\1\0\0\4\0\n\0\0145\0\1\0005\1\0\0=\1\2\0005\1\3\0005\2\4\0=\2\5\1=\1\6\0006\1\a\0'\3\b\0B\1\2\0029\1\t\1\18\3\0\0B\1\2\1K\0\1\0\nsetup\bnnn\frequire\vpicker\nstyle\1\0\4\vheight\3\1\nwidth\3\1\fyoffset\3\0\fxoffset\3\0\1\0\1\bcmd\bnnn\rexplorer\1\0\1\15auto_close\2\1\0\2\nwidth\3\24\bcmd\bnnn\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -243,14 +243,14 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> T <cmd>lua require("packer.load")({'flit.nvim'}, { keys = "T", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> s <cmd>lua require("packer.load")({'leap.nvim'}, { keys = "s", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> f <cmd>lua require("packer.load")({'flit.nvim'}, { keys = "f", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> t <cmd>lua require("packer.load")({'flit.nvim'}, { keys = "t", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> F <cmd>lua require("packer.load")({'flit.nvim'}, { keys = "F", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> ) <cmd>lua require("packer.load")({'harpoon'}, { keys = ")", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> ( <cmd>lua require("packer.load")({'harpoon'}, { keys = "(", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> T <cmd>lua require("packer.load")({'flit.nvim'}, { keys = "T", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> f <cmd>lua require("packer.load")({'flit.nvim'}, { keys = "f", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> S <cmd>lua require("packer.load")({'leap.nvim'}, { keys = "S", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> t <cmd>lua require("packer.load")({'flit.nvim'}, { keys = "t", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> s <cmd>lua require("packer.load")({'leap.nvim'}, { keys = "s", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> ) <cmd>lua require("packer.load")({'harpoon'}, { keys = ")", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
