@@ -4,48 +4,48 @@ require('packer').startup(function(use)
 	-- LSP
 	use {
 		'neovim/nvim-lspconfig',
-		requires = {{
-				'williamboman/mason.nvim',
-				config = function()
-					local on_attach = function(_, bufnr)
-						vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-							if     vim.lsp.buf.format     then vim.lsp.buf.format()
-							elseif vim.lsp.buf.formatting then vim.lsp.buf.formatting()
-							end
-						end, { desc = 'Format current buffer with LSP' })
-					end
-
-					require('mason').setup()
-
-					local servers = { 'rust_analyzer', 'tsserver', 'sumneko_lua', 'omnisharp' }
-					-- Ensure the servers above are installed
-					require('mason-lspconfig').setup {}
-
-					local capabilities = vim.lsp.protocol.make_client_capabilities()
-					capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
-					for _, lsp in ipairs(servers) do
-						require('lspconfig')[lsp].setup { on_attach = on_attach, capabilities = capabilities }
-					end
-
-					local runtime_path = vim.split(package.path, ';')
-					table.insert(runtime_path, 'lua/?.lua')
-					table.insert(runtime_path, 'lua/?/init.lua')
-
-					require('lspconfig').sumneko_lua.setup {
-						on_attach = on_attach,
-						capabilities = capabilities,
-						settings = {
-							Lua = {
-								runtime     = { version = 'LuaJIT', path = runtime_path, },
-								diagnostics = { globals = { 'vim' } },
-								workspace   = { library = vim.api.nvim_get_runtime_file('', true) },
-								telemetry   = { enable = false },
-							},
-						},
-					}
+		requires = { {
+			'williamboman/mason.nvim',
+			config = function()
+				local on_attach = function(_, bufnr)
+					vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+						if vim.lsp.buf.format then vim.lsp.buf.format()
+						elseif vim.lsp.buf.formatting then vim.lsp.buf.formatting()
+						end
+					end, { desc = 'Format current buffer with LSP' })
 				end
-			},
+
+				require('mason').setup()
+
+				local servers = { 'rust_analyzer', 'tsserver', 'sumneko_lua', 'omnisharp' }
+				-- Ensure the servers above are installed
+				require('mason-lspconfig').setup {}
+
+				local capabilities = vim.lsp.protocol.make_client_capabilities()
+				capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+				for _, lsp in ipairs(servers) do
+					require('lspconfig')[lsp].setup { on_attach = on_attach, capabilities = capabilities }
+				end
+
+				local runtime_path = vim.split(package.path, ';')
+				table.insert(runtime_path, 'lua/?.lua')
+				table.insert(runtime_path, 'lua/?/init.lua')
+
+				require('lspconfig').sumneko_lua.setup {
+					on_attach = on_attach,
+					capabilities = capabilities,
+					settings = {
+						Lua = {
+							runtime     = { version = 'LuaJIT', path = runtime_path, },
+							diagnostics = { globals = { 'vim' } },
+							workspace   = { library = vim.api.nvim_get_runtime_file('', true) },
+							telemetry   = { enable = false },
+						},
+					},
+				}
+			end
+		},
 			'williamboman/mason-lspconfig.nvim',
 		},
 	}
@@ -81,7 +81,7 @@ require('packer').startup(function(use)
 		end
 	}
 
-	use { -- Highlight, edit, and navigate code
+	use { {
 		'nvim-treesitter/nvim-treesitter',
 		config = function()
 			require('nvim-treesitter.configs').setup {
@@ -120,25 +120,16 @@ require('packer').startup(function(use)
 							['[]'] = '@class.outer',
 						},
 					},
-					swap = {
-						enable = true,
-						swap_next = {
-							['<leader>a'] = '@parameter.inner',
-						},
-						swap_previous = {
-							['<leader>A'] = '@parameter.inner',
-						},
-					},
 				},
 			}
 
 		end,
 		event = "InsertEnter"
-	}
-
-	use { -- Additional text objects via treesitter
-		'nvim-treesitter/nvim-treesitter-textobjects',
-		after = 'nvim-treesitter',
+	},
+		{
+			'nvim-treesitter/nvim-treesitter-textobjects',
+			after = 'nvim-treesitter',
+		}
 	}
 
 	use {
