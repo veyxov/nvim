@@ -45,7 +45,7 @@ vim.g.maplocalleader = ' '
 
 -- Disable builtin plugins.
 local builtin_plugins = {
-	'gzip', 'man', 'matchparen', 'matchit', 'netrwPlugin',
+	'gzip', 'matchparen', 'matchit', 'netrwPlugin',
 	'shada', 'tarPlugin', 'tohtml',
 	'tutor', 'zipPlugin',
 }
