@@ -180,6 +180,33 @@ require('packer').startup(function(use)
 	-- File explorer
 	use {
 		"luukvbaal/nnn.nvim",
-		config = function() require("nnn").setup() end
+		config = function()
+			local cfg = {
+				explorer = {
+					cmd = "nnn",       -- command overrride (-F1 flag is implied, -a flag is invalid!)
+					width = 24,        -- width of the vertical split
+					side = "topleft",  -- or "botright", location of the explorer window
+				},
+				picker = {
+					cmd = "nnn",       -- command override (-p flag is implied)
+					style = {
+						width = 1,     -- percentage relative to terminal size when < 1, absolute otherwise
+						height = 1,    -- ^
+						xoffset = 0,   -- ^
+						yoffset = 0,   -- ^
+						border = "rounded"-- border decoration for example "rounded"(:h nvim_open_win)
+					}
+				},
+				auto_close = true,
+				mappings = {},       -- table containing mappings, see below
+				windownav = {        -- window movement mappings to navigate out of nnn
+					left = "<C-w>h",
+					right = "<C-w>l",
+					next = "<C-w>w",
+					prev = "<C-w>W",
+				},
+			}
+			require("nnn").setup(cfg)
+		end,
 	}
 end)
