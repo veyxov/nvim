@@ -1,60 +1,33 @@
 require('packer').startup(function(use)
-	use {
-		'wbthomason/packer.nvim',
-		'nvim-lua/plenary.nvim'
-	}
+	use { 'wbthomason/packer.nvim', 'nvim-lua/plenary.nvim' }
 
+	-- LSP
 	use {
 		'neovim/nvim-lspconfig',
-		requires = {
-			{
+		requires = {{
 				'williamboman/mason.nvim',
 				config = function()
-					-- LSP settings.
-					--  This function gets run when an LSP connects to a particular buffer.
 					local on_attach = function(_, bufnr)
-						-- NOTE: Remember that lua is a real programming language, and as such it is possible
-						-- to define small helper and utility functions so you don't have to repeat yourself
-						-- many times.
-						--
-						-- In this case, we create a function that lets us more easily define mappings specific
-						-- for LSP related items. It sets the mode, buffer and description for us each time.
-						-- Create a command `:Format` local to the LSP buffer
 						vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-							if vim.lsp.buf.format then
-								vim.lsp.buf.format()
-							elseif vim.lsp.buf.formatting then
-								vim.lsp.buf.formatting()
+							if     vim.lsp.buf.format     then vim.lsp.buf.format()
+							elseif vim.lsp.buf.formatting then vim.lsp.buf.formatting()
 							end
 						end, { desc = 'Format current buffer with LSP' })
 					end
 
-					-- Setup mason so it can manage external tooling
 					require('mason').setup()
 
-					-- Enable the following language servers
-					-- Feel free to add/remove any LSPs that you want here. They will automatically be installed
 					local servers = { 'rust_analyzer', 'tsserver', 'sumneko_lua', 'omnisharp' }
-
 					-- Ensure the servers above are installed
-					require('mason-lspconfig').setup {
-						ensure_installed = servers,
-					}
+					require('mason-lspconfig').setup {}
 
-					-- nvim-cmp supports additional completion capabilities
 					local capabilities = vim.lsp.protocol.make_client_capabilities()
 					capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 					for _, lsp in ipairs(servers) do
-						require('lspconfig')[lsp].setup {
-							on_attach = on_attach,
-							capabilities = capabilities,
-						}
+						require('lspconfig')[lsp].setup { on_attach = on_attach, capabilities = capabilities }
 					end
 
-					-- Example custom configuration for lua
-					--
-					-- Make runtime files discoverable to the server
 					local runtime_path = vim.split(package.path, ';')
 					table.insert(runtime_path, 'lua/?.lua')
 					table.insert(runtime_path, 'lua/?/init.lua')
@@ -64,18 +37,10 @@ require('packer').startup(function(use)
 						capabilities = capabilities,
 						settings = {
 							Lua = {
-								runtime = {
-									-- Tell the language server which version of Lua you're using (most likely LuaJIT)
-									version = 'LuaJIT',
-									-- Setup your lua path
-									path = runtime_path,
-								},
-								diagnostics = {
-									globals = { 'vim' },
-								},
-								workspace = { library = vim.api.nvim_get_runtime_file('', true) },
-								-- Do not send telemetry data containing a randomized but unique identifier
-								telemetry = { enable = false },
+								runtime     = { version = 'LuaJIT', path = runtime_path, },
+								diagnostics = { globals = { 'vim' } },
+								workspace   = { library = vim.api.nvim_get_runtime_file('', true) },
+								telemetry   = { enable = false },
 							},
 						},
 					}
@@ -96,27 +61,18 @@ require('packer').startup(function(use)
 
 			cmp.setup {
 				mapping = cmp.mapping.preset.insert {
-					['<C-Up>'] = cmp.mapping.scroll_docs(-4),
-					['<C-Down>'] = cmp.mapping.scroll_docs(4),
 					['<C-Space>'] = cmp.mapping.complete(),
 					['<CR>'] = cmp.mapping.confirm {
 						behavior = cmp.ConfirmBehavior.Replace,
 						select = true,
 					},
 					['<Tab>'] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_next_item()
+						if cmp.visible() then
+							cmp.select_next_item()
 						else
 							fallback()
 						end
-						end, { 'i', 's' }),
-					['<S-Tab>'] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_prev_item()
-						else
-							fallback()
-						end
-						end, { 'i', 's' }),
+					end, { 'i', 's' })
 				},
 				sources = {
 					{ name = 'nvim_lsp' },
@@ -197,7 +153,7 @@ require('packer').startup(function(use)
 
 	use {
 		'sam4llis/nvim-tundra',
-		config = function ()
+		config = function()
 			require('nvim-tundra').setup {}
 
 			vim.opt.background = 'dark'
@@ -244,7 +200,7 @@ require('packer').startup(function(use)
 		'ggandor/leap.nvim',
 		config = function()
 			local leap = require 'leap'
-			local lbls =  { 'n', 'e', 'i', 'o', 's', 'a', 'r', 't' }
+			local lbls = { 'n', 'e', 'i', 'o', 's', 'a', 'r', 't' }
 
 
 			leap.add_default_mappings()
@@ -258,7 +214,7 @@ require('packer').startup(function(use)
 	use {
 		'ggandor/flit.nvim',
 		config = function()
-			local lbls =  { 'n', 'e', 'i', 'o', 's', 'a', 'r', 't' }
+			local lbls = { 'n', 'e', 'i', 'o', 's', 'a', 'r', 't' }
 
 			-- Explicitly load leap.nvim
 			vim.cmd ":PackerLoad leap.nvim"
@@ -289,23 +245,23 @@ require('packer').startup(function(use)
 		config = function()
 			local cfg = {
 				explorer = {
-					cmd = "nnn",       -- command overrride (-F1 flag is implied, -a flag is invalid!)
-					width = 24,        -- width of the vertical split
-					side = "topleft",  -- or "botright", location of the explorer window
+					cmd = "nnn", -- command overrride (-F1 flag is implied, -a flag is invalid!)
+					width = 24, -- width of the vertical split
+					side = "topleft", -- or "botright", location of the explorer window
 				},
 				picker = {
-					cmd = "nnn",       -- command override (-p flag is implied)
+					cmd = "nnn", -- command override (-p flag is implied)
 					style = {
-						width = 1,     -- percentage relative to terminal size when < 1, absolute otherwise
-						height = 1,    -- ^
-						xoffset = 0,   -- ^
-						yoffset = 0,   -- ^
-						border = "rounded"-- border decoration for example "rounded"(:h nvim_open_win)
+						width = 1, -- percentage relative to terminal size when < 1, absolute otherwise
+						height = 1, -- ^
+						xoffset = 0, -- ^
+						yoffset = 0, -- ^
+						border = "rounded" -- border decoration for example "rounded"(:h nvim_open_win)
 					}
 				},
 				auto_close = true,
-				mappings = {},       -- table containing mappings, see below
-				windownav = {        -- window movement mappings to navigate out of nnn
+				mappings = {}, -- table containing mappings, see below
+				windownav = { -- window movement mappings to navigate out of nnn
 					left = "<C-w>h",
 					right = "<C-w>l",
 					next = "<C-w>w",
