@@ -80,7 +80,8 @@ require('packer').startup(function(use)
 				},
 			}
 
-		end
+		end,
+		event = "InsertEnter"
 	}
 
 	use { -- Additional text objects via treesitter
@@ -147,20 +148,14 @@ require('packer').startup(function(use)
 		keys = { 's', 'S' }
 	}
 
-	use {
-		'ThePrimeagen/harpoon',
-		config = function()
-			vim.keymap.set('n', '(', function() require("harpoon.mark").add_file() end)
-			vim.keymap.set('n', ')', function() require("harpoon.ui").toggle_quick_menu() end)
-		end
-	}
-
 	-- Better f/F
 	use {
 		'ggandor/flit.nvim',
 		config = function()
 			local lbls =  { 'n', 'e', 'i', 'o', 's', 'a', 'r', 't' }
 
+			-- Explicitly load leap.nvim
+			vim.cmd ":PackerLoad leap.nvim"
 			require('flit').setup {
 				labeled_modes = "nvo",
 				opts = {
@@ -168,6 +163,17 @@ require('packer').startup(function(use)
 					labels = lbls
 				}
 			}
-		end
+		end,
+		keys = { 'f', 'F', 't', 'T' },
+		after = 'leap.nvim'
+	}
+
+	use {
+		'ThePrimeagen/harpoon',
+		config = function()
+			vim.keymap.set('n', '(', function() require("harpoon.mark").add_file() end)
+			vim.keymap.set('n', ')', function() require("harpoon.ui").toggle_quick_menu() end)
+		end,
+		keys = { '(', ')' }
 	}
 end)
