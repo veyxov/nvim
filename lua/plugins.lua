@@ -208,5 +208,6 @@ require('packer').startup(function(use)
 			}
 			require("nnn").setup(cfg)
 		end,
+		cmd = { "NnnExplorer", "NnnPicker" }
 	}
 end)

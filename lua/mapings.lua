@@ -17,6 +17,9 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>Q', vim.diagnostic.setloclist)
 
+vim.keymap.set('n', '<C-N>', "<cmd>NnnPicker<cr>")
+vim.keymap.set('n', '<C-A>', "<cmd>NnnExplorer<cr>")
+
 local nmap = function(keys, func, desc)
     if desc then
       desc = 'LSP: ' .. desc
