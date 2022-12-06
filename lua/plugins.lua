@@ -176,4 +176,10 @@ require('packer').startup(function(use)
 		end,
 		keys = { '(', ')' }
 	}
+
+	-- File explorer
+	use {
+		"luukvbaal/nnn.nvim",
+		config = function() require("nnn").setup() end
+	}
 end)
