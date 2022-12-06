@@ -115,7 +115,8 @@ require('packer').startup(function(use)
 		"arnamak/stay-centered.nvim",
 		config = function()
 			require("stay-centered")
-		end
+		end,
+		event = "InsertEnter"
 	}
 
 	-- EasyMotion
