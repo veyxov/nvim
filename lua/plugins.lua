@@ -181,7 +181,6 @@ require('packer').startup(function(use)
 			local leap = require 'leap'
 			local lbls = { 'n', 'e', 'i', 'o', 's', 'a', 'r', 't' }
 
-
 			leap.add_default_mappings()
 			leap.opts.safe_labels = lbls
 			leap.opts.labels = lbls
