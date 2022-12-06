@@ -34,56 +34,12 @@ require('packer').startup(function(use)
 	use {
 		'sam4llis/nvim-tundra',
 		config = function ()
-			require('nvim-tundra').setup({
-				transparent_background = false,
-				dim_inactive_windows = {
-					enabled = true,
-					color = nil,
-				},
-				editor = {
-					search = {},
-					substitute = {},
-				},
-				syntax = {
-					booleans = { bold = true, italic = true },
-					comments = { bold = true, italic = true },
-					conditionals = {},
-					constants = { bold = true },
-					fields = {},
-					functions = {},
-					keywords = {},
-					loops = {},
-					numbers = { bold = true },
-					operators = { bold = true },
-					punctuation = {},
-					strings = {},
-					types = { italic = true },
-				},
-				diagnostics = {
-					errors = {},
-					warnings = {},
-					information = {},
-					hints = {},
-				},
-				plugins = {
-					lsp = true,
-					treesitter = true,
-					nvimtree = true,
-					cmp = true,
-					context = false,
-					dbui = true,
-					gitsigns = false,
-					telescope = true,
-				},
-				overwrite = {
-					colors = {},
-					highlights = {},
-				},
-			})
+			require('nvim-tundra').setup {}
 
 			vim.opt.background = 'dark'
 			vim.cmd('colorscheme tundra')
-		end
+		end,
+		event = "InsertEnter"
 	}
 
 	-- Fuzzy Finder
@@ -130,7 +86,8 @@ require('packer').startup(function(use)
 			leap.add_default_mappings()
 			leap.opts.safe_labels = lbls
 			leap.opts.labels = lbls
-		end
+		end,
+		keys = { 's', 'S' }
 	}
 
 	use {
