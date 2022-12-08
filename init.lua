@@ -1,4 +1,4 @@
-require 'plugins'
-require 'autocmd'
 require 'options'
+require 'autocmd'
+require 'plugins'
 require 'mapings'

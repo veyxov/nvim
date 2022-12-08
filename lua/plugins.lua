@@ -6,6 +6,7 @@ require('packer').startup(function(use)
 		'neovim/nvim-lspconfig',
 		requires = { {
 			'williamboman/mason.nvim',
+			after = "nvim-cmp",
 			config = function()
 				local on_attach = function(_, bufnr)
 					vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
@@ -48,12 +49,14 @@ require('packer').startup(function(use)
 		},
 			'williamboman/mason-lspconfig.nvim',
 		},
+		after = "nvim-cmp",
 	}
 
 	use { -- Autocompletion
 		'hrsh7th/nvim-cmp',
 		requires = {
-			'hrsh7th/cmp-nvim-lsp'
+			'hrsh7th/cmp-nvim-lsp',
+			event = "InsertEnter"
 		},
 		config = function()
 			-- nvim-cmp setup
@@ -78,7 +81,8 @@ require('packer').startup(function(use)
 					{ name = 'nvim_lsp' },
 				},
 			}
-		end
+		end,
+		after = "cmp-nvim-lsp"
 	}
 
 	use {{
