@@ -4,9 +4,10 @@ require('packer').startup(function(use)
 	-- LSP
 	use {
 		'neovim/nvim-lspconfig',
+		after = "nvim-cmp",
 		requires = { {
 			'williamboman/mason.nvim',
-			after = "nvim-cmp",
+			after = "nvim-lspconfig",
 			config = function()
 				local on_attach = function(_, bufnr)
 					vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
@@ -49,7 +50,6 @@ require('packer').startup(function(use)
 		},
 			'williamboman/mason-lspconfig.nvim',
 		},
-		after = "nvim-cmp",
 	}
 
 	use { -- Autocompletion
