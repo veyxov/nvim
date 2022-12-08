@@ -21,6 +21,7 @@ vim.o.swapfile = false
 vim.o.undofile = true
 
 -- Hide status bar
+vim.o.cmdheight = 0
 vim.o.laststatus = 0
 
 -- Case insensitive searching UNLESS /C or capital in search
