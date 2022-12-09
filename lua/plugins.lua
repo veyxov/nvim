@@ -85,7 +85,7 @@ require('packer').startup(function(use)
 		after = "cmp-nvim-lsp"
 	}
 
-	use {{
+	use { {
 		'nvim-treesitter/nvim-treesitter',
 		config = function()
 			require('nvim-treesitter.configs').setup {
@@ -129,14 +129,19 @@ require('packer').startup(function(use)
 
 		end,
 		event = "InsertEnter"
-	},{
+	}, {
 		'nvim-treesitter/nvim-treesitter-textobjects',
 		after = 'nvim-treesitter',
-	}}
+	} }
 
 	use {
 		"ellisonleao/gruvbox.nvim",
 		config = function()
+			require("gruvbox").setup({
+				contrast = "hard", -- can be "hard", "soft" or empty string
+				transparent_mode = true,
+			})
+
 			vim.cmd "color gruvbox"
 		end,
 		after = "mason.nvim"

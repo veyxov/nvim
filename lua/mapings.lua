@@ -7,6 +7,8 @@ vim.keymap.set('n', '<leader>y', '"+y')
 vim.keymap.set('n', '<cr>g', ":silent !tmux neww 'lazygit; exit'<CR>")
 
 vim.keymap.set('n', '<cr>s', "<cmd>Telescope find_files<cr>", { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<cr>f', "<cmd>Format<cr>", { desc = 'Format current file' })
+
 vim.keymap.set('n', 'hh', "<cmd>Telescope help_tags<cr>", { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', 'hg', "<cmd>Telescope grep_file<cr>", { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', 'hd', "<cmd>Telescope diagnostic", { desc = '[S]earch [D]iagnostics' })
