@@ -135,14 +135,11 @@ require('packer').startup(function(use)
 	}}
 
 	use {
-		'sam4llis/nvim-tundra',
+		"ellisonleao/gruvbox.nvim",
 		config = function()
-			require('nvim-tundra').setup {}
-
-			vim.opt.background = 'dark'
-			vim.cmd('colorscheme tundra')
+			vim.cmd "color gruvbox"
 		end,
-		event = "InsertEnter"
+		after = "mason.nvim"
 	}
 
 	-- Fuzzy Finder
