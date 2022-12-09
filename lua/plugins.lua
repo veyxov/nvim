@@ -54,15 +54,32 @@ require('packer').startup(function(use)
 
 	use { -- Autocompletion
 		'hrsh7th/nvim-cmp',
+		after = "LuaSnip",
 		requires = {
-			'hrsh7th/cmp-nvim-lsp',
-			event = "InsertEnter"
+			{
+				'hrsh7th/cmp-nvim-lsp',
+				after = "LuaSnip"
+			},
+			{
+				'L3MON4D3/LuaSnip',
+				event = "InsertEnter"
+			},
+			{
+				'saadparwaiz1/cmp_luasnip',
+				after = "nvim-cmp"
+			}
 		},
 		config = function()
 			-- nvim-cmp setup
 			local cmp = require 'cmp'
+			local luasnip = require 'luasnip'
 
 			cmp.setup {
+				snippet = {
+					expand = function(args)
+						luasnip.lsp_expand(args.body)
+					end,
+				},
 				mapping = cmp.mapping.preset.insert {
 					['<C-Space>'] = cmp.mapping.complete(),
 					['<CR>'] = cmp.mapping.confirm {
@@ -72,6 +89,8 @@ require('packer').startup(function(use)
 					['<Tab>'] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
+						elseif luasnip.expand_or_jumpable() then
+							luasnip.expand_or_jump()
 						else
 							fallback()
 						end
@@ -79,10 +98,10 @@ require('packer').startup(function(use)
 				},
 				sources = {
 					{ name = 'nvim_lsp' },
+					{ name = 'luasnip' },
 				},
 			}
 		end,
-		after = "cmp-nvim-lsp"
 	}
 
 	use { {
