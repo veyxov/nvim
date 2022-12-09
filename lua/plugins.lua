@@ -7,7 +7,7 @@ require('packer').startup(function(use)
 		after = "nvim-cmp",
 		requires = { {
 			'williamboman/mason.nvim',
-			after = "nvim-lspconfig",
+			after = "cmp-nvim-lsp",
 			config = function()
 				local on_attach = function(_, bufnr)
 					vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
@@ -58,7 +58,7 @@ require('packer').startup(function(use)
 		requires = {
 			{
 				'hrsh7th/cmp-nvim-lsp',
-				after = "LuaSnip"
+				after = "cmp_luasnip"
 			},
 			{
 				'L3MON4D3/LuaSnip',
