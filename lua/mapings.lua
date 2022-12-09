@@ -1,7 +1,7 @@
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 vim.keymap.set('n', '<cr>w', ':wall<CR>')
-vim.keymap.set('n', '<leader>q', ':q<CR>')
+vim.keymap.set('n', '<cr>q', ':q<CR>')
 vim.keymap.set('n', '<leader>y', '"+y')
 
 vim.keymap.set('n', '<cr>g', ":silent !tmux neww 'lazygit; exit'<CR>")
@@ -10,8 +10,8 @@ vim.keymap.set('n', '<cr>s', "<cmd>Telescope find_files<cr>", { desc = '[S]earch
 vim.keymap.set('n', '<cr>f', "<cmd>Format<cr>", { desc = 'Format current file' })
 
 vim.keymap.set('n', 'hh', "<cmd>Telescope help_tags<cr>", { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', 'hg', "<cmd>Telescope grep_file<cr>", { desc = '[S]earch by [G]rep' })
-vim.keymap.set('n', 'hd', "<cmd>Telescope diagnostic", { desc = '[S]earch [D]iagnostics' })
+vim.keymap.set('n', 'hg', "<cmd>Telescope grep_string<cr>", { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', 'hd', "<cmd>Telescope diagnostics<cr>", { desc = '[S]earch [D]iagnostics' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -23,11 +23,11 @@ vim.keymap.set('n', '<C-N>', "<cmd>NnnPicker<cr>")
 vim.keymap.set('n', '<C-A>', "<cmd>NnnExplorer<cr>")
 
 local nmap = function(keys, func, desc)
-    if desc then
-      desc = 'LSP: ' .. desc
-    end
+	if desc then
+		desc = 'LSP: ' .. desc
+	end
 
-    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+	vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
 end
 
 nmap('lr', vim.lsp.buf.rename, '[R]e[n]ame')
@@ -46,5 +46,5 @@ nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
 nmap('lwa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
 nmap('lwr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
 nmap('lwl', function()
-			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-	end, '[W]orkspace [L]ist Folders')
+	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+end, '[W]orkspace [L]ist Folders')
