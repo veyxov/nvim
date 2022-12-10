@@ -7,7 +7,7 @@ require('packer').startup(function(use)
 		after = "nvim-cmp",
 		requires = { {
 			'williamboman/mason.nvim',
-			after = "cmp-nvim-lsp",
+			after = "nvim-lspconfig",
 			config = function()
 				local on_attach = function(_, bufnr)
 					vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
