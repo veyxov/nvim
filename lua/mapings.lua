@@ -48,3 +48,6 @@ nmap('lwr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
 nmap('lwl', function()
 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 end, '[W]orkspace [L]ist Folders')
+
+-- New, experimental stuff
+vim.keymap.set("n", "<cr>cw", function() vim.fn.jobstart("setwall")end)
