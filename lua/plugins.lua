@@ -1,4 +1,4 @@
-require('packer').startup(function(use)
+require 'packer'.startup(function(use)
 	use { 'wbthomason/packer.nvim', 'nvim-lua/plenary.nvim' }
 
 	-- LSP
@@ -24,6 +24,8 @@ require('packer').startup(function(use)
 				require('mason-lspconfig').setup {}
 
 				local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+				require 'packer'.loader("cmp-nvim-lsp")
 				capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 				for _, lsp in ipairs(servers) do
@@ -58,7 +60,8 @@ require('packer').startup(function(use)
 		requires = {
 			{
 				'hrsh7th/cmp-nvim-lsp',
-				after = "cmp_luasnip"
+				after = "cmp_luasnip",
+				opt = true
 			},
 			{
 				'L3MON4D3/LuaSnip',
@@ -220,7 +223,7 @@ require('packer').startup(function(use)
 			local lbls = { 'n', 'e', 'i', 'o', 's', 'a', 'r', 't' }
 
 			-- Explicitly load leap.nvim
-			vim.cmd ":PackerLoad leap.nvim"
+			require 'packer'.loader 'leap.nvim'
 			require('flit').setup {
 				labeled_modes = "nvo",
 				opts = {
@@ -233,6 +236,7 @@ require('packer').startup(function(use)
 		after = 'leap.nvim'
 	}
 
+	--[[
 	use {
 		'ThePrimeagen/harpoon',
 		config = function()
@@ -241,6 +245,7 @@ require('packer').startup(function(use)
 		end,
 		keys = { '(', ')' }
 	}
+	]]
 
 	-- File explorer
 	use {
