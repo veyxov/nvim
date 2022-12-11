@@ -17,26 +17,26 @@ require 'packer'.startup(function(use)
 					end, { desc = 'Format current buffer with LSP' })
 				end
 
-				require('mason').setup()
+				require 'mason'.setup()
 
 				local servers = { 'rust_analyzer', 'tsserver', 'sumneko_lua', 'omnisharp' }
 				-- Ensure the servers above are installed
-				require('mason-lspconfig').setup {}
+				require 'mason-lspconfig'.setup {}
 
 				local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-				require 'packer'.loader("cmp-nvim-lsp")
-				capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+				require 'packer'.loader 'cmp-nvim-lsp'
+				capabilities = require 'cmp_nvim_lsp'.default_capabilities(capabilities)
 
 				for _, lsp in ipairs(servers) do
-					require('lspconfig')[lsp].setup { on_attach = on_attach, capabilities = capabilities }
+					require 'lspconfig'[lsp].setup { on_attach = on_attach, capabilities = capabilities }
 				end
 
 				local runtime_path = vim.split(package.path, ';')
 				table.insert(runtime_path, 'lua/?.lua')
 				table.insert(runtime_path, 'lua/?/init.lua')
 
-				require('lspconfig').sumneko_lua.setup {
+				require'lspconfig'.sumneko_lua.setup {
 					on_attach = on_attach,
 					capabilities = capabilities,
 					settings = {
@@ -84,6 +84,7 @@ require 'packer'.startup(function(use)
 					end,
 				},
 				mapping = cmp.mapping.preset.insert {
+					---@diagnostic disable-next-line: missing-parameter
 					['<C-Space>'] = cmp.mapping.complete(),
 					['<CR>'] = cmp.mapping.confirm {
 						behavior = cmp.ConfirmBehavior.Replace,
@@ -110,7 +111,7 @@ require 'packer'.startup(function(use)
 	use { {
 		'nvim-treesitter/nvim-treesitter',
 		config = function()
-			require('nvim-treesitter.configs').setup {
+			require 'nvim-treesitter.configs'.setup {
 				highlight = { enable = true },
 				textobjects = {
 					select = {
@@ -159,7 +160,7 @@ require 'packer'.startup(function(use)
 	use {
 		"ellisonleao/gruvbox.nvim",
 		config = function()
-			require("gruvbox").setup({
+			require 'gruvbox'.setup({
 				contrast = "hard", -- can be "hard", "soft" or empty string
 				transparent_mode = true,
 			})
@@ -173,7 +174,7 @@ require 'packer'.startup(function(use)
 	use {
 		'nvim-telescope/telescope.nvim',
 		config = function()
-			require('telescope').setup {
+			require 'telescope'.setup {
 				extensions = {
 					fuzzy = true,
 					override_generic_sorter = true,
@@ -182,7 +183,7 @@ require 'packer'.startup(function(use)
 				}
 			}
 
-			require('telescope').load_extension('fzf')
+			require 'telescope'.load_extension('fzf')
 		end,
 		after = 'telescope-fzf-native.nvim'
 	}
@@ -197,7 +198,7 @@ require 'packer'.startup(function(use)
 	use {
 		"arnamak/stay-centered.nvim",
 		config = function()
-			require("stay-centered")
+			require 'stay-centered'
 		end,
 		event = "InsertEnter"
 	}
@@ -224,7 +225,7 @@ require 'packer'.startup(function(use)
 
 			-- Explicitly load leap.nvim
 			require 'packer'.loader 'leap.nvim'
-			require('flit').setup {
+			require'flit'.setup {
 				labeled_modes = "nvo",
 				opts = {
 					safe_labels = lbls,
@@ -259,7 +260,7 @@ require 'packer'.startup(function(use)
 				},
 				auto_close = true
 			}
-			require("nnn").setup(cfg)
+			require 'nnn'.setup(cfg)
 		end,
 		cmd = { "NnnExplorer", "NnnPicker" }
 	}

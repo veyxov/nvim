@@ -5,14 +5,15 @@ vim.keymap.set('n', '<cr>q', ':q<CR>') -- Close buffer **
 vim.keymap.set('n', '<cr>Q', ':qall!<CR>') -- Force quit
 vim.keymap.set('n', '<leader>y', '"+y') -- Copy to system clipboar
 
-vim.keymap.set('n', '<cr>g', ":silent !tmux neww 'lazygit; exit'<CR>") -- Open git manager **
+vim.keymap.set('n', '<c-g>', ":silent !tmux neww 'lazygit; exit'<CR>") -- Open git manager **
 
 vim.keymap.set('n', '<cr>s', "<cmd>Telescope find_files<cr>", { desc = '[S]earch [F]iles' }) -- Fuzzy find files ****
 vim.keymap.set('n', '<cr>f', "<cmd>Format<cr>", { desc = 'Format current file' }) -- Format code using LSP
 
 vim.keymap.set('n', 'hh', "<cmd>Telescope help_tags<cr>", { desc = '[S]earch [H]elp' }) -- Seach in help
-vim.keymap.set('n', 'hg', "<cmd>Telescope grep_string<cr>", { desc = '[S]earch by [G]rep' }) -- Grep search *
+vim.keymap.set('n', '<cr>g', "<cmd>Telescope live_grep<cr>", { desc = '[S]earch by [G]rep' }) -- Grep search *
 vim.keymap.set('n', 'hd', "<cmd>Telescope diagnostics<cr>", { desc = '[S]earch [D]iagnostics' }) -- Search in diagnostics
+vim.keymap.set('n', '/', "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = '[S]earch [D]iagnostics' }) -- Search in diagnostics
 
 -- Diagnostic keymaps
 vim.keymap.set('n', 'dn', vim.diagnostic.goto_prev) -- Go to next problem/warning
