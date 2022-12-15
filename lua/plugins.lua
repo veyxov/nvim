@@ -51,6 +51,7 @@ require 'packer'.startup(function(use)
 			end
 		},
 			'williamboman/mason-lspconfig.nvim',
+			opt = true
 		},
 	}
 
