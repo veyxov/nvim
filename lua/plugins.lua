@@ -14,7 +14,7 @@ require 'packer'.startup(function(use)
 						if vim.lsp.buf.format then vim.lsp.buf.format()
 						elseif vim.lsp.buf.formatting then vim.lsp.buf.formatting()
 						end
-					end, { desc = 'Format current buffer with LSP' })
+					end)
 				end
 
 				require 'mason'.setup()
