@@ -21,6 +21,9 @@ vim.keymap.set('n', 'dN', vim.diagnostic.goto_next) -- Go to prev problem/warnin
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float) -- Show full diagnostics for current line
 vim.keymap.set('n', '<leader>D', vim.diagnostic.setloclist) -- Show list of diagnostics
 
+vim.keymap.set('n', '<cr>r', "<cmd>Telescope lsp_references<cr>")
+vim.keymap.set('n', '<cr>d', "<cmd>Telescope diagnostics<cr>", { desc = '[S]earch [D]iagnostics' }) -- Search in diagnostics
+
 vim.keymap.set('n', '<C-N>', "<cmd>NnnPicker<cr>")
 vim.keymap.set('n', '<C-A>', "<cmd>NnnExplorer<cr>")
 
