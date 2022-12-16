@@ -1,5 +1,9 @@
 require 'packer'.startup(function(use)
-	use { 'wbthomason/packer.nvim', 'nvim-lua/plenary.nvim' }
+	-- Global deps
+	use {
+		'wbthomason/packer.nvim',
+		'nvim-lua/plenary.nvim'
+	}
 
 	-- LSP
 	use {
@@ -14,7 +18,7 @@ require 'packer'.startup(function(use)
 						if vim.lsp.buf.format then vim.lsp.buf.format()
 						elseif vim.lsp.buf.formatting then vim.lsp.buf.formatting()
 						end
-					end)
+					end, {})
 				end
 
 				require 'mason'.setup()
@@ -228,9 +232,10 @@ require 'packer'.startup(function(use)
 			require 'packer'.loader 'leap.nvim'
 			require 'flit'.setup {
 				labeled_modes = "nvo",
+				multiline = false,
 				opts = {
 					safe_labels = lbls,
-					labels = lbls
+					labels = lbls,
 				}
 			}
 		end,
