@@ -19,7 +19,7 @@ require 'packer'.startup(function(use)
 
 				require 'mason'.setup()
 
-				local servers = { 'rust_analyzer', 'tsserver', 'sumneko_lua', 'omnisharp' }
+				local servers = { 'rust_analyzer', 'tsserver', 'sumneko_lua', "csharp_ls" }
 				-- Ensure the servers above are installed
 				require 'mason-lspconfig'.setup {}
 
@@ -236,33 +236,5 @@ require 'packer'.startup(function(use)
 		end,
 		keys = { 'f', 'F', 't', 'T' },
 		after = 'leap.nvim'
-	}
-
-	--[[
-	use {
-		'ThePrimeagen/harpoon',
-		config = function()
-			vim.keymap.set('n', '(', function() require("harpoon.mark").add_file() end)
-			vim.keymap.set('n', ')', function() require("harpoon.ui").toggle_quick_menu() end)
-		end,
-		keys = { '(', ')' }
-	}
-	]]
-
-	-- File explorer
-	use {
-		"luukvbaal/nnn.nvim",
-		config = function()
-			local cfg = {
-				explorer = { cmd = "nnn", width = 24 },
-				picker = {
-					cmd = "nnn",
-					style = { width = 1, height = 1, xoffset = 0, yoffset = 0 }
-				},
-				auto_close = true
-			}
-			require 'nnn'.setup(cfg)
-		end,
-		cmd = { "NnnExplorer", "NnnPicker" }
 	}
 end)
