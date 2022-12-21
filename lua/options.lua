@@ -5,6 +5,8 @@
 -- Set highlight on search
 vim.o.hlsearch = false
 
+vim.o.expandtab = true
+
 -- Disable mouse mode
 vim.o.mouse = ''
 
