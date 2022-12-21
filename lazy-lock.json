@@ -1,0 +1,9 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "b802729bf63a6d56cf27469dbed2098b3227c1c7" },
+  "telescope-file-browser.nvim": { "branch": "main", "commit": "nil" },
+  "telescope-fzf-native.nvim": { "branch": "main", "commit": "nil" },
+  "telescope-symbols.nvim": { "branch": "main", "commit": "nil" },
+  "telescope-z.nvim": { "branch": "main", "commit": "nil" },
+  "telescope.nvim": { "branch": "main", "commit": "nil" },
+  "tokyonight.nvim": { "branch": "main", "commit": "8b55a47165348dd1d811f9e1f867bb17bb35a360" }
+}

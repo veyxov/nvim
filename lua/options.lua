@@ -22,7 +22,8 @@ vim.o.undofile = true
 
 -- Hide status bar
 vim.o.cmdheight = 0
-vim.o.laststatus = 0
+vim.o.laststatus = 3
+vim.opt.list = true -- Show some invisible characters (tabs...
 
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
@@ -31,6 +32,7 @@ vim.o.showmode = false
 
 -- Decrease update time
 vim.o.updatetime = 250
+vim.opt.wildmode = "longest:full,full" -- Command-line completion mode
 vim.wo.signcolumn = 'number'
 
 -- tabs settings
@@ -44,6 +46,7 @@ vim.o.termguicolors = true
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
+vim.o.shortmess = "filnxtToOFWIcC"
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
