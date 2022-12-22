@@ -1,9 +1,6 @@
 local M = {
     "ggandor/leap.nvim",
-    keys = { 's', 'S' },
-    dependencies = {
-        { "ggandor/flit.nvim" },
-    },
+    keys = { 's', 'S' }
 }
 
 function M.config()
@@ -14,14 +11,6 @@ function M.config()
     leap.opts.safe_labels = lbls
     leap.opts.labels = lbls
 
-    require 'flit'.setup {
-        labeled_modes = "nvo",
-        multiline = false,
-        opts = {
-            safe_labels = lbls,
-            labels = lbls,
-        },
-    }
 end
 
 return M
