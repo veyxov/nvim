@@ -4,7 +4,7 @@ local M = {
     dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/nvim-cmp" }
 }
 function M.config()
-    local lsp = require 'nvim-lspconfig'
+    local lsp = require 'lspconfig'
 
     lsp.omnisharp.setup {
     cmd = { "dotnet", "/path/to/omnisharp/OmniSharp.dll" },

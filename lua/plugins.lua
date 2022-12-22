@@ -7,7 +7,7 @@ require("lazy").setup("plugz", {
             disabled_plugins = { "gzip", "matchit", "matchparen", "netrwPlugin", "tarPlugin", "tohtml", "tutor", "zipPlugin", },
         },
     },
-    debug = true,
+    debug = false,
 })
 
 vim.keymap.set("n", "<leader>l", "<cmd>:Lazy<cr>")
