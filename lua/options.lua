@@ -1,63 +1,39 @@
--- Lua filetype detection
--- vim.g.do_filetype_lua = 1
--- vim.g.did_load_filetypes = 0
-
--- Set highlight on search
-vim.o.hlsearch = false
-
-vim.o.expandtab = true
-
--- Disable mouse mode
-vim.o.mouse = ''
-
--- Enable break indent
-vim.o.breakindent = true
-
--- Don't wrap
-vim.o.wrap = false
-
--- Disable swap
-vim.o.swapfile = false
-
--- Save undo history
-vim.o.undofile = true
-
--- Hide status bar
-vim.o.cmdheight = 0
-vim.o.laststatus = 3
-vim.opt.list = true -- Show some invisible characters (tabs...
-
--- Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.showmode = false
-
--- Decrease update time
-vim.o.updatetime = 250
-vim.opt.wildmode = "longest:full,full" -- Command-line completion mode
-vim.wo.signcolumn = 'number'
-
--- tabs settings
-local tabs = 4
-vim.o.tabstop = tabs;
-vim.o.softtabstop = tabs;
-vim.o.shiftwidth = tabs;
+vim.g.mapleader = ' '
 
 -- Set colorscheme
 vim.o.termguicolors = true
 
--- Set completeopt to have a better completion experience
+vim.o.mouse = ''
+
+-- Visual clutter
+vim.o.wrap = false
+vim.opt.list = true
+vim.o.hlsearch = true
+vim.wo.signcolumn = 'number'
+
+-- Backup, undo
+vim.o.backupcopy = false
+vim.o.swapfile = false
+vim.o.undofile = true
+
+-- Hide status bar
+vim.o.ruler = false
+vim.o.showmode = false
+vim.o.cmdheight = 0
+vim.o.laststatus = 3
+
+-- Smart case search
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+-- Completion
+vim.o.updatetime = 250
+vim.opt.wildmode = "longest:full,full"
 vim.o.completeopt = 'menuone,noselect'
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
--- Disable builtin plugins.
-local builtin_plugins = {
-    'gzip', 'matchparen', 'matchit', 'netrwPlugin',
-    'shada', 'tarPlugin', 'tohtml',
-    'tutor', 'zipPlugin',
-}
-for _, plugin in ipairs(builtin_plugins) do
-    vim.g['loaded_' .. plugin] = 1
-end
+-- tabs settings
+local tabs = 4
+vim.o.tabstop = tabs;
+vim.o.expandtab = true
+vim.o.shiftwidth = tabs;
+vim.o.softtabstop = tabs;
