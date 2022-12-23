@@ -10,7 +10,6 @@ function M.config()
     leap.add_default_mappings()
     leap.opts.safe_labels = lbls
     leap.opts.labels = lbls
-
 end
 
 return M

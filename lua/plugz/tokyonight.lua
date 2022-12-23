@@ -1,6 +1,5 @@
 local M = {
   "folke/tokyonight.nvim",
-
   event = "InsertEnter"
 }
 
@@ -8,8 +7,7 @@ function M.config()
   -- vim.o.background = "dark"
   local tokyonight = require("tokyonight")
   tokyonight.setup({
-    style = "moon",
-    -- transparent = true,
+    style = "night",
     -- hide_inactive_statusline = false,
     sidebars = {
       "qf",
