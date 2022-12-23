@@ -6,20 +6,13 @@ local M = {
 function M.config()
     local lsp = require 'lspconfig'
 
-    lsp.omnisharp.setup {
-    cmd = { "dotnet", "/path/to/omnisharp/OmniSharp.dll" },
-
-    enable_editorconfig_support = false,
-
-    -- Specifies whether 'using' directives should be grouped and sorted during
-    -- document formatting.
-    organize_imports_on_format = true,
-
-    enable_import_completion = false,
-
-    -- Only run analyzers against open files when 'enableRoslynAnalyzers' is
-    analyze_open_documents_only = false,
-}
+    require'lspconfig'.csharp_ls.setup {
+        cmd = { "csharp-ls" },
+        filetypes = { "cs" },
+        init_options = { AutomaticWorkspaceInit = true },
+        single_file_support = true,
+        on_attach = on_attach,
+    }
 end
 
 return M
