@@ -9,7 +9,6 @@ local M = {
 
 function M.config()
     local telescope = require("telescope")
-    local borderless = true
     telescope.setup({
         extensions = {
             fzf = {
@@ -19,14 +18,15 @@ function M.config()
             },
         },
         defaults = {
+            borderchars = { "", "", "", "", "", "", "", "" }, -- No borders
             layout_strategy = "horizontal",
             layout_config = {
-                prompt_position = "top",
+                prompt_position = "bottom",
             },
             sorting_strategy = "ascending",
             prompt_prefix = " ",
             selection_caret = " ",
-            winblend = borderless and 0 or 10,
+            winblend = 0,
         },
     })
 
