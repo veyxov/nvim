@@ -12,7 +12,6 @@ vim.o.hlsearch = true
 vim.wo.signcolumn = 'number'
 
 -- Backup, undo
-vim.o.backupcopy = false
 vim.o.swapfile = false
 vim.o.undofile = true
 
