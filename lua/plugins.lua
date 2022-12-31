@@ -1,6 +1,6 @@
 require("lazy").setup("plugz", {
     defaults = { lazy = true },
-    install = { colorscheme = { "tokyonight", "habamax" } },
+    install = { colorscheme = { "habamax" } },
     checker = { enabled = true },
     ui = { size = { width = 1, height = 1 } },
     performance = {
