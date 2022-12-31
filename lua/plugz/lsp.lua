@@ -6,12 +6,12 @@ local M = {
 function M.config()
     local lsp = require 'lspconfig'
 
-    --require'lspconfig'.csharp_ls.setup {
-        --cmd = { "csharp-ls" },
-        --filetypes = { "cs" },
-        --single_file_support = false,
-        --on_attach = on_attach,
-    --}
+    require'lspconfig'.csharp_ls.setup {
+        cmd = { "csharp-ls" },
+        filetypes = { "cs" },
+        single_file_support = false,
+        on_attach = on_attach,
+    }
 end
 
 return M
