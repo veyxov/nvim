@@ -5,6 +5,8 @@ vim.o.termguicolors = true
 
 vim.o.mouse = ''
 
+vim.o.virtualedit = 'block'
+
 -- Visual clutter
 vim.o.wrap = false
 vim.opt.list = true
