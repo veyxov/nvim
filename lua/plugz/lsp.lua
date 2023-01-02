@@ -9,7 +9,7 @@ function M.config()
     require'lspconfig'.csharp_ls.setup {
         cmd = { "csharp-ls" },
         filetypes = { "cs" },
-        single_file_support = false,
+        single_file_support = true,
         on_attach = on_attach,
     }
 end

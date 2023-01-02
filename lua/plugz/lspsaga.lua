@@ -1,13 +1,9 @@
 local M = {
     "glepnir/lspsaga.nvim",
-    event = "InsertEnter"
+    cmd = "Lspsaga"
 }
 
-M.config = function()
-    local saga = require('lspsaga')
-
-    saga.init_lsp_saga()
-
+M.init = function()
     -- Diagnostic keymaps
     vim.keymap.set('n', 'dn',        vim.diagnostic.goto_prev)
     vim.keymap.set('n', 'dN',        vim.diagnostic.goto_next)
@@ -22,6 +18,14 @@ M.config = function()
 
     vim.keymap.set('n', '<cr>f', "<cmd>Format<cr>") -- Format code using LSP
 
+end
+
+M.config = function()
+    local saga = require('lspsaga')
+
+    saga.init_lsp_saga({
+        code_action_lightbulb = { enable = false }
+    })
 end
 
 return M
