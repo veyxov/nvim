@@ -1,6 +1,6 @@
 local M = {
     "ggandor/flit.nvim",
-    keys = { 'f', 'F' }
+    keys = { 'f', 'F', 't', 'T' }
 }
 
 function M.config()
