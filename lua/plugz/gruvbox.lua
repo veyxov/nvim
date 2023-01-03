@@ -1,6 +1,5 @@
 local M = {
     "luisiacc/gruvbox-baby",
-    event = "InsertEnter"
 }
 
 M.config = function()
