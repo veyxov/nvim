@@ -23,6 +23,8 @@ vim.o.showmode = false
 vim.o.cmdheight = 0
 vim.o.laststatus = 0
 
+vim.o.shortmess = "aItF" -- F is dangerous
+
 -- Smart case search
 vim.o.ignorecase = true
 vim.o.smartcase = true
