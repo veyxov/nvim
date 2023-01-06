@@ -1,7 +1,10 @@
 local M = {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    event = "VeryLazy",
+    event = "InsertEnter",
+    dependencies = {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+    }
 }
 
 function M.config()
