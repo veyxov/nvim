@@ -22,17 +22,26 @@ function M.config()
                     ["af"] = "@function.outer",
                     ["if"] = "@function.inner",
 
+                    ["aC"] = "@conditional.outer",
+                    ["iC"] = "@conditional.inner",
+
                     ["ic"] = "@class.inner",
                     ["ac"] = "@class.outer",
 
                     ["ib"] = "@block.inner",
                     ["ab"] = "@block.outer",
 
+                    ["iF"] = "@frame.inner",
+                    ["aF"] = "@frame.outer",
+
+                    ["il"] = "@loop.inner",
+                    ["al"] = "@loop.outer",
+
                     ["ic"] = "@call.inner",
                     ["ac"] = "@call.outer",
                 },
 
-                include_surrounding_whitespace = true,
+                include_surrounding_whitespace = false,
             },
             move = {
                 enable = true,
