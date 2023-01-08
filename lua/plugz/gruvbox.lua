@@ -1,6 +1,6 @@
 local M = {
     "luisiacc/gruvbox-baby",
-    event = "InsertEnter"
+    event = "VeryLazy"
 }
 
 M.config = function()
