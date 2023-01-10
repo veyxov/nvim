@@ -4,15 +4,17 @@
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "flit.nvim": { "branch": "main", "commit": "be110f9814a45788d10537fd59b3c76d956bb7ad" },
   "gruvbox-baby": { "branch": "main", "commit": "0753c05f1d4f0f7af79b2eb636ddca267b71f515" },
-  "lazy.nvim": { "branch": "main", "commit": "8a3754717162cd453abd8da87a6020beaba17994" },
+  "harpoon": { "branch": "master", "commit": "21d0d1bfa3000e4384740bfaefa0ebc51c773786" },
+  "lazy.nvim": { "branch": "main", "commit": "8756c0950ca9053713262abd1092f6d100adc9a5" },
   "leap.nvim": { "branch": "main", "commit": "a968ab4250840dc879e805f918b4f3b892310a12" },
   "lspsaga.nvim": { "branch": "main", "commit": "b7b4777369b441341b2dcd45c738ea4167c11c9e" },
   "nvim-cmp": { "branch": "main", "commit": "11a95792a5be0f5a40bab5fc5b670e5b1399a939" },
-  "nvim-lspconfig": { "branch": "master", "commit": "41dc4e017395d73af0333705447e858b7db1f75e" },
-  "nvim-treesitter": { "branch": "master", "commit": "3e316204f8ec8450bbaace69d0bf8fe332633fec" },
+  "nvim-lspconfig": { "branch": "master", "commit": "7b98aadc6e85db4fc3af6c1ec22c4774d965506e" },
+  "nvim-treesitter": { "branch": "master", "commit": "5b1299868302184f2e15819a719df698ad1aa251" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "a8c86f48c1030acee22b9e071e3c531de77bf253" },
-  "plenary.nvim": { "branch": "master", "commit": "9d81624fbcedd3dd43b38d7e13a1e7b3f873d8cd" },
+  "plenary.nvim": { "branch": "master", "commit": "1c7e3e6b0f4dd5a174fcea9fda8a4d7de593b826" },
   "stay-centered.nvim": { "branch": "main", "commit": "68ef23c4dd7f515140bf20650845e2211a7c64ea" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "fab3e2212e206f4f8b3bbaa656e129443c9b802e" },
-  "telescope.nvim": { "branch": "master", "commit": "04af51dbfb17c2afa0b8d82b0e842e0638201ca9" }
+  "telescope-ui-select.nvim": { "branch": "master", "commit": "62ea5e58c7bbe191297b983a9e7e89420f581369" },
+  "telescope.nvim": { "branch": "master", "commit": "e8c01bab917537ba4f54193c29b77bf4a04584d3" }
 }
