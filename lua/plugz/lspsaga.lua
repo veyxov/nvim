@@ -10,7 +10,7 @@ M.init = function()
 
     -- Lspsaga
     vim.keymap.set("n", 'lr', '<cmd>Lspsaga rename<cr>')
-    vim.keymap.set("n", '<cr>a', '<cmd>Lspsaga code_action<cr>')
+    vim.keymap.set("n", '<cr>a', '<cmd>lua vim.lsp.buf.code_action()<cr>')
     vim.keymap.set("n", 'K', '<cmd>Lspsaga hover_doc<cr>')
 
     -- Builtin lsp
