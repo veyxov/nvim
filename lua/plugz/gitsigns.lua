@@ -1,7 +1,6 @@
 local M = {
     'lewis6991/gitsigns.nvim',
-    event = "InsertEnter",
-    priority = 999
+    event = "InsertEnter"
 }
 
 M.config = function()
