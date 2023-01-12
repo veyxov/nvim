@@ -1,7 +1,7 @@
 local M = {
     "rebelot/kanagawa.nvim",
-    enable = false,
-    event = "InsertEnter"
+    event = "InsertEnter",
+    enabled = false,
 }
 
 M.config = function()
