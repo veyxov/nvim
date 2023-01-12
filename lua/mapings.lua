@@ -8,3 +8,6 @@ vim.keymap.set('n', '<c-g>', ":silent !tmux neww 'lazygit; exit'<CR>") -- Open g
 
 -- New, experimental stuff
 vim.keymap.set("n", "<cr>cw", function() vim.fn.jobstart("setwall")end)
+
+vim.keymap.set("n", "ls", "<cmd>Lazy sync<cr>")
+vim.keymap.set("n", "ll", "<cmd>Lazy<cr>")
