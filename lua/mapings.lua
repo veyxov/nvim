@@ -6,8 +6,5 @@ vim.keymap.set('n', '<leader>v', '<C-V>') -- Copy to system clipboar
 
 vim.keymap.set('n', '<c-s>', ":silent !tmux neww 'lazygit; exit'<CR>") -- Open git manager **
 
--- New, experimental stuff
-vim.keymap.set("n", "<cr>cw", function() vim.fn.jobstart("setwall")end)
-
 vim.keymap.set("n", "ls", "<cmd>Lazy sync<cr>")
 vim.keymap.set("n", "ll", "<cmd>Lazy<cr>")
