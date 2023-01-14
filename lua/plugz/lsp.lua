@@ -3,11 +3,12 @@ local M = {
     event = "InsertEnter",
     dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/nvim-cmp" }
 }
+
 function M.config()
     local lsp = require 'lspconfig'
 
     -- C#
-    require'lspconfig'.csharp_ls.setup {
+    lsp.csharp_ls.setup {
         cmd = { "csharp-ls" },
         filetypes = { "cs" },
         single_file_support = true,
@@ -15,7 +16,9 @@ function M.config()
     }
 
     -- Typescript
-    require'lspconfig'.tsserver.setup{}
+    lsp.tsserver.setup{}
+
+    lsp.sumneko_lua.setup{}
 end
 
 return M
