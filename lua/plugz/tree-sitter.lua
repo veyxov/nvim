@@ -28,9 +28,6 @@ function M.config()
                     ["aC"] = "@conditional.outer",
                     ["iC"] = "@conditional.inner",
 
-                    ["ic"] = "@class.inner",
-                    ["ac"] = "@class.outer",
-
                     ["ib"] = "@block.inner",
                     ["ab"] = "@block.outer",
 
