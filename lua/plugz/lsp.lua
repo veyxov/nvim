@@ -19,6 +19,8 @@ function M.config()
     lsp.tsserver.setup{}
 
     lsp.sumneko_lua.setup{}
+
+    vim.keymap.set("n", "<cr>f", function() vim.lsp.buf.format()end)
 end
 
 return M
