@@ -18,7 +18,11 @@ function M.config()
     -- Typescript
     lsp.tsserver.setup{}
 
+    -- Lua
     lsp.sumneko_lua.setup{}
+
+    -- Rust
+    lsp.rust_analyzer.setup{}
 
     vim.keymap.set("n", "<cr>f", function() vim.lsp.buf.format()end)
 end
