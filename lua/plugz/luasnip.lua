@@ -45,9 +45,9 @@ M.config = function()
     {}
 }}
 
-M.config = function() {{
+M.config = function()
     {}
-}}
+end
 
 return M
 ]]           , { i(1), i(2) }))
@@ -59,9 +59,14 @@ return M
 
         ]], {i(1, "string"), i(2, "MyProperty")}))
     })
+
     ls.add_snippets("cs", {
         s("record", fmt([[public record {}({});]], {i(1, "MyRecord"), i(2, "string")}))
     })
+
+    --ls.add_snippets("cs", {
+        --s("class", fmt([[public class {}]], {i(1, "MyClass")}))
+    --})
     ------------------------
 end
 
