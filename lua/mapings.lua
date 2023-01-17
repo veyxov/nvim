@@ -8,3 +8,6 @@ vim.keymap.set('n', '<c-s>', ":silent !tmux neww 'lazygit; exit'<CR>") -- Open g
 
 vim.keymap.set("n", "ls", "<cmd>Lazy sync<cr>")
 vim.keymap.set("n", "ll", "<cmd>Lazy<cr>")
+
+-- Insert a semicolon at the end of the line and create a new one
+vim.cmd [[inoremap <C-O> <esc>A;<esc>o]]
