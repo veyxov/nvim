@@ -1,5 +1,6 @@
 local M = {
     'folke/tokyonight.nvim',
+    enabled = false,
     event = "InsertEnter"
 }
 
