@@ -7,15 +7,15 @@ M.init = function()
     vim.keymap.set("n", "<leader>s", "<cmd>Lspsaga lsp_finder<CR>")
 
     -- Code action
-    vim.keymap.set({"n","v"}, "<cr>a", "<cmd>Lspsaga code_action<CR>")
+    vim.keymap.set({"n","v"}, "<cr>a", function () vim.lsp.buf.code_action() end)
 
     -- Rename
     vim.keymap.set("n", "<cr>r", "<cmd>Lspsaga rename<CR>")
 
-    vim.keymap.set("n", "<cr>t", "<cmd>Lspsaga peek_definition<CR>")
+    vim.keymap.set("n", "<cr>d", "<cmd>Lspsaga peek_definition<CR>")
 
     -- Go to Definition
-    vim.keymap.set("n","<cr>d", "<cmd>Lspsaga goto_definition<CR>")
+    vim.keymap.set("n","<cr>t", "<cmd>Lspsaga goto_definition<CR>")
 
     -- Show cursor diagnostic
     -- also like show_line_diagnostics  support pass ++unfocus

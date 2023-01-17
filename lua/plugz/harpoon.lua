@@ -1,6 +1,5 @@
 local M = {
     'ThePrimeagen/harpoon',
-    keys = { "ha", "ht" }
 }
 
 M.init = function()
