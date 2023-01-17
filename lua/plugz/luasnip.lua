@@ -36,10 +36,12 @@ M.config = function()
         })
     })
 
+    ------------------------
     ls.add_snippets("lua", {
 
-s("module", fmt(
-[[local M = {{
+
+        s("module", fmt(
+            [[local M = {{
     {}
 }}
 
@@ -48,9 +50,10 @@ M.config = function() {{
 }}
 
 return M
-]], {i(1), i(2)}))
+]]           , { i(1), i(2) }))
 
     })
+    ------------------------
 end
 
 return M
