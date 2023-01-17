@@ -53,6 +53,15 @@ return M
 ]]           , { i(1), i(2) }))
 
     })
+
+    ls.add_snippets("cs", {
+        s("rt", fmt([[public {} {} {{ get; set; }}
+
+        ]], {i(1, "string"), i(2, "MyProperty")}))
+    })
+    ls.add_snippets("cs", {
+        s("record", fmt([[public record {}({});]], {i(1, "MyRecord"), i(2, "string")}))
+    })
     ------------------------
 end
 
