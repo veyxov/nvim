@@ -58,7 +58,7 @@ function M.init()
     vim.keymap.set('n', '<cr>g', "<cmd>Telescope live_grep<cr>") -- Grep search *
     vim.keymap.set('n', '<leader>/', "<cmd>Telescope current_buffer_fuzzy_find theme=get_dropdown previewer=false<cr>") -- Search in diagnostics
     vim.keymap.set('n', '<cr>r', "<cmd>Telescope lsp_references<cr>")
-    vim.keymap.set("n", "<space>fb", function() require 'telescope'.extensions.file_browser.file_browser({depth = 3}) end)
+    vim.keymap.set("n", "<cr>n", function() require 'telescope'.extensions.file_browser.file_browser({depth = 3}) end)
 
     -- vim.keymap.set('n', '<cr>d', "<cmd>Telescope diagnostics<cr>", { desc = '[S]earch [D]iagnostics' }) -- Search in diagnostics
 end
