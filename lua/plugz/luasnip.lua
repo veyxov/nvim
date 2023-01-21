@@ -57,15 +57,21 @@ return M
     ls.add_snippets("cs", {
         s("rt", fmt([[public {} {} {{ get; set; }}
 
-        ]], {i(1, "string"), i(2, "MyProperty")}))
+        ]], { i(1, "string"), i(2, "MyProperty") }))
     })
 
     ls.add_snippets("cs", {
-        s("record", fmt([[public record {}({});]], {i(1, "MyRecord"), i(2, "string")}))
+        s("class", fmt([[public class {} {{
+    {}
+}}]], { i(1, "MyClass"), i(2) }))
+    })
+
+    ls.add_snippets("cs", {
+        s("record", fmt([[public record {}({});]], { i(1, "MyRecord"), i(2, "string") }))
     })
 
     --ls.add_snippets("cs", {
-        --s("class", fmt([[public class {}]], {i(1, "MyClass")}))
+    --s("class", fmt([[public class {}]], {i(1, "MyClass")}))
     --})
     ------------------------
 end
