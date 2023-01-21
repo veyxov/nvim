@@ -11,6 +11,7 @@ local M = {
 
 function M.config()
     local telescope = require("telescope")
+    local fb_actions = require "telescope".extensions.file_browser.actions
     telescope.setup({
         extensions = {
             fzf = {
@@ -24,6 +25,13 @@ function M.config()
             file_browser = {
                 theme = "ivy",
                 hijack_netrw = true,
+                mappings = {
+                    ["i"] = {
+                        -- remap to going to home directory
+                        ["<C-n>"] = fb_actions.create_from_prompt,
+                        ["<C-r>"] = fb_actions.rename,
+                    },
+                }
             }
         },
         defaults = {
@@ -50,7 +58,7 @@ function M.init()
     vim.keymap.set('n', '<cr>g', "<cmd>Telescope live_grep<cr>") -- Grep search *
     vim.keymap.set('n', '<leader>/', "<cmd>Telescope current_buffer_fuzzy_find theme=get_dropdown previewer=false<cr>") -- Search in diagnostics
     vim.keymap.set('n', '<cr>r', "<cmd>Telescope lsp_references<cr>")
-    vim.keymap.set("n", "<space>fb", function() require 'telescope'.extensions.file_browser.file_browser() end)
+    vim.keymap.set("n", "<space>fb", function() require 'telescope'.extensions.file_browser.file_browser({depth = 3}) end)
 
     -- vim.keymap.set('n', '<cr>d', "<cmd>Telescope diagnostics<cr>", { desc = '[S]earch [D]iagnostics' }) -- Search in diagnostics
 end
