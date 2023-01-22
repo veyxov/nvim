@@ -5,6 +5,7 @@
         "on_attach"
     ],
     "Lua.workspace.library": [
-        "/home/iz/.config/nvim"
+        "~/.config/nvim",
+        "~/.local/share/nvim/lazy/*",
     ]
 }
