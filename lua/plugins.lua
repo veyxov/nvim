@@ -21,11 +21,6 @@ require("lazy").setup("plugz", {
         notify = false, -- get a notification when changes are found
     },
     performance = {
-        cache = {
-            enabled = true,
-            disable_events = { "UIEnter", "BufReadPre" },
-            ttl = 3600 * 24 * 5, -- keep unused modules for up to 5 days
-        },
         rtp = {
             disabled_plugins = {
                 "gzip", "matchit", "matchparen", "netrwPlugin", "tarPlugin", "tohtml", "tutor", "zipPlugin",
