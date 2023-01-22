@@ -50,7 +50,8 @@ M.config = function()
     saga.setup({
         lightbulb = { enable = false }
     })
-
+    -- Code action
+    vim.keymap.set({"n","v"}, "<cr>a", function () vim.lsp.buf.code_action() end)
 end
 
 return M
