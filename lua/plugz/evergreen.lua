@@ -1,6 +1,7 @@
 local M = {
     "sainnhe/everforest",
-    event = "InsertEnter"
+    event = "InsertEnter",
+    enabled = false
 }
 
 M.config = function ()

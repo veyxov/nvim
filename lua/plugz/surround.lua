@@ -3,7 +3,7 @@ local M = {
     keys = { "ys", "cs", "ds", "S" }
 }
 
-M.config = function(arst)
+M.config = function()
     -- We aliased b->(, r->[
     -- But ab ar motions does not exist in vim
     vim.keymap.set("o", "ir", "i[")
