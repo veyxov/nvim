@@ -11,8 +11,7 @@ M.config = function()
     vim.keymap.set("o", "ia", "i<")
     vim.keymap.set("o", "aa", "a<")
 
-    require 'nvim-surround'.setup {
-    }
+    require 'nvim-surround'.setup { }
 end
 
 return M
