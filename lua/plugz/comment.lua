@@ -1,7 +1,7 @@
 local M = {
     'numToStr/Comment.nvim',
     keys = {
-        "gcc", "gbc", "gc", "gb", "c0", "co", "cA"
+        "gcc", "gbc", "gc", "gb", "c0", "co", "cA", "gc" -- TODO: not working for visual mode mappings
     }
 }
 
