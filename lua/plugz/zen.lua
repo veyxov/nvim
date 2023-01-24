@@ -11,7 +11,11 @@ M.init = function()
 end
 
 M.config = function()
-    require("true-zen").setup { }
+    require("true-zen").setup {
+        integrations = {
+            twilight = true
+        }
+    }
 end
 
 return M
