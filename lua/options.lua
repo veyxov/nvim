@@ -43,4 +43,5 @@ vim.o.softtabstop = tabs;
 
 vim.diagnostic.config ({
     virtual_text = { prefix = "●" },
+    underline = true,
 })
