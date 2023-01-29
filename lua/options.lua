@@ -40,3 +40,7 @@ vim.o.tabstop = tabs;
 vim.o.expandtab = true
 vim.o.shiftwidth = tabs;
 vim.o.softtabstop = tabs;
+
+vim.diagnostic.config ({
+    virtual_text = { prefix = "●" },
+})
