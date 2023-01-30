@@ -1,6 +1,6 @@
 local M = {
     'AlexvZyl/nordic.nvim',
-    enabled = true,
+    enabled = false,
     lazy = false
 }
 
