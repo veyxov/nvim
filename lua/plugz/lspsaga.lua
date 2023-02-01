@@ -8,6 +8,7 @@ M.init = function()
 
     -- Code action
     vim.keymap.set({"n","v"}, "<cr>a", function () vim.lsp.buf.code_action() end)
+    vim.keymap.set("n", "<cr>i", function() vim.lsp.buf.implementation() end)
 
     -- Rename
     vim.keymap.set("n", "<cr>r", "<cmd>Lspsaga rename<CR>")
