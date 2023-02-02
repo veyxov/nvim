@@ -1,7 +1,11 @@
 local M = {
     'pwntester/octo.nvim',
-    lazy = false
+    cmd = "Octo"
 }
+
+M.init = function()
+    vim.keymap.set('n', "<leader>opc", "<cmd>Octo pr create<cr>") -- PR create
+end
 
 M.config = function()
     require 'octo'.setup({
