@@ -3,11 +3,18 @@ local M = {
     cmd = "Lspsaga"
 }
 
-M.init = function()
+M.config = function()
+    local saga = require('lspsaga')
+
+    saga.setup({
+        lightbulb = { enable = false }
+    })
+    -- Code action
+    vim.keymap.set({ "n", "v" }, "<cr>a", function() vim.lsp.buf.code_action() end)
     vim.keymap.set("n", "<leader>s", "<cmd>Lspsaga lsp_finder<CR>")
 
     -- Code action
-    vim.keymap.set({"n","v"}, "<cr>a", function () vim.lsp.buf.code_action() end)
+    vim.keymap.set({ "n", "v" }, "<cr>a", function() vim.lsp.buf.code_action() end)
     vim.keymap.set("n", "<cr>i", function() vim.lsp.buf.implementation() end)
 
     -- Rename
@@ -16,7 +23,7 @@ M.init = function()
     vim.keymap.set("n", "<cr>d", "<cmd>Lspsaga peek_definition<CR>")
 
     -- Go to Definition
-    vim.keymap.set("n","<cr>t", "<cmd>Lspsaga goto_definition<CR>")
+    vim.keymap.set("n", "<cr>t", "<cmd>Lspsaga goto_definition<CR>")
 
     -- Show cursor diagnostic
     -- also like show_line_diagnostics  support pass ++unfocus
@@ -30,7 +37,7 @@ M.init = function()
     vim.keymap.set("n", "gE", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
     -- Toglle Outline
-    vim.keymap.set("n","<leader>o", "<cmd>Lspsaga outline<CR>")
+    vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 
     -- Hover Doc
     -- if there has no hover will have a notify no information available
@@ -42,17 +49,7 @@ M.init = function()
     vim.keymap.set("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
     -- Float terminal
-    vim.keymap.set({"n", "t"}, "<C-T>", "<cmd>Lspsaga term_toggle<CR>")
-end
-
-M.config = function()
-    local saga = require('lspsaga')
-
-    saga.setup({
-        lightbulb = { enable = false }
-    })
-    -- Code action
-    vim.keymap.set({"n","v"}, "<cr>a", function () vim.lsp.buf.code_action() end)
+    vim.keymap.set({ "n", "t" }, "<C-T>", "<cmd>Lspsaga term_toggle<CR>")
 end
 
 return M
