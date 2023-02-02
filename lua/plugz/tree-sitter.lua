@@ -24,15 +24,14 @@ function M.config()
                 keymaps = {
                     ["af"] = "@function.outer",
                     ["if"] = "@function.inner",
+                    ["aF"] = "@class.outer",
+                    ["iF"] = "@class.inner",
 
                     ["aC"] = "@conditional.outer",
                     ["iC"] = "@conditional.inner",
 
                     ["ib"] = "@block.inner",
                     ["ab"] = "@block.outer",
-
-                    ["iF"] = "@frame.inner",
-                    ["aF"] = "@frame.outer",
 
                     ["il"] = "@loop.inner",
                     ["al"] = "@loop.outer",
@@ -73,4 +72,3 @@ function M.config()
 end
 
 return M
-
