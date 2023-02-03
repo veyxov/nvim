@@ -1,6 +1,10 @@
 local M = {
     "glepnir/lspsaga.nvim",
-    cmd = "Lspsaga"
+    cmd = "Lspsaga",
+    keys = {
+        "<cr>t",
+        "<cr>r"
+    }
 }
 
 M.config = function()
