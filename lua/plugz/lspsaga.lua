@@ -3,7 +3,8 @@ local M = {
     cmd = "Lspsaga",
     keys = {
         "<cr>t",
-        "<cr>r"
+        "<cr>r",
+        "<cr>a"
     }
 }
 
