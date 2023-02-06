@@ -6,7 +6,7 @@ local M = {
 M.config = function()
     require 'delaytrain'.setup {
         keys = {
-            ['nvi'] = {'<Left>', '<Down>', '<Up>', '<Right>', 'w', 'b', '<c-d>', '<PageDown>', '<PageUp>'},
+            ['nvi'] = { '<Left>', '<Down>', '<Up>', '<Right>', 'w', 'b', '<c-d>' },
         },
     }
 end
