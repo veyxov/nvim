@@ -24,6 +24,7 @@ require("lazy").setup("plugz", {
         rtp = {
             disabled_plugins = {
                 "gzip", "matchit", "matchparen", "netrwPlugin", "tarPlugin", "tohtml", "tutor", "zipPlugin",
+                "spellfile", "rplugin"
             },
         },
     },
