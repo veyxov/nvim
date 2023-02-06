@@ -1,6 +1,6 @@
 local M = {
     'ThePrimeagen/harpoon',
-    keys = {"ht", "ha", "1", "2", "3", "4"}
+    keys = { "ht", "ha", "1", "2", "3", "4" }
 }
 
 M.config = function()
@@ -13,7 +13,7 @@ M.config = function()
 
     for i = 1, 4, 1 do
         vim.keymap.set('n', tostring(i), '<cmd>lua require("harpoon.ui").nav_file(' .. tostring(i) .. ')<cr>')
-    end  
+    end
 end
 
 return M
