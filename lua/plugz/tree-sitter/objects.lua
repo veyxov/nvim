@@ -3,11 +3,8 @@ local M = {
     'chrisgrieser/nvim-various-textobjs',
     config = function()
         require('various-textobjs').setup {
-            -- lines to seek forwards for "small" textobjs (mostly characterwise textobjs)
-            -- set to 0 to only look in the current line
             lookForwardSmall = 25,
 
-            -- lines to seek forwards for "big" textobjs (linewise textobjs & url textobj)
             lookForwardBig = 15,
         }
     end,

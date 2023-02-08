@@ -29,7 +29,6 @@ return {
 
         map('ih', ':<C-U>Gitsigns select_hunk<CR>', { 'o', 'x' })
 
-
         map(
             'ju',
             function() gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end,
