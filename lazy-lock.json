@@ -10,7 +10,7 @@
   "gitsigns.nvim": { "branch": "main", "commit": "f29f0b22fd66c910b892aae3bc18a4872c002738" },
   "harpoon": { "branch": "master", "commit": "8c0bb0a328e57278f4783bb0e2ea32f296d36db1" },
   "lazy.nvim": { "branch": "main", "commit": "e28555950f8ceb52e86533df6df333dcd55fba04" },
-  "leap.nvim": { "branch": "main", "commit": "c7f966fdfbf63f0bc4f3a6b7a71c0d7e4a4ce14b" },
+  "leap.nvim": { "branch": "main", "commit": "7140feed70a5911b8c8a7eb9c218d198772f69cf" },
   "lspsaga.nvim": { "branch": "main", "commit": "96a95ddcbabee9b0c84d750b828ea936b0b00252" },
   "nvim-autopairs": { "branch": "master", "commit": "45ae3122a4c7744db41298b41f9f5a3f092123e6" },
   "nvim-cmp": { "branch": "main", "commit": "cfafe0a1ca8933f7b7968a287d39904156f2c57d" },
