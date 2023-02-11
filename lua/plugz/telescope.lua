@@ -62,8 +62,6 @@ function M.init()
     vim.keymap.set("n", "<cr>n",
         function() require 'telescope'.extensions.file_browser.file_browser({ depth = 5, files = false }) end)
     vim.keymap.set("n", "<cr>N", function() require 'telescope'.extensions.file_browser.file_browser({ depth = 3 }) end)
-
-    -- vim.keymap.set('n', '<cr>d', "<cmd>Telescope diagnostics<cr>", { desc = '[S]earch [D]iagnostics' }) -- Search in diagnostics
 end
 
 return M
