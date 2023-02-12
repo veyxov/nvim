@@ -12,8 +12,6 @@ function M.config()
         ensure_installed = { "lua", "vim", "json", "c_sharp" },
         highlight = { enable = true },
         indent = { enable = false },
-
-
         textobjects = {
             select = {
                 enable = true,
@@ -24,11 +22,12 @@ function M.config()
                 keymaps = {
                     ["af"] = "@function.outer",
                     ["if"] = "@function.inner",
-                    ["aF"] = "@class.outer",
-                    ["iF"] = "@class.inner",
 
-                    ["aC"] = "@conditional.outer",
-                    ["iC"] = "@conditional.inner",
+                    ["aC"] = "@class.outer",
+                    ["iC"] = "@class.inner",
+
+                    ["aif"] = "@conditional.outer",
+                    ["iif"] = "@conditional.inner",
 
                     ["ib"] = "@block.inner",
                     ["ab"] = "@block.outer",
