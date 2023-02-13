@@ -49,6 +49,7 @@ M.config = function()
 
     vim.keymap.set("n", "hs", "<cmd>Gitsigns stage_hunk<cr>");
     vim.keymap.set("n", "hS", "<cmd>Gitsigns undo_stage_hunk<cr>");
+    vim.keymap.set("n", "hrA", "<cmd>Gitsigns reset_buffer<cr>");
 end
 
 return M
