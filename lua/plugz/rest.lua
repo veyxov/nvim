@@ -4,6 +4,10 @@ local M = {
 }
 
 M.config = function()
+    vim.cmd.nnoremap "<leader>hs <Plug>RestNvim"
+    vim.cmd.nnoremap "<leader>hp <Plug>RestNvimPreview"
+    vim.cmd.nnoremap "<leader>hh <Plug>RestNvimLast"
+
     require("rest-nvim").setup({
         -- Open request results in a horizontal split
         result_split_horizontal = false,
