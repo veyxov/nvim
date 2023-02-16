@@ -14,8 +14,6 @@
   "lspsaga.nvim": { "branch": "main", "commit": "397201abffa681419a610ecbfd5d3c0fed45d20a" },
   "nvim-autopairs": { "branch": "master", "commit": "45ae3122a4c7744db41298b41f9f5a3f092123e6" },
   "nvim-cmp": { "branch": "main", "commit": "ea9eaff5739856f3187d228d2c1181ea49fd4697" },
-  "nvim-dap": { "branch": "master", "commit": "82e98f340cf5183e1c8743a3986c5b2e8705063b" },
-  "nvim-dap-ui": { "branch": "master", "commit": "110193102b4840be8bda6eb2358367026145ae3a" },
   "nvim-lspconfig": { "branch": "master", "commit": "649137cbc53a044bffde36294ce3160cb18f32c7" },
   "nvim-surround": { "branch": "main", "commit": "90821ad682aac189cd0a38fd83fc96f0cbcc5d29" },
   "nvim-treesitter": { "branch": "master", "commit": "b23856a88e04e1468e1603d6e0900f2372709e22" },
