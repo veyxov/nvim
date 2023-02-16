@@ -4,7 +4,8 @@ local M = {
     keys = {
         "<cr>t",
         "<cr>r",
-        "<cr>a"
+        "<cr>a",
+        "<leader>s"
     }
 }
 
