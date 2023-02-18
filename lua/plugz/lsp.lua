@@ -7,6 +7,9 @@ local M = {
 function M.config()
     local lsp = require 'lspconfig'
 
+    --golang
+    lsp.gopls.setup {}
+
     -- C#
     lsp.csharp_ls.setup {
         cmd = { "csharp-ls" },
