@@ -50,8 +50,18 @@ M.config = function()
 end
 
 return M
-]]           , { i(1), i(2) }))
+]], { i(1), i(2) }))
 
+    })
+
+    ls.add_snippets("cs", {
+        s("fact", fmt([[
+[Fact]
+public void {}()
+{{
+    {}
+}}
+        ]], { i(1, "TestName"), i(2) }))
     })
 
     ls.add_snippets("cs", {
