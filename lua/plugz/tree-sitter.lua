@@ -10,7 +10,7 @@ local M = {
 function M.config()
     require("nvim-treesitter.configs").setup({
         ensure_installed = { "lua", "vim", "json", "c_sharp" },
-        highlight = { enable = true },
+        highlight = { enable = true, additional_vim_regex_highlighting = { "markdown" }, },
         indent = { enable = false },
         textobjects = {
             select = {
