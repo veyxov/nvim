@@ -23,7 +23,7 @@ vim.o.showmode = false
 vim.o.cmdheight = 0
 vim.o.laststatus = 0
 
-vim.o.shortmess = "aItFOW"
+vim.o.shortmess = 'aItFOW'
 
 -- Smart case search
 vim.o.ignorecase = true
@@ -31,7 +31,7 @@ vim.o.smartcase = true
 
 -- Completion
 vim.o.updatetime = 250
-vim.opt.wildmode = "longest:full,full"
+vim.opt.wildmode = 'longest:full,full'
 vim.o.completeopt = 'menuone,noselect'
 
 -- tabs settings
@@ -41,7 +41,7 @@ vim.o.expandtab = true
 vim.o.shiftwidth = tabs;
 vim.o.softtabstop = tabs;
 
-vim.diagnostic.config ({
+vim.diagnostic.config({
     virtual_text = { prefix = "●" },
     underline = true,
 })
