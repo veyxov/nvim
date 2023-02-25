@@ -1,17 +1,17 @@
 local M = {
     'numToStr/Comment.nvim',
     keys = {
-        "gcc", "gbc", "gc", "gb", "c0", "co", "cA", "gc" -- TODO: not working for visual mode mappings
+        "gcc", "gC", "gc", "gb", "c0", "co", "cA", "gc" -- TODO: not working for visual mode mappings
     }
 }
 
 M.config = function()
-    require("Comment").setup {
+    require 'Comment'.setup {
         toggler = {
             ---Line-comment toggle keymap
             line = 'gcc',
             ---Block-comment toggle keymap
-            block = 'gbc',
+            block = 'gC',
         },
         opleader = {
             line = 'gc',
