@@ -37,6 +37,8 @@ function M.config()
 
                     ["ic"] = "@call.inner",
                     ["ac"] = "@call.outer",
+
+                    ["aa"] = "@parameter.inner",
                 },
 
                 include_surrounding_whitespace = false,
@@ -46,6 +48,7 @@ function M.config()
                 set_jumps = true, -- whether to set jumps in the jumplist
                 goto_next_start = {
                     ["gm"] = "@function.outer",
+                    ["gb"] = "@block.inner"
                 },
                 goto_next_end = {
                     ["gM"] = "@function.outer",
