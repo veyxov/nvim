@@ -8,16 +8,3 @@ vim.keymap.set("n", "ll", "<cmd>Lazy<cr>")
 
 -- Insert a semicolon at the end of the line and create a new one
 vim.cmd [[inoremap <C-O> <esc>A;<esc>o]]
-
-vim.keymap.set(
-    "n",
-    "gf",
-    function()
-        if require('obsidian').util.cursor_on_markdown_link() then
-            return "<cmd>ObsidianFollowLink<CR>"
-        else
-            return "gf"
-        end
-    end,
-    { noremap = false, expr = true }
-)
