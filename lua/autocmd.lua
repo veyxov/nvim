@@ -16,8 +16,3 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     group = GROUP,
     pattern = "*"
 })
-
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'lua', 'help' },
-    callback = function() vim.treesitter.start() end,
-})
