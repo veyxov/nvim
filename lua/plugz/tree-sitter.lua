@@ -20,8 +20,8 @@ function M.config()
                 lookahead = true,
 
                 keymaps = {
-                    ["af"] = "@function.outer",
-                    ["if"] = "@function.inner",
+                    ["am"] = "@function.outer",
+                    ["im"] = "@function.inner",
 
                     ["aC"] = "@class.outer",
                     ["iC"] = "@class.inner",
