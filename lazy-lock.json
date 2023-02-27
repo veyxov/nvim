@@ -5,7 +5,6 @@
   "cmp-nvim-lsp": { "branch": "main", "commit": "0e6b2ed705ddcff9738ec4ea838141654f12eeef" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "csharpls-extended-lsp.nvim": { "branch": "master", "commit": "865ace7f8f4069b4965e86005392dc78eec0858f" },
-  "delaytrain.nvim": { "branch": "main", "commit": "eb8d2157e6a7de1b4f024f7ca5bccc4014d88b05" },
   "flit.nvim": { "branch": "main", "commit": "980e80e8fe44caaeb9de501c8e97a559b17db2f4" },
   "harpoon": { "branch": "master", "commit": "f7040fd0c44e7a4010369136547de5604b9c22a1" },
   "lazy.nvim": { "branch": "main", "commit": "8077428e63feb0f3bf795d53b23ba1695b28ab0e" },
