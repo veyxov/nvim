@@ -1,15 +1,13 @@
 local M = {
     'nvim-tree/nvim-tree.lua',
     tag = 'nightly',
-    cmd = "NvimTreeToggle"
+    lazy = false
 }
 
-M.init = function()
-    vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeToggle<cr>")
-end
-
 M.config = function()
-    require("nvim-tree").setup({})
+    require("nvim-tree").setup({
+
+    })
 end
 
 return M
