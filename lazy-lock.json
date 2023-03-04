@@ -8,7 +8,6 @@
   "flit.nvim": { "branch": "main", "commit": "4c1739137acd3e7f03e2065a7be8a4dc41c7e461" },
   "harpoon": { "branch": "master", "commit": "f7040fd0c44e7a4010369136547de5604b9c22a1" },
   "lazy.nvim": { "branch": "main", "commit": "8d18ef44e769e98a8dc974ca85275de1d8cc7c04" },
-  "leap-spooky.nvim": { "branch": "main", "commit": "0bb68f00a02f16085aad6a2b2cea9e53781fb05a" },
   "leap.nvim": { "branch": "main", "commit": "d34680b16af977928228e57c68e5a162f1649e3c" },
   "lspsaga.nvim": { "branch": "main", "commit": "9bb2cd918d773dd47497acba20a90384703dea5a" },
   "nvim-autopairs": { "branch": "master", "commit": "ab49517cfd1765b3f3de52c1f0fda6190b44e27b" },
