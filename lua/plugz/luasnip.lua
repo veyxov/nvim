@@ -80,6 +80,17 @@ public void {}()
         s("record", fmt([[public record {}({});]], { i(1, "MyRecord"), i(2, "string") }))
     })
 
+    ls.add_snippets("cs", {
+        s("apicontroller", fmt([[
+[ApiController]
+[Route("{}")]
+public class {}Contoller : ControllerBase
+{{
+    {}
+}}
+        ]], { i(1, "api"), i(2, "Some"), i(3) }))
+    })
+
     --ls.add_snippets("cs", {
     --s("class", fmt([[public class {}]], {i(1, "MyClass")}))
     --})

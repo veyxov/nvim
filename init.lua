@@ -1,4 +1,3 @@
--- Neovim configuration
 require 'lazyopt'
 require 'options'
 require 'plugins'
