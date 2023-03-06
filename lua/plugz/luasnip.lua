@@ -90,11 +90,6 @@ public class {}Contoller : ControllerBase
 }}
         ]], { i(1, "api"), i(2, "Some"), i(3) }))
     })
-
-    --ls.add_snippets("cs", {
-    --s("class", fmt([[public class {}]], {i(1, "MyClass")}))
-    --})
-    ------------------------
 end
 
 return M
