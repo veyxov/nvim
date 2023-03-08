@@ -11,7 +11,7 @@ M.config = function()
             comments = { italic = true },
             keywords = { italic = true },
             functions = { bold = true, italic = true },
-            variables = {},
+            variables = {}
         },
     })
     vim.cmd.colorscheme 'tokyonight-night'
