@@ -11,8 +11,8 @@ local M = {
 function M.config()
     -- Setup nvim-cmp.
     local luasnip = require 'luasnip'
-    local cmp = require("cmp")
-    local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+    local cmp = require 'cmp'
+    local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
 
     cmp.event:on(
         'confirm_done',
@@ -29,7 +29,7 @@ function M.config()
             end,
         },
         mapping = cmp.mapping.preset.insert({
-            ["<Tab>"] = cmp.mapping(function(fallback)
+                ["<Tab>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
                     cmp.confirm({ select = true })
                 elseif luasnip.expand_or_jumpable() then
@@ -38,7 +38,7 @@ function M.config()
                     fallback()
                 end
             end, { "i", "s" }),
-            ["<C-e>"] = cmp.mapping.close(),
+                ["<C-e>"] = cmp.mapping.close(),
         }),
         sources = cmp.config.sources({
             { name = "nvim_lsp" },
