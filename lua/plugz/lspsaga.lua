@@ -14,7 +14,16 @@ M.config = function()
     local saga = require('lspsaga')
 
     saga.setup({
-        lightbulb = { enable = false }
+        lightbulb = { enable = false },
+        preview = {
+            lines_above = 0,
+            lines_below = 10,
+        },
+        scroll_preview = {
+            scroll_down = "<C-f>",
+            scroll_up = "<C-b>",
+        },
+        request_timeout = 2000,
     })
     -- Code action
     vim.keymap.set({ "n", "v" }, "<cr>a", function() vim.lsp.buf.code_action() end)
