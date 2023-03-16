@@ -15,7 +15,6 @@ return {
         map('jJ', gs.stage_buffer)
         map('jU', gs.reset_buffer)
 
-
         -- Toggles
         map('jtw', gs.toggle_word_diff)
         map('jtt', gs.toggle_signs)
@@ -30,15 +29,17 @@ return {
 
         map('ih', ':<C-U>Gitsigns select_hunk<CR>', { 'o', 'x' })
 
+
+        map(
+            'ju',
+            function() gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end,
+            'v'
+        )
+
         -- Visual mode mappings
         map(
             'jj',
             function() gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' } end,
-            'v'
-        )
-        map(
-            'ju',
-            function() gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end,
             'v'
         )
 
