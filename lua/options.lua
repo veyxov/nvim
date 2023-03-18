@@ -12,6 +12,7 @@ vim.o.wrap = false
 vim.opt.list = true
 vim.o.hlsearch = true
 vim.wo.signcolumn = 'number'
+vim.opt.colorcolumn = "80"
 
 -- Backup, undo
 vim.o.swapfile = false
@@ -23,6 +24,7 @@ vim.o.showmode = false
 vim.o.cmdheight = 0
 vim.o.laststatus = 3
 
+vim.opt.formatoptions = "jcroqlnt"
 vim.o.shortmess = 'aItFOW'
 
 -- Smart case search
