@@ -7,6 +7,8 @@ vim.o.mouse = ''
 
 vim.o.virtualedit = 'block'
 
+vim.opt.timeoutlen = 200 -- mapping wait
+
 -- Visual clutter
 vim.o.wrap = false
 vim.opt.list = true
