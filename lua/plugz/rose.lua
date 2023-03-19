@@ -1,6 +1,7 @@
 local M = {
     'rose-pine/neovim',
-    event = "InsertEnter"
+    event = "InsertEnter",
+    enabled = false
 }
 
 M.config = function()

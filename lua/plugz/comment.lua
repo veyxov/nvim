@@ -1,7 +1,8 @@
 local M = {
     'numToStr/Comment.nvim',
     keys = {
-        "gcc", "gC", "gc", "gb", "c0", "co", "cA", "gc", "cO", "co", { "gc", mode = "v" }
+        "gcc", "gC", "gc", "gb", "c0", "co", "cA", "gc", "cO", "co",
+        { "gc", mode = "v" }
     }
 }
 
@@ -26,9 +27,7 @@ M.config = function()
             eol = 'cA',
         },
         mappings = {
-            ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
             basic = true,
-            ---Extra mapping; `gco`, `gcO`, `gcA`
             extra = true,
         },
     }

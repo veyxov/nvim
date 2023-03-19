@@ -1,6 +1,6 @@
 local M = {
     'folke/tokyonight.nvim',
-    enabled = false,
+    enabled = true,
     event = "InsertEnter"
 }
 
@@ -8,10 +8,10 @@ M.config = function()
     require("tokyonight").setup({
         transparent = false,
         styles = {
-            comments = { italic = true },
-            keywords = { italic = true },
-            functions = { bold = true, italic = true },
-            variables = {},
+            -- comments = { italic = true },
+            -- keywords = { italic = false },
+            -- functions = { bold = true, italic = false },
+            -- variables = { italic = false },
         },
     })
     vim.cmd.colorscheme 'tokyonight-night'
