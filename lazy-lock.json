@@ -7,6 +7,7 @@
   "csharpls-extended-lsp.nvim": { "branch": "master", "commit": "865ace7f8f4069b4965e86005392dc78eec0858f" },
   "flit.nvim": { "branch": "main", "commit": "4c1739137acd3e7f03e2065a7be8a4dc41c7e461" },
   "harpoon": { "branch": "master", "commit": "f7040fd0c44e7a4010369136547de5604b9c22a1" },
+  "kmonad-vim": { "branch": "master", "commit": "37978445197ab00edeb5b731e9ca90c2b141723f" },
   "lazy.nvim": { "branch": "main", "commit": "8456a867f79e3fb3b5390659c5d11a1e35793372" },
   "leap.nvim": { "branch": "main", "commit": "f74473d23ebf60957e0db3ff8172349a82e5a442" },
   "lspsaga.nvim": { "branch": "main", "commit": "db6cdf51bf5ae45e4aa65760e597cf0d587c66ee" },
