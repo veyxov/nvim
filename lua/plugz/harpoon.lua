@@ -12,7 +12,9 @@ M.config = function()
     vim.keymap.set('n', 'ht', '<cmd>Telescope harpoon marks<cr>')
 
     for i = 1, 4, 1 do
-        vim.keymap.set('n', tostring(i), '<cmd>lua require("harpoon.ui").nav_file(' .. tostring(i) .. ')<cr>')
+        local i_str = tostring(i);
+        vim.keymap.set('n', i_str,
+            '<cmd>lua require"harpoon.ui".nav_file(' .. i_str .. ')<cr>')
     end
 end
 
