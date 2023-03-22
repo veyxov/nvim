@@ -1,7 +1,8 @@
 local M = {
     'neovim/nvim-lspconfig',
     event = "InsertEnter",
-    dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/nvim-cmp", "Decodetalkers/csharpls-extended-lsp.nvim" }
+    dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/nvim-cmp",
+        "Decodetalkers/csharpls-extended-lsp.nvim" }
 }
 
 function M.config()
