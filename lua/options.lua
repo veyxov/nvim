@@ -1,13 +1,17 @@
+-- Splaceship
 vim.g.mapleader = ' '
 
--- Rich terminal colors.
+-- Nice and juicy terminal colors.
 vim.o.termguicolors = true
 
+-- What is a mouse? Don't know, don't care.
 vim.o.mouse = ''
 
+-- Allow empty-space selection in v-block mode
 vim.o.virtualedit = 'block'
 
-vim.opt.timeoutlen = 200 -- mapping wait
+-- Train your fingers to be faster, stronger, better...
+vim.opt.timeoutlen = 200
 
 -- Visual clutter
 vim.o.wrap = false
@@ -16,11 +20,11 @@ vim.o.hlsearch = true
 vim.wo.signcolumn = 'number'
 vim.opt.colorcolumn = "80"
 
--- Backup, undo
+-- Too risky? Nah, it'll be fine :)
 vim.o.swapfile = false
 vim.o.undofile = true
 
--- Hide status bar
+-- Minimal visual clutter.
 vim.o.ruler = false
 vim.o.showmode = false
 vim.o.cmdheight = 0
@@ -29,23 +33,21 @@ vim.o.laststatus = 3
 vim.opt.formatoptions = "jcroqlnt"
 vim.o.shortmess = 'aItFOW'
 
--- Smart case search
+-- Work smarter not harder.
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- Completion
+-- Fast completion and diagnostic.
 vim.o.updatetime = 250
 vim.opt.wildmode = 'longest:full,full'
 vim.o.completeopt = 'menuone,noselect'
 
--- tabs settings
+-- Tabs or spaces?
 local tabs = 4
-vim.o.tabstop = tabs;
 vim.o.expandtab = true
+vim.o.tabstop = tabs;
 vim.o.shiftwidth = tabs;
 vim.o.softtabstop = tabs;
 
-vim.diagnostic.config({
-    virtual_text = { prefix = "●" },
-    underline = true,
-})
+-- Beautiful circle for buggy situations.
+vim.diagnostic.config({ virtual_text = { prefix = "●" }, })
