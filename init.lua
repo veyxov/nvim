@@ -1,5 +1,5 @@
-require 'lazyopt'
+-- The Big Bang.
 require 'options'
-require 'plugins'
+require 'lazyopt'
 require 'autocmd'
 require 'mapings'
