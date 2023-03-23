@@ -8,7 +8,7 @@ M.config = function()
 
     require 'telescope'.load_extension('harpoon')
 
-    vim.keymap.set('n', 'ha', function() require("harpoon.mark").add_file() end)
+    vim.keymap.set('n', 'ha', function() require'harpoon.mark'.add_file() end)
     vim.keymap.set('n', 'ht', '<cmd>Telescope harpoon marks<cr>')
 
     for i = 1, 4, 1 do
