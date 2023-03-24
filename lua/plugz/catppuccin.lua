@@ -8,7 +8,7 @@ local M = {
 M.config = function()
     require("catppuccin").setup({
         flavour = "mocha", -- latte, frappe, macchiato, mocha
-        transparent_background = false,
+        transparent_background = true,
         dim_inactive = {
             enabled = true,
             shade = "dark",
