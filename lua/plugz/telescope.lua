@@ -22,17 +22,17 @@ function M.config()
                 override_generic_sorter = true,
                 override_file_sorter = true,
             },
-                ["ui-select"] = {
+            ["ui-select"] = {
 
             },
             file_browser = {
                 theme = "ivy",
                 hijack_netrw = true,
                 mappings = {
-                        ["i"] = {
+                    ["i"] = {
                         -- remap to going to home directory
-                            ["<C-n>"] = fb_actions.create_from_prompt,
-                            ["<C-r>"] = fb_actions.rename,
+                        ["<C-n>"] = fb_actions.create_from_prompt,
+                        ["<C-r>"] = fb_actions.rename,
                     },
                 }
             }
