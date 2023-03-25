@@ -16,7 +16,6 @@ M.config = function()
         })
     })
 
-    ------------------------
     ls.add_snippets("lua", {
 
 
