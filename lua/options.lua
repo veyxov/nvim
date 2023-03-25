@@ -13,6 +13,8 @@ vim.o.virtualedit = 'block'
 -- Train your fingers to be faster, stronger, better...
 vim.opt.timeoutlen = 200
 
+vim.opt.splitkeep = 'cursor'
+
 -- Visual clutter
 vim.o.wrap = false
 vim.opt.list = true
