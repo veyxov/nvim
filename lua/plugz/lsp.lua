@@ -1,8 +1,12 @@
 local M = {
     'neovim/nvim-lspconfig',
     event = "InsertEnter",
-    dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/nvim-cmp",
-        "Decodetalkers/csharpls-extended-lsp.nvim" }
+    dependencies = {
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/nvim-cmp",
+        "Decodetalkers/csharpls-extended-lsp.nvim"
+    }
 }
 
 function M.config()
@@ -17,9 +21,13 @@ function M.config()
         filetypes = { "cs", "solution" },
         single_file_support = true,
         on_attach = on_attach,
-        root_dir = lsp.util.root_pattern('.git', '.sln') or vim.loop.os_homedir(),
+        root_dir =
+            lsp.util.root_pattern('.git', '.sln')
+            or
+            vim.loop.os_homedir(),
+
         handlers = {
-            ["textDocument/definition"] = require('csharpls_extended').handler,
+            ["textDocument/definition"] = require 'csharpls_extended'.handler,
         },
     }
 
