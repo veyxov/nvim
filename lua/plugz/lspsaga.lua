@@ -8,7 +8,8 @@ local M = {
         "<leader>s",
         "<c-k>",
         "<c-t>",
-        "K"
+        "K",
+        "gs"
     }
 }
 
