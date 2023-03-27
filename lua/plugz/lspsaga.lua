@@ -26,9 +26,6 @@ M.config = function()
             scroll_up = "<C-b>",
         },
         request_timeout = 2000,
-        diagnostic = {
-            on_insert = false
-        }
     })
     -- Code action
     vim.keymap.set({ "n", "v" }, "<cr>a", function() vim.lsp.buf.code_action() end)
