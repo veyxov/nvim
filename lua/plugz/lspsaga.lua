@@ -7,7 +7,8 @@ local M = {
         "<cr>a",
         "<leader>s",
         "<c-k>",
-        "<c-t>"
+        "<c-t>",
+        "K"
     }
 }
 
