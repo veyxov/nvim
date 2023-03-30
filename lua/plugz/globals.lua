@@ -8,7 +8,13 @@ return {
     {
         'windwp/nvim-autopairs',
         config = function()
-            require("nvim-autopairs").setup {}
+            local lbls='neiosart'
+            require("nvim-autopairs").setup {
+                fast_wrap = {
+                    map = '<C-w>',
+                    keys = lbls
+                }
+            }
         end
     }
 }
