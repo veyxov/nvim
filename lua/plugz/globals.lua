@@ -16,6 +16,8 @@ return {
                     end_key = 'o'
                 }
             }
+            -- Handy on class declaration
+            vim.keymap.set('i', '{{', '<space>{<cr>}<esc>O')
         end
     }
 }
