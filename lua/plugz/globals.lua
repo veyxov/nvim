@@ -8,10 +8,10 @@ return {
     {
         'windwp/nvim-autopairs',
         config = function()
-            local lbls='neiosart'
+            local lbls = 'neiosart'
             require("nvim-autopairs").setup {
                 fast_wrap = {
-                    map = '<C-w>',
+                    map = '<C-w>', -- mnemonic: control wrap
                     keys = lbls
                 }
             }
