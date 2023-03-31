@@ -15,6 +15,11 @@ end
 
 M.config = function()
     require 'neo-tree'.setup {
+        auto_clean_after_session_restore = true,
+        source_selector = {
+            winbar = true,
+            statusline = true
+        },
         close_if_last_window = true,
         enable_git_status = false,
         enable_diagnostic = false,
