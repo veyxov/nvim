@@ -18,6 +18,15 @@ function M.config()
     local fb_actions = require "telescope".extensions.file_browser.actions
     telescope.setup({
         extensions = {
+            undo = {
+                use_delta = true,
+                -- Big side by side view
+                side_by_side = true,
+                layout_strategy = "vertical",
+                layout_config = {
+                    preview_height = 0.8,
+                },
+            },
             fzf = {
                 fuzzy = true,
                 override_generic_sorter = true,
@@ -74,19 +83,19 @@ function M.init()
     vim.keymap.set('n', '<cr>o', "<cmd>Telescope lsp_workspace_symbols<cr>")
 
     vim.keymap.set("n", "<cr>n",
-        function() 
+        function()
             require 'telescope'
-            .extensions
-            .file_browser
-            .file_browser({ depth = 5, files = false })
+                .extensions
+                .file_browser
+                .file_browser({ depth = 5, files = false })
         end)
 
     vim.keymap.set("n", "<cr>N",
-        function() 
+        function()
             require 'telescope'
-            .extensions
-            .file_browser
-            .file_browser({ depth = 3 })
+                .extensions
+                .file_browser
+                .file_browser({ depth = 3 })
         end)
 end
 
