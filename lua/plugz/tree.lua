@@ -18,6 +18,8 @@ M.config = function()
         close_if_last_window = true,
         enable_git_status = false,
         enable_diagnostic = false,
+        use_libuv_file_watcher = true,
+        follow_current_file = true,
         window = {
             position = "left",
             width = 40,
@@ -26,6 +28,9 @@ M.config = function()
                 nowait = true,
             },
             mappings = {
+                ["I"] = "navigate_up", -- cd ..
+                ["."] = "set_root",    -- Set root to current node
+                ["H"] = "toggle_hidden",
                 ["<space>"] = {
                     "toggle_node",
                     nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
