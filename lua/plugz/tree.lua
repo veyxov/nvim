@@ -10,7 +10,7 @@ local M = {
 M.init = function()
     vim.g.neo_tree_remove_legacy_commands = 1
 
-    vim.keymap.set('n', '<C-n>', '<cmd>Neotree<cr>')
+    vim.keymap.set('n', '<C-n>', '<cmd>Neotree toggle<cr>')
 end
 
 M.config = function()
