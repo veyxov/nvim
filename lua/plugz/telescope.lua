@@ -13,7 +13,6 @@ local M = {
 
 function M.config()
     local telescope = require("telescope")
-    local fb_actions = require "telescope".extensions.file_browser.actions
     telescope.setup({
         extensions = {
             undo = {
@@ -30,17 +29,6 @@ function M.config()
                 override_generic_sorter = true,
                 override_file_sorter = true,
             },
-            file_browser = {
-                theme = "ivy",
-                hijack_netrw = true,
-                mappings = {
-                    ["i"] = {
-                        -- remap to going to home directory
-                        ["<C-n>"] = fb_actions.create_from_prompt,
-                        ["<C-r>"] = fb_actions.rename,
-                    },
-                }
-            }
         },
         defaults = {
             borderchars = { "", "", "", "", "", "", "", "" }, -- No borders
