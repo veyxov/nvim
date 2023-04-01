@@ -8,7 +8,6 @@ local M = {
             [[cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build
             build --config Release && cmake --install build --prefix build]]
         },
-        { 'nvim-telescope/telescope-ui-select.nvim' },
         { 'nvim-telescope/telescope-file-browser.nvim' }
     },
 }
@@ -31,9 +30,6 @@ function M.config()
                 fuzzy = true,
                 override_generic_sorter = true,
                 override_file_sorter = true,
-            },
-            ["ui-select"] = {
-
             },
             file_browser = {
                 theme = "ivy",
@@ -61,7 +57,6 @@ function M.config()
     })
 
     telescope.load_extension("fzf")
-    telescope.load_extension("ui-select")
     telescope.load_extension("file_browser")
 end
 
