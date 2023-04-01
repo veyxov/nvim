@@ -4,6 +4,7 @@ end
 
 local M = {
     "stevearc/dressing.nvim",
+    event = "VeryLazy"
 }
 
 -- Load the module when needed
