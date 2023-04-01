@@ -57,6 +57,7 @@ function M.config()
     -- Rust
     lsp.rust_analyzer.setup {}
 
+    vim.keymap.set({ 'n', 'v' }, '<cr>a', function() vim.lsp.buf.code_action({ apply = true }) end)
     vim.keymap.set("n", "<cr>f", function() vim.lsp.buf.format() end)
     vim.keymap.set("i", "<C-E>", function() vim.lsp.buf.signature_help() end)
 end
