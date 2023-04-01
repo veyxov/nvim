@@ -1,5 +1,6 @@
 local GROUP = vim.api.nvim_create_augroup('VEYXOV_GROUP', { clear = true })
 
+-- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
     callback = function()
         vim.highlight.on_yank()
@@ -8,6 +9,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*',
 })
 
+-- Format before writing
 vim.api.nvim_create_autocmd('BufWritePre', {
     callback = function()
         vim.lsp.buf.format({ async = false })
