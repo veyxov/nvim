@@ -1,16 +1,20 @@
+local function load_dressing()
+    require 'lazy'.load { plugins = { "dressing.nvim" } }
+end
+
 local M = {
     "stevearc/dressing.nvim",
-    init = function()
-        ---@diagnostic disable-next-line: duplicate-set-field
-        vim.ui.select = function(...)
-            require("lazy").load({ plugins = { "dressing.nvim" } })
-            return vim.ui.select(...)
-        end
-        ---@diagnostic disable-next-line: duplicate-set-field
-        vim.ui.input = function(...)
-            require("lazy").load({ plugins = { "dressing.nvim" } })
-            return vim.ui.input(...)
-        end
-    end,
 }
+
+-- Load the module when needed
+M.init = function()
+    vim.ui.select = function(...)
+        load_dressing()
+        return vim.ui.select(...)
+    end
+    vim.ui.input = function(...)
+        load_dressing()
+        return vim.ui.input(...)
+    end
+end
 return M
