@@ -22,7 +22,8 @@ end
 M.config = function()
     require 'dressing'.setup {
         input = {
-            default_prompt = "> "
+            default_prompt = "> ",
+            border = 'single'
         }
     }
 end
