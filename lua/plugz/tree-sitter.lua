@@ -1,5 +1,6 @@
 local M = {
     "nvim-treesitter/nvim-treesitter",
+    version = false,
     build = ":TSUpdate",
     event = "InsertEnter",
     dependencies = {
