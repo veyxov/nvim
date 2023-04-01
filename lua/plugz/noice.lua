@@ -64,7 +64,10 @@ M.config = function()
             command_palette = true,
             long_message_to_split = true,
         },
-        background_color = '#FF0000'
+        background_color = '#FF0000',
+        health = {
+            checker = false, -- Disable if you don't want health checks to run
+        },
     }
 
     require 'noice'.setup(opts)
