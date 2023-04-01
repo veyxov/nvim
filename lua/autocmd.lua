@@ -9,6 +9,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*',
 })
 
+-- Resize splits if window got resized
+vim.api.nvim_create_autocmd({ "VimResized" }, {
+    group = GROUP,
+    callback = function()
+        vim.cmd("tabdo wincmd =")
+    end,
+})
 -- Format before writing
 vim.api.nvim_create_autocmd('BufWritePre', {
     callback = function()
