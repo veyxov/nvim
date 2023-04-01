@@ -1,11 +1,11 @@
 local M = {
     'neovim/nvim-lspconfig',
-    event = "InsertEnter",
+    event = 'InsertEnter',
     dependencies = {
-        "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/nvim-cmp",
-        "Decodetalkers/csharpls-extended-lsp.nvim"
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/nvim-cmp',
+        'Decodetalkers/csharpls-extended-lsp.nvim'
     }
 }
 
@@ -17,8 +17,8 @@ function M.config()
 
     -- C#
     lsp.csharp_ls.setup {
-        cmd = { "csharp-ls" },
-        filetypes = { "cs", "solution" },
+        cmd = { 'csharp-ls' },
+        filetypes = { 'cs', 'solution' },
         single_file_support = true,
         on_attach = on_attach,
         root_dir =
@@ -27,7 +27,7 @@ function M.config()
             vim.loop.os_homedir(),
 
         handlers = {
-            ["textDocument/definition"] = require 'csharpls_extended'.handler,
+            ['textDocument/definition'] = require 'csharpls_extended'.handler,
         },
     }
 
@@ -45,7 +45,7 @@ function M.config()
                     globals = { 'vim' },
                 },
                 workspace = {
-                    library = vim.api.nvim_get_runtime_file("", true),
+                    library = vim.api.nvim_get_runtime_file('', true),
                 },
                 telemetry = {
                     enable = false,
@@ -58,8 +58,9 @@ function M.config()
     lsp.rust_analyzer.setup {}
 
     vim.keymap.set({ 'n', 'v' }, '<cr>a', function() vim.lsp.buf.code_action({ apply = true }) end)
-    vim.keymap.set("n", "<cr>f", function() vim.lsp.buf.format() end)
-    vim.keymap.set("i", "<C-E>", function() vim.lsp.buf.signature_help() end)
+    vim.keymap.set({ 'n', 'v' }, '<cr>t', '<cmd>Telescope lsp_definitions')
+    vim.keymap.set('n', '<cr>f', function() vim.lsp.buf.format() end)
+    vim.keymap.set('i', '<C-E>', function() vim.lsp.buf.signature_help() end)
 end
 
 return M
