@@ -20,7 +20,6 @@ vim.o.wrap = false
 vim.opt.list = true
 vim.o.hlsearch = true
 vim.wo.signcolumn = 'number'
-vim.opt.colorcolumn = "80"
 
 -- Too risky? Nah, it'll be fine :)
 vim.o.swapfile = false
