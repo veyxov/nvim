@@ -2,7 +2,7 @@ local M = {
     "catppuccin/nvim",
     name = "catppuccin",
     lazy = false,
-    enabled = true
+    enabled = false
 }
 
 M.config = function()
@@ -18,9 +18,9 @@ M.config = function()
         no_bold = false,   -- Force no bold
         styles = {
             comments = {},
-            conditionals = {'bold'},
+            conditionals = { 'bold' },
             loops = {},
-            functions = {'bold'},
+            functions = { 'bold' },
             keywords = {},
             strings = {},
             variables = {},
