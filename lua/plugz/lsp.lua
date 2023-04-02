@@ -63,6 +63,7 @@ function M.config()
     vim.keymap.set('i', '<C-E>', function() vim.lsp.buf.signature_help() end)
 
     vim.keymap.set('n', '<S-k>', function() vim.lsp.buf.hover() end)
+    vim.keymap.set('n', '<cr>r', function() vim.lsp.buf.rename() end)
 end
 
 return M
