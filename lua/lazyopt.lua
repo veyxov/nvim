@@ -14,7 +14,7 @@ require 'lazy'.setup("plugz", {
     ui = { size = { width = 1, height = 1 } },
     change_detection = {
         enabled = true,
-        notify = false,
+        notify = true,
     },
     performance = {
         rtp = {
