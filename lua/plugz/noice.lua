@@ -70,6 +70,7 @@ M.config = function()
         },
         views = {
             cmdline_popup = {
+                relative = "editor",
                 border = {
                     style = "none",
                     padding = { 1, 1 },
@@ -77,6 +78,17 @@ M.config = function()
                 filter_options = {},
                 win_options = {
                     winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+                },
+            },
+            popupmenu = {
+                relative = "editor",
+                position = {
+                    row = 6,
+                    col = "50%",
+                },
+                border = {
+                    style = "none",
+                    padding = { 0, 1 },
                 },
             },
         },
