@@ -1,5 +1,6 @@
 local M = {
     "rcarriga/nvim-notify",
+    enabled = false,
     event = "VeryLazy",
     keys = {
         {
@@ -10,7 +11,14 @@ local M = {
             desc = "Delete all Notifications",
         },
     },
-    opts = {
+}
+
+M.init = function()
+    vim.notify = require 'notify'
+end
+
+M.config = function()
+    local opts = {
         timeout = 3000,
         max_height = function()
             return math.floor(vim.o.lines * 0.75)
@@ -18,9 +26,15 @@ local M = {
         max_width = function()
             return math.floor(vim.o.columns * 0.75)
         end,
-    },
-    init = function()
-        vim.notify = require("notify")
-    end
-}
+        background_color = '#FF0000',
+        stages = 'slide',
+        render = "compact",
+        highlights = {
+            borders = 'none',
+        }
+    }
+
+    require 'notify'.setup(opts)
+end
+
 return M
