@@ -29,7 +29,7 @@ vim.o.undofile = true
 vim.o.ruler = false
 vim.o.showmode = false
 vim.o.cmdheight = 0
-vim.o.laststatus = 3
+vim.o.laststatus = 0
 
 vim.opt.formatoptions = "jcroqlnt"
 vim.o.shortmess = 'aItFOW'
