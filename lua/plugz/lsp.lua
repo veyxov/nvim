@@ -61,6 +61,8 @@ function M.config()
     vim.keymap.set({ 'n', 'v' }, '<cr>t', '<cmd>Telescope lsp_definitions')
     vim.keymap.set('n', '<cr>f', function() vim.lsp.buf.format() end)
     vim.keymap.set('i', '<C-E>', function() vim.lsp.buf.signature_help() end)
+
+    vim.keymap.set('n', '<S-k>', function() vim.lsp.buf.hover() end)
 end
 
 return M
