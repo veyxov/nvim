@@ -68,6 +68,18 @@ M.config = function()
         health = {
             checker = false, -- Disable if you don't want health checks to run
         },
+        views = {
+            cmdline_popup = {
+                border = {
+                    style = "none",
+                    padding = { 1, 1 },
+                },
+                filter_options = {},
+                win_options = {
+                    winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+                },
+            },
+        },
     }
 
     require 'noice'.setup(opts)
