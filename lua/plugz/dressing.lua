@@ -23,7 +23,9 @@ M.config = function()
     require 'dressing'.setup {
         input = {
             default_prompt = "> ",
-            border = 'single'
+            border = 'single',
+            prompt_align = 'center',
+            relative = "win"
         }
     }
 end
