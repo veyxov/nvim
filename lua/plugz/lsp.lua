@@ -59,7 +59,8 @@ function M.config()
 
     vim.keymap.set({ 'n', 'v' }, '<cr>a', function() vim.lsp.buf.code_action { apply = true } end)
     vim.keymap.set({ 'n', 'v' }, '<cr>t', '<cmd>Telescope lsp_definitions theme=dropdown<cr>')
-    vim.keymap.set({ 'n', 'v' }, '<cr>s', '<cmd>Telescope lsp_references theme=dropdown<cr>');
+    vim.keymap.set({ 'n', 'v' }, '<leader>s', '<cmd>Telescope lsp_references theme=dropdown<cr>');
+    vim.keymap.set({ 'n', 'v' }, '<cr>i', '<cmd>Telescope lsp_implementations theme=dropdown<cr>');
     vim.keymap.set('n', '<cr>f', function() vim.lsp.buf.format() end)
     vim.keymap.set('i', '<C-E>', function() vim.lsp.buf.signature_help() end)
 
