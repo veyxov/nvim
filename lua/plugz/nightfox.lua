@@ -1,7 +1,7 @@
 local M = {
     'EdenEast/nightfox.nvim',
     event = "VeryLazy",
-    enabled = true,
+    enabled = false,
 }
 
 M.config = function()
