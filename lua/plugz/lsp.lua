@@ -2,7 +2,8 @@ local M = {
     'neovim/nvim-lspconfig',
     event = 'InsertEnter',
     dependencies = {
-        'Decodetalkers/csharpls-extended-lsp.nvim'
+        'Decodetalkers/csharpls-extended-lsp.nvim',
+        'hrsh7th/nvim-cmp'
     }
 }
 
