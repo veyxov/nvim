@@ -1,6 +1,6 @@
 local M = {
     'EdenEast/nightfox.nvim',
-    lazy = false,
+    event = "VeryLazy",
     enabled = true,
 }
 
