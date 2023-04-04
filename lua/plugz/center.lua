@@ -1,6 +1,6 @@
 local M = {
     "arnamak/stay-centered.nvim",
-    event = "InsertEnter"
+    event = "VeryLazy"
 }
 
 M.config = function()
