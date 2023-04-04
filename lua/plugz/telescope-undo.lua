@@ -1,6 +1,5 @@
 local M = {
-    "debugloop/telescope-undo.nvim",
-    lazy = false,
+    "debugloop/telescope-undo.nvim"
 }
 
 M.config = function()
