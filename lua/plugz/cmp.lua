@@ -13,7 +13,8 @@ function M.config()
     local luasnip = require 'luasnip'
     local cmp = require 'cmp'
 
-    cmp.setup({
+    ---@diagnostic disable-next-line: redundant-parameter
+    cmp.setup {
         completion = {
             completeopt = "menu,menuone,preview",
         },
@@ -50,7 +51,7 @@ function M.config()
                 }
             }
         }),
-    })
+    }
 end
 
 return M
