@@ -1,10 +1,12 @@
 local M = {
-    "debugloop/telescope-undo.nvim"
+    "debugloop/telescope-undo.nvim",
+    keys = {
+        { '<leader>u', '<cmd>Telescope undo<cr>' }
+    }
 }
 
 M.config = function()
-    require("telescope").load_extension("undo")
-    vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
+    require 'telescope'.load_extension 'undo'
 end
 
 return M
