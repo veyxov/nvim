@@ -4,13 +4,14 @@ local M = {
     dependencies = {
         "MunifTanjim/nui.nvim",
     },
-    cmd = "Neotree"
+    cmd = "Neotree",
+    keys = {
+        { '<C-n>', '<cmd>Neotree toggle<cr>' }
+    }
 }
 
 M.init = function()
     vim.g.neo_tree_remove_legacy_commands = 1
-
-    vim.keymap.set('n', '<C-n>', '<cmd>Neotree toggle<cr>')
 end
 
 M.config = function()
