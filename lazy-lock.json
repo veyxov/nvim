@@ -21,10 +21,10 @@
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "b55fe6175f0001347a433c9df358c8cbf8a4e90f" },
   "nvim-web-devicons": { "branch": "master", "commit": "0568104bf8d0c3ab16395433fcc5c1638efc25d4" },
   "octo.nvim": { "branch": "master", "commit": "f37efab489a99b4a104e5ee18c73453d5e828b62" },
-  "oxocarbon.nvim": { "branch": "main", "commit": "be12ad8a9607a195d0fc081af0bf3cd38b095d12" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
   "stay-centered.nvim": { "branch": "main", "commit": "68ef23c4dd7f515140bf20650845e2211a7c64ea" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "580b6c48651cabb63455e97d7e131ed557b8c7e2" },
   "telescope-undo.nvim": { "branch": "main", "commit": "231b5ebb4328d2768c830c9a8d1b9c696116848d" },
-  "telescope.nvim": { "branch": "master", "commit": "942fe5faef47b21241e970551eba407bc10d9547" }
+  "telescope.nvim": { "branch": "master", "commit": "942fe5faef47b21241e970551eba407bc10d9547" },
+  "tokyonight.nvim": { "branch": "main", "commit": "1b0c88094548a62641ece1e668fa9a234e1c539e" }
 }

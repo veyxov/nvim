@@ -1,6 +1,6 @@
 local M = {
     'nyoom-engineering/oxocarbon.nvim',
-    enabled = true,
+    enabled = false,
     event = 'VeryLazy'
 }
 
