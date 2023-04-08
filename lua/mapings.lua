@@ -12,6 +12,9 @@ vim.keymap.set('n', '<C-Left>', '<C-w><Left>')
 vim.keymap.set('n', '<C-Right>', '<C-w><Right>')
 vim.keymap.set('n', '<C-Up>', '<C-w><Up>')
 
+vim.keymap.set('n', '<C-e>', '<C-w>s')           -- split
+vim.keymap.set('n', '<C-i>', '<C-w>v')           -- split-v
+
 vim.keymap.set('n', '<cr>w', '<cmd>wall<cr>')    -- Save file
 
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y') -- Copy to system clipboar
