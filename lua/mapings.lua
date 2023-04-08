@@ -5,7 +5,8 @@ vim.keymap.set('i', '<C-a>', '<esc>ggVG')          -- Select all
 
 -- Pairing
 vim.keymap.set('i', '{{', '<space>{<cr>}<esc>O')
-vim.keymap.set('i', '((', '<space>()<space>{<cr>}<esc>O')
+vim.keymap.set('i', '((', '()<space>{<cr>}<esc>O')
+
 
 -- Window navigation
 vim.keymap.set('n', '<C-Down>', '<C-w><Down>')
