@@ -14,12 +14,12 @@ autocmd('TextYankPost', function()
 end)
 
 -- Resize splits if window got resized
-autocmd("VimResized", function()
-        vim.cmd("tabdo wincmd =")
+autocmd('VimResized', function()
+        vim.cmd 'tabdo wincmd ='
 end)
 
 -- Go to last loc when opening a buffer
-autocmd("BufReadPost", function()
+autocmd('BufReadPost', function()
         local mark = vim.api.nvim_buf_get_mark(0, '"')
         local lcount = vim.api.nvim_buf_line_count(0)
         if mark[1] > 0 and mark[1] <= lcount then
