@@ -1,6 +1,13 @@
+local mode = { 'n', 'o', 'v' }
+
 local M = {
     "ggandor/flit.nvim",
-    keys = { 'f', 'F', 't', 'T' }
+    keys = {
+        { 'f', mode = mode },
+        { 'F', mode = mode },
+        { 't', mode = mode },
+        { 'T', mode = mode },
+    }
 }
 
 function M.config()
