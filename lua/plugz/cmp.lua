@@ -6,10 +6,10 @@ local M = {
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
     },
+    keys = { { '<tab>', mode = 'i' } },
 }
 
 function M.config()
-    -- Setup nvim-cmp.
     local luasnip = require 'luasnip'
     local cmp = require 'cmp'
 
