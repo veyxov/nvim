@@ -1,4 +1,4 @@
--- Splaceship
+-- Spaceship
 vim.g.mapleader = ' '
 
 -- Nice and juicy terminal colors.
@@ -11,7 +11,7 @@ vim.o.mouse = ''
 vim.o.virtualedit = 'block'
 
 -- Train your fingers to be faster, stronger, better...
-vim.opt.timeoutlen = 200
+vim.opt.timeoutlen = 150
 
 vim.opt.splitkeep = 'cursor'
 
