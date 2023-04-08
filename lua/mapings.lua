@@ -29,7 +29,7 @@ map('n', '<leader>v', '<C-V>')        -- Visual block mode
 map("n", "ll", "<cmd>Lazy<cr>")
 
 -- Insert a semicolon at the end of the line and create a new one
-vim.cmd [[inoremap <C-O> <esc>A;<esc>o]]
+map('i', '<C-o>', '<esc>A;<esc>o')
 
 -- better indenting
 map("v", "<", "<gv")
