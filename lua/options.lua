@@ -44,11 +44,7 @@ opt.wildmode = 'longest:full,full'
 opt.completeopt = 'menuone,noselect'
 
 -- Tabs or spaces?
-local tabs = 4
 opt.expandtab = true
-opt.tabstop = tabs;
-opt.shiftwidth = tabs;
-opt.softtabstop = tabs;
 
 -- Beautiful circle for buggy situations.
 vim.diagnostic.config({ virtual_text = { prefix = "●" }, })
