@@ -3,6 +3,7 @@ vim.keymap.set('n', '<cr>q', '<cmd>q<cr>')         -- Close buffer
 
 vim.keymap.set('i', '<C-a>', '<esc>ggVG')          -- Select all
 
+-- Pairing
 vim.keymap.set('i', '{{', '<space>{<cr>}<esc>O')
 vim.keymap.set('i', '((', '<space>()<space>{<cr>}<esc>O')
 
@@ -12,11 +13,13 @@ vim.keymap.set('n', '<C-Left>', '<C-w><Left>')
 vim.keymap.set('n', '<C-Right>', '<C-w><Right>')
 vim.keymap.set('n', '<C-Up>', '<C-w><Up>')
 
-vim.keymap.set('n', '<C-e>', '<C-w>s')           -- split
-vim.keymap.set('n', '<C-i>', '<C-w>v')           -- split-v
+-- Splitting
+vim.keymap.set('n', '<C-e>', '<C-w>s')        -- split
+vim.keymap.set('n', '<C-i>', '<C-w>v')        -- split-v
 
-vim.keymap.set('n', '<cr>w', '<cmd>wall<cr>')    -- Save file
+vim.keymap.set('n', '<cr>w', '<cmd>wall<cr>') -- Save file
 
+-- Select and copy
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y') -- Copy to system clipboar
 vim.keymap.set('n', '<leader>v', '<C-V>')        -- Visual block mode
 
