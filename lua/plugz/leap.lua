@@ -4,8 +4,8 @@ local M = {
 }
 
 function M.config()
-    local lbls = { 'n', 'e', 'i', 'o', 's', 'a', 'r', 't' }
-    local safe_lbls = { 'n', 's', 'r', 't' }
+    local lbls = { 'n', 'e', 'i', 'o', 's', 'a', 'r', 't', 'p', 'l' }
+    local safe_lbls = { 'n', 'e', 's', 'r', 't', 'p', 'l' }
 
     local leap = require 'leap'
 
