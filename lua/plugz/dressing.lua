@@ -3,8 +3,7 @@ local function load_dressing()
 end
 
 local M = {
-    "stevearc/dressing.nvim",
-    event = "VeryLazy"
+    "stevearc/dressing.nvim"
 }
 
 -- Load the module when needed
