@@ -1,4 +1,4 @@
--- The Big Bang.
+-- The Big Bang
 require 'options'
 require 'lazyopt'
 require 'autocmd'
