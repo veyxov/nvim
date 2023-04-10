@@ -33,7 +33,7 @@ function M.config()
                     fallback()
                 end
             end, { "i", "s" }),
-            ["<C-e>"] = cmp.mapping.close(),
+            ["<C-q>"] = cmp.mapping.close(),
         }),
         sources = cmp.config.sources({
             { name = "nvim_lsp" },
