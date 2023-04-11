@@ -1,44 +1,44 @@
-local map = vim.keymap.set
+local map = require 'globals'.Map
 
-map('n', '<leader>Q', '<cmd>qall!<cr>') -- Force quit
-map('n', '<cr>q', '<cmd>q<cr>')         -- Close buffer
+map('<leader>Q', '<cmd>qall!<cr>') -- Force quit
+map('<cr>q', '<cmd>q<cr>')         -- Close buffer
 
-map('i', '<C-a>', '<esc>ggVG')          -- Select all
+map('<C-a>', '<esc>ggVG', 'i')     -- Select all
 
 -- Pairing
-map('i', '{{', '<space>{<cr>}<esc>O')
-map('i', '((', '()<space>{<cr>}<esc>O')
+map('{{', '<space>{<cr>}<esc>O', 'i')
+map('((', '()<space>{<cr>}<esc>O', 'i')
 
 
 -- Window navigation
-map('n', '<C-Down>', '<C-w><Down>')
-map('n', '<C-Left>', '<C-w><Left>')
-map('n', '<C-Right>', '<C-w><Right>')
-map('n', '<C-Up>', '<C-w><Up>')
+map('<C-Down>', '<C-w><Down>')
+map('<C-Left>', '<C-w><Left>')
+map('<C-Right>', '<C-w><Right>')
+map('<C-Up>', '<C-w><Up>')
 
 -- Add undo break-points
-map('i', ',', ',<c-g>u')
-map('i', '.', '.<c-g>u')
-map('i', ';', ';<c-g>u')
+map(',', ',<c-g>u', 'i')
+map('.', '.<c-g>u', 'i')
+map(';', ';<c-g>u', 'i')
 
 -- Splitting
-map('n', '<C-e>', function()
+map('<C-e>', function()
     local keys = vim.api.nvim_replace_termcodes('<C-w>s', true, true, true);
     vim.api.nvim_feedkeys(keys, 'n', true)
     vim.opt.laststatus = 3
-end)                               -- split
+end)                          -- split
 
-map('n', '<cr>w', '<cmd>wall<cr>') -- Save file
+map('<cr>w', '<cmd>wall<cr>') -- Save file
 
 -- Select and copy
-map({ 'n', 'v' }, '<leader>y', '"+y') -- Copy to system clipboar
-map('n', '<leader>v', '<C-V>')        -- Visual block mode
+map('<leader>y', '"+y', { 'n', 'v' }) -- Copy to system clipboar
+map('<leader>v', '<C-V>')             -- Visual block mode
 
-map("n", "ll", "<cmd>Lazy<cr>")
+map("ll", "<cmd>Lazy<cr>")
 
 -- Insert a semicolon at the end of the line and create a new one
-map('i', '<C-o>', '<esc>A;<esc>o')
+map('<C-o>', '<esc>A;<esc>o', 'i')
 
 -- better indenting
-map("v", "<", "<gv")
-map("v", ">", ">gv")
+map("<", "<gv", 'v')
+map(">", ">gv", 'v')
