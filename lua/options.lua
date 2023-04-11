@@ -30,6 +30,7 @@ opt.signcolumn = 'number'
 
 -- Too risky? Nah, it'll be fine :)
 opt.swapfile = false
+opt.undolevels = 10000
 opt.undofile = true
 
 -- Minimal visual clutter.
@@ -39,14 +40,14 @@ opt.cmdheight = 0
 opt.laststatus = 3
 
 opt.formatoptions = "jcroqlnt"
-opt.shortmess = 'aItFOW'
+opt.shortmess:append { W = true, I = true, c = true }
 
 -- Work smarter not harder.
 opt.ignorecase = true
 opt.smartcase = true
 
 -- Fast completion and diagnostic.
-opt.updatetime = 250
+opt.updatetime = 200
 opt.wildmode = 'longest:full,full'
 opt.completeopt = 'menuone,noselect'
 
