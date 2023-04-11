@@ -7,10 +7,10 @@ local mode = { 'n', 'o', 'x' }
 local M = {
     "chrisgrieser/nvim-spider",
     keys = {
-        { "w",  function() motion 'w' end,  mode = mode },
-        { "e",  function() motion 'e' end,  mode = mode },
-        { "b",  function() motion 'b' end,  mode = mode },
-        { "ge", function() motion 'ge' end, mode = mode },
+        { "<leader>w",     function() motion 'w' end,  mode = mode },
+        { "<leader>e", function() motion 'e' end,  mode = mode },
+        { "<cr>b",     function() motion 'b' end,  mode = mode },
+        { "ge",        function() motion 'ge' end, mode = mode },
     }
 }
 
