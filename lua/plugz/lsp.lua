@@ -53,16 +53,18 @@ function M.config()
     -- Rust
     lsp.rust_analyzer.setup {}
 
-    vim.keymap.set({ 'n', 'v' }, '<cr>a', function() vim.lsp.buf.code_action { apply = true } end)
-    vim.keymap.set({ 'n', 'v' }, '<cr>t', '<cmd>Telescope lsp_definitions theme=dropdown<cr>')
-    vim.keymap.set({ 'n', 'v' }, '<leader>s', '<cmd>Telescope lsp_references theme=dropdown<cr>');
-    vim.keymap.set({ 'n', 'v' }, '<cr>i', '<cmd>Telescope lsp_implementations theme=dropdown<cr>');
-    vim.keymap.set('n', '<cr>f', function() vim.lsp.buf.format() end)
-    vim.keymap.set('n', '<cr>r', function() vim.lsp.buf.rename() end)
-    vim.keymap.set('i', '<C-E>', function() vim.lsp.buf.signature_help() end)
+    local map = require 'globals'.Map
 
-    vim.keymap.set('n', '<S-k>', function() vim.lsp.buf.hover() end)
-    vim.keymap.set('n', '<cr>r', function() vim.lsp.buf.rename() end)
+    map('<cr>a', function() vim.lsp.buf.code_action { apply = true } end, { 'n', 'v' })
+    map('<cr>t', '<cmd>Telescope lsp_definitions theme=dropdown<cr>', { 'n', 'v' })
+    map('<leader>s', '<cmd>Telescope lsp_references theme=dropdown<cr>', { 'n', 'v' });
+    map('<cr>i', '<cmd>Telescope lsp_implementations theme=dropdown<cr>', { 'n', 'v' });
+    map('<cr>f', function() vim.lsp.buf.format() end)
+    map('<cr>r', function() vim.lsp.buf.rename() end)
+    map('<C-E>', function() vim.lsp.buf.signature_help() end, 'i')
+
+    map('<S-k>', function() vim.lsp.buf.hover() end, 'n')
+    map('<cr>r', function() vim.lsp.buf.rename() end)
 end
 
 return M
