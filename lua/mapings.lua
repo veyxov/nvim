@@ -16,6 +16,11 @@ map('n', '<C-Left>', '<C-w><Left>')
 map('n', '<C-Right>', '<C-w><Right>')
 map('n', '<C-Up>', '<C-w><Up>')
 
+-- Add undo break-points
+map('i', ',', ',<c-g>u')
+map('i', '.', '.<c-g>u')
+map('i', ';', ';<c-g>u')
+
 -- Splitting
 map('n', '<C-e>', '<C-w>s')        -- split
 
