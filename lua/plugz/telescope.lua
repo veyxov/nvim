@@ -47,12 +47,11 @@ function M.config()
 end
 
 M.keys = {
-    {'<cr>s', '<cmd>Telescope find_files<cr>'},
-    {'hh', '<cmd>Telescope help_tags<cr>'},
-    {'<cr>g', '<cmd>Telescope live_grep theme=ivy<cr>'},
-    {'<leader>/', "<cmd>Telescope current_buffer_fuzzy_find theme=get_dropdown previewer=false<cr>"},
-    {'<cr>r', "<cmd>Telescope lsp_references<cr>"},
-    {'<cr>o', "<cmd>Telescope lsp_workspace_symbols<cr>"},
+    { '<cr>s',     '<cmd>Telescope find_files<cr>' },
+    { 'hh',        '<cmd>Telescope help_tags<cr>' },
+    { '<cr>g',     '<cmd>Telescope live_grep theme=ivy<cr>' },
+    { '<leader>/', "<cmd>Telescope current_buffer_fuzzy_find theme=get_dropdown previewer=false<cr>" },
+    { '<cr>o',     "<cmd>Telescope lsp_workspace_symbols<cr>" },
 }
 
 
