@@ -18,7 +18,6 @@ map('n', '<C-Up>', '<C-w><Up>')
 
 -- Splitting
 map('n', '<C-e>', '<C-w>s')        -- split
-map('n', '<C-i>', '<C-w>v')        -- split-v
 
 map('n', '<cr>w', '<cmd>wall<cr>') -- Save file
 
