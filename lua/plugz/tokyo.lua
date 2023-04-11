@@ -6,9 +6,9 @@ local M = {
 
 M.config = function()
     require("tokyonight").setup({
-        transparent = true,
+        transparent = false,
     })
-    vim.cmd.colorscheme 'tokyonight-night'
+    vim.cmd.colorscheme 'tokyonight-moon'
 end
 
 return M
