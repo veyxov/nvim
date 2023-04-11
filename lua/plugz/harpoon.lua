@@ -9,10 +9,11 @@ local M = {
 
 M.config = function()
     require 'harpoon'.setup {}
+    local map = require 'globals'.Map
 
     for i = 1, 4, 1 do
         local i_str = tostring(i);
-        vim.keymap.set('n', i_str,
+        map(i_str,
             '<cmd>lua require"harpoon.ui".nav_file(' .. i_str .. ')<cr>')
     end
 end
