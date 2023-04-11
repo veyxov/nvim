@@ -9,7 +9,7 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require 'lazy'.setup("plugz", {
-    defaults = { lazy = true },
+    defaults = { lazy = true, version = false },
     install = { missing = true },
     ui = { size = { width = 1, height = 1 } },
     change_detection = {
