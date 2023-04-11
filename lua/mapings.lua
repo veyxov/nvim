@@ -22,7 +22,11 @@ map('i', '.', '.<c-g>u')
 map('i', ';', ';<c-g>u')
 
 -- Splitting
-map('n', '<C-e>', '<C-w>s')        -- split
+map('n', '<C-e>', function()
+    local keys = vim.api.nvim_replace_termcodes('<C-w>s', true, true, true);
+    vim.api.nvim_feedkeys(keys, 'n', true)
+    vim.opt.laststatus = 3
+end)                               -- split
 
 map('n', '<cr>w', '<cmd>wall<cr>') -- Save file
 
