@@ -9,6 +9,9 @@ opt.termguicolors = true
 -- What is a mouse? Don't know, don't care.
 opt.mouse = ''
 
+-- Nice splitting
+opt.splitkeep = 'screen'
+
 -- Allow empty-space selection in v-block mode
 opt.virtualedit = 'block'
 

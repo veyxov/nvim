@@ -15,7 +15,7 @@
   "nui.nvim": { "branch": "main", "commit": "bf5900f1b60bf6499755ac92315181a24a87a577" },
   "nvim-cmp": { "branch": "main", "commit": "777450fd0ae289463a14481673e26246b5e38bf2" },
   "nvim-lspconfig": { "branch": "master", "commit": "10fa01d553ce10646350461ac5ddc71f189e9d1a" },
-  "nvim-spider": { "branch": "main", "commit": "fcae87f8c73cc8624eacf6c5fd5de4d5e16ee0c0" },
+  "nvim-spider": { "branch": "main", "commit": "015becfd5b963447eecf2d5a733d80db6df1e628" },
   "nvim-surround": { "branch": "main", "commit": "e6047128e57c1aff1566fb9f627521d2887fc77a" },
   "nvim-treesitter": { "branch": "master", "commit": "ac4020c70722337c326bf65b645b162ee6e1796b" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "8673926519ea61069f9c1366d1ad1949316d250e" },
