@@ -12,6 +12,10 @@ opt.mouse = ''
 -- Nice splitting
 opt.splitkeep = 'screen'
 
+-- Show current command in status line
+opt.showcmdloc = 'statusline'
+opt.statusline = "%f %=%S %l/%L"
+
 -- Allow empty-space selection in v-block mode
 opt.virtualedit = 'block'
 
@@ -32,7 +36,7 @@ opt.undofile = true
 opt.ruler = false
 opt.showmode = false
 opt.cmdheight = 0
-opt.laststatus = 0
+opt.laststatus = 3
 
 opt.formatoptions = "jcroqlnt"
 opt.shortmess = 'aItFOW'
