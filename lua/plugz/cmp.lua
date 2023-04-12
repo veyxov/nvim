@@ -1,22 +1,24 @@
 local M = {
     "hrsh7th/nvim-cmp",
-    dependencies = {
-        "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-buffer",
-        "L3MON4D3/LuaSnip",
-        "saadparwaiz1/cmp_luasnip",
-    },
-    keys = { {
-        '<tab>',
-        function() -- Load cmp and remove redundant tab that is inserted with the <tab> keymap
-            local key = vim.api.nvim_replace_termcodes('<tab><bs>', true, true, true)
-            vim.api.nvim_feedkeys(key, 'i', false)
-            require 'lazy'.load { plugins = { "nvim-cmp" } }
-            vim.keymap.del('i', '<tab>')
-        end,
-        mode = 'i'
-    } },
 }
+
+M.dependencies = {
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip",
+}
+
+M.keys = { {
+    '<tab>',
+    function() -- Load cmp and remove redundant tab that is inserted with the <tab> keymap
+        local key = vim.api.nvim_replace_termcodes('<tab><bs>', true, true, true)
+        vim.api.nvim_feedkeys(key, 'i', false)
+        require 'lazy'.load { plugins = { "nvim-cmp" } }
+        vim.keymap.del('i', '<tab>')
+    end,
+    mode = 'i'
+} }
 
 function M.config()
     local luasnip = require 'luasnip'
