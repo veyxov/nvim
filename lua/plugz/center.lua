@@ -8,14 +8,14 @@ local stay = {
 
 local zen = {
     'folke/zen-mode.nvim',
-    event = 'InsertEnter',
+    event = 'VeryLazy',
     config = function()
         require 'zen-mode'.setup()
-        require("zen-mode").toggle({
+        require 'zen-mode'.toggle {
             window = {
-                width = .85 -- width will be 85% of the editor width
+                width = 0.7
             }
-        })
+        }
     end
 }
 
