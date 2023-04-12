@@ -9,16 +9,22 @@ local stay = {
 local zen = {
     'folke/zen-mode.nvim',
     event = 'VeryLazy',
-    config = function()
-        require 'zen-mode'.setup()
-        require 'zen-mode'.toggle {
-            window = {
-                width = 0.7,
-                backdrop = 1
-            }
-        }
-    end
 }
+
+zen.config = function()
+    local zen_mode = require 'zen-mode'
+
+    local opts = {
+        window = {
+            width = 0.7,
+            backdrop = 1
+        }
+    }
+    zen_mode.setup()
+
+    zen_mode.toggle(opts)
+    require 'globals'.Map('<leader><leader>', function() zen_mode.toggle(opts) end)
+end
 
 local M = { stay, zen }
 
