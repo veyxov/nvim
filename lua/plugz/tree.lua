@@ -1,13 +1,14 @@
 local M = {
     "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
-    dependencies = {
-        "MunifTanjim/nui.nvim",
-    },
-    cmd = "Neotree",
-    keys = {
-        { '<C-n>', '<cmd>Neotree toggle<cr>' }
-    }
+    branch = "v2.x"
+}
+
+M.dependencies = {
+    "MunifTanjim/nui.nvim",
+}
+
+M.keys = {
+    { '<C-n>', '<cmd>Neotree toggle<cr>' }
 }
 
 M.init = function()
