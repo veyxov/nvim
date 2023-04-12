@@ -14,7 +14,7 @@ local zen = {
         require 'zen-mode'.toggle {
             window = {
                 width = 0.7,
-                backdrop = 0.5
+                backdrop = 1
             }
         }
     end
