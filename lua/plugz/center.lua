@@ -19,9 +19,6 @@ local zen = {
     end
 }
 
-local M = {
-    stay,
-    zen
-}
+local M = { stay, zen }
 
 return M
