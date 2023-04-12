@@ -2,9 +2,10 @@ local M = {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     event = "InsertEnter",
-    dependencies = {
-        "nvim-treesitter/nvim-treesitter-textobjects",
-    }
+}
+
+M.dependencies = {
+    "nvim-treesitter/nvim-treesitter-textobjects",
 }
 
 function M.config()
