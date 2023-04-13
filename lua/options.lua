@@ -49,9 +49,8 @@ opt.smartcase = true
 -- Fast completion and diagnostic.
 opt.updatetime = 200
 opt.wildmode = 'longest:full,full'
-opt.completeopt = "menu,menuone,preview",
+opt.completeopt = "menu,menuone,preview"
 
--- Tabs or spaces?
 -- Tabs or spaces?
 local tabs = 4
 opt.expandtab = true
