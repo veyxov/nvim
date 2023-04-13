@@ -57,7 +57,7 @@ function M.config()
     map('<cr>r', vim.lsp.buf.rename)
     map('<C-E>', vim.lsp.buf.signature_help, 'i')
 
-    map('<S-k>', vim.lsp.buf.hover, 'n')
+    map('<S-k>', vim.lsp.buf.hover)
     map('<cr>r', vim.lsp.buf.rename)
 end
 
