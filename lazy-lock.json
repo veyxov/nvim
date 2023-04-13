@@ -11,6 +11,7 @@
   "leap.nvim": { "branch": "main", "commit": "98a72ad93c629c49bd7127d342960cc1b159b620" },
   "lf.nvim": { "branch": "master", "commit": "b88c1efa65939909da0b672e5fb755a208ade2e7" },
   "noice.nvim": { "branch": "main", "commit": "1da4edfba3e9278e98fc9723d7235d9ab3889744" },
+  "nui.nvim": { "branch": "main", "commit": "ecd9def93891b9260b15b5fcef542eaabf4145c9" },
   "nvim-cmp": { "branch": "main", "commit": "777450fd0ae289463a14481673e26246b5e38bf2" },
   "nvim-lspconfig": { "branch": "master", "commit": "6fe69025b8825029ea9bf291ab3b1750f9bcb39e" },
   "nvim-spider": { "branch": "main", "commit": "23fa1260be2090f2d675ee90e0b83fd993f6c3dc" },
@@ -23,5 +24,6 @@
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "580b6c48651cabb63455e97d7e131ed557b8c7e2" },
   "telescope-undo.nvim": { "branch": "main", "commit": "231b5ebb4328d2768c830c9a8d1b9c696116848d" },
   "telescope.nvim": { "branch": "master", "commit": "6258d50b09f9ae087317e392efe7c05a7323492d" },
+  "toggleterm.nvim": { "branch": "main", "commit": "1c5996ee3c30b54751093fe68d40676859e7778f" },
   "zen-mode.nvim": { "branch": "main", "commit": "d907e638c879642d226d27469b53db6925f69d4c" }
 }
