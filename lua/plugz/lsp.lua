@@ -48,16 +48,17 @@ function M.config()
 
     local map = require 'globals'.Map
 
-    map('<cr>a', function() vim.lsp.buf.code_action { apply = true } end, { 'n', 'v' })
     map('<cr>t', '<cmd>Telescope lsp_definitions theme=dropdown<cr>', { 'n', 'v' })
     map('<leader>s', '<cmd>Telescope lsp_references theme=dropdown<cr>', { 'n', 'v' });
     map('<cr>i', '<cmd>Telescope lsp_implementations theme=dropdown<cr>', { 'n', 'v' });
-    map('<cr>f', function() vim.lsp.buf.format() end)
-    map('<cr>r', function() vim.lsp.buf.rename() end)
-    map('<C-E>', function() vim.lsp.buf.signature_help() end, 'i')
 
-    map('<S-k>', function() vim.lsp.buf.hover() end, 'n')
-    map('<cr>r', function() vim.lsp.buf.rename() end)
+    map('<cr>a', vim.lsp.buf.code_action, { 'n', 'v' })
+    map('<cr>f', vim.lsp.buf.format)
+    map('<cr>r', vim.lsp.buf.rename)
+    map('<C-E>', vim.lsp.buf.signature_help, 'i')
+
+    map('<S-k>', vim.lsp.buf.hover, 'n')
+    map('<cr>r', vim.lsp.buf.rename)
 end
 
 return M
