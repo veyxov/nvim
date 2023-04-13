@@ -1,4 +1,4 @@
-local stay = {
+local Center = {
     'arnamak/stay-centered.nvim',
     event = 'VeryLazy',
     config = function()
@@ -6,12 +6,12 @@ local stay = {
     end
 }
 
-local zen = {
+local Zen = {
     'folke/zen-mode.nvim',
     event = 'VeryLazy',
 }
 
-zen.config = function()
+Zen.config = function()
     local zen_mode = require 'zen-mode'
 
     local opts = {
@@ -26,6 +26,7 @@ zen.config = function()
     require 'globals'.Map('<leader><leader>', function() zen_mode.toggle(opts) end)
 end
 
-local M = { stay, zen }
-
-return M
+return {
+    Center,
+    Zen
+}
