@@ -12,8 +12,10 @@ M.dependencies = {
 M.keys = { {
     '<tab>',
     function() -- Load cmp and remove redundant tab that is inserted with the <tab> keymap
-        local key = vim.api.nvim_replace_termcodes('<tab><bs>', true, true, true)
-        vim.api.nvim_feedkeys(key, 'i', false)
+        local tab_bs = vim.api.nvim_replace_termcodes('<tab><bs>', true, true, true)
+        local esc = vim.api.nvim_replace_termcodes('<esc>a', true, true, true)
+        vim.api.nvim_feedkeys(tab_bs, 'i', false)
+        vim.api.nvim_feedkeys(esc, 'i', false)
         require 'lazy'.load { plugins = { "nvim-cmp" } }
         vim.keymap.del('i', '<tab>')
     end,
