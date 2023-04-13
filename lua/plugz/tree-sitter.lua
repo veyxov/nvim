@@ -9,13 +9,13 @@ M.dependencies = {
 }
 
 local opts = {
-    ensure_installed = { 'lua', 'vim', 'json', 'c_sharp' },
+    ensure_installed = { 'lua', 'vim', 'json', 'c_sharp', 'vimdoc' },
     -- highlight
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = { 'markdown' }
     },
-    indent = { enable = false },
+    indent = { enable = true },
     textobjects = {
         select = {
             enable = true,
