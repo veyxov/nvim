@@ -22,7 +22,7 @@ zen.config = function()
     }
     zen_mode.setup()
 
-    zen_mode.toggle(opts)
+    -- zen_mode.toggle(opts)
     require 'globals'.Map('<leader><leader>', function() zen_mode.toggle(opts) end)
 end
 
