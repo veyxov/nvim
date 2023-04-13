@@ -1,9 +1,6 @@
 local M = {
     'neovim/nvim-lspconfig',
-    event = 'InsertEnter',
-    dependencies = {
-        'Decodetalkers/csharpls-extended-lsp.nvim',
-    }
+    event = 'InsertEnter'
 }
 
 function M.config()
@@ -21,10 +18,6 @@ function M.config()
             lsp.util.root_pattern('.git', '.sln')
             or
             vim.loop.os_homedir(),
-
-        handlers = {
-            ['textDocument/definition'] = require 'csharpls_extended'.handler,
-        },
     }
 
     -- Typescript
