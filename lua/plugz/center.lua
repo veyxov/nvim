@@ -12,7 +12,7 @@ local Zen = {
         { '<leader><leader>', function()
             require 'zen-mode'.toggle {
                 window = {
-                    width = 0.7,
+                    width = 0.5,
                     backdrop = 1
                 }
             }
