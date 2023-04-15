@@ -49,10 +49,11 @@ function M.config()
             ["<C-q>"] = cmp.mapping.close(),
         }),
         sources = cmp.config.sources({
-            { name = "nvim_lsp" },
+            { name = "nvim_lsp", keyword_length = 3 },
             { name = "luasnip" },
             {
                 name = 'buffer',
+                keyword_length = 3,
                 option = {
                     get_bufnrs = function()
                         local bufs = {}
