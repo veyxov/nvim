@@ -23,6 +23,8 @@ function M.config()
     -- Typescript
     lsp.tsserver.setup {}
 
+    lsp.clangd.setup {}
+
     -- Lua
     require 'lspconfig'.lua_ls.setup {
         settings = {
