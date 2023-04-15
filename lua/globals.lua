@@ -1,7 +1,7 @@
 local M = {
-    -- Mapping helper
+    -- Cartographer
     Map = function(lhs, rhs, mode)
-        mode = mode or 'n' -- default to normal mode
+        mode = mode or 'n' -- We are normal, most of the time
         vim.keymap.set(mode, lhs, rhs)
     end
 }
