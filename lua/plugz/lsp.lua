@@ -1,7 +1,8 @@
 local M = {
-    'neovim/nvim-lspconfig',
-    event = 'InsertEnter'
+    'neovim/nvim-lspconfig'
 }
+
+M.event = 'InsertEnter'
 
 function M.config()
     local lsp = require 'lspconfig'
@@ -23,6 +24,7 @@ function M.config()
     -- Typescript
     lsp.tsserver.setup {}
 
+    -- C++
     lsp.clangd.setup {}
 
     -- Lua
