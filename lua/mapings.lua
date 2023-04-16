@@ -34,11 +34,11 @@ map('<cr>w', '<cmd>wall<cr>') -- Save file
 map('<leader>y', '"+y', { 'n', 'v' }) -- Copy to system clipboar
 map('<leader>v', '<C-V>')             -- Visual block mode
 
-map("ll", "<cmd>Lazy<cr>")
-
 -- Insert a semicolon at the end of the line and create a new one
 map('<C-o>', '<esc>A;<esc>o', 'i')
 
 -- better indenting
 map("<", "<gv", 'v')
 map(">", ">gv", 'v')
+
+vim.cmd [[map z l]] -- folds using l
