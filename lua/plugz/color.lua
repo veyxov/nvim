@@ -1,14 +1,8 @@
 local M = {
-    "neanias/everforest-nvim",
+    "ellisonleao/gruvbox.nvim",
     event = 'VeryLazy',
     config = function()
-        local everforest = require 'everforest'
-
-        everforest.setup{
-            italics = true
-        }
-
-        everforest.load()
+        vim.cmd.colorscheme 'gruvbox'
     end,
 }
 
