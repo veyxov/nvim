@@ -9,19 +9,28 @@ local Center = {
 local Zen = {
     'folke/zen-mode.nvim',
     keys = {
-        { '<leader><leader>', function()
-            require 'zen-mode'.toggle {
-                window = {
-                    width = 0.5,
-                    backdrop = 1
+        { '<leader><leader>',
+            function()
+                require 'zen-mode'.toggle {
+                    window = {
+                        width = 0.5,
+                        backdrop = 1
+                    }
                 }
-            }
-        end }
+            end
+        }
     }
 }
 
 Zen.config = function()
-    require 'zen-mode'.setup()
+    require 'zen-mode'.setup {
+        plugins = {
+            wezterm = {
+                enabled = true,
+                font = "+4"
+            }
+        }
+    }
 end
 
 return {
