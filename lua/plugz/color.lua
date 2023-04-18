@@ -1,4 +1,13 @@
-local M = {
+local Moonlify = {
+    "bluz71/vim-moonfly-colors",
+    name = "moonfly",
+    event = 'VeryLazy',
+    config = function()
+        vim.cmd.colorscheme 'moonfly'
+    end
+}
+
+local Gruvbox = {
     "ellisonleao/gruvbox.nvim",
     event = 'VeryLazy',
     config = function()
@@ -6,4 +15,4 @@ local M = {
     end,
 }
 
-return M
+return Moonlify;
