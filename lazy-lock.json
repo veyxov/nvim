@@ -7,7 +7,7 @@
   "flit.nvim": { "branch": "main", "commit": "f60e4b3d49bb5a5e97cfffe66f2e671eb422078e" },
   "harpoon": { "branch": "master", "commit": "f7040fd0c44e7a4010369136547de5604b9c22a1" },
   "lazy.nvim": { "branch": "main", "commit": "5f13f69851d2b244891d77590db9e3370197facc" },
-  "leap.nvim": { "branch": "main", "commit": "8062dd5e653a1a7c5df8768db0dc8430a517540c" },
+  "leap.nvim": { "branch": "main", "commit": "0eb3611593e135150e2f7880ec67568ccb51c17a" },
   "moonfly": { "branch": "master", "commit": "1580ef2d75810cd780ff1ca28c7d5ab16232d700" },
   "noice.nvim": { "branch": "main", "commit": "7bd435a48a2d2b3f028c633126e3f669ae6b902f" },
   "nui.nvim": { "branch": "main", "commit": "ecd9def93891b9260b15b5fcef542eaabf4145c9" },
