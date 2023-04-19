@@ -28,6 +28,8 @@ map('<C-e>', function()
     vim.opt.laststatus = 3
 end)                          -- split
 
+map('yw', '<C-w>', 'i')       -- no control, control
+
 map('<cr>w', '<cmd>wall<cr>') -- Save file
 
 -- Select and copy
