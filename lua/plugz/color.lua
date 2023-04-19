@@ -15,17 +15,39 @@ local Gruvbox = {
     end,
 }
 
+local Poimandres = {
+    'olivercederborg/poimandres.nvim',
+    event = 'VeryLazy',
+    config = function()
+        require('poimandres').setup {
+            -- leave this setup function empty for default config
+            -- or refer to the configuration section
+            -- for configuration options
+        }
+    end
+}
+
 local Kanagawa = {
     "rebelot/kanagawa.nvim",
     event = 'VeryLazy',
     config = function()
-       require('kanagawa').setup({
+        require('kanagawa').setup({
             compile = true,     -- enable compiling the colorscheme
             undercurl = true,   -- enable undercurls
             dimInactive = true, -- dim inactive window `:h hl-NormalNC`
             overrides = function(colors)
                 local theme = colors.theme
                 return {
+                    NormalFloat = { bg = "none" },
+                    FloatBorder = { bg = "none" },
+                    FloatTitle = { bg = "none" },
+                    -- Save an hlgroup with dark background and dimmed foreground
+                    -- so that you can use it where your still want darker windows.
+                    -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
+                    NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+                    -- Popular plugins that open floats will link to NormalFloat by default;
+                    -- set their background accordingly if you wish to keep them dark and borderless
+                    LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
                     TelescopeTitle = { fg = theme.ui.special, bold = true },
                     TelescopePromptNormal = { bg = theme.ui.bg_p1 },
                     TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
@@ -44,8 +66,8 @@ local Kanagawa = {
         })
 
         -- setup must be called before loading
-        vim.cmd("colorscheme kanagawa") 
+        vim.cmd("colorscheme kanagawa")
     end
 }
 
-return Kanagawa;
+return Poimandres;
