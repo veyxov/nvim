@@ -25,7 +25,7 @@ local Poimandres = {
             disable_background = true
         }
 
-        vim.cmd.colorscheme "poimandres"
+        vim.cmd.colorscheme 'poimandres'
     end
 }
 
