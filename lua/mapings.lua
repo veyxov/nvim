@@ -1,9 +1,11 @@
 local map = require 'globals'.Map
 
-map('<leader>Q', '<cmd>qall!<cr>') -- Force quit
-map('<cr>q', '<cmd>q<cr>')         -- Close buffer
+map('<leader>Q', '<cmd>qall!<cr>')                       -- Force quit
+map('<cr>q', '<cmd>q<cr>')                               -- Close buffer
 
-map('<C-a>', '<esc>ggVG', 'i')     -- Select all
+map('<C-a>', '<esc>ggVG', 'i')                           -- Select all
+
+map('<C-r>', function() require 'globals'.Restart() end) -- Reload neovim instance
 
 -- Pairing
 map('{{', '<space>{<cr>}<esc>O', 'i')

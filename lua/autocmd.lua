@@ -10,12 +10,6 @@ autocmd('TextYankPost', function()
     vim.highlight.on_yank()
 end)
 
--- Return to the last open position
-autocmd('VimEnter', function()
-    local food = vim.api.nvim_replace_termcodes('<C-o>', true, true, true)
-    vim.api.nvim_feedkeys(food, 'n', false)
-end)
-
 -- Resize splits if window got resized
 autocmd('VimResized', function()
     vim.cmd 'tabdo wincmd ='
