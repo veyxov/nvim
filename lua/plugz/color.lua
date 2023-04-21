@@ -70,7 +70,7 @@ local Sonokay = {
     "sainnhe/sonokai",
     event = 'VeryLazy',
     init = function()
-        vim.g.sonokai_style = 'maia'
+        vim.g.sonokai_style = 'atlantis'
 
         vim.g.sonokai_enable_italic = 1
         vim.g.sonokai_transparent_background = 0
