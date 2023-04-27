@@ -10,11 +10,11 @@ return {
 
         -- Add/reset
         map('jj', gs.stage_hunk)
+        map('js', gs.preview_hunk)
         map('ju', gs.reset_hunk)
         map('jJ', gs.stage_buffer)
         map('jU', gs.reset_buffer)
 
-        map('js', gs.preview_hunk)
 
         -- Toggles
         map('jtw', gs.toggle_word_diff)
