@@ -1,11 +1,7 @@
 local map = require 'globals'.Map
 
-map('<leader>Q', '<cmd>qall!<cr>')                       -- Force quit
-map('<cr>q', '<cmd>q<cr>')                               -- Close buffer
-
-map('<C-a>', '<esc>ggVG', 'i')                           -- Select all
-
-map('<C-r>', function() require 'globals'.Restart() end) -- Reload neovim instance
+map('<leader>qu', '<cmd>qall!<cr>')                       -- Force quit
+map('qu', '<cmd>q<cr>')                               -- Close buffer
 
 -- Pairing
 map('{{', '<space>{<cr>}<esc>O', 'i')
@@ -23,16 +19,7 @@ map(',', ',<c-g>u', 'i')
 map('.', '.<c-g>u', 'i')
 map(';', ';<c-g>u', 'i')
 
--- Splitting
-map('<C-e>', function()
-    local keys = vim.api.nvim_replace_termcodes('<C-w>s', true, true, true);
-    vim.api.nvim_feedkeys(keys, 'n', true)
-    vim.opt.laststatus = 3
-end)                          -- split
-
-map('yw', '<C-w>', 'i')       -- no control, control
-
-map('<cr>w', '<cmd>wall<cr>') -- Save file
+map('<leater>s', '<cmd>wall<cr>') -- Save file
 
 -- Select and copy
 map('<leader>y', '"+y', { 'n', 'v' }) -- Copy to system clipboar
@@ -44,5 +31,3 @@ map('<C-o>', '<esc>A;<esc>o', 'i')
 -- better indenting
 map("<", "<gv", 'v')
 map(">", ">gv", 'v')
-
-vim.cmd [[map z l]] -- folds using l
