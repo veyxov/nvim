@@ -53,13 +53,12 @@ function M.config()
     map('<leader>s', '<cmd>Telescope lsp_references theme=dropdown<cr>', { 'n', 'v' });
     map('<cr>i', '<cmd>Telescope lsp_implementations theme=dropdown<cr>', { 'n', 'v' });
 
-    map('<cr>a', vim.lsp.buf.code_action, { 'n', 'v' })
-    map('<cr>f', vim.lsp.buf.format)
-    map('<cr>r', vim.lsp.buf.rename)
+    map('ha', vim.lsp.buf.code_action, { 'n', 'v' })
+    map('hf', vim.lsp.buf.format)
+    map('hr', vim.lsp.buf.rename)
     map('<C-E>', vim.lsp.buf.signature_help, 'i')
 
-    map('<S-k>', vim.lsp.buf.hover)
-    map('<cr>r', vim.lsp.buf.rename)
+    map('<S-h>', vim.lsp.buf.hover)
 end
 
 return M
