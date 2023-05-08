@@ -1,6 +1,6 @@
 local mode = { 'n', 'o', 'v' }
-local lbls = { 'n', 'e', 'i', 'o', 's', 'a', 'r', 't', 'p', 'l' }
-local safe_lbls = { 'n', 'e', 's', 'r', 't', 'p', 'l' }
+local lbls = { 't', 'e', 'i', 'a', 'h', 'n', 's', 'r', 'd' }
+local safe_lbls = { 't', 'e', 'h', 'e', 's', 'r' }
 
 local Flint = {
     "ggandor/flit.nvim",
