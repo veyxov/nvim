@@ -27,7 +27,6 @@ M.config = function()
             ["n"] = "actions.parent",
             ["q"] = "actions.close",
             ["<C-l>"] = "actions.refresh",
-            ["f"] = "actions.parent",
             ["h"] = "actions.open_cwd",
             ["`"] = "actions.cd",
             ["~"] = "actions.tcd",
