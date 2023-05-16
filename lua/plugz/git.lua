@@ -9,6 +9,9 @@ local Gitsigns = {
 
         map('<leader>hs', gs.stage_hunk)
         map('<leader>hr', gs.reset_hunk)
+
+        map('<leader>hs', function() gs.stage_hunk {vim.fn.line("."), vim.fn.line("v")} end, 'v')
+        map('<leader>hr', function() gs.reset_hunk {vim.fn.line("."), vim.fn.line("v")} end, 'v')
     end
 }
 
