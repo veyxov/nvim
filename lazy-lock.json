@@ -25,5 +25,6 @@
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "580b6c48651cabb63455e97d7e131ed557b8c7e2" },
   "telescope-undo.nvim": { "branch": "main", "commit": "231b5ebb4328d2768c830c9a8d1b9c696116848d" },
   "telescope.nvim": { "branch": "master", "commit": "ebf93395e79e5d026e3867d9e5e158b2bbe1499c" },
+  "vim-fugitive": { "branch": "master", "commit": "5f0d280b517cacb16f59316659966c7ca5e2bea2" },
   "zen-mode.nvim": { "branch": "main", "commit": "6e6c963d70a8e47854fa656987666bfb863f9c4e" }
 }
