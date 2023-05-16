@@ -5,8 +5,13 @@ local Gitsigns = {
     event = "VeryLazy",
     config = function()
         local gs = require 'gitsigns'
-        gs.setup { }
+        gs.setup {
+            yadm = {
+                enable = true
+            },
+        }
 
+        -- Hunk stage
         map('hs', gs.stage_hunk)
         map('hr', gs.reset_hunk)
 
@@ -16,7 +21,7 @@ local Gitsigns = {
         map('ha', gs.stage_buffer)
         map('hU', gs.stage_buffer)
 
-        map('<leader>hb', function() gs.blame_line{full=true} end)
+        map('hb', function() gs.blame_line{full=true} end)
     end
 }
 
