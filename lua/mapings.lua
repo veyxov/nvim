@@ -1,7 +1,8 @@
 local map = require 'globals'.Map
 
-map('<leader>qu', '<cmd>qall!<cr>')                       -- Force quit
-map('qu', '<cmd>wq<cr>')                               -- Close buffer
+map('<leader>qu', '<cmd>qall!<cr>')
+map('qu', '<cmd>wq<cr>')
+map('<bs>', '<cmd>q<cr>')
 
 -- Pairing
 map('{{', '<space>{<cr>}<esc>O', 'i')
