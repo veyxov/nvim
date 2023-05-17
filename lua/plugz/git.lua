@@ -31,6 +31,10 @@ local Fugitive = {
     init = function()
         map('gc', '<cmd>G commit<cr>')
         map('gb', '<cmd>G blame<cr>')
+        
+        map('gP', '<cmd>G! push<cr>')
+        map('gA', '<cmd>G add .<cr>') -- stage all files
+
     end
 }
 
