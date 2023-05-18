@@ -46,6 +46,7 @@ function M.config()
 
     -- Rust
     lsp.rust_analyzer.setup {}
+    lsp.gopls.setup {}
 
     local map = require 'globals'.Map
 
