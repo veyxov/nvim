@@ -20,7 +20,7 @@ opt.statusline = " %f %= %S "
 opt.virtualedit = 'block'
 
 -- Train your fingers to be faster, stronger, better...
-opt.timeoutlen = 200
+-- opt.timeoutlen = 200
 
 -- Visual clutter
 opt.wrap = false
