@@ -84,10 +84,11 @@ local Sonokay = {
 
 local Rose = {
     "rose-pine/neovim",
+    event = "VeryLazy",
     config = function()
         require('rose-pine').setup({
             --- @usage 'auto'|'main'|'moon'|'dawn'
-            variant = 'auto',
+            variant = 'moon',
             --- @usage 'main'|'moon'|'dawn'
             dark_variant = 'main',
             bold_vert_split = false,
