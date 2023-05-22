@@ -33,7 +33,7 @@ local Fugitive = {
         map('gb', '<cmd>G blame<cr>')
 
         map('gP', '<cmd>G! push<cr>')
-        map('gA', '<cmd>G add .<cr>') -- stage all files
+        map('ga', '<cmd>G add .<cr>') -- stage all files
 
     end
 }
