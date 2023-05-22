@@ -9,7 +9,7 @@ local Center = {
 local Zen = {
     'folke/zen-mode.nvim',
     keys = {
-        { '<leader><leader>',
+        { '<leader>c',
             function()
                 require 'zen-mode'.toggle {
                     window = {
