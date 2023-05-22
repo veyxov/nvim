@@ -15,6 +15,9 @@ local opts = {
         enable = true,
         additional_vim_regex_highlighting = { 'markdown' }
     },
+    autotag = {
+        enable = true
+    },
     indent = { enable = true },
     textobjects = {
         select = {
