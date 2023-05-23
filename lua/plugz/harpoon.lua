@@ -1,8 +1,8 @@
 local M = {
     'ThePrimeagen/harpoon',
     keys = {
-        { "ha", function() require 'harpoon.mark'.add_file() end },
-        { "ht", function() require 'harpoon.ui'.toggle_quick_menu() end },
+        { "<C-a>", function() require 'harpoon.mark'.add_file() end },
+        { "<C-h>", function() require 'harpoon.ui'.toggle_quick_menu() end },
         "1", "2", "3", "4"
     }
 }
