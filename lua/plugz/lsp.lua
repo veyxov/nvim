@@ -24,6 +24,9 @@ function M.config()
     -- C++
     lsp.clangd.setup {}
 
+    -- Svelte
+    lsp.svelte.setup {}
+
     -- Lua
     require 'lspconfig'.lua_ls.setup {
         settings = {
