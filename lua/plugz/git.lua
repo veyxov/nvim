@@ -18,7 +18,7 @@ local Gitsigns = {
         map('hs', function() gs.stage_hunk {vim.fn.line("."), vim.fn.line("v")} end, 'v')
         map('hr', function() gs.reset_hunk {vim.fn.line("."), vim.fn.line("v")} end, 'v')
 
-        map('ha', gs.stage_buffer)
+        --map('ha', gs.stage_buffer)
         map('hU', gs.stage_buffer)
 
         map('hb', function() gs.blame_line{full=true} end)
