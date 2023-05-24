@@ -1,5 +1,13 @@
 local map = require 'globals'.Map
 
+local LazyGit = {
+    "kdheepak/lazygit.nvim",
+    cmd = "LazyGit",
+    init = function()
+        map('<leader>gg', '<cmd>LazyGit<cr>')
+    end
+}
+
 local Gitsigns = {
     "lewis6991/gitsigns.nvim",
     event = "VeryLazy",
@@ -40,5 +48,6 @@ local Fugitive = {
 
 return {
     Gitsigns,
-    Fugitive
+    Fugitive,
+    LazyGit
 }
