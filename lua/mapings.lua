@@ -32,6 +32,9 @@ map("ha", "ya")
 map("he", "ye")
 map("hw", "yw")
 
+-- Teporary solution for muscle memory
+map("ya", "da")
+
 -- Insert a semicolon at the end of the line and create a new one
 map('<C-o>', '<esc>A;<esc>o', 'i')
 
