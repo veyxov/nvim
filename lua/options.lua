@@ -37,7 +37,7 @@ opt.undofile = true
 opt.ruler = false
 opt.showmode = false
 opt.cmdheight = 0
-opt.laststatus = 0
+opt.laststatus = 3
 
 opt.formatoptions = "jcroqlnt"
 opt.shortmess:append { W = true, I = true, c = true }
