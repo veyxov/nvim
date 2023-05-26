@@ -16,7 +16,7 @@ opt.splitkeep = 'screen'
 opt.virtualedit = 'block'
 
 -- Train your fingers to be faster, stronger, better...
--- opt.timeoutlen = 200
+ opt.timeoutlen = 500
 
 -- Visual clutter
 opt.wrap = false
