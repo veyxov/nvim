@@ -1,12 +1,9 @@
 local map = require 'globals'.Map
 
+-- Quitting made easy
 map('<leader>qu', '<cmd>qall!<cr>')
 map('qu', '<cmd>wq<cr>')
 map('<bs>', '<cmd>q<cr>')
-
--- Pairing
-map('{{', '<space>{<cr>}<esc>O', 'i')
-map('((', '()<space>{<cr>}<esc>O', 'i')
 
 
 -- Window navigation
