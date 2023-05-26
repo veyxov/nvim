@@ -1,5 +1,6 @@
 local M = {
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter"
 }
 
 M.dependencies = {
@@ -8,19 +9,6 @@ M.dependencies = {
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
 }
-
-M.keys = { {
-    '<tab>',
-    function() -- Load cmp and remove redundant tab that is inserted with the <tab> keymap
-        local tab_bs = vim.api.nvim_replace_termcodes('<tab><bs>', true, true, true)
-        local esc = vim.api.nvim_replace_termcodes('<esc>a', true, true, true)
-        vim.api.nvim_feedkeys(tab_bs, 'i', false)
-        vim.api.nvim_feedkeys(esc, 'i', false)
-        require 'lazy'.load { plugins = { "nvim-cmp" } }
-        vim.keymap.del('i', '<tab>')
-    end,
-    mode = 'i'
-} }
 
 function M.config()
     local luasnip = require 'luasnip'
