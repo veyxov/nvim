@@ -30,8 +30,6 @@ opt.undolevels = 10000
 opt.undofile = true
 
 -- Minimal visual clutter.
-opt.ruler = false
-opt.showmode = false
 opt.cmdheight = 0
 opt.laststatus = 3
 
