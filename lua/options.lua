@@ -12,10 +12,6 @@ opt.mouse = ''
 -- Nice splitting
 opt.splitkeep = 'screen'
 
--- Show current command in status line
-opt.showcmdloc = 'statusline'
-opt.statusline = " %f %= %S "
-
 -- Allow empty-space selection in v-block mode
 opt.virtualedit = 'block'
 
