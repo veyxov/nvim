@@ -37,6 +37,7 @@ local Fugitive = {
     "tpope/vim-fugitive",
     lazy = false,
     init = function()
+        map('gac', '<cmd>G add . | G commit<cr>')
         map('gc', '<cmd>G commit<cr>')
         map('gb', '<cmd>G blame<cr>')
 
