@@ -1,2 +1,1 @@
-# My neovim configuration
-## Blazingly fast !!!
+# Neovim configuration
