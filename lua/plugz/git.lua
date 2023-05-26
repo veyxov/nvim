@@ -35,7 +35,7 @@ local Gitsigns = {
 
 local Fugitive = {
     "tpope/vim-fugitive",
-    lazy = false,
+    cmd = 'G',
     init = function()
         map('gac', '<cmd>G add . | G commit<cr>')
         map('gc', '<cmd>G commit<cr>')
