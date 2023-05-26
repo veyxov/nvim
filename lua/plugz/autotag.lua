@@ -1,6 +1,6 @@
 return {
     "windwp/nvim-ts-autotag",
-    event = "InsertEnter",
+    ft = {"svelte", "js", "ts", "html", "vue"},
     config = function()
         require('nvim-ts-autotag').setup()
     end
