@@ -1,14 +1,24 @@
+local cmp_integration = function()
+    local cmp = require('cmp')
+    local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+    cmp.event:on(
+        'confirm_done',
+        cmp_autopairs.on_confirm_done()
+    )
+end
+
 return {
-	"windwp/nvim-autopairs",
-    event = "InsertEnter",
+    "windwp/nvim-autopairs",
+    keys = {
+        {"(", mode = "i"}
+        {"[", mode = "i"}
+        {"{", mode = "i"}
+        {'"', mode = "i"}
+        {"'", mode = "i"}
+    },
     config = function() 
         require("nvim-autopairs").setup {}
 
-        local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-        local cmp = require('cmp')
-        cmp.event:on(
-            'confirm_done',
-            cmp_autopairs.on_confirm_done()
-        )
+        cmp_integration()
     end
 }
