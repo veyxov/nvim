@@ -10,11 +10,11 @@ end
 return {
     "windwp/nvim-autopairs",
     keys = {
-        {"(", mode = "i"}
-        {"[", mode = "i"}
-        {"{", mode = "i"}
-        {'"', mode = "i"}
-        {"'", mode = "i"}
+        {"(", mode = "i"},
+        {"[", mode = "i"},
+        {"{", mode = "i"},
+        {'"', mode = "i"},
+        {"'", mode = "i"},
     },
     config = function() 
         require("nvim-autopairs").setup {}
