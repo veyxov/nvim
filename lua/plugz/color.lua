@@ -84,6 +84,7 @@ local Sonokay = {
 
 local Rose = {
     "rose-pine/neovim",
+    name = "rose-pine",
     event = "VeryLazy",
     config = function()
         require('rose-pine').setup({
