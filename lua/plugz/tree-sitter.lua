@@ -9,7 +9,10 @@ M.dependencies = {
 }
 
 local opts = {
-    ensure_installed = { 'lua', 'vim', 'json', 'c_sharp', 'vimdoc' },
+    ensure_installed = { 
+        'lua', 'vim', 'json', 'vimdoc',
+        'c_sharp', 'regex', 'bash', 'markdown', 'markdown_inline'
+    },
     -- highlight
     highlight = {
         enable = true,
