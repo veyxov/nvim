@@ -53,9 +53,10 @@ local Lualine = {
                 lualine_z = {}
             },
             tabline = {},
-            winbar = {},
-            inactive_winbar = {},
-            extensions = {}
+            inactive_winbar  = {
+                lualine_c = {'filename'},
+            },
+            extensions = {"fugitive"}
         }
     end
 }
