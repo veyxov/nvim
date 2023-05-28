@@ -47,8 +47,25 @@ local Fugitive = {
     end
 }
 
+local Search =     {
+    "aaronhallaert/advanced-git-search.nvim",
+    keys = {
+        {"<leader>gs", "<cmd>Telescope advanced_git_search diff_commit_line<cr>"}
+    },
+    config = function()
+        require 'telescope'.load_extension("advanced_git_search")
+    end,
+    dependencies = {
+        "nvim-telescope/telescope.nvim",
+        "tpope/vim-fugitive",
+        "tpope/vim-rhubarb",
+        "sindrets/diffview.nvim",
+    },
+}
+
 return {
     Gitsigns,
     Fugitive,
+    Search,
     LazyGit
 }
