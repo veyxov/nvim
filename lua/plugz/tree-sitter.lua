@@ -58,15 +58,13 @@ local opts = {
                 [']'] = '@function.outer',
             },
             goto_previous_end = {
-                ['GM'] = '@function.outer',
+                --['GM'] = '@function.outer',
             },
         },
         swap = {
             enable = true,
             swap_next = {
                 ['<leader>gm'] = '@function.outer',
-            },
-            swap_previous = {
                 ['<leader>A'] = '@parameter.inner',
             },
         },

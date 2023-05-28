@@ -42,7 +42,6 @@ local Lualine = {
             inactive_winbar  = {
                 lualine_c = {'filename'},
             },
-            extensions = {"fugitive"}
         }
     end
 }
