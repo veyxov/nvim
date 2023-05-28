@@ -20,19 +20,14 @@ map(';', ';<c-g>u', 'i')
 map('<C-w>', '<cmd>wall<cr>') -- Save file
 map('<leader>w', '<cmd>wall<cr>') -- Save file
 
--- Select and copy
-map('<leader>y', '"+y', { 'n', 'v' }) -- Copy to system clipboar
-map('<leader>v', '<C-V>')             -- Visual block mode
-
 -- Reduce sfb when yanking
-map("hh", "yy")
-map("ha", "ya")
-map("hi", "yi")
-map("he", "ye")
-map("hw", "yw")
+-- TODO: Lua
+vim.cmd "nmap h y"
+vim.cmd "nmap hh yy"
 
--- Teporary solution for muscle memory
-map("ya", "da")
+-- Select and copy
+map('<leader>h', '"+y', { 'n', 'v', 'o' }) -- Copy to system clipboar
+map('<leader>v', '<C-V>')             -- Visual block mode
 
 -- Insert a semicolon at the end of the line and create a new one
 map('<C-o>', '<esc>A;<esc>o', 'i')
