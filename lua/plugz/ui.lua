@@ -13,8 +13,6 @@ local Lualine = {
     config = function()
         require('lualine').setup {
             options = {
-                icons_enabled = true,
-                theme = 'auto',
                 component_separators = { left = '', right = ''},
                 section_separators = { left = '', right = ''},
                 globalstatus = true
@@ -40,19 +38,12 @@ local Lualine = {
                         newfile = '[New]',     -- Text to show for newly created file before first write
                     }
                 }},
-                lualine_x = {'FugitiveHead', 'fileformat', 'filetype'},
-                lualine_y = {'progress'},
-                lualine_z = {'location'}
+                lualine_x = {'fileformat', 'filetype'},
             },
             inactive_sections = {
-                lualine_a = {},
-                lualine_b = {},
                 lualine_c = {'filename'},
                 lualine_x = {'location'},
-                lualine_y = {},
-                lualine_z = {}
             },
-            tabline = {},
             inactive_winbar  = {
                 lualine_c = {'filename'},
             },
