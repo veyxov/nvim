@@ -74,25 +74,16 @@ Noice.config = function()
             long_message_to_split = true,
         },
         background_color = '#FF0000',
-        health = { checker = true, },
         views = {
             cmdline_popup = {
                 relative = "editor",
                 border = {
                     style = "none",
-                    padding = { 1, 1 },
-                },
-                filter_options = {},
-                win_options = {
-                    winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+                    padding = { 0, 0 },
                 },
             },
             popupmenu = {
                 relative = "editor",
-                position = {
-                    row = 6,
-                    col = "50%",
-                },
                 border = {
                     style = "none",
                     padding = { 0, 1 },
@@ -136,4 +127,4 @@ Dressing.config = function()
     }
 end
 
-return { Dressing, Noice, Lualine }
+return { Dressing, Noice }
