@@ -50,7 +50,7 @@ local Fugitive = {
 local Search =     {
     "aaronhallaert/advanced-git-search.nvim",
     keys = {
-        {"<leader>gs", "<cmd>Telescope advanced_git_search diff_commit_line<cr>"}
+        {"<leader>gs", "<cmd>AdvancedGitSearch<cr>"}
     },
     config = function()
         require 'telescope'.load_extension("advanced_git_search")
