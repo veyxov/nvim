@@ -142,4 +142,20 @@ local Rose = {
     end
 }
 
-return Rose;
+local Fluro = {
+    'maxmx03/fluoromachine.nvim',
+    event = "VeryLazy",
+    config = function ()
+        local fm = require 'fluoromachine'
+
+        fm.setup {
+            glow = true,
+            --theme = 'delta'
+        }
+
+        vim.cmd.colorscheme 'fluoromachine'
+    end
+
+}
+
+return Fluro;
