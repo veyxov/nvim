@@ -6,6 +6,7 @@ vim.g.mapleader = ' '
 -- Nice terminal colors.
 opt.termguicolors = true
 
+-- :)
 -- Nice splitting
 opt.splitkeep = 'screen'
 
