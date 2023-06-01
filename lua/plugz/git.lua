@@ -13,11 +13,7 @@ local Gitsigns = {
     event = "VeryLazy",
     config = function()
         local gs = require 'gitsigns'
-        gs.setup {
-            yadm = {
-                enable = true
-            },
-        }
+        gs.setup { yadm = { enable = true } }
 
         -- Hunk stage
         map('hs', gs.stage_hunk)
@@ -38,7 +34,68 @@ local Neogit = {
     cmd = 'Neogit',
     config = function()
         local neogit = require('neogit')
-        neogit.setup {}
+        neogit.setup {
+            disable_commit_confirmation = true,
+            disable_builtin_notifications = false,
+            kind = "tab",
+            console_timeout = 2000,
+            auto_show_console = true,
+            remember_settings = true,
+            use_per_project_settings = true,
+            commit_popup = {
+                kind = "split",
+            },
+            -- Change the default way of opening the preview buffer
+            preview_buffer = {
+                kind = "split",
+            },
+            -- Change the default way of opening popups
+            popup = {
+                kind = "split",
+            },
+            -- customize displayed signs
+            signs = {
+                -- { CLOSED, OPENED }
+                section = { ">", "v" },
+                item = { ">", "v" },
+                hunk = { "", "" },
+            },
+            integrations = {
+                diffview = true
+            },
+            -- Setting any section to `false` will make the section not render at all
+            sections = {
+                untracked = {
+                    folded = false
+                },
+                unstaged = {
+                    folded = false
+                },
+                staged = {
+                    folded = false
+                },
+                stashes = {
+                    folded = true
+                },
+                unpulled = {
+                    folded = true
+                },
+                unmerged = {
+                    folded = false
+                },
+                recent = {
+                    folded = true
+                },
+            },
+            -- override/add mappings
+            mappings = {
+                -- modify status buffer mappings
+                status = {
+                    -- Adds a mapping with "B" as key that does the "BranchPopup" command
+                    ["B"] = "BranchPopup",
+                }
+            }
+        }
     end
 }
 
