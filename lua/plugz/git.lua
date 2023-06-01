@@ -33,6 +33,15 @@ local Gitsigns = {
     end
 }
 
+local Neogit = {
+    "TimUntersberger/neogit",
+    cmd = 'Neogit',
+    config = function()
+        local neogit = require('neogit')
+        neogit.setup {}
+    end
+}
+
 local Fugitive = {
     "tpope/vim-fugitive",
     cmd = 'G',
@@ -63,7 +72,7 @@ local Search =     {
 
 return {
     Gitsigns,
-    Fugitive,
+    Neogit,
     Search,
     LazyGit
 }
