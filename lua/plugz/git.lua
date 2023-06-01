@@ -32,6 +32,9 @@ local Gitsigns = {
 local Neogit = {
     "TimUntersberger/neogit",
     cmd = 'Neogit',
+    keys = {
+        {"<leader>ng", '<cmd>Neogit<cr>'}
+    },
     config = function()
         local neogit = require('neogit')
         neogit.setup {
@@ -129,6 +132,7 @@ local Search =     {
 
 return {
     Gitsigns,
+    --Fugitive,
     Neogit,
     Search,
     LazyGit
