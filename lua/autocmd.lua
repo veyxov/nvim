@@ -10,6 +10,16 @@ autocmd('TextYankPost', function()
     vim.highlight.on_yank()
 end)
 
+-- Highlight current word
+autocmd('CursorHold', function()
+    vim.lsp.buf.document_highlight();
+    vim.diagnostic.open_float();
+end)
+autocmd('CursorMoved', function()
+    vim.lsp.buf.clear_references();
+end)
+
+
 -- Resize splits if window got resized
 autocmd('VimResized', function()
     vim.cmd 'tabdo wincmd ='
