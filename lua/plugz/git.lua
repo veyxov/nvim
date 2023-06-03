@@ -33,7 +33,7 @@ local Neogit = {
     "TimUntersberger/neogit",
     cmd = 'Neogit',
     keys = {
-        {"<leader>ng", '<cmd>Neogit<cr>'}
+        {"<leader>g", '<cmd>Neogit<cr>'}
     },
     config = function()
         local neogit = require('neogit')
