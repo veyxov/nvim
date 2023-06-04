@@ -14,7 +14,6 @@
   "lazy.nvim": { "branch": "main", "commit": "f145e6f42a56306c5536e9efbfe41f7efbec285d" },
   "lazygit.nvim": { "branch": "main", "commit": "3466e48439601445e26c65635421625886f2d0c0" },
   "leap.nvim": { "branch": "main", "commit": "14b5a65190fe69388a8f59c695ed3394a10d6af8" },
-  "neogit": { "branch": "master", "commit": "4cebc271b13cb7af6b5a3e8ad76a356660c0c00c" },
   "noice.nvim": { "branch": "main", "commit": "7e358170cea2314d9768b3f63616e8fad186195e" },
   "nui.nvim": { "branch": "main", "commit": "4ef43af1edea96c03c0508558d9b77a2261d7052" },
   "nvim-autopairs": { "branch": "master", "commit": "59df87a84c80a357ca8d8fe86e451b93ac476ccc" },
@@ -32,6 +31,7 @@
   "telescope-undo.nvim": { "branch": "main", "commit": "3dec002ea3e7952071d26fbb5d01e2038a58a554" },
   "telescope.nvim": { "branch": "master", "commit": "6d3fbffe426794296a77bb0b37b6ae0f4f14f807" },
   "typebreak.nvim": { "branch": "master", "commit": "28492d17ef4f4e596ba794a7bb0e67cecbd4a7ac" },
+  "vim-fugitive": { "branch": "master", "commit": "5f0d280b517cacb16f59316659966c7ca5e2bea2" },
   "vim-rhubarb": { "branch": "master", "commit": "ee69335de176d9325267b0fd2597a22901d927b1" },
   "zen-mode.nvim": { "branch": "main", "commit": "68f554702de63f4b7b6b6d4bcb10178f41a0acc7" }
 }
