@@ -5,7 +5,6 @@ map('<leader>qu', '<cmd>qall!<cr>')
 map('qu', '<cmd>wq<cr>')
 map('<bs>', '<cmd>q<cr>')
 
-
 -- Window navigation
 map('<C-Down>', '<C-w><Down>')
 map('<C-Left>', '<C-w><Left>')
