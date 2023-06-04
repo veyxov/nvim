@@ -48,14 +48,14 @@ local opts = {
             enable = true,
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
-                ['['] = '@function.outer',
+                [']'] = '@function.outer',
                 ['gb'] = '@block.inner'
             },
             goto_next_end = {
                 ['gM'] = '@function.outer',
             },
             goto_previous_start = {
-                [']'] = '@function.outer',
+                ['['] = '@function.outer',
             },
             goto_previous_end = {
                 --['GM'] = '@function.outer',
