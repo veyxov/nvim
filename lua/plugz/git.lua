@@ -96,6 +96,7 @@ local Neogit = {
                 status = {
                     -- Adds a mapping with "B" as key that does the "BranchPopup" command
                     ["B"] = "BranchPopup",
+                    ["u"] = "",
                 }
             }
         }
@@ -132,8 +133,8 @@ local Search =     {
 
 return {
     Gitsigns,
-    --Fugitive,
-    Neogit,
+    Fugitive,
+    --Neogit,
     Search,
     LazyGit
 }
