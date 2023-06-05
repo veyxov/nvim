@@ -20,9 +20,8 @@ map('<C-w>', '<cmd>wall<cr>') -- Save file
 map('<leader>w', '<cmd>wall<cr>') -- Save file
 
 -- Select and copy
-map('h', 'y', { 'n', 'v', 'o' })
-map('ha', 'ya', { 'n', 'v', 'o' })
-map('hi', 'yi', { 'n', 'v', 'o' })
+vim.cmd "map h y"
+vim.cmd "map H Y"
 map('<leader>h', '"+y', { 'n', 'v', 'o' })
 map('<leader>hh', '"+yy', { 'n', 'v', 'o' })
 map('<leader>v', '<C-V>')             -- Visual block mode

@@ -21,26 +21,16 @@ local opts = {
     autotag = {
         enable = true
     },
-    indent = { enable = true },
     textobjects = {
         select = {
             enable = true,
             -- Automatically jump forward to textobj
             lookahead = true,
             keymaps = {
-                ['am'] = '@function.outer',
-                ['im'] = '@function.inner',
-                ['aC'] = '@class.outer',
-                ['iC'] = '@class.inner',
-                ['aif'] = '@conditional.outer',
-                ['iif'] = '@conditional.inner',
-                ['ib'] = '@block.inner',
-                ['ab'] = '@block.outer',
-                ['il'] = '@loop.inner',
-                ['al'] = '@loop.outer',
-                ['ic'] = '@call.inner',
-                ['ac'] = '@call.outer',
-                ['aa'] = '@parameter.inner',
+                ['af'] = '@function.outer',
+                ['if'] = '@function.inner',
+                ['ac'] = '@class.outer',
+                ['ic'] = '@class.inner',
             },
             include_surrounding_whitespace = false,
         },
@@ -52,7 +42,7 @@ local opts = {
                 ['gb'] = '@block.inner'
             },
             goto_next_end = {
-                ['gM'] = '@function.outer',
+                ['gF'] = '@function.outer',
             },
             goto_previous_start = {
                 ['['] = '@function.outer',

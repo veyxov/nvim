@@ -62,7 +62,7 @@ function M.config()
     map('<leader>r', vim.lsp.buf.rename)
     map('<C-E>', vim.lsp.buf.signature_help, 'i')
 
-    map('<S-h>', vim.lsp.buf.hover)
+    map('<leader>k', vim.lsp.buf.hover)
 end
 
 return M
