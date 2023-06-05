@@ -18,7 +18,7 @@ M.config = function()
         },
         skip_confirm_for_simple_edits = true,
         keymaps = {
-            ["<CR>"] = "actions.select",
+            ["t"] = "actions.select",
             ["<C-i>"] = "actions.select_vsplit",
             ["<C-e>"] = "actions.select_split",
             ["<C-t>"] = "actions.select_tab",
@@ -29,10 +29,10 @@ M.config = function()
             ["q"] = "actions.close",
             ["<C-l>"] = "actions.refresh",
             ["h"] = "actions.open_cwd",
-            ["`"] = "actions.cd",
+            ["cd"] = "actions.cd",
             ["~"] = "actions.tcd",
-            ["g."] = "actions.toggle_hidden",
-            ["Y"] = "actions.copy_entry_path",
+            ["."] = "actions.toggle_hidden",
+            ["yy"] = "actions.copy_entry_path",
         },
         float = {
             padding = 3,
