@@ -1,5 +1,7 @@
 local map = require 'globals'.Map
 
+local nvo = {'n', 'v', 'o'}
+
 -- Quitting made easy
 map('<leader>qu', '<cmd>qall!<cr>')
 map('qu', '<cmd>wq<cr>')
@@ -20,10 +22,20 @@ map('<C-w>', '<cmd>wall<cr>') -- Save file
 map('<leader>w', '<cmd>wall<cr>') -- Save file
 
 -- Select and copy
-vim.cmd "map h y"
-vim.cmd "map H Y"
-map('<leader>h', '"+y', { 'n', 'v', 'o' })
-map('<leader>hh', '"+yy', { 'n', 'v', 'o' })
+map('h', 'y', nvo)
+map('H', 'y$')
+
+map('y', '<cmd>quit<cr>', nvo)
+map('<leader>h', '"+y', nvo)
+map('<leader>H', '"+y$', nvo)
+map('<leader>hh', '"+yy', nvo)
+
+map('y', '<cmd>quit<cr>', nvo)
+map('<leader>h', '"+y', nvo)
+map('<leader>H', '"+y$', nvo)
+map('<leader>hh', '"+yy', nvo)
+-- Copy end
+
 map('<leader>v', '<C-V>')             -- Visual block mode
 
 -- Insert a semicolon at the end of the line and create a new one
