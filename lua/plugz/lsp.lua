@@ -57,7 +57,7 @@ function M.config()
     map('<leader>s', '<cmd>Telescope lsp_references theme=dropdown<cr>', { 'n', 'v' });
     map('<leader><leader>', '<cmd>Telescope lsp_implementations theme=dropdown<cr>', { 'n', 'v' });
 
-    map('<leader>a', vim.lsp.buf.code_action, { 'n', 'v' })
+    map('<F5>', vim.lsp.buf.code_action, { 'n', 'v' })
     map('<leader>f', vim.lsp.buf.format)
     map('<leader>r', vim.lsp.buf.rename)
     map('<C-E>', vim.lsp.buf.signature_help, 'i')
