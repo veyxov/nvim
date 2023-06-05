@@ -38,19 +38,20 @@ local opts = {
             enable = true,
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
-                [']'] = '@function.outer',
-                ['gb'] = '@block.inner',
+                ['['] = '@function.outer',
                 ['gc'] = '@class.outer'
             },
             goto_next_end = {
-                ['gF'] = '@function.outer',
+                ['('] = '@function.outer',
+                ['Gc'] = '@class.outer',
             },
             goto_previous_start = {
-                ['['] = '@function.outer',
+                [']'] = '@function.outer',
                 ['gC'] = '@class.outer'
             },
             goto_previous_end = {
-                --['GM'] = '@function.outer',
+                ['GC'] = '@class.outer',
+                [')'] = '@function.outer',
             },
         },
         swap = {
