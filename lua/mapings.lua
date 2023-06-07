@@ -39,7 +39,7 @@ map('<leader>hh', '"+yy', nvo)
 map('<leader>v', '<C-V>')             -- Visual block mode
 
 -- Insert a semicolon at the end of the line and create a new one
-map('<C-o>', '<esc>A;<esc>o', 'i')
+map('<F5>', '<esc>A;<esc>o', 'i')
 
 -- better indenting
 map("<", "<gv", 'v')
