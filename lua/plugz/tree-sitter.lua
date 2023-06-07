@@ -31,6 +31,8 @@ local opts = {
                 ['if'] = '@function.inner',
                 ['ac'] = '@class.outer',
                 ['ic'] = '@class.inner',
+                ['AA'] = '@parameter.inner',
+                ['aa'] = '@parameter.outer',
             },
             include_surrounding_whitespace = false,
         },
