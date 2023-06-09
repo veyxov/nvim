@@ -12,15 +12,15 @@ local Lualine = {
     event = "InsertEnter",
     config = function()
         require('lualine').setup {
-            options = {
-                component_separators = { left = '', right = ''},
-                section_separators = { left = '', right = ''},
+            options           = {
+                component_separators = { left = '', right = '' },
+                section_separators = { left = '', right = '' },
                 globalstatus = true
             },
-            sections = {
-                lualine_a = {'mode'},
-                lualine_b = {'branch', 'diff', 'diagnostics'},
-                lualine_c = {{
+            sections          = {
+                lualine_a = { 'mode' },
+                lualine_b = { 'branch', 'diff', 'diagnostics' },
+                lualine_c = { {
                     'filename',
                     file_status = true,
                     newfile_status = false,
@@ -29,18 +29,18 @@ local Lualine = {
                     symbols = {
                         modified = '[+]',
                         readonly = '[-]',
-                        unnamed = '[No Name]', 
+                        unnamed = '[No Name]',
                         newfile = '[New]',
                     }
-                }},
-                lualine_x = {'fileformat', 'filetype'},
+                } },
+                lualine_x = { 'fileformat', 'filetype' },
             },
             inactive_sections = {
-                lualine_c = {'filename'},
-                lualine_x = {'location'},
+                lualine_c = { 'filename' },
+                lualine_x = { 'location' },
             },
-            inactive_winbar  = {
-                lualine_c = {'filename'},
+            inactive_winbar   = {
+                lualine_c = { 'filename' },
             },
         }
     end
