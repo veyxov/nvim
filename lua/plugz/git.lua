@@ -19,13 +19,15 @@ local Gitsigns = {
         map('hs', gs.stage_hunk)
         map('hr', gs.reset_hunk)
 
-        map('hs', function() gs.stage_hunk {vim.fn.line("."), vim.fn.line("v")} end, 'v')
-        map('hr', function() gs.reset_hunk {vim.fn.line("."), vim.fn.line("v")} end, 'v')
+        map('gh', gs.next_hunk)
+
+        map('hs', function() gs.stage_hunk { vim.fn.line("."), vim.fn.line("v") } end, 'v')
+        map('hr', function() gs.reset_hunk { vim.fn.line("."), vim.fn.line("v") } end, 'v')
 
         --map('ha', gs.stage_buffer)
         map('hU', gs.stage_buffer)
 
-        map('hb', function() gs.blame_line{full=true} end)
+        map('hb', function() gs.blame_line { full = true } end)
     end
 }
 
@@ -33,7 +35,7 @@ local Neogit = {
     "TimUntersberger/neogit",
     cmd = 'Neogit',
     keys = {
-        {"<leader>g", '<cmd>Neogit<cr>'}
+        { "<leader>g", '<cmd>Neogit<cr>' }
     },
     config = function()
         local neogit = require('neogit')
@@ -113,14 +115,13 @@ local Fugitive = {
 
         --map('gP', '<cmd>G! push<cr>')
         --map('ga', '<cmd>G add .<cr>') -- stage all files
-
     end
 }
 
-local Search =     {
+local Search = {
     "aaronhallaert/advanced-git-search.nvim",
     keys = {
-        {"<leader>gs", "<cmd>AdvancedGitSearch<cr>"}
+        { "<leader>gs", "<cmd>AdvancedGitSearch<cr>" }
     },
     config = function()
         require 'telescope'.load_extension("advanced_git_search")
