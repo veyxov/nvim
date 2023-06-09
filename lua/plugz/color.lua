@@ -145,7 +145,7 @@ local Rose = {
 local Fluro = {
     'maxmx03/fluoromachine.nvim',
     event = "VeryLazy",
-    config = function ()
+    config = function()
         local fm = require 'fluoromachine'
 
         fm.setup {
@@ -158,4 +158,12 @@ local Fluro = {
 
 }
 
-return Rose;
+local OneNord = {
+    'rmehri01/onenord.nvim',
+    event = "VeryLazy",
+    config = function()
+        require('onenord').setup()
+    end
+}
+
+return OneNord;
