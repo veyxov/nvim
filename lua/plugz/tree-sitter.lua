@@ -9,7 +9,7 @@ M.dependencies = {
 }
 
 local opts = {
-    ensure_installed = { 
+    ensure_installed = {
         'lua', 'vim', 'json', 'vimdoc',
         'c_sharp', 'regex', 'bash', 'markdown', 'markdown_inline'
     },
@@ -29,6 +29,10 @@ local opts = {
             keymaps = {
                 ['af'] = '@function.outer',
                 ['if'] = '@function.inner',
+                ['aif'] = '@conditional.outer',
+                ['iif'] = '@conditional.inner',
+                ['al'] = '@loop.outer',
+                ['il'] = '@loop.inner',
                 ['ac'] = '@class.outer',
                 ['ic'] = '@class.inner',
                 ['AA'] = '@parameter.inner',
