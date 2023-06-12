@@ -166,4 +166,6 @@ local OneNord = {
     end
 }
 
-return OneNord;
+return {
+    Sonokay
+};
