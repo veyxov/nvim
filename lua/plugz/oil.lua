@@ -2,7 +2,7 @@ local M = {
     'stevearc/oil.nvim',
     keys = {
         { '<C-n>', function() require 'oil'.open_float() end },
-        { '-', function() require 'oil'.open() end },
+        { '-',     function() require 'oil'.open() end },
     },
 }
 
@@ -23,10 +23,8 @@ M.config = function()
             ["<C-e>"] = "actions.select_split",
             ["<C-t>"] = "actions.select_tab",
             ["<C-p>"] = "actions.preview",
-            ["e"] = "j",
-            ["i"] = "k",
             ["n"] = "actions.parent",
-            ["q"] = "actions.close",
+            ["qu"] = "actions.close",
             ["<C-l>"] = "actions.refresh",
             --["h"] = "actions.open_cwd",
             ["cd"] = "actions.cd",
