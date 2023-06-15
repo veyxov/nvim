@@ -167,5 +167,5 @@ local OneNord = {
 }
 
 return {
-    Sonokay
+    Rose
 };
