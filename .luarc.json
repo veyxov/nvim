@@ -1,0 +1,22 @@
+{
+    "workspace.library": [
+        "/home/iz/.config/nvim",
+        "/home/iz/.local/share/nvim/lazy/lazy.nvim",
+        "/home/iz/.local/share/nvim/lazy/nvim-lspconfig",
+        "/home/iz/.local/share/nvim/lazy/nvim-treesitter-context",
+        "/home/iz/.local/share/nvim/lazy/nvim-treesitter-textobjects",
+        "/home/iz/.local/share/nvim/lazy/nvim-treesitter",
+        "/home/iz/.local/share/nvim/lazy/plenary.nvim",
+        "/home/iz/.local/share/nvim/lazy/telescope-fzf-native.nvim",
+        "/home/iz/.local/share/nvim/lazy/telescope.nvim",
+        "/home/iz/.local/share/nvim/lazy/nui.nvim",
+        "/home/iz/.local/share/nvim/lazy/noice.nvim",
+        "/home/iz/.local/share/nvim/lazy/stay-centered.nvim",
+        "/home/iz/.local/share/nvim/lazy/neovim",
+        "/home/iz/.local/share/nvim/lazy/gitsigns.nvim",
+        "/usr/share/nvim/runtime",
+        "/usr/lib/nvim",
+        "/home/iz/.local/state/nvim/lazy/readme",
+        "${3rd}/luv/library"
+    ]
+}
