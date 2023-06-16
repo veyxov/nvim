@@ -1,7 +1,7 @@
 return {
-	"windwp/nvim-ts-autotag",
-	ft = { "svelte", "js", "ts", "html", "vue" },
-	config = function()
-		require("nvim-ts-autotag").setup()
-	end,
+    'windwp/nvim-ts-autotag',
+    ft = { 'svelte', 'js', 'ts', 'html', 'vue' },
+    config = function()
+        require('nvim-ts-autotag').setup()
+    end,
 }
