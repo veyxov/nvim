@@ -1,68 +1,65 @@
 local M = {
-    'neovim/nvim-lspconfig'
+	"neovim/nvim-lspconfig",
 }
 
-M.event = 'InsertEnter'
+M.event = "InsertEnter"
 
 function M.config()
-    local lsp = require 'lspconfig'
+	local lsp = require("lspconfig")
 
-    -- C#
-    lsp.csharp_ls.setup {
-        cmd = { 'csharp-ls' },
-        filetypes = { 'cs', 'solution' },
-        on_attach = on_attach,
-        root_dir =
-            lsp.util.root_pattern('.git', '.sln')
-            or
-            vim.loop.os_homedir(),
-    }
+	-- C#
+	lsp.csharp_ls.setup({
+		cmd = { "csharp-ls" },
+		filetypes = { "cs", "solution" },
+		on_attach = on_attach,
+		root_dir = lsp.util.root_pattern(".git", ".sln") or vim.loop.os_homedir(),
+	})
 
-    -- Typescript
-    lsp.tsserver.setup {}
+	-- Typescript
+	lsp.tsserver.setup({})
 
-    -- C++
-    lsp.clangd.setup {}
+	-- C++
+	lsp.clangd.setup({})
 
-    -- Svelte
-    lsp.svelte.setup {}
+	-- Svelte
+	lsp.svelte.setup({})
 
-    -- Lua
-    require 'lspconfig'.lua_ls.setup {
-        settings = {
-            Lua = {
-                runtime = {
-                    version = 'LuaJIT',
-                },
-                diagnostics = {
-                    globals = { 'vim' },
-                },
-                workspace = {
-                    library = vim.api.nvim_get_runtime_file('', true),
-                },
-                telemetry = {
-                    enable = false,
-                }
-            },
-        },
-    }
+	-- Lua
+	require("lspconfig").lua_ls.setup({
+		settings = {
+			Lua = {
+				runtime = {
+					version = "LuaJIT",
+				},
+				diagnostics = {
+					globals = { "vim" },
+				},
+				workspace = {
+					library = vim.api.nvim_get_runtime_file("", true),
+				},
+				telemetry = {
+					enable = false,
+				},
+			},
+		},
+	})
 
-    -- Rust
-    lsp.rust_analyzer.setup {}
-    lsp.gopls.setup {}
+	-- Rust
+	lsp.rust_analyzer.setup({})
+	lsp.gopls.setup({})
 
-    local map = require 'globals'.Map
+	local map = require("globals").Map
 
-    map('<leader>t', '<cmd>Telescope lsp_definitions theme=dropdown<cr>', { 'n', 'v' })
-    map('<leader>s', '<cmd>Telescope lsp_references theme=dropdown<cr>', { 'n', 'v' });
-    map('<leader><leader>', '<cmd>Telescope lsp_implementations theme=dropdown<cr>', { 'n', 'v' });
+	map("<leader>t", "<cmd>Telescope lsp_definitions theme=dropdown<cr>", { "n", "v" })
+	map("<leader>s", "<cmd>Telescope lsp_references theme=dropdown<cr>", { "n", "v" })
+	map("<leader><leader>", "<cmd>Telescope lsp_implementations theme=dropdown<cr>", { "n", "v" })
 
-    map('<F5>', vim.lsp.buf.code_action, { 'n', 'v' })
-    map('<leader>f', vim.lsp.buf.format)
-    map('<leader>r', vim.lsp.buf.rename)
-    map('<C-E>', vim.lsp.buf.signature_help, 'i')
+	map("<F5>", vim.lsp.buf.code_action, { "n", "v" })
+	map("<leader>f", vim.lsp.buf.format)
+	map("<leader>r", vim.lsp.buf.rename)
+	map("<C-E>", vim.lsp.buf.signature_help, "i")
 
-    map('<leader>k', vim.lsp.buf.hover)
+	map("<leader>k", vim.lsp.buf.hover)
 end
 
 return M
