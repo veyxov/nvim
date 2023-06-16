@@ -4,12 +4,11 @@ local M = {
     event = 'InsertEnter',
 }
 
-local F =
-{
-    "zbirenbaum/copilot-cmp",
+local F = {
+    'zbirenbaum/copilot-cmp',
     config = function()
-        require("copilot_cmp").setup()
-    end
+        require('copilot_cmp').setup()
+    end,
 }
 
 M.config = function()
