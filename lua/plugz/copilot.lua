@@ -4,10 +4,18 @@ local M = {
     event = 'InsertEnter',
 }
 
+local F =
+{
+    "zbirenbaum/copilot-cmp",
+    config = function()
+        require("copilot_cmp").setup()
+    end
+}
+
 M.config = function()
     require('copilot').setup {
         panel = {
-            enabled = true,
+            enabled = false,
             auto_refresh = true,
             keymap = {
                 jump_prev = 'gp',
@@ -22,7 +30,7 @@ M.config = function()
             },
         },
         suggestion = {
-            enabled = true,
+            enabled = false,
             auto_trigger = false,
             debounce = 75,
             keymap = {
@@ -40,4 +48,4 @@ M.config = function()
     }
 end
 
-return M
+return { M, F }

@@ -14,6 +14,9 @@ function M.config()
     local luasnip = require 'luasnip'
     local cmp = require 'cmp'
 
+    -- Load cmp
+    require('lazy').load { plugins = { 'copilot-cmp' } }
+
     ---@diagnostic disable-next-line: redundant-parameter
     cmp.setup {
         completion = {
@@ -37,6 +40,7 @@ function M.config()
             ['<C-q>'] = cmp.mapping.close(),
         },
         sources = cmp.config.sources {
+            { name = 'copilot',  group_index = 2 },
             { name = 'nvim_lsp', keyword_length = 3 },
             { name = 'luasnip' },
             {
