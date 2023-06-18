@@ -178,5 +178,5 @@ local OneNord = {
 }
 
 return {
-    Rose,
+    Gruvbox,
 }
