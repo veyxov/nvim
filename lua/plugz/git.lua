@@ -8,8 +8,8 @@ local Gitsigns = {
         gs.setup { yadm = { enable = true } }
 
         -- Hunk stage
-        map('hs', gs.stage_hunk)
-        map('hr', gs.reset_hunk)
+        map('jj', gs.stage_hunk)
+        map('ju', gs.reset_hunk)
 
         map('gh', gs.next_hunk)
 
