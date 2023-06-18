@@ -15,7 +15,7 @@ return {
                 ---Add comment on the line below
                 below = 'ko',
                 ---Add comment at the end of line
-                eol = 'ka',
+                eol = 'K',
             },
 
             toggler = {
