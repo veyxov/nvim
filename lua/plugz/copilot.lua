@@ -1,17 +1,17 @@
-local M = {
+local Copilot = {
     'zbirenbaum/copilot.lua',
     cmd = 'Copilot',
     event = 'InsertEnter',
 }
 
-local F = {
+local CmpSource = {
     'zbirenbaum/copilot-cmp',
     config = function()
         require('copilot_cmp').setup()
     end,
 }
 
-M.config = function()
+Copilot.config = function()
     require('copilot').setup {
         panel = {
             enabled = false,
@@ -47,4 +47,4 @@ M.config = function()
     }
 end
 
-return { M, F }
+return { Copilot, CmpSource }
