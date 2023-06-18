@@ -7,21 +7,21 @@ local Gitsigns = {
         local gs = require 'gitsigns'
         gs.setup { yadm = { enable = true } }
 
-        -- Hunk stage
+        -- Add/reset
         map('jj', gs.stage_hunk)
         map('ju', gs.reset_hunk)
+        map('jJ', gs.stage_buffer)
+        map('jU', gs.reset_buffer)
 
         map('gh', gs.next_hunk)
 
-        map('hs', function()
+        map('jj', function()
             gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
         end, 'v')
-        map('hr', function()
+        map('ju', function()
             gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
         end, 'v')
 
-        --map('ha', gs.stage_buffer)
-        map('hU', gs.stage_buffer)
 
         map('hb', function()
             gs.blame_line { full = true }
