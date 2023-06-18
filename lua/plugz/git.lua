@@ -33,12 +33,12 @@ local Fugitive = {
     'tpope/vim-fugitive',
     cmd = 'G',
     init = function()
-        map('gac', '<cmd>G add . | G commit<cr>')
-        --map('gc', '<cmd>G commit<cr>')
-        --map('gb', '<cmd>G blame<cr>')
+        map('J', '<cmd>G add . | G commit<cr>')
+        map('jc', '<cmd>G commit<cr>')
+        map('jb', '<cmd>G blame<cr>')
 
-        --map('gP', '<cmd>G! push<cr>')
-        --map('ga', '<cmd>G add .<cr>') -- stage all files
+        map('jp', '<cmd>G! push<cr>')
+        map('ja', '<cmd>G add .<cr>') -- stage all files
     end,
 }
 
