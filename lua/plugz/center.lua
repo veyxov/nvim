@@ -2,7 +2,7 @@ local Center = {
     'arnamak/stay-centered.nvim',
     event = 'VeryLazy',
     config = function()
-        require 'stay-centered'
+        require('stay-centered').setup()
     end,
 }
 
@@ -12,12 +12,7 @@ local Zen = {
         {
             '<leader>c',
             function()
-                require('zen-mode').toggle {
-                    window = {
-                        width = 0.5,
-                        backdrop = 1,
-                    },
-                }
+                require('zen-mode').toggle {}
             end,
         },
     },
