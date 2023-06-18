@@ -2,7 +2,7 @@ local map = require('globals').Map
 
 local Gitsigns = {
     'lewis6991/gitsigns.nvim',
-    keys = {'j'},
+    keys = { 'j' },
     config = function()
         local gs = require 'gitsigns'
         gs.setup { yadm = { enable = true } }
@@ -16,6 +16,8 @@ local Gitsigns = {
         map('js', gs.preview_hunk)
 
         map('gh', gs.next_hunk)
+
+        map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
 
         map('jj', function()
             gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
