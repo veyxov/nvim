@@ -13,6 +13,8 @@ local Gitsigns = {
         map('jJ', gs.stage_buffer)
         map('jU', gs.reset_buffer)
 
+        map('js', gs.preview_hunk)
+
         map('gh', gs.next_hunk)
 
         map('jj', function()
@@ -21,7 +23,6 @@ local Gitsigns = {
         map('ju', function()
             gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
         end, 'v')
-
 
         map('hb', function()
             gs.blame_line { full = true }
