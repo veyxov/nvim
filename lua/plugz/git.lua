@@ -15,9 +15,18 @@ local Gitsigns = {
 
         map('js', gs.preview_hunk)
 
+        -- Toggles
+        map('jtw', gs.toggle_word_diff)
+
+        -- Blaming
+        map('jb', gs.blame_line)
+
+        -- Diffing
+        map('jD', gs.diffthis)
+
         map('gh', gs.next_hunk)
 
-        map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+        map('ih', ':<C-U>Gitsigns select_hunk<CR>', { 'o', 'x' })
 
         map('jj', function()
             gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
