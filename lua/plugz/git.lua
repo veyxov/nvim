@@ -1,13 +1,5 @@
 local map = require('globals').Map
 
-local LazyGit = {
-    'kdheepak/lazygit.nvim',
-    cmd = 'LazyGit',
-    init = function()
-        map('<leader>gg', '<cmd>LazyGit<cr>')
-    end,
-}
-
 local Gitsigns = {
     'lewis6991/gitsigns.nvim',
     event = 'VeryLazy',
@@ -34,80 +26,6 @@ local Gitsigns = {
         map('hb', function()
             gs.blame_line { full = true }
         end)
-    end,
-}
-
-local Neogit = {
-    'TimUntersberger/neogit',
-    cmd = 'Neogit',
-    keys = {
-        { '<leader>g', '<cmd>Neogit<cr>' },
-    },
-    config = function()
-        local neogit = require 'neogit'
-        neogit.setup {
-            disable_commit_confirmation = true,
-            disable_builtin_notifications = false,
-            kind = 'tab',
-            console_timeout = 10000,
-            auto_show_console = true,
-            remember_settings = true,
-            use_per_project_settings = true,
-            commit_popup = {
-                kind = 'split',
-            },
-            -- Change the default way of opening the preview buffer
-            preview_buffer = {
-                kind = 'split',
-            },
-            -- Change the default way of opening popups
-            popup = {
-                kind = 'split',
-            },
-            -- customize displayed signs
-            signs = {
-                -- { CLOSED, OPENED }
-                section = { '>', 'v' },
-                item = { '>', 'v' },
-                hunk = { '', '' },
-            },
-            integrations = {
-                diffview = true,
-            },
-            -- Setting any section to `false` will make the section not render at all
-            sections = {
-                untracked = {
-                    folded = false,
-                },
-                unstaged = {
-                    folded = false,
-                },
-                staged = {
-                    folded = false,
-                },
-                stashes = {
-                    folded = true,
-                },
-                unpulled = {
-                    folded = true,
-                },
-                unmerged = {
-                    folded = false,
-                },
-                recent = {
-                    folded = true,
-                },
-            },
-            -- override/add mappings
-            mappings = {
-                -- modify status buffer mappings
-                status = {
-                    -- Adds a mapping with "B" as key that does the "BranchPopup" command
-                    ['B'] = 'BranchPopup',
-                    ['u'] = '',
-                },
-            },
-        }
     end,
 }
 
@@ -141,7 +59,5 @@ local Search = {
 return {
     Gitsigns,
     Fugitive,
-    --Neogit,
     Search,
-    LazyGit,
 }
