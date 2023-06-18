@@ -23,8 +23,3 @@ autocmd('BufReadPost', function()
         pcall(vim.api.nvim_win_set_cursor, 0, mark)
     end
 end)
-
--- Format before writing
-autocmd('BufWritePre', function()
-    vim.lsp.buf.format { async = false }
-end)
