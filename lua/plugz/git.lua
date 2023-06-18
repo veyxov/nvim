@@ -2,7 +2,7 @@ local map = require('globals').Map
 
 local Gitsigns = {
     'lewis6991/gitsigns.nvim',
-    event = 'VeryLazy',
+    keys = {'j'},
     config = function()
         local gs = require 'gitsigns'
         gs.setup { yadm = { enable = true } }
