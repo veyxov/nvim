@@ -9,6 +9,15 @@ return {
                 ---Block-comment keymap
                 block = 'gb',
             },
+            extra = {
+                ---Add comment on the line above
+                above = 'kO',
+                ---Add comment on the line below
+                below = 'ko',
+                ---Add comment at the end of line
+                eol = 'ka',
+            },
+
             toggler = {
                 line = 'kk',
             },
