@@ -12,7 +12,7 @@ local Noice = {
                 require('noice').cmd 'all'
             end,
         },
-    }
+    },
 }
 
 Noice.config = function()
