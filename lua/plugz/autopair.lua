@@ -5,7 +5,7 @@ local cmp_integration = function()
     cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 end
 
-return {
+local Autopairs = {
     'windwp/nvim-autopairs',
     keys = {
         { '(', mode = 'i' },
@@ -20,3 +20,13 @@ return {
         cmp_integration()
     end,
 }
+
+local Autotags = {
+    'windwp/nvim-ts-autotag',
+    ft = { 'svelte', 'js', 'ts', 'html', 'vue' },
+    config = function()
+        require('nvim-ts-autotag').setup()
+    end,
+}
+
+return { Autopairs, Autotags }
