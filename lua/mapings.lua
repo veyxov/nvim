@@ -18,7 +18,6 @@ map(',', ',<c-g>u', 'i')
 map('.', '.<c-g>u', 'i')
 map(';', ';<c-g>u', 'i')
 
-map('<C-w>', '<cmd>wall<cr>') -- Save file
 map('<leader>w', '<cmd>wall<cr>') -- Save file
 
 -- Select and copy
