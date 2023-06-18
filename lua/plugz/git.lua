@@ -17,6 +17,7 @@ local Gitsigns = {
 
         -- Toggles
         map('jtw', gs.toggle_word_diff)
+        map('jtt', gs.toggle_signs)
 
         -- Blaming
         map('jb', gs.blame_line)
