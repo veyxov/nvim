@@ -7,7 +7,7 @@ return {
                 ---Line-comment keymap
                 line = 'k',
                 ---Block-comment keymap
-                block = 'gb',
+                block = 'kb',
             },
             extra = {
                 ---Add comment on the line above
