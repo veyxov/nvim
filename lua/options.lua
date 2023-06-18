@@ -24,7 +24,6 @@ opt.list = true
 opt.hlsearch = true
 opt.signcolumn = 'number'
 
--- Too risky? Nah, it'll be fine :)
 opt.swapfile = false
 opt.undolevels = 10000
 opt.undofile = true
