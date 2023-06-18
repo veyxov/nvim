@@ -5,13 +5,13 @@ return {
         { '<C-r>' },
     },
     config = function()
-        require('highlight-undo').setup({
+        require('highlight-undo').setup {
             hlgroup = 'DiffAdd',
             duration = 300,
             keymaps = {
-                { 'n', 'u',     'undo', {} },
+                { 'n', 'u', 'undo', {} },
                 { 'n', '<C-r>', 'redo', {} },
-            }
-        })
-    end
+            },
+        }
+    end,
 }
