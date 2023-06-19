@@ -20,6 +20,9 @@ local Zen = {
 
 Zen.config = function()
     require('zen-mode').setup {
+        window = {
+            width = .69
+        },
         plugins = {
             wezterm = {
                 enabled = true,
