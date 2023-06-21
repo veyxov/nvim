@@ -21,6 +21,53 @@ return {
         }
 
         local keymap = vim.keymap.set
+
+        -- indentation based objects
+        keymap(
+            { 'o', 'x' },
+            'ii',
+            "<cmd>lua require('various-textobjs').indentation(true, true)<CR>"
+        )
+        keymap(
+            { 'o', 'x' },
+            'ai',
+            "<cmd>lua require('various-textobjs').indentation(false, true)<CR>"
+        )
+        keymap(
+            { 'o', 'x' },
+            'iI',
+            "<cmd>lua require('various-textobjs').indentation(true, true)<CR>"
+        )
+        keymap(
+            { 'o', 'x' },
+            'aI',
+            "<cmd>lua require('various-textobjs').indentation(false, false)<CR>"
+        )
+
+        -- subword
+        keymap(
+            { 'o', 'x' },
+            'ah',
+            "<cmd>lua require('various-textobjs').subword(true)<CR>"
+        )
+        keymap(
+            { 'o', 'x' },
+            'ih',
+            "<cmd>lua require('various-textobjs').subword(false)<CR>"
+        )
+
+        -- to next closing bracket
+        keymap(
+            { 'o', 'x' },
+            't;',
+            "<cmd>lua require('various-textobjs').toNextClosingBracket()<CR>"
+        )
+        keymap(
+            { 'o', 'x' },
+            'ax',
+            "<cmd>lua require('various-textobjs').lineCharacterwise(false)<CR>"
+        )
+
         -- rhs
         keymap(
             { 'o', 'x' },
