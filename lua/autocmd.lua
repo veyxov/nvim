@@ -7,7 +7,7 @@ end
 
 -- Highlight on yank
 autocmd('TextYankPost', function()
-    vim.highlight.on_yank({timeout = 700})
+    vim.highlight.on_yank { timeout = 700 }
 end)
 
 -- Resize splits if window got resized
