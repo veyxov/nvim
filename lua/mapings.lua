@@ -43,3 +43,5 @@ map('<F5>', '<esc>A;<esc>o', 'i')
 -- better indenting
 map('<', '<gv', 'v')
 map('>', '>gv', 'v')
+
+map('<leader>l', '<cmd>Lazy<cr>', 'n')

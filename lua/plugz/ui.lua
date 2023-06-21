@@ -1,7 +1,6 @@
 -- Noice
 local Noice = {
     'folke/noice.nvim',
-    event = 'VeryLazy',
     dependencies = {
         'MunifTanjim/nui.nvim',
     },
@@ -12,6 +11,9 @@ local Noice = {
                 require('noice').cmd 'all'
             end,
         },
+        {
+            ':'
+        }
     },
 }
 
