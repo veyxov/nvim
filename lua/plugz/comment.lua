@@ -1,7 +1,12 @@
 return {
     'numToStr/Comment.nvim',
     keys = {
-        'k', 'kk', 'kb', 'kO', 'ko', 'K',
+        'k',
+        'kk',
+        'kb',
+        'kO',
+        'ko',
+        'K',
     },
     config = function()
         require('Comment').setup {
