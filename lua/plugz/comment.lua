@@ -1,6 +1,8 @@
 return {
     'numToStr/Comment.nvim',
-    lazy = false,
+    keys = {
+        'k', 'kk', 'kb', 'kO', 'ko', 'K',
+    },
     config = function()
         require('Comment').setup {
             opleader = {
