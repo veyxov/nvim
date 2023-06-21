@@ -25,39 +25,39 @@ return {
         keymap(
             { 'o', 'x' },
             'ar',
-            '<cmd>lua require(\'various-textobjs\').value(true)<CR>'
+            "<cmd>lua require('various-textobjs').value(true)<CR>"
         )
         keymap(
             { 'o', 'x' },
             'ir',
-            '<cmd>lua require(\'various-textobjs\').value(false)<CR>'
+            "<cmd>lua require('various-textobjs').value(false)<CR>"
         )
         -- lhs
         keymap(
             { 'o', 'x' },
             'ak',
-            '<cmd>lua require(\'various-textobjs\').key(true)<CR>'
+            "<cmd>lua require('various-textobjs').key(true)<CR>"
         )
         keymap(
             { 'o', 'x' },
             'ik',
-            '<cmd>lua require(\'various-textobjs\').key(false)<CR>'
+            "<cmd>lua require('various-textobjs').key(false)<CR>"
         )
         -- Member funcions
         keymap(
             { 'o', 'x' },
             'im',
-            '<cmd>lua require(\'various-textobjs\').chainMember(true)<CR>'
+            "<cmd>lua require('various-textobjs').chainMember(true)<CR>"
         )
         keymap(
             { 'o', 'x' },
             'am',
-            '<cmd>lua require(\'various-textobjs\').chainMember(false)<CR>'
+            "<cmd>lua require('various-textobjs').chainMember(false)<CR>"
         )
         -- Visible part of the screen
         map(
             'gw',
-            '<cmd>lua require(\'various-textobjs\').visibleInWindow()<CR>',
+            "<cmd>lua require('various-textobjs').visibleInWindow()<CR>",
             { 'o', 'x' }
         )
     end,

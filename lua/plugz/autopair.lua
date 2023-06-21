@@ -12,7 +12,7 @@ local Autopairs = {
         { '[', mode = 'i' },
         { '{', mode = 'i' },
         { '"', mode = 'i' },
-        { '\'', mode = 'i' },
+        { "'", mode = 'i' },
     },
     config = function()
         require('nvim-autopairs').setup {}
