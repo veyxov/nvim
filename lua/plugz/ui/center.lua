@@ -5,4 +5,3 @@ return {
         require('stay-centered').setup()
     end,
 }
-
