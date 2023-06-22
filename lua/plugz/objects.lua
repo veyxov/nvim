@@ -4,20 +4,13 @@ return {
     config = function()
         local map = require('globals').Map
 
-        -- default config
         require('various-textobjs').setup {
             -- lines to seek forwards for "small" textobjs (mostly characterwise textobjs)
             -- set to 0 to only look in the current line
-            lookForwardSmall = 5,
+            lookForwardSmall = 25,
 
             -- lines to seek forwards for "big" textobjs (linewise textobjs & url textobj)
             lookForwardBig = 15,
-
-            -- use suggested keymaps (see README)
-            useDefaultKeymaps = false,
-
-            -- disable some default keymaps, e.g. { "ai", "ii" }
-            disabledKeymaps = {},
         }
 
         local keymap = vim.keymap.set
@@ -83,12 +76,12 @@ return {
         keymap(
             { 'o', 'x' },
             'ak',
-            "<cmd>lua require('various-textobjs').key(true)<CR>"
+            "<cmd>lua require('various-textobjs').key(false)<CR>"
         )
         keymap(
             { 'o', 'x' },
             'ik',
-            "<cmd>lua require('various-textobjs').key(false)<CR>"
+            "<cmd>lua require('various-textobjs').key(true)<CR>"
         )
         -- Member funcions
         keymap(
