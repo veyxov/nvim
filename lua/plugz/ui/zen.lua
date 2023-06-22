@@ -1,11 +1,3 @@
-local Center = {
-    'arnamak/stay-centered.nvim',
-    event = 'VeryLazy',
-    config = function()
-        require('stay-centered').setup()
-    end,
-}
-
 local Zen = {
     'folke/zen-mode.nvim',
     keys = {
@@ -33,6 +25,5 @@ Zen.config = function()
 end
 
 return {
-    Center,
     Zen,
 }
