@@ -30,7 +30,7 @@ Noice.config = function()
             bottom_search = true,
             command_palette = true,
             long_message_to_split = true,
-            inc_rename = true -- temp?
+            inc_rename = true, -- temp?
         },
         background_color = '#FF0000',
         views = {
