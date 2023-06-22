@@ -12,4 +12,3 @@ return {
         map('ja', '<cmd>G add .<cr>') -- stage all files
     end,
 }
-

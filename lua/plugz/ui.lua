@@ -17,7 +17,6 @@ local Noice = {
     },
 }
 
-
 Noice.config = function()
     local opts = {
         lsp = {
