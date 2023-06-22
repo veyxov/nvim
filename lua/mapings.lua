@@ -2,6 +2,20 @@ local map = require('globals').Map
 
 local nvo = { 'n', 'v', 'o' }
 
+--- Replace text-object with yanked content
+map(';r', function()
+    local paste_cmd = 'p'
+    local prev_func = vim.go.operatorfunc
+    -- selene: allow(global_usage)
+    _G.paste_replace = function()
+        vim.api.nvim_feedkeys('`[v`]' .. paste_cmd, 'n', true)
+        vim.go.operatorfunc = prev_func
+        _G.paste_replace = nil
+    end
+    vim.go.operatorfunc = 'v:lua.paste_replace'
+    vim.api.nvim_feedkeys('g@', 'n', false)
+end)
+
 -- Quitting made easy
 map('<leader>qu', '<cmd>qall!<cr>')
 map('qu', '<cmd>wq<cr>')
