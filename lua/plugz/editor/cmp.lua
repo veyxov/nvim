@@ -10,7 +10,7 @@ M.dependencies = {
     'saadparwaiz1/cmp_luasnip',
     'ray-x/cmp-treesitter',
     'hrsh7th/cmp-cmdline',
-    'lukas-reineke/cmp-rg'
+    'lukas-reineke/cmp-rg',
 }
 
 function M.config()
@@ -61,10 +61,10 @@ function M.config()
                 },
             },
             {
-            name = "rg",
-            -- Try it when you feel cmp performance is poor
-            keyword_length = 3
-        },
+                name = 'rg',
+                -- Try it when you feel cmp performance is poor
+                keyword_length = 3,
+            },
         },
     }
 
