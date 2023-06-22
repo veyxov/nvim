@@ -57,13 +57,13 @@ local opts = {
         enable = true,
     },
     incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = ",,",
-        scope_incremental = ",,",
-        node_incremental = ",m",
-        node_decremental = ",n",
-      },
+        enable = true,
+        keymaps = {
+            init_selection = ',,',
+            scope_incremental = ',,',
+            node_incremental = ',m',
+            node_decremental = ',n',
+        },
     },
 
     textobjects = {
