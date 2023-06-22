@@ -59,7 +59,7 @@ end
 
 M.keys = {
     { '<leader>n', '<cmd>Telescope find_files<cr>' },
-    { '<cr>g', '<cmd>Telescope live_grep theme=ivy<cr>' },
+    { '<leader>g', '<cmd>Telescope live_grep theme=ivy<cr>' },
     {
         '<leader>/',
         '<cmd>Telescope current_buffer_fuzzy_find theme=get_dropdown previewer=false<cr>',
