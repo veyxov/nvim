@@ -1,10 +1,10 @@
-local map = require('globals').Map
-
-local Gitsigns = {
+return {
     'lewis6991/gitsigns.nvim',
     keys = { 'j' },
     config = function()
         local gs = require 'gitsigns'
+        local map = require('general').Map
+
         gs.setup { yadm = { enable = true } }
 
         -- Add/reset
@@ -40,37 +40,4 @@ local Gitsigns = {
             gs.blame_line { full = true }
         end)
     end,
-}
-
-local Fugitive = {
-    'tpope/vim-fugitive',
-    cmd = 'G',
-    init = function()
-        map('J', '<cmd>G add . | G commit<cr>')
-        map('jc', '<cmd>G commit<cr>')
-        map('jb', '<cmd>G blame<cr>')
-
-        map('jp', '<cmd>G! push<cr>')
-        map('ja', '<cmd>G add .<cr>') -- stage all files
-    end,
-}
-
-local Search = {
-    'aaronhallaert/advanced-git-search.nvim',
-    keys = {
-        { '<leader>gs', '<cmd>AdvancedGitSearch<cr>' },
-    },
-    config = function()
-        require('telescope').load_extension 'advanced_git_search'
-    end,
-    dependencies = {
-        'tpope/vim-rhubarb',
-        'sindrets/diffview.nvim',
-    },
-}
-
-return {
-    Gitsigns,
-    Fugitive,
-    Search,
 }
