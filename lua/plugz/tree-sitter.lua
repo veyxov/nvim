@@ -56,6 +56,16 @@ local opts = {
     autotag = {
         enable = true,
     },
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = ",,",
+        scope_incremental = ",,",
+        node_incremental = ",m",
+        node_decremental = ",n",
+      },
+    },
+
     textobjects = {
         select = {
             enable = true,
