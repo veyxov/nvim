@@ -79,6 +79,7 @@ local opts = {
                 ['al'] = '@loop.outer',
                 ['il'] = '@loop.inner',
                 ['ac'] = '@class.outer',
+                ['a/'] = '@comment.outer',
                 ['ic'] = '@class.inner',
                 ['AA'] = '@parameter.inner',
                 ['aa'] = '@parameter.outer',
