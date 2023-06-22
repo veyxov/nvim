@@ -1,5 +1,5 @@
 -- Noice
-local Noice = {
+return {
     'folke/noice.nvim',
     dependencies = {
         'MunifTanjim/nui.nvim',
@@ -15,9 +15,8 @@ local Noice = {
             ':',
         },
     },
-}
 
-Noice.config = function()
+config = function()
     local opts = {
         lsp = {
             override = {
@@ -53,37 +52,5 @@ Noice.config = function()
 
     require('noice').setup(opts)
 end
-
--- Dressing
-local function load_dressing()
-    require('lazy').load { plugins = { 'dressing.nvim' } }
-end
-
-local Dressing = {
-    'stevearc/dressing.nvim',
 }
 
--- Load the module when needed
-Dressing.init = function()
-    vim.ui.select = function(...)
-        load_dressing()
-        return vim.ui.select(...)
-    end
-    vim.ui.input = function(...)
-        load_dressing()
-        return vim.ui.input(...)
-    end
-end
-
-Dressing.config = function()
-    require('dressing').setup {
-        input = {
-            default_prompt = '> ',
-            border = 'single',
-            prompt_align = 'center',
-            relative = 'win',
-        },
-    }
-end
-
-return { Dressing, Noice }
