@@ -8,6 +8,7 @@ M.dependencies = {
     'hrsh7th/cmp-buffer',
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
+    'ray-x/cmp-treesitter'
 }
 
 function M.config()
@@ -42,6 +43,7 @@ function M.config()
         sources = cmp.config.sources {
             { name = 'copilot', group_index = 2 },
             { name = 'nvim_lsp', keyword_length = 3 },
+            { name = 'treesitter' },
             { name = 'luasnip' },
             {
                 name = 'buffer',
