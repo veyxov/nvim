@@ -65,12 +65,12 @@ return {
         keymap(
             { 'o', 'x' },
             'ar',
-            "<cmd>lua require('various-textobjs').value(true)<CR>"
+            "<cmd>lua require('various-textobjs').value(false)<CR>"
         )
         keymap(
             { 'o', 'x' },
             'ir',
-            "<cmd>lua require('various-textobjs').value(false)<CR>"
+            "<cmd>lua require('various-textobjs').value(true)<CR>"
         )
         -- lhs
         keymap(
