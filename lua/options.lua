@@ -21,6 +21,7 @@ opt.timeoutlen = 500
 -- Visual clutter
 opt.wrap = false
 opt.list = true
+opt.listchars = { tab = "→ ", trail = "·", extends = "▶", precedes = "◀", nbsp = "␣" }
 opt.hlsearch = true
 opt.signcolumn = 'number'
 
