@@ -57,7 +57,7 @@ function M.config()
         { 'n', 'v' }
     )
     map(
-        '<leader>s',
+        '<leader>u', -- semantic for usages
         '<cmd>Telescope lsp_references theme=dropdown<cr>',
         { 'n', 'v' }
     )

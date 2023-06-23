@@ -21,7 +21,7 @@ local M = {
         },
         {
             -- Show diagnostic details
-            '<leader>sd',
+            '<leader>dd',
             function()
                 require('flash').jump {
                     matcher = function(win)
