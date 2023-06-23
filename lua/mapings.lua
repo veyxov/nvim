@@ -32,7 +32,7 @@ map(',', ',<c-g>u', 'i')
 map('.', '.<c-g>u', 'i')
 map(';', ';<c-g>u', 'i')
 
-map('<leader>w', '<cmd>wall<cr>') -- Save file
+map('<leader>s', '<cmd>wall<cr>') -- Save file
 
 -- Select and copy
 map('h', 'y', nvo)
