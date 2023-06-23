@@ -1,6 +1,10 @@
 return {
     'folke/todo-comments.nvim',
     event = 'VeryLazy',
+    keys = {
+        { '<leader>fl', ':TodoTelescope<CR>' },
+    },
+    -- TODO: Remove unnecessary
     opts = {
         signs = true, -- show icons in the signs column
         sign_priority = 8, -- sign priority
