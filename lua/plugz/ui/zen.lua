@@ -1,4 +1,4 @@
-local Zen = {
+local M = {
     'folke/zen-mode.nvim',
     keys = {
         {
@@ -10,7 +10,7 @@ local Zen = {
     },
 }
 
-Zen.config = function()
+M.config = function()
     require('zen-mode').setup {
         window = {
             width = 0.69,
@@ -24,6 +24,5 @@ Zen.config = function()
     }
 end
 
-return {
-    Zen,
-}
+return M
+
