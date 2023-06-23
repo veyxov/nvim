@@ -3,7 +3,7 @@ return {
     keys = { 'j' },
     config = function()
         local gs = require 'gitsigns'
-        local map = require('general').Map
+        local map = require('globals').Map
 
         gs.setup { yadm = { enable = true } }
 

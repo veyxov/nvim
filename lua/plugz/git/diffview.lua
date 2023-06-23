@@ -1,9 +1,11 @@
 local Diffview = {
-    "sindrets/diffview.nvim",
-
+    'sindrets/diffview.nvim',
+    keys = {
+        { 'jd', '<cmd>DiffviewOpen<cr>' },
+    },
     cmd = {
-        "DiffviewOpen"
-    }
+        'DiffviewOpen',
+    },
 }
 
 return Diffview
