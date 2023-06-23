@@ -10,7 +10,7 @@ M.dependencies = {
     'saadparwaiz1/cmp_luasnip',
     'hrsh7th/cmp-cmdline',
     'lukas-reineke/cmp-rg',
-    'hrsh7th/cmp-path'
+    'hrsh7th/cmp-path',
 }
 
 function M.config()
