@@ -17,6 +17,7 @@
         "/usr/share/nvim/runtime",
         "/usr/lib/nvim",
         "/home/iz/.local/state/nvim/lazy/readme",
-        "${3rd}/luv/library"
+        "${3rd}/luv/library",
+        "${3rd}/luassert/library"
     ]
 }

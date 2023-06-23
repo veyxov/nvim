@@ -2,7 +2,6 @@ local lbls = 'netsidarhol/m?f;cu,w'
 
 local M = {
     'folke/flash.nvim',
-    ---@type Flash.Config
     keys = {
         {
             's',
@@ -82,7 +81,6 @@ M.opts = {
         forward = true,
         -- when `false`, find only matches in the given direction
         wrap = true,
-        ---@type Flash.Pattern.Mode
         -- Each mode will take ignorecase and smartcase into account.
         -- * exact: exact match
         -- * search: regular search
