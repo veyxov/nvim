@@ -7,7 +7,6 @@ return {
         require('telescope').load_extension 'advanced_git_search'
     end,
     dependencies = {
-        'tpope/vim-rhubarb',
-        'sindrets/diffview.nvim',
+        'tpope/vim-rhubarb'
     },
 }
