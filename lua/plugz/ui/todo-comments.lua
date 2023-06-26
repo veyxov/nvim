@@ -20,7 +20,7 @@ return {
             HACK = { icon = ' ', color = 'warning' },
             WARN = {
                 icon = ' ',
-                -- 
+                --
                 color = 'warning',
                 alt = { 'WARNING', 'XXX' },
             },
