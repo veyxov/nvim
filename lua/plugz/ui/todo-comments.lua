@@ -6,7 +6,7 @@ return {
     },
     -- TODO: Remove unnecessary
     opts = {
-        signs = true, -- show icons in the signs column
+        signs = false, -- show icons in the signs column
         sign_priority = 8, -- sign priority
         -- keywords recognized as todo comments
         keywords = {
@@ -20,11 +20,12 @@ return {
             HACK = { icon = ' ', color = 'warning' },
             WARN = {
                 icon = ' ',
+                -- 
                 color = 'warning',
                 alt = { 'WARNING', 'XXX' },
             },
             PERF = {
-                icon = ' ',
+                icon = ' ',
                 alt = { 'OPTIM', 'PERFORMANCE', 'OPTIMIZE' },
             },
             NOTE = { icon = ' ', color = 'hint', alt = { 'INFO' } },

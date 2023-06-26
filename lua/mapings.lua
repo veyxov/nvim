@@ -3,6 +3,7 @@ local map = require('globals').Map
 local nvo = { 'n', 'v', 'o' }
 
 --- Replace text-object with yanked content
+-- TODO: Any better alternatives?
 map(';r', function()
     local paste_cmd = 'p'
     local prev_func = vim.go.operatorfunc
