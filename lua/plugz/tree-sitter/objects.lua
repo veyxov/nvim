@@ -23,7 +23,7 @@ return {
         )
         keymap(
             { 'o', 'x' },
-            'ai',
+            'aI',
             "<cmd>lua require('various-textobjs').indentation(false, true)<CR>"
         )
         keymap(
@@ -33,7 +33,7 @@ return {
         )
         keymap(
             { 'o', 'x' },
-            'aI',
+            'ai',
             "<cmd>lua require('various-textobjs').indentation(false, false)<CR>"
         )
 
