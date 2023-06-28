@@ -7,7 +7,7 @@ return {
             load = {
                 ['core.defaults'] = {}, -- Loads default behaviour
                 ['core.concealer'] = {
-                    config = { icon_preset = 'diamond' }
+                    config = { icon_preset = 'diamond' },
                 },
                 ['core.dirman'] = { -- Manages Neorg workspaces
                     config = {
