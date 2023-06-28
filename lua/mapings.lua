@@ -60,3 +60,6 @@ map('<', '<gv', 'v')
 map('>', '>gv', 'v')
 
 map('<leader>l', '<cmd>Lazy<cr>', 'n')
+
+-- text objects
+map('ij', 'i"', { 'o', 'x' })
