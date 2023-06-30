@@ -65,7 +65,7 @@ M.keys = {
         '<cmd>Telescope current_buffer_fuzzy_find theme=get_dropdown previewer=false<cr>',
     },
     { '<cr>o', '<cmd>Telescope lsp_workspace_symbols<cr>' },
-    { 'jh', '<cmd>Telescope git_branches<cr>'}
+    { 'jh', '<cmd>Telescope git_branches<cr>' },
 }
 
 return M
