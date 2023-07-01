@@ -39,6 +39,6 @@ return {
 
         map('jb', function()
             gs.blame_line { full = true }
-        end, {'v'})
+        end, { 'v' })
     end,
 }
