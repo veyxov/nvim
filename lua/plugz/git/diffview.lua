@@ -307,6 +307,12 @@ Diffview.config = function()
             file_panel = {
                 {
                     'n',
+                    'qu',
+                    '<cmd>DiffviewClose<cr>',
+                    { desc = 'Close the panel' },
+                },
+                {
+                    'n',
                     'j',
                     actions.next_entry,
                     { desc = 'Bring the cursor to the next file entry' },
@@ -713,7 +719,7 @@ Diffview.config = function()
                 },
                 {
                     'n',
-                    'q',
+                    'qu',
                     actions.close,
                     { desc = 'Close the panel' },
                 },
