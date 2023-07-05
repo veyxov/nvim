@@ -22,6 +22,9 @@ function M.config()
     -- C++
     lsp.clangd.setup {}
 
+    -- Tailwind
+    lsp.tailwindcss.setup {}
+
     -- Svelte
     lsp.svelte.setup {}
 
