@@ -754,13 +754,7 @@ Diffview.config = function()
                 },
             },
             help_panel = {
-                {
-                    'n',
-                    'qu',
-                    '<cmd>DiffviewClose<cr>',
-                    { desc = 'Close the panel' },
-                },
-                { 'n', 'q', actions.close, { desc = 'Close help menu' } },
+                { 'n', 'qu', actions.close, { desc = 'Close help menu' } },
                 { 'n', '<esc>', actions.close, { desc = 'Close help menu' } },
             },
         },
