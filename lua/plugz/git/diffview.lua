@@ -2,7 +2,6 @@ local Diffview = {
     'sindrets/diffview.nvim',
     keys = {
         { 'jdo', '<cmd>DiffviewOpen<cr>' },
-        { 'jdqu', '<cmd>DiffviewClose<cr>' },
         { 'jdh', '<cmd>DiffviewFileHistory %<cr>' },
     },
     cmd = {
@@ -16,9 +15,7 @@ Diffview.config = function()
 
     require('diffview').setup {
         diff_binaries = false, -- Show diffs for binaries
-        enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
-        git_cmd = { 'git' }, -- The git executable followed by default args.
-        hg_cmd = { 'hg' }, -- The hg executable followed by default args.
+        enhanced_diff_hl = true, -- See ':h diffview-config-enhanced_diff_hl'
         use_icons = true, -- Requires nvim-web-devicons
         show_help_hints = true, -- Show hints for how to open the help panel
         watch_index = true, -- Update views and index buffers when the git index changes.
@@ -99,6 +96,12 @@ Diffview.config = function()
                 -- tabpage is a Diffview.
                 {
                     'n',
+                    'qu',
+                    '<cmd>DiffviewClose<cr>',
+                    { desc = 'Close the panel' },
+                },
+                {
+                    'n',
                     '<tab>',
                     actions.select_next_entry,
                     { desc = 'Open the diff for the next file' },
@@ -145,6 +148,7 @@ Diffview.config = function()
                     actions.cycle_layout,
                     { desc = 'Cycle through available layouts.' },
                 },
+                -- TODO: Change these, this will come in handy ocasionally
                 {
                     'n',
                     '[x',
@@ -159,6 +163,7 @@ Diffview.config = function()
                     actions.next_conflict,
                     { desc = 'In the merge-tool: jump to the next conflict' },
                 },
+                -- TODO: This.
                 {
                     'n',
                     '<leader>co',
@@ -310,6 +315,12 @@ Diffview.config = function()
                     'qu',
                     '<cmd>DiffviewClose<cr>',
                     { desc = 'Close the panel' },
+                },
+                {
+                    'n',
+                    'c',
+                    '<cmd>G commit<cr>',
+                    { desc = 'Commit staged' },
                 },
                 {
                     'n',
@@ -565,6 +576,12 @@ Diffview.config = function()
             file_history_panel = {
                 {
                     'n',
+                    'qu',
+                    '<cmd>DiffviewClose<cr>',
+                    { desc = 'Close the panel' },
+                },
+                {
+                    'n',
                     'g!',
                     actions.options,
                     { desc = 'Open the option panel' },
@@ -713,6 +730,12 @@ Diffview.config = function()
             option_panel = {
                 {
                     'n',
+                    'qu',
+                    '<cmd>DiffviewClose<cr>',
+                    { desc = 'Close the panel' },
+                },
+                {
+                    'n',
                     '<tab>',
                     actions.select_entry,
                     { desc = 'Change the current option' },
@@ -731,6 +754,12 @@ Diffview.config = function()
                 },
             },
             help_panel = {
+                {
+                    'n',
+                    'qu',
+                    '<cmd>DiffviewClose<cr>',
+                    { desc = 'Close the panel' },
+                },
                 { 'n', 'q', actions.close, { desc = 'Close help menu' } },
                 { 'n', '<esc>', actions.close, { desc = 'Close help menu' } },
             },
