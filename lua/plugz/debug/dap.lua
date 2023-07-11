@@ -25,7 +25,7 @@ M.init = function()
     map('yx', function()
         dap.close()
     end)
-    map('yt', function()
+    map('yb', function()
         dap.toggle_breakpoint()
     end)
 end
