@@ -1,4 +1,4 @@
-local langs = require 'globals'.smart_langs
+local langs = require('globals').smart_langs
 
 local M = {
     'hrsh7th/nvim-cmp',
