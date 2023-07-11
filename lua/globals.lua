@@ -5,4 +5,14 @@ M.Map = function(lhs, rhs, mode)
     vim.keymap.set(mode, lhs, rhs)
 end
 
+-- Languages that need LSP and CMP
+M.smart_langs = {
+    'go',
+    'javascript',
+    'lua',
+    'rust',
+    'typescript',
+    'vim',
+}
+
 return M

@@ -1,5 +1,8 @@
+local langs = require 'globals'.smart_langs
+
 local M = {
     'hrsh7th/nvim-cmp',
+    ft = langs,
     event = 'InsertEnter',
 }
 

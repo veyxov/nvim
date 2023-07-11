@@ -4,6 +4,7 @@ return {
     { import = 'plugz.tree-sitter' },
     { import = 'plugz.editor' },
     { import = 'plugz.misc' },
+    { import = 'plugz.lsp' },
     { import = 'plugz.debug' },
     { 'nvim-lua/plenary.nvim' },
     {
