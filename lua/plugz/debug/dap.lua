@@ -1,44 +1,56 @@
 local map = require('globals').Map
 
 local M = {
-    "mfussenegger/nvim-dap",
+    'mfussenegger/nvim-dap',
     lazy = false,
     dependencies = {
-        "rcarriga/nvim-dap-ui"
-    }
+        'rcarriga/nvim-dap-ui',
+    },
 }
 
 M.init = function()
     local dap = require 'dap'
-        map('yy', function() dap.continue() end)
-		map('yi', function() dap.step_into() end)
-		map('yo', function() dap.step_over() end)
-		map('yu', function() dap.step_out() end)
-		map('yx', function() dap.close() end)
-		map('yt', function() dap.toggle_breakpoint() end)
+    map('yy', function()
+        dap.continue()
+    end)
+    map('yi', function()
+        dap.step_into()
+    end)
+    map('yo', function()
+        dap.step_over()
+    end)
+    map('yu', function()
+        dap.step_out()
+    end)
+    map('yx', function()
+        dap.close()
+    end)
+    map('yt', function()
+        dap.toggle_breakpoint()
+    end)
 end
 
 M.config = function()
     local status, dap = pcall(require, 'dap')
-    if (not status) then
-        print("dap not loaded")
+    if not status then
+        print 'dap not loaded'
         return
     end
 
     local dap_status, dapui = pcall(require, 'dapui')
-    if (not dap_status) then
-        print("dapui not loaded")
+    if not dap_status then
+        print 'dapui not loaded'
         return
     end
 
     -- used by nvim-dap
     dap.adapters.coreclr = {
         type = 'executable',
-        command = "/usr/local/netcoredbg",
+        command = '/usr/local/netcoredbg',
         args = { '--interpreter=vscode' },
         options = {
             detached = false, -- Will put the output in the REPL. #CloseEnough
-        }
+        },
     }
 
     -- Neotest Test runner looks at this table
@@ -51,109 +63,130 @@ M.config = function()
     -- Used by nvim-dap
     dap.configurations.cs = {
         {
-            type = "coreclr",
-            name = "launch - netcoredbg",
-            request = "launch",
+            type = 'coreclr',
+            name = 'launch - netcoredbg',
+            request = 'launch',
             program = function()
-                return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file")
+                return vim.fn.input(
+                    'Path to dll',
+                    vim.fn.getcwd() .. '/bin/Debug/',
+                    'file'
+                )
             end,
             -- stopAtentry = true,
-            console = "integratedTerminal"
+            console = 'integratedTerminal',
         },
     }
 
     local status_ui, dap_ui = pcall(require, 'dapui')
-    if (not status_ui) then
-        print("dapui not loaded")
+    if not status_ui then
+        print 'dapui not loaded'
         return
     end
 
-    dap_ui.setup({
+    dap_ui.setup {
         controls = {
-            element = "repl",
+            element = 'repl',
             enabled = true,
             icons = {
-                disconnect = "",
-                pause = "",
-                play = "",
-                run_last = "",
-                step_back = "",
-                step_into = "",
-                step_out = "",
-                step_over = "",
-                terminate = ""
-            }
+                disconnect = '',
+                pause = '',
+                play = '',
+                run_last = '',
+                step_back = '',
+                step_into = '',
+                step_out = '',
+                step_over = '',
+                terminate = '',
+            },
         },
         element_mappings = {},
         expand_lines = true,
         floating = {
-            border = "single",
+            border = 'single',
             mappings = {
-                close = { "q", "<Esc>" }
-            }
+                close = { 'q', '<Esc>' },
+            },
         },
         force_buffers = true,
         icons = {
-            collapsed = "",
-            current_frame = "",
-            expanded = ""
+            collapsed = '',
+            current_frame = '',
+            expanded = '',
         },
-        layouts = { {
-            elements = { {
-                id = "console",
-                size = 0.2
-            }, {
-                id = "breakpoints",
-                size = 0.2
-            }, {
-                id = "stacks",
-                size = 0.2
-            }, {
-                id = "repl",
-                size = 0.2
-            }, {
-                id = "watches",
-                size = 0.2
-            } },
-            position = "left",
-            size = 50
-        }, {
-            elements = { {
-                id = "scopes",
-                size = 1
-            } },
-            position = "bottom",
-            size = 10
-        } },
+        layouts = {
+            {
+                elements = {
+                    {
+                        id = 'console',
+                        size = 0.2,
+                    },
+                    {
+                        id = 'breakpoints',
+                        size = 0.2,
+                    },
+                    {
+                        id = 'stacks',
+                        size = 0.2,
+                    },
+                    {
+                        id = 'repl',
+                        size = 0.2,
+                    },
+                    {
+                        id = 'watches',
+                        size = 0.2,
+                    },
+                },
+                position = 'left',
+                size = 50,
+            },
+            {
+                elements = {
+                    {
+                        id = 'scopes',
+                        size = 1,
+                    },
+                },
+                position = 'bottom',
+                size = 10,
+            },
+        },
         mappings = {
-            edit = "e",
-            expand = { "<CR>", "<2-LeftMouse>" },
-            open = "o",
-            remove = "d",
-            repl = "r",
-            toggle = "t"
+            edit = 'e',
+            expand = { '<CR>', '<2-LeftMouse>' },
+            open = 'o',
+            remove = 'd',
+            repl = 'r',
+            toggle = 't',
         },
         render = {
             indent = 1,
-            max_value_lines = 100
-        }
-    })
+            max_value_lines = 100,
+        },
+    }
     ------------
     -- Dap UI --
     ------------
 
-    dap.listeners.after.event_initialized["dapui_config"] = function()
+    dap.listeners.after.event_initialized['dapui_config'] = function()
         dapui.open()
     end
-    dap.listeners.before.event_terminated["dapui_config"] = function()
+    dap.listeners.before.event_terminated['dapui_config'] = function()
         dapui.close()
     end
-    dap.listeners.before.event_exited["dapui_config"] = function()
+    dap.listeners.before.event_exited['dapui_config'] = function()
         dapui.close()
     end
 
-    vim.fn.sign_define('DapBreakpoint', { text = '🟥', texthl = '', linehl = '', numhl = '' })
-    vim.fn.sign_define('DapStopped', { text = '▶️', texthl = '', linehl = '', numhl = '' })
+    vim.fn.sign_define(
+        'DapBreakpoint',
+        { text = '🟥', texthl = '', linehl = '', numhl = '' }
+    )
+    vim.fn.sign_define(
+        'DapStopped',
+        { text = '▶️', texthl = '', linehl = '', numhl = '' }
+    )
     ------------
     -- PYTHON --
     ------------
@@ -163,23 +196,29 @@ M.config = function()
             local port = (config_py.connect or config_py).port
             ---@diagnostic disable-next-line: undefined-field
             local host = (config_py.connect or config_py).host or '127.0.0.1'
-            cb({
+            cb {
                 type = 'server',
-                port = assert(port, '`connect.port` is required for a python `attach` configuration'),
+                port = assert(
+                    port,
+                    '`connect.port` is required for a python `attach` configuration'
+                ),
                 host = host,
                 options = {
                     source_filetype = 'python',
                 },
-            })
+            }
         else
-            cb({
+            cb {
                 type = 'executable',
-                command = vim.fs.normalize(vim.fn.stdpath('data') .. '/mason/packages/debugpy/venv/Scripts/python'),
+                command = vim.fs.normalize(
+                    vim.fn.stdpath 'data'
+                        .. '/mason/packages/debugpy/venv/Scripts/python'
+                ),
                 args = { '-m', 'debugpy.adapter' },
                 options = {
                     source_filetype = 'python',
                 },
-            })
+            }
         end
     end
     dap.configurations.python = {
@@ -187,11 +226,11 @@ M.config = function()
             -- The first three options are required by nvim-dap
             type = 'python', -- the type here established the link to the adapter definition: `dap.adapters.python`
             request = 'launch',
-            name = "Launch file",
-            console = "integratedTerminal",
+            name = 'Launch file',
+            console = 'integratedTerminal',
             -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
 
-            program = "${file}", -- This configuration will launch the current file if used.
+            program = '${file}', -- This configuration will launch the current file if used.
             pythonPath = function()
                 -- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
                 -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
