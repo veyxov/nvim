@@ -16,9 +16,9 @@ function M.config()
     --         or vim.loop.os_homedir(),
     -- }
     lsp.omnisharp.setup {
+        cmd = { "/usr/bin/omnisharp" },
         on_attach = function(client, _)
             -- This is a hack that is needed with omnisharp in it's current state. This the result of a bug in Rosyln.
-            if client.name == 'omnisharp' then
                 client.server_capabilities.semanticTokensProvider.legend = {
                     tokenModifiers = { 'static' },
                     tokenTypes = {
@@ -89,7 +89,6 @@ function M.config()
                         'regexp',
                     },
                 }
-            end
         end,
     }
 
