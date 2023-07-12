@@ -137,21 +137,6 @@ M.opts = {
         autojump = true,
     },
     highlight = {
-        label = {
-            -- add a label for the first match in the current window.
-            -- you can always jump to the first match with `<CR>`
-            current = true,
-            -- show the label after the match
-            after = true, ---@type boolean|number[]
-            -- show the label before the match
-            before = false, ---@type boolean|number[]
-            -- position of the label extmark
-            style = 'overlay', ---@type "eol" | "overlay" | "right_align" | "inline"
-            -- flash tries to re-use labels that were already assigned to a position,
-            -- when typing more characters. By default only lower-case labels are re-used.
-            reuse = 'lowercase', ---@type "lowercase" | "all"
-        },
-        -- show a backdrop with hl FlashBackdrop
         backdrop = true,
         -- Highlight the search matches
         matches = true,
@@ -168,14 +153,7 @@ M.opts = {
         -- options used when flash is activated through
         -- a regular search with `/` or `?`
         search = {
-            enabled = true, -- enable flash for search
-            highlight = { backdrop = false },
-            jump = { history = true, register = true, nohlsearch = true },
-            search = {
-                -- `forward` will be automatically set to the search direction
-                -- `mode` is always set to `search`
-                -- `incremental` is set to `true` when `incsearch` is enabled
-            },
+            enabled = false, -- enable flash for search
         },
         -- options used when flash is activated through
         -- `f`, `F`, `t`, `T`, `;` and `,` motions
