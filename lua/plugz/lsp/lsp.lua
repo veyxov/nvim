@@ -11,9 +11,9 @@ M.dependencies = {
             require('lsp_lines').setup()
 
             -- disable builtin diagnostics
-            vim.diagnostic.config({
+            vim.diagnostic.config {
                 virtual_text = false,
-            })
+            }
         end,
     },
 }
