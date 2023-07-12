@@ -9,6 +9,11 @@ M.dependencies = {
         'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
         config = function()
             require('lsp_lines').setup()
+
+            -- disable builtin diagnostics
+            vim.diagnostic.config({
+                virtual_text = false,
+            })
         end,
     },
 }
