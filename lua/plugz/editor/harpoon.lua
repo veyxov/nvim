@@ -6,7 +6,7 @@ local M = {
             function() require('harpoon.mark').add_file() end,
         },
         {
-            '<C-h>',
+            '<leader><C-H>',
             function() require('harpoon.ui').toggle_quick_menu() end,
         },
         '1',

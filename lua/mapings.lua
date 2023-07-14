@@ -4,6 +4,7 @@ local nvo = { 'n', 'v', 'o' }
 
 --- Replace text-object with yanked content
 -- TODO: Any better alternatives?
+-- NOTE: There is a plugin for this
 map(';r', function()
     local paste_cmd = 'p'
     local prev_func = vim.go.operatorfunc
@@ -20,7 +21,7 @@ end)
 -- Quitting made easy
 map('<leader>qu', '<cmd>qall!<cr>')
 map('qu', '<cmd>wq<cr>')
-map('<bs>', '<cmd>q<cr>')
+map('<C-H>', '<cmd>q<cr>')
 
 -- Window navigation
 map('<C-Down>', '<C-w><Down>')
