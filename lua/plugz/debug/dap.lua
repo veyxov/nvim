@@ -1,7 +1,7 @@
 local map = require('globals').Map
 
 local M = {
-    'mfussenegger/nvim-dap'
+    'mfussenegger/nvim-dap',
 }
 
 M.dependencies = {
@@ -23,8 +23,7 @@ M.dependencies = {
             )
                 dapui.close()
             end
-            dap.listeners.before.event_exited['dapui_config'] = function(
-            )
+            dap.listeners.before.event_exited['dapui_config'] = function()
                 dapui.close()
             end
         end,

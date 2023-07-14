@@ -4,18 +4,17 @@ return {
         {
             'n',
             'ytd',
-            function() require 'neotest'.run.run { strategy = 'dap' } end,
+            function() require('neotest').run.run { strategy = 'dap' } end,
         },
         {
             'n',
             'ytr',
-            function() require 'neotest'.run.run() end,
-        }
-
+            function() require('neotest').run.run() end,
+        },
     },
     dependencies = {
         {
-            'Issafalcon/neotest-dotnet'
+            'Issafalcon/neotest-dotnet',
         },
     },
     config = function()
