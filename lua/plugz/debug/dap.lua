@@ -7,7 +7,6 @@ local M = {
 M.dependencies = {
     {
         'rcarriga/nvim-dap-ui',
-        lazy = true,
         config = function()
             local dap, dapui = require 'dap', require 'dapui'
 
