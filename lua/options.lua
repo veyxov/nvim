@@ -41,7 +41,7 @@ opt.laststatus = 3
 
 -- TODO: doc for these?
 opt.formatoptions = 'jcroqlnt'
-opt.shortmess:append { W = true, I = true, c = true }
+opt.shortmess = 'a'
 
 -- Work smarter not harder.
 opt.ignorecase = true
