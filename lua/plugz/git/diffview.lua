@@ -150,7 +150,7 @@ Diffview.config = function()
                     'n',
                     'a',
                     actions.toggle_stage_entry,
-                }
+                },
             },
             option_panel = {
                 {
