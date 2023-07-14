@@ -8,7 +8,7 @@ local nvo = { 'n', 'v', 'o' }
 map(';r', function()
     local paste_cmd = 'p'
     local prev_func = vim.go.operatorfunc
-    -- selene: allow(global_usage)
+
     _G.paste_replace = function()
         vim.api.nvim_feedkeys('`[v`]' .. paste_cmd, 'n', true)
         vim.go.operatorfunc = prev_func
