@@ -3,15 +3,11 @@ local M = {
     keys = {
         {
             '<C-a>',
-            function()
-                require('harpoon.mark').add_file()
-            end,
+            function() require('harpoon.mark').add_file() end,
         },
         {
             '<C-h>',
-            function()
-                require('harpoon.ui').toggle_quick_menu()
-            end,
+            function() require('harpoon.ui').toggle_quick_menu() end,
         },
         '1',
         '2',

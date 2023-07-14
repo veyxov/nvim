@@ -2,17 +2,13 @@ local Moonlify = {
     'bluz71/vim-moonfly-colors',
     name = 'moonfly',
     event = 'VeryLazy',
-    config = function()
-        vim.cmd.colorscheme 'moonfly'
-    end,
+    config = function() vim.cmd.colorscheme 'moonfly' end,
 }
 
 local Gruvbox = {
     'ellisonleao/gruvbox.nvim',
     event = 'VeryLazy',
-    config = function()
-        vim.cmd.colorscheme 'gruvbox'
-    end,
+    config = function() vim.cmd.colorscheme 'gruvbox' end,
 }
 
 local Poimandres = {
@@ -89,9 +85,7 @@ local Sonokay = {
         vim.g.sonokai_dim_inactive_windows = 1
         vim.g.sonokai_diagnostic_text_highlight = 1
     end,
-    config = function()
-        vim.cmd.colorscheme 'sonokai'
-    end,
+    config = function() vim.cmd.colorscheme 'sonokai' end,
 }
 
 local Rose = {
@@ -172,9 +166,7 @@ local Fluro = {
 local OneNord = {
     'rmehri01/onenord.nvim',
     event = 'VeryLazy',
-    config = function()
-        require('onenord').setup()
-    end,
+    config = function() require('onenord').setup() end,
 }
 
 local Tokyio = {
@@ -182,9 +174,7 @@ local Tokyio = {
     event = 'VeryLazy',
     priority = 1000,
     opts = {},
-    config = function()
-        vim.cmd [[colorscheme tokyonight]]
-    end,
+    config = function() vim.cmd [[colorscheme tokyonight]] end,
 }
 
 return {

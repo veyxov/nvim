@@ -4,7 +4,7 @@ indent_type = "Spaces"
 indent_width = 4
 quote_style = "AutoPreferSingle"
 call_parentheses = "None"
-collapse_simple_statement = "Never"
+collapse_simple_statement = "Always"
 
 [sort_requires]
 enabled = true

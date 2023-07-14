@@ -3,15 +3,11 @@ local M = {
     keys = {
         {
             '<C-n>',
-            function()
-                require('oil').open_float()
-            end,
+            function() require('oil').open_float() end,
         },
         {
             '-',
-            function()
-                require('oil').open()
-            end,
+            function() require('oil').open() end,
         },
     },
 }

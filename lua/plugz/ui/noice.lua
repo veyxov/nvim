@@ -7,9 +7,7 @@ return {
     keys = {
         {
             '<leader>ma',
-            function()
-                require('noice').cmd 'all'
-            end,
+            function() require('noice').cmd 'all' end,
         },
         {
             ':',

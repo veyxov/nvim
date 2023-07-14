@@ -6,9 +6,7 @@ local Copilot = {
 
 local CmpSource = {
     'zbirenbaum/copilot-cmp',
-    config = function()
-        require('copilot_cmp').setup()
-    end,
+    config = function() require('copilot_cmp').setup() end,
 }
 
 Copilot.config = function()

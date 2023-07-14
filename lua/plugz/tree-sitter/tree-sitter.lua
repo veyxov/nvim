@@ -12,9 +12,7 @@ M.dependencies = {
             { '<leader>xc', '<cmd>TSContextToggle<cr>' },
             {
                 'gx',
-                function()
-                    require('treesitter-context').go_to_context()
-                end,
+                function() require('treesitter-context').go_to_context() end,
             },
         },
         config = function()

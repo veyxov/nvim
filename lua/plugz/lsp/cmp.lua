@@ -37,9 +37,7 @@ function M.config()
             completeopt = 'menu,menuone,preview',
         },
         snippet = {
-            expand = function(args)
-                require('luasnip').lsp_expand(args.body)
-            end,
+            expand = function(args) require('luasnip').lsp_expand(args.body) end,
         },
         mapping = cmp.mapping.preset.insert {
             ['<Tab>'] = cmp.mapping(function(fallback)

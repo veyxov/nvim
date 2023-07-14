@@ -20,7 +20,8 @@ local M = {
                 )
                     dapui.close()
                 end
-                dap.listeners.before.event_exited['dapui_config'] = function()
+                dap.listeners.before.event_exited['dapui_config'] = function(
+                )
                     dapui.close()
                 end
             end,
@@ -31,32 +32,20 @@ local M = {
 M.keys = {
     {
         'yy',
-        function()
-            require('dap').continue()
-        end,
+        function() require('dap').continue() end,
     },
     {
         'yb',
-        function()
-            require('dap').toggle_breakpoint()
-        end,
+        function() require('dap').toggle_breakpoint() end,
     },
 }
 
 M.init = function()
     local dap = require 'dap'
-    map('yi', function()
-        dap.step_into()
-    end)
-    map('yo', function()
-        dap.step_over()
-    end)
-    map('yu', function()
-        dap.step_out()
-    end)
-    map('yx', function()
-        dap.close()
-    end)
+    map('yi', function() dap.step_into() end)
+    map('yo', function() dap.step_over() end)
+    map('yu', function() dap.step_out() end)
+    map('yx', function() dap.close() end)
 end
 
 M.config = function()
@@ -202,9 +191,7 @@ M.config = function()
     dap.listeners.before.event_terminated['dapui_config'] = function()
         dapui.close()
     end
-    dap.listeners.before.event_exited['dapui_config'] = function()
-        dapui.close()
-    end
+    dap.listeners.before.event_exited['dapui_config'] = function() dapui.close() end
 
     vim.fn.sign_define(
         'DapBreakpoint',

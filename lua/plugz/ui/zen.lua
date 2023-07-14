@@ -3,9 +3,7 @@ local M = {
     keys = {
         {
             '<leader>c',
-            function()
-                require('zen-mode').toggle {}
-            end,
+            function() require('zen-mode').toggle {} end,
         },
     },
 }

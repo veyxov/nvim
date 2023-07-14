@@ -30,15 +30,17 @@ return {
         map('ih', ':<C-U>Gitsigns select_hunk<CR>', { 'o', 'x' })
 
         -- Visual mode mappings
-        map('jj', function()
-            gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
-        end, 'v')
-        map('ju', function()
-            gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
-        end, 'v')
+        map(
+            'jj',
+            function() gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' } end,
+            'v'
+        )
+        map(
+            'ju',
+            function() gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end,
+            'v'
+        )
 
-        map('jb', function()
-            gs.blame_line { full = true }
-        end, { 'v' })
+        map('jb', function() gs.blame_line { full = true } end, { 'v' })
     end,
 }
