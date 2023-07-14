@@ -40,12 +40,11 @@ map('<leader>s', '<cmd>wall<cr>') -- Save file
 map('h', 'y', nvo)
 map('H', 'y$')
 
-map('y', '<cmd>quit<cr>', nvo)
+-- map('y', '<cmd>quit<cr>', nvo)
 map('<leader>h', '"+y', nvo)
 map('<leader>H', '"+y$', nvo)
 map('<leader>hh', '"+yy', nvo)
 
-map('y', '<cmd>quit<cr>', nvo)
 map('<leader>h', '"+y', nvo)
 map('<leader>H', '"+y$', nvo)
 map('<leader>hh', '"+yy', nvo)

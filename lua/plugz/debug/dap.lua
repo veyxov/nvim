@@ -1,31 +1,33 @@
 local map = require('globals').Map
 
 local M = {
-    'mfussenegger/nvim-dap',
-    dependencies = {
-        {
-            'rcarriga/nvim-dap-ui',
-            config = function()
-                local dap, dapui = require 'dap', require 'dapui'
+    'mfussenegger/nvim-dap'
+}
 
-                dapui.setup {
-                    expand_lines = vim.fn.has 'nvim-0.7' == 1,
-                }
+M.dependencies = {
+    {
+        'rcarriga/nvim-dap-ui',
+        lazy = true,
+        config = function()
+            local dap, dapui = require 'dap', require 'dapui'
 
-                dap.listeners.after.event_initialized['dapui_config'] = function(
-                )
-                    dapui.open()
-                end
-                dap.listeners.before.event_terminated['dapui_config'] = function(
-                )
-                    dapui.close()
-                end
-                dap.listeners.before.event_exited['dapui_config'] = function(
-                )
-                    dapui.close()
-                end
-            end,
-        },
+            dapui.setup {
+                expand_lines = vim.fn.has 'nvim-0.7' == 1,
+            }
+
+            dap.listeners.after.event_initialized['dapui_config'] = function(
+            )
+                dapui.open()
+            end
+            dap.listeners.before.event_terminated['dapui_config'] = function(
+            )
+                dapui.close()
+            end
+            dap.listeners.before.event_exited['dapui_config'] = function(
+            )
+                dapui.close()
+            end
+        end,
     },
 }
 
@@ -40,20 +42,17 @@ M.keys = {
     },
 }
 
-M.init = function()
-    local dap = require 'dap'
-    map('yi', function() dap.step_into() end)
-    map('yo', function() dap.step_over() end)
-    map('yu', function() dap.step_out() end)
-    map('yx', function() dap.close() end)
-end
-
 M.config = function()
     local status, dap = pcall(require, 'dap')
     if not status then
         print 'dap not loaded'
         return
     end
+
+    map('yi', function() dap.step_into() end)
+    map('yo', function() dap.step_over() end)
+    map('yu', function() dap.step_out() end)
+    map('yx', function() dap.close() end)
 
     local dap_status, dapui = pcall(require, 'dapui')
     if not dap_status then
