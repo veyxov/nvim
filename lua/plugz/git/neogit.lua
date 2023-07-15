@@ -5,7 +5,7 @@ local M = {
 }
 
 M.config = function()
-    local neogit = require("neogit")
+    local neogit = require 'neogit'
 
     neogit.setup {
         disable_signs = false, -- TODO: What is this?
@@ -19,10 +19,10 @@ M.config = function()
         -- Allows a different telescope sorter. Defaults to 'fuzzy_with_index_bias'. The example
         -- below will use the native fzf sorter instead.
         telescope_sorter = function()
-            return require("telescope").extensions.fzf.native_fzf_sorter()
+            return require('telescope').extensions.fzf.native_fzf_sorter()
         end,
         -- Change the default way of opening neogit
-        kind = "tab",
+        kind = 'tab',
         -- The time after which an output console is shown for slow running commands
         console_timeout = 2000,
         -- Automatically show console if a command takes more than console_timeout milliseconds
@@ -33,22 +33,22 @@ M.config = function()
         use_per_project_settings = true,
         -- Change the default way of opening the commit popup
         commit_popup = {
-            kind = "split",
+            kind = 'split',
         },
         -- Change the default way of opening the preview buffer
         preview_buffer = {
-            kind = "split",
+            kind = 'split',
         },
         -- Change the default way of opening popups
         popup = {
-            kind = "split",
+            kind = 'split',
         },
         -- customize displayed signs
         signs = {
             -- { CLOSED, OPENED }
-            section = { ">", "v" },
-            item = { ">", "v" },
-            hunk = { "", "" },
+            section = { '>', 'v' },
+            item = { '>', 'v' },
+            hunk = { '', '' },
         },
         integrations = {
             diffview = true,
@@ -59,16 +59,16 @@ M.config = function()
             -- modify status buffer mappings
             status = {
                 -- Adds a mapping with "B" as key that does the "BranchPopup" command
-                ["B"] = "BranchPopup",
+                ['B'] = 'BranchPopup',
                 -- Removes the default mapping of "s"
-                ["u"] = "",
+                ['u'] = '',
             },
             -- Modify fuzzy-finder buffer mappings
             finder = {
                 -- Binds <cr> to trigger select action
-                ["<cr>"] = "select",
-            }
-        }
+                ['<cr>'] = 'select',
+            },
+        },
     }
 end
 
