@@ -17,11 +17,11 @@ local M = {
 }
 
 M.config = function()
-    require("harpoon").setup({
+    require('harpoon').setup {
         menu = {
             width = vim.api.nvim_win_get_width(0) - 4,
-        }
-    })
+        },
+    }
 
     local map = require('globals').Map
 
