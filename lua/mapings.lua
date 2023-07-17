@@ -22,6 +22,7 @@ end)
 map('<leader>qu', '<cmd>qall!<cr>')
 map('qu', '<cmd>wq<cr>')
 map('<C-H>', '<cmd>q<cr>')
+map('<C-H>', '<C-W>', 'i')
 
 -- Window navigation
 map('<C-Down>', '<C-w><Down>')
