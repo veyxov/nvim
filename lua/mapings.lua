@@ -39,8 +39,6 @@ map('<leader>s', '<cmd>wall<cr>') -- Save file
 -- Select and copy
 map('h', 'y', nvo)
 map('H', 'y$')
-
--- map('y', '<cmd>quit<cr>', nvo)
 map('<leader>h', '"+y', nvo)
 map('<leader>H', '"+y$', nvo)
 map('<leader>hh', '"+yy', nvo)
@@ -58,8 +56,3 @@ map('<F5>', '<esc>A;<esc>o', 'i')
 -- better indenting
 map('<', '<gv', 'v')
 map('>', '>gv', 'v')
-
-map('<leader>l', '<cmd>Lazy<cr>', 'n')
-
--- text objects
-map('ij', 'i"', { 'o', 'x' })
