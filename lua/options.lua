@@ -35,8 +35,8 @@ opt.undofile = true
 opt.cmdheight = 0
 opt.laststatus = 3
 
--- Avoid "Hit Enter to continue"
 opt.formatoptions = 'jcroqlnt'
+-- Avoid "Hit Enter to continue"
 opt.shortmess = 'aOtTAIFS'
 
 -- Work smarter not harder.
@@ -44,7 +44,7 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- Fast completion and diagnostic.
-opt.updatetime = 200
+opt.updatetime = 500
 opt.wildmode = 'longest:full,full'
 opt.completeopt = 'menu,menuone,preview'
 
