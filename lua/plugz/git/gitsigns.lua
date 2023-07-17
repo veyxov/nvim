@@ -1,6 +1,7 @@
 return {
     'lewis6991/gitsigns.nvim',
     keys = { 'j' },
+    event = 'VeryLazy',
     config = function()
         local gs = require 'gitsigns'
         local map = require('globals').Map
