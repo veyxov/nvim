@@ -35,9 +35,9 @@ opt.undofile = true
 opt.cmdheight = 0
 opt.laststatus = 3
 
--- TODO: doc for these?
+-- Avoid "Hit Enter to continue"
 opt.formatoptions = 'jcroqlnt'
-opt.shortmess = 'a'
+opt.shortmess = 'aOtTAIFS'
 
 -- Work smarter not harder.
 opt.ignorecase = true
