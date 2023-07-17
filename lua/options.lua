@@ -17,6 +17,7 @@ opt.timeoutlen = 250
 
 -- Visual clutter
 opt.wrap = false
+
 opt.list = true
 opt.listchars = {
     tab = '→ ',
@@ -25,6 +26,9 @@ opt.listchars = {
     precedes = '◀',
     nbsp = '␣',
 }
+-- Nice diff chars, from diffview.nvim
+opt.fillchars:append { diff = '╱' }
+
 opt.hlsearch = true
 
 opt.swapfile = false
