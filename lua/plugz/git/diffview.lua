@@ -14,9 +14,9 @@ Diffview.config = function()
     local actions = require 'diffview.actions'
 
     require('diffview').setup {
-        enhanced_diff_hl = true,     -- See ':h diffview-config-enhanced_diff_hl'
-        use_icons = true,            -- Requires nvim-web-devicons
-        show_help_hints = true,      -- Show hints for how to open the help panel
+        enhanced_diff_hl = true, -- See ':h diffview-config-enhanced_diff_hl'
+        use_icons = true, -- Requires nvim-web-devicons
+        show_help_hints = true, -- Show hints for how to open the help panel
         keymaps = {
             disable_defaults = true, -- Disable the default keymaps
             view = {
@@ -179,7 +179,7 @@ Diffview.config = function()
                 },
             },
             help_panel = {
-                { 'n', 'qu',    actions.close },
+                { 'n', 'qu', actions.close },
                 { 'n', '<esc>', actions.close },
             },
         },
