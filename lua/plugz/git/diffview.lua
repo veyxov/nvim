@@ -2,7 +2,7 @@ local Diffview = {
     'sindrets/diffview.nvim',
     keys = {
         { 'jdo', '<cmd>DiffviewOpen<cr>' },
-        { 'jdh', '<cmd>DiffviewFileHistory %<cr>' },
+        { 'jdh', '<cmd>DiffviewFileHistory %<cr>' }, -- current file history
     },
     cmd = {
         'DiffviewOpen',
@@ -14,14 +14,13 @@ Diffview.config = function()
     local actions = require 'diffview.actions'
 
     require('diffview').setup {
-        enhanced_diff_hl = true, -- See ':h diffview-config-enhanced_diff_hl'
-        use_icons = true, -- Requires nvim-web-devicons
-        show_help_hints = true, -- Show hints for how to open the help panel
+        enhanced_diff_hl = true,     -- See ':h diffview-config-enhanced_diff_hl'
+        use_icons = true,            -- Requires nvim-web-devicons
+        show_help_hints = true,      -- Show hints for how to open the help panel
         keymaps = {
             disable_defaults = true, -- Disable the default keymaps
             view = {
-                -- The `view` bindings are active in the diff buffers, only when the current
-                -- tabpage is a Diffview.
+                { 'n', 'f', actions.focus_files },
                 {
                     'n',
                     'qu',
@@ -180,9 +179,16 @@ Diffview.config = function()
                 },
             },
             help_panel = {
-                { 'n', 'qu', actions.close },
+                { 'n', 'qu',    actions.close },
                 { 'n', '<esc>', actions.close },
             },
+        },
+        hooks = {
+            diff_buf_read = function(bufnr)
+                -- Change local options in diff buffers
+                vim.opt_local.list = false
+                vim.opt_local.colorcolumn = { 80 }
+            end,
         },
     }
 end
