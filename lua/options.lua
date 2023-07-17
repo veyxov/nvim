@@ -3,11 +3,8 @@ local opt = vim.opt
 -- Spaceship
 vim.g.mapleader = ' '
 
--- Nice and juicy terminal colors.
+-- Nice terminal colors.
 opt.termguicolors = true
-
--- What is a mouse? Don't know, don't care.
-opt.mouse = ''
 
 -- Nice splitting
 opt.splitkeep = 'screen'
@@ -15,8 +12,8 @@ opt.splitkeep = 'screen'
 -- Allow empty-space selection in v-block mode
 opt.virtualedit = 'block'
 
--- Train your fingers to be faster, stronger, better...
-opt.timeoutlen = 500
+-- Need to type chords fast
+opt.timeoutlen = 250
 
 -- Visual clutter
 opt.wrap = false
@@ -29,13 +26,12 @@ opt.listchars = {
     nbsp = '␣',
 }
 opt.hlsearch = true
-opt.signcolumn = 'number'
 
 opt.swapfile = false
-opt.undolevels = 10000
+opt.undolevels = 1000
 opt.undofile = true
 
--- Minimal visual clutter.
+-- Minimal status line
 opt.cmdheight = 0
 opt.laststatus = 3
 
