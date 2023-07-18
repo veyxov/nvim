@@ -70,21 +70,7 @@ local M = {
         {
             '<leader>w',
             function()
-                require('flash').jump {
-                    search = {
-                        mode = function(str) return '\\<' .. str end,
-                    },
-                }
-            end,
-        },
-        {
-            '<leader>l',
-            function()
-                require('flash').jump {
-                    search = { mode = 'search' },
-                    highlight = { label = { after = { 0, 0 } } },
-                    pattern = '^',
-                }
+                require('flash').jump {}
             end,
         },
     },
@@ -167,7 +153,7 @@ M.opts = {
             labels = lbls,
             jump = { pos = 'range' },
             highlight = {
-                label = { before = true, after = true, style = 'inline' },
+                label = { before = true, after = true, style = 'inine' },
                 backdrop = false,
                 matches = false,
             },
