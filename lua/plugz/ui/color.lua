@@ -177,6 +177,13 @@ local Tokyio = {
     config = function() vim.cmd [[colorscheme tokyonight]] end,
 }
 
+local Catpuchin = {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    priority = 1000, -- TODO: What is this?
+    event = 'VeryLazy',
+}
+
 return {
-    Rose,
+    Catpuchin,
 }
