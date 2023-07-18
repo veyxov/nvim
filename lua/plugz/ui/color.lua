@@ -30,8 +30,8 @@ local Kanagawa = {
     event = 'VeryLazy',
     config = function()
         require('kanagawa').setup {
-            compile = true,     -- enable compiling the colorscheme
-            undercurl = true,   -- enable undercurls
+            compile = true, -- enable compiling the colorscheme
+            undercurl = true, -- enable undercurls
             dimInactive = true, -- dim inactive window `:h hl-NormalNC`
             overrides = function(colors)
                 local theme = colors.theme
@@ -183,7 +183,7 @@ local Catpuchin = {
     priority = 1000, -- TODO: What is this?
     event = 'VeryLazy',
     config = function()
-        require("catppuccin").setup({
+        require('catppuccin').setup {
             integrations = {
                 cmp = true,
                 gitsigns = true,
@@ -192,28 +192,28 @@ local Catpuchin = {
                 noice = true,
                 telescope = {
                     enabled = true,
-                    style = "nvchad"
+                    style = 'nvchad',
                 },
                 native_lsp = {
                     enabled = true,
                     virtual_text = {
-                        errors = { "italic" },
-                        hints = { "italic" },
-                        warnings = { "italic" },
-                        information = { "italic" },
+                        errors = { 'italic' },
+                        hints = { 'italic' },
+                        warnings = { 'italic' },
+                        information = { 'italic' },
                     },
                     underlines = {
-                        errors = { "underline" },
-                        hints = { "underline" },
-                        warnings = { "underline" },
-                        information = { "underline" },
+                        errors = { 'underline' },
+                        hints = { 'underline' },
+                        warnings = { 'underline' },
+                        information = { 'underline' },
                     },
                     inlay_hints = {
                         background = true,
                     },
                 },
-            }
-        })
+            },
+        }
         vim.cmd [[colorscheme catppuccin]]
     end,
 }
