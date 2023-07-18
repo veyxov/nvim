@@ -49,7 +49,7 @@ function M.config()
             },
             sorting_strategy = 'ascending',
             prompt_prefix = ' ',
-            selection_caret = ' ',
+            selection_caret = ' ',
             winblend = 0,
         },
     }
@@ -59,12 +59,12 @@ end
 
 M.keys = {
     { '<leader>n', '<cmd>Telescope find_files<cr>' },
-    { '<leader>g', '<cmd>Telescope grep_string theme=ivy<cr>' },
+    { '<leader>gc', '<cmd>Telescope grep_string theme=ivy<cr>' },
+    { '<leader>g', '<cmd>Telescope live_grep theme=ivy<cr>' },
     {
         '<leader>/',
         '<cmd>Telescope current_buffer_fuzzy_find theme=get_dropdown previewer=false<cr>',
     },
-    { '<cr>o', '<cmd>Telescope lsp_workspace_symbols<cr>' },
     { 'jh', '<cmd>Telescope git_branches<cr>' },
 }
 

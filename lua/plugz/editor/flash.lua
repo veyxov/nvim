@@ -69,9 +69,7 @@ local M = {
         },
         {
             '<leader>w',
-            function()
-                require('flash').jump {}
-            end,
+            function() require('flash').jump {} end,
         },
     },
 }
