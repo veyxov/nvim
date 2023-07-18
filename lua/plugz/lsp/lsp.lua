@@ -4,20 +4,6 @@ local M = {
 
 M.event = 'InsertEnter'
 
-M.dependencies = {
-    {
-        'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
-        config = function()
-            require('lsp_lines').setup()
-
-            -- disable builtin diagnostics
-            vim.diagnostic.config {
-                virtual_text = false,
-            }
-        end,
-    },
-}
-
 function M.config()
     local lsp = require 'lspconfig'
 
