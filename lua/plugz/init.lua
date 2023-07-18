@@ -5,6 +5,7 @@ return {
     { import = 'plugz.editor' },
     { import = 'plugz.misc' },
     { import = 'plugz.lsp' },
+    { import = 'plugz.debug' },
     { 'nvim-lua/plenary.nvim' },
     {
         'nvim-tree/nvim-web-devicons',

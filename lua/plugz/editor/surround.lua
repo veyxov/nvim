@@ -13,9 +13,9 @@ M.config = function()
             normal_cur_line = 'Ll',
             visual = 'l',
             visual_line = 'L',
-            delete = 'dl',
-            change = 'cl',
-            --change_line = 'cl',
+            delete = 'ds',
+            change = 'cs',
+            change_line = 'cl',
         },
     }
 end
