@@ -15,6 +15,7 @@ function M.config()
     --     root_dir = lsp.util.root_pattern('.git', '.sln')
     --         or vim.loop.os_homedir(),
     -- }
+
     lsp.omnisharp.setup {
         cmd = { '/usr/bin/omnisharp' },
         on_attach = function(client, _)
@@ -126,6 +127,8 @@ function M.config()
 
     -- Rust
     lsp.rust_analyzer.setup {}
+
+    -- Golang
     lsp.gopls.setup {}
 
     local map = require('globals').Map
