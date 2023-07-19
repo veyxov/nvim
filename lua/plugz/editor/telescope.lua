@@ -87,12 +87,51 @@ local function live_grep_from_project_git_root()
 end
 
 local function project_files()
-    local opts = {} -- define here if you want to define something
+    local no_preview = function()
+        return require('telescope.themes').get_dropdown {
+            borderchars = {
+                { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+                prompt = {
+                    '─',
+                    '│',
+                    ' ',
+                    '│',
+                    '┌',
+                    '┐',
+                    '│',
+                    '│',
+                },
+                results = {
+                    '─',
+                    '│',
+                    '─',
+                    '│',
+                    '├',
+                    '┤',
+                    '┘',
+                    '└',
+                },
+                preview = {
+                    '─',
+                    '│',
+                    '─',
+                    '│',
+                    '┌',
+                    '┐',
+                    '┘',
+                    '└',
+                },
+            },
+            width = 0.8,
+            previewer = false,
+            prompt_title = false,
+        }
+    end
     vim.fn.system 'git rev-parse --is-inside-work-tree'
     if vim.v.shell_error == 0 then
-        require('telescope.builtin').git_files(opts)
+        require('telescope.builtin').git_files(no_preview())
     else
-        require('telescope.builtin').find_files(opts)
+        require('telescope.builtin').find_files(no_preview())
     end
 end
 
