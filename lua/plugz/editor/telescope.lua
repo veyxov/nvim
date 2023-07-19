@@ -57,8 +57,18 @@ function M.config()
     telescope.load_extension 'fzf'
 end
 
+local project_files = function()
+  local opts = {} -- define here if you want to define something
+  vim.fn.system('git rev-parse --is-inside-work-tree')
+  if vim.v.shell_error == 0 then
+    require"telescope.builtin".git_files(opts)
+  else
+    require"telescope.builtin".find_files(opts)
+  end
+end
+
 M.keys = {
-    { '<leader>n', '<cmd>Telescope find_files<cr>' },
+    { '<leader>n', function() project_files() end},
     { '<leader>gc', '<cmd>Telescope grep_string theme=ivy<cr>' },
     { '<leader>g', '<cmd>Telescope live_grep theme=ivy<cr>' },
     {
