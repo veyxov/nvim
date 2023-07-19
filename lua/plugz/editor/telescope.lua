@@ -11,6 +11,8 @@ local M = {
 
 function M.config()
     local telescope = require 'telescope'
+    local actions = require 'telescope.actions'
+
     telescope.setup {
         extensions = {
             advanced_git_search = {
@@ -42,6 +44,11 @@ function M.config()
                 '┐',
                 '┘',
                 '└',
+            },
+            mappings = {
+                i = {
+                    ['<esc>'] = actions.close,
+                },
             },
             layout_strategy = 'horizontal',
             layout_config = {
