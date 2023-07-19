@@ -133,7 +133,7 @@ Diffview.config = function()
                 {
                     'n',
                     'ca',
-                    '<cmd>G commit --ammend <cr>',
+                    '<cmd>G commit --amend <cr>',
                 },
                 {
                     'n',
