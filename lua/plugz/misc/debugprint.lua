@@ -19,7 +19,6 @@ local M = {
 
 M.keys = {
     {
-        'n',
         '<Leader>d',
         function()
             -- Note: setting `expr=true` and returning the value are essential
