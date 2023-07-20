@@ -8,6 +8,14 @@ local M = {
     },
 }
 
+local function toggle_fullscreen()
+    local cmd = 'swaymsg'
+    local args = { 'fullscreen' }
+    local on_exit = nil
+
+    vim.loop.spawn(cmd, { args = args }, on_exit)
+end
+
 M.config = function()
     require('zen-mode').setup {
         window = {
@@ -19,6 +27,8 @@ M.config = function()
                 font = '+4',
             },
         },
+        on_open = function(_) toggle_fullscreen() end,
+        on_close = function() toggle_fullscreen() end,
     }
 end
 
