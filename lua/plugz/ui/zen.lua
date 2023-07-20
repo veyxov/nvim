@@ -1,10 +1,21 @@
 local M = {
-    'folke/zen-mode.nvim',
-    keys = {
-        {
-            '<leader>c',
-            function() require('zen-mode').toggle {} end,
+    {
+        'folke/zen-mode.nvim',
+        keys = {
+            {
+                '<leader>c',
+                function() require('zen-mode').toggle {} end,
+            },
         },
+    },
+    {
+        'folke/twilight.nvim',
+        config = function()
+            require('twilight').setup {
+                context = -1,
+                treesitter = true,
+            }
+        end,
     },
 }
 
@@ -20,12 +31,6 @@ M.config = function()
     require('zen-mode').setup {
         window = {
             width = 0.69,
-        },
-        plugins = {
-            wezterm = {
-                enabled = true,
-                font = '+4',
-            },
         },
         on_open = function(_) toggle_fullscreen() end,
         on_close = function() toggle_fullscreen() end,
