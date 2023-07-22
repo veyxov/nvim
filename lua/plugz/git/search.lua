@@ -10,6 +10,9 @@ return {
         {
             'tpope/vim-rhubarb',
             cmd = 'GBrowse',
+            keys = {
+                { '<leader>gg', '<cmd>GBrowse<cr>' },
+            },
             config = function()
                 require('lazy').load { plugins = { 'vim-fugitive' } }
             end,
