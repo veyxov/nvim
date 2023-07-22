@@ -3,6 +3,24 @@ local M = {
     dependencies = {
         {
             'mfussenegger/nvim-dap',
+            keys = {
+                {
+                    '<leader>dd',
+                    '<cmd>lua require("dap").toggle_breakpoint()<CR>',
+                },
+                {
+                    '<leader>dn',
+                    '<cmd>lua require("dap").continue()<CR>',
+                },
+                {
+                    '<leader>do',
+                    '<cmd>lua require("dap").step_over()<CR>',
+                },
+                {
+                    '<leader>di',
+                    '<cmd>lua require("dap").step_into()<CR>',
+                },
+            },
         },
     },
     config = function()
