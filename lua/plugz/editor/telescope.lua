@@ -48,7 +48,8 @@ function M.config()
             mappings = {
                 i = {
                     ['<esc>'] = actions.close,
-                    -- ['<C-H>'] = TODO: clean current line
+                    ['<C-H>'] = false,
+                    ['<C-U>'] = false
                 },
             },
             layout_strategy = 'horizontal',
