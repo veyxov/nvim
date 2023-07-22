@@ -49,7 +49,7 @@ function M.config()
                 i = {
                     ['<esc>'] = actions.close,
                     ['<C-H>'] = false,
-                    ['<C-U>'] = false
+                    ['<C-U>'] = false,
                 },
             },
             layout_strategy = 'horizontal',

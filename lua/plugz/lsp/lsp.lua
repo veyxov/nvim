@@ -126,8 +126,7 @@ function M.config()
     }
 
     -- Rust
-    -- NOTE: Using rust tools, which configures this automatically
-    -- lsp.rust_analyzer.setup {}
+    lsp.rust_analyzer.setup {}
 
     -- Golang
     lsp.gopls.setup {}
