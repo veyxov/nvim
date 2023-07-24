@@ -40,8 +40,20 @@ opt.cmdheight = 0
 opt.laststatus = 3
 
 opt.formatoptions = 'jcroqlnt'
--- Avoid "Hit Enter to continue"
-opt.shortmess = 'aOtTAIFS'
+-----------------------------------------------------------------------------//
+--TODO: Docs?
+opt.shortmess = {
+    t = true,
+    A = true,
+    o = true,
+    O = true,
+    T = true,
+    f = true,
+    F = true,
+    s = true,
+    c = true,
+    W = true,
+}
 
 -- Work smarter not harder.
 opt.ignorecase = true
