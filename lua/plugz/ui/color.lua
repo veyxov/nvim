@@ -30,8 +30,8 @@ local Kanagawa = {
     event = 'VeryLazy',
     config = function()
         require('kanagawa').setup {
-            compile = true, -- enable compiling the colorscheme
-            undercurl = true, -- enable undercurls
+            compile = true,     -- enable compiling the colorscheme
+            undercurl = true,   -- enable undercurls
             dimInactive = true, -- dim inactive window `:h hl-NormalNC`
             overrides = function(colors)
                 local theme = colors.theme
@@ -225,6 +225,15 @@ local Citruszest = {
     config = function() vim.cmd [[colorscheme citruszest]] end,
 }
 
+local Nordic = {
+    'AlexvZyl/nordic.nvim',
+    event = "InsertEnter",
+    priority = 1000,
+    config = function()
+        require 'nordic'.load()
+    end
+}
+
 return {
-    Citruszest,
+    Nordic,
 }
