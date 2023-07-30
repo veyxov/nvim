@@ -2,6 +2,24 @@ local map = require('globals').Map
 
 local nvo = { 'n', 'v', 'o' }
 
+map('<leader>s', '<cmd>wall<cr>') -- Save file
+-- Quitting made easy
+map('<leader>q', '<cmd>qall!<cr>')
+map('<C-H>', '<C-W>', 'i')
+map('<C-H>', '<cmd>q<cr>')
+
+-- Select and copy
+map('h', 'y', nvo)
+map('H', 'y$')
+map('<leader>h', '"+y', nvo)
+map('<leader>H', '"+y$', nvo)
+map('<leader>hh', '"+yy', nvo)
+
+map('<leader>h', '"+y', nvo)
+map('<leader>H', '"+y$', nvo)
+map('<leader>hh', '"+yy', nvo)
+-- Copy end
+
 --- Replace text-object with yanked content
 -- TODO: Any better alternatives?
 -- NOTE: There is a plugin for this
@@ -18,12 +36,6 @@ map(';r', function()
     vim.api.nvim_feedkeys('g@', 'n', false)
 end)
 
--- Quitting made easy
-map('<leader>qu', '<cmd>qall!<cr>')
-map('qu', '<cmd>wq<cr>')
-map('<C-H>', '<cmd>q<cr>')
-map('<C-H>', '<C-W>', 'i')
-
 -- Window navigation
 map('<C-Down>', '<C-w><Down>')
 map('<C-Left>', '<C-w><Left>')
@@ -34,20 +46,6 @@ map('<C-Up>', '<C-w><Up>')
 map(',', ',<c-g>u', 'i')
 map('.', '.<c-g>u', 'i')
 map(';', ';<c-g>u', 'i')
-
-map('<leader>s', '<cmd>wall<cr>') -- Save file
-
--- Select and copy
-map('h', 'y', nvo)
-map('H', 'y$')
-map('<leader>h', '"+y', nvo)
-map('<leader>H', '"+y$', nvo)
-map('<leader>hh', '"+yy', nvo)
-
-map('<leader>h', '"+y', nvo)
-map('<leader>H', '"+y$', nvo)
-map('<leader>hh', '"+yy', nvo)
--- Copy end
 
 map('<leader>v', '<C-V>') -- Visual block mode
 
