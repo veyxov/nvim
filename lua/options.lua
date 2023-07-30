@@ -26,7 +26,8 @@ opt.listchars = {
     precedes = '◀',
     nbsp = '␣',
 }
--- Nice diff chars, from diffview.nvim
+
+-- Nice diff chars, for diffview.nvim
 opt.fillchars:append { diff = '╱' }
 
 opt.hlsearch = true
@@ -40,20 +41,9 @@ opt.cmdheight = 0
 opt.laststatus = 3
 
 opt.formatoptions = 'jcroqlnt'
------------------------------------------------------------------------------//
---TODO: Docs?
-opt.shortmess = {
-    t = true,
-    A = true,
-    o = true,
-    O = true,
-    T = true,
-    f = true,
-    F = true,
-    s = true,
-    c = true,
-    W = true,
-}
+
+-- Short, sweet and to the point.
+opt.shortmess = 'aoOtTWAIqF'
 
 -- Work smarter not harder.
 opt.ignorecase = true
