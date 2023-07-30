@@ -10,7 +10,6 @@ local Diffview = {
 }
 
 Diffview.config = function()
-    -- Lua
     local actions = require 'diffview.actions'
 
     require('diffview').setup {

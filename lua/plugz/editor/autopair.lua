@@ -20,6 +20,7 @@ local Autopairs = {
 
         cmp_integration()
     end,
+    enabled = false,
 }
 
 return Autopairs
