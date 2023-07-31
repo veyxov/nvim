@@ -20,18 +20,8 @@ M.keys = {
         mode = ox,
     },
     {
-        'aI',
-        "<cmd>lua require('various-textobjs').indentation(false, true)<CR>",
-        mode = ox,
-    },
-    {
         'ai',
         "<cmd>lua require('various-textobjs').indentation(false, false)<CR>",
-        mode = ox,
-    },
-    {
-        'iI',
-        "<cmd>lua require('various-textobjs').indentation(true, true)<CR>",
         mode = ox,
     },
     {
