@@ -45,8 +45,8 @@ M.keys = {
         mode = ox,
     },
     {
-        't;',
-        "<cmd>lua require('various-textobjs').toNextClosingBracket()<CR>",
+        [[t']],
+        "<cmd>lua require('various-textobjs').toNextQuotationMark()<CR>",
         mode = ox,
     },
     {
