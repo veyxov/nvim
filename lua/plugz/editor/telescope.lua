@@ -47,7 +47,7 @@ function M.config()
             },
             mappings = {
                 i = {
-                    ['<esc>'] = actions.close,
+                    -- ['<esc>'] = actions.close,
                     ['<C-H>'] = false,
                     ['<C-U>'] = false,
                 },
