@@ -5,7 +5,7 @@ local nvo = { 'n', 'v', 'o' }
 map('<leader>s', '<cmd>wall<cr>') -- Save file
 
 -- Quitting made easy
-map('qu', '<cmd>wqall!<cr>')
+map('qu', '<cmd>wq<cr>')
 map('<leader>q', '<cmd>qall!<cr>')
 map('<C-H>', '<C-W>', 'i')
 map('<C-H>', '<cmd>q<cr>')
