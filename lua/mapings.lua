@@ -1,7 +1,5 @@
 local map = require('globals').Map
 
-local nvo = { 'n', 'v', 'o' }
-
 map('<leader>s', '<cmd>wall<cr>') -- Save file
 
 -- Quitting made easy
@@ -9,18 +7,6 @@ map('qu', '<cmd>wq<cr>')
 map('<leader>q', '<cmd>qall!<cr>')
 map('<C-H>', '<C-W>', 'i')
 map('<C-H>', '<cmd>q<cr>')
-
--- Select and copy
-map('h', 'y', nvo)
-map('H', 'y$')
-map('<leader>h', '"+y', nvo)
-map('<leader>H', '"+y$', nvo)
-map('<leader>hh', '"+yy', nvo)
-
-map('<leader>h', '"+y', nvo)
-map('<leader>H', '"+y$', nvo)
-map('<leader>hh', '"+yy', nvo)
--- Copy end
 
 --- Replace text-object with yanked content
 -- TODO: Any better alternatives?

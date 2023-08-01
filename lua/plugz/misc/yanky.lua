@@ -1,23 +1,55 @@
+local nx = { 'n', 'x' }
+
 return {
     'gbprod/yanky.nvim',
-    init = function()
-        local nx = { 'n', 'x' }
-
-        vim.keymap.set(nx, 'h', '<Plug>(YankyYank)')
-
-        vim.keymap.set(nx, 'p', '<Plug>(YankyPutAfter)')
-        vim.keymap.set(nx, 'P', '<Plug>(YankyPutBefore)')
-
-        vim.keymap.set('n', 'hn', '<Plug>(YankyCycleForward)')
-        vim.keymap.set('n', 'hp', '<Plug>(YankyCycleBackward)')
-    end,
-    event = 'VeryLazy',
+    keys = {
+        {
+            'h',
+            '<Plug>(YankyYank)',
+            mode = nx,
+        },
+        {
+            'hh',
+            'yy',
+            mode = nx,
+        },
+        {
+            '<leader>h',
+            '"+y',
+            mode = nx,
+        },
+        {
+            '<leader>hh',
+            '"+yy',
+            mode = nx,
+        },
+        {
+            'p',
+            '<Plug>(YankyPutAfter)',
+            mode = nx,
+        },
+        {
+            'P',
+            '<Plug>(YankyPutBefore)',
+            mode = nx,
+        },
+        {
+            'hn',
+            '<Plug>(YankyCycleForward)',
+            mode = nx,
+        },
+        {
+            'hp',
+            '<Plug>(YankyCycleBackward)',
+            mode = nx,
+        },
+    },
     config = function()
         require('yanky').setup {
             ring = {
                 history_length = 100,
                 storage = 'shada',
-                sync_with_numbered_registers = true,
+                sync_with_numbered_registers = false,
                 cancel_event = 'update',
             },
             picker = {
