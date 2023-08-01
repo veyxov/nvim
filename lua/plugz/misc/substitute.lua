@@ -1,10 +1,10 @@
 return {
     'gbprod/substitute.nvim',
     keys = {
-        { '_', function() require('substitute').operator() end },
-        { '__', function() require('substitute').line() end },
-        { '_$', function() require('substitute').eol() end },
-        { '_', function() require('substitute').visual() end, mode = 'x' },
+        { 'r', function() require('substitute').operator() end },
+        { 'rr', function() require('substitute').line() end },
+        { 'r$', function() require('substitute').eol() end },
+        { 'r', function() require('substitute').visual() end, mode = 'x' },
     },
     config = function()
         -- yanky.nvim integration
