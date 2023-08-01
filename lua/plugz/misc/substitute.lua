@@ -5,6 +5,20 @@ return {
         { 'rr', function() require('substitute').line() end },
         { 'r$', function() require('substitute').eol() end },
         { 'r', function() require('substitute').visual() end, mode = 'x' },
+
+        {
+            'rs',
+            function() require('substitute.range').operator() end,
+        },
+        {
+            'rs',
+            function() require('substitute.range').visual() end,
+            mode = 'x',
+        },
+        {
+            'rss',
+            function() require('substitute.range').word() end,
+        },
     },
     config = function()
         -- yanky.nvim integration
