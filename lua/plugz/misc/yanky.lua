@@ -1,5 +1,17 @@
 return {
     'gbprod/yanky.nvim',
+    init = function()
+        local nx = { 'n', 'x' }
+
+        vim.keymap.set(nx, 'h', '<Plug>(YankyYank)')
+
+        vim.keymap.set(nx, 'p', '<Plug>(YankyPutAfter)')
+        vim.keymap.set(nx, 'P', '<Plug>(YankyPutBefore)')
+
+        vim.keymap.set('n', 'hn', '<Plug>(YankyCycleForward)')
+        vim.keymap.set('n', 'hp', '<Plug>(YankyCycleBackward)')
+    end,
+    event = 'VeryLazy',
     config = function()
         require('yanky').setup {
             ring = {
