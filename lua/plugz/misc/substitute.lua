@@ -24,6 +24,10 @@ return {
             '<leader>x',
             function() require('substitute.exchange').operator() end,
         },
+        {
+            '<leader>xx',
+            function() require('substitute.exchange').line() end,
+        },
     },
     config = function()
         -- yanky.nvim integration
