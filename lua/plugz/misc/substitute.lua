@@ -19,6 +19,11 @@ return {
             'rss',
             function() require('substitute.range').word() end,
         },
+
+        {
+            '<leader>x',
+            function() require('substitute.exchange').operator() end,
+        },
     },
     config = function()
         -- yanky.nvim integration
