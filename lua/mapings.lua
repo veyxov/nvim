@@ -48,3 +48,7 @@ map('>', '>gv', 'v')
 
 -- Wierd bug, when toggling symbol layer, continues to delete
 map('d<Space>', '<nop>')
+
+-- fix spelling errors
+map('fl', '1z=') -- Fix Word Under Cursor
+map('<Esc>', ':nohl<CR>:echo<CR>') -- Clear
