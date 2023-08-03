@@ -32,7 +32,7 @@ return {
             -- If enabled, only critical notifications are sent.
             -- If you do not use a plugin like nvim-notify, set this to `true`
             -- to remove otherwise annoying messages.
-            lessNotifications = true,
+            lessNotifications = false,
 
             useNerdfontIcons = false,
 
