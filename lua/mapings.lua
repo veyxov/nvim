@@ -45,3 +45,6 @@ map('H', 'y$')
 -- better indenting
 map('<', '<gv', 'v')
 map('>', '>gv', 'v')
+
+-- Wierd bug, when toggling symbol layer, continues to delete
+map('d<Space>', '<nop>')
