@@ -1,26 +1,26 @@
-local recording = "<leader>mm"
-local play = "<leader>me" -- execute
-local switch = "<leader>ms"
-local edit = "<leader>mc" -- change
+local recording = '<leader>mm'
+local play = '<leader>me' -- execute
+local switch = '<leader>ms'
+local edit = '<leader>mc' -- change
 
 return {
-    "chrisgrieser/nvim-recorder",
+    'chrisgrieser/nvim-recorder',
     keys = {
         recording,
     },
     config = function()
         -- default values
-        require("recorder").setup {
+        require('recorder').setup {
             timeout = 1500,
-            slots = { "a", "e" },
+            slots = { 'a', 'e' },
 
             mapping = {
                 startStopRecording = recording,
                 playMacro = play,
                 switchSlot = switch,
                 editMacro = edit,
-                yankMacro = "<leader>kh",
-                addBreakPoint = "##", -- ⚠️ this should be a string you don't use in insert mode during a macro
+                yankMacro = '<leader>kh',
+                addBreakPoint = '##', -- ⚠️ this should be a string you don't use in insert mode during a macro
             },
 
             -- Clears all macros-slots on startup.
@@ -43,14 +43,14 @@ return {
             -- temporarily changes changes some settings for the duration of the macro.
             performanceOpts = {
                 countThreshold = 100,
-                lazyredraw = true,        -- enable lazyredraw (see `:h lazyredraw`)
+                lazyredraw = true, -- enable lazyredraw (see `:h lazyredraw`)
                 noSystemClipboard = true, -- remove `+`/`*` from clipboard option
-                autocmdEventsIgnore = {   -- temporarily ignore these autocmd events
-                    "TextChangedI",
-                    "TextChanged",
-                    "InsertLeave",
-                    "InsertEnter",
-                    "InsertCharPre",
+                autocmdEventsIgnore = { -- temporarily ignore these autocmd events
+                    'TextChangedI',
+                    'TextChanged',
+                    'InsertLeave',
+                    'InsertEnter',
+                    'InsertCharPre',
                 },
             },
 
@@ -58,5 +58,5 @@ return {
             -- (See README for further explanations.)
             dapSharedKeymaps = false,
         }
-    end
+    end,
 }
