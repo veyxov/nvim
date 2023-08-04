@@ -27,6 +27,11 @@ Diffview.config = function()
                 },
                 {
                     'n',
+                    'q',
+                    '<cmd>DiffviewClose<cr>',
+                },
+                {
+                    'n',
                     'e',
                     actions.select_next_entry,
                 },
@@ -126,6 +131,11 @@ Diffview.config = function()
                 },
                 {
                     'n',
+                    'q',
+                    '<cmd>DiffviewClose<cr>',
+                },
+                {
+                    'n',
                     'cc',
                     '<cmd>G commit<cr>',
                 },
@@ -163,6 +173,11 @@ Diffview.config = function()
                 },
                 {
                     'n',
+                    'q',
+                    '<cmd>DiffviewClose<cr>',
+                },
+                {
+                    'n',
                     '<tab>',
                     actions.select_entry,
                 },
@@ -170,6 +185,11 @@ Diffview.config = function()
                     'n',
                     'qu',
                     actions.close,
+                },
+                {
+                    'n',
+                    'q',
+                    actions.close
                 },
                 {
                     'n',
