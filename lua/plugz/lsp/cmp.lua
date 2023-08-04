@@ -10,7 +10,6 @@ M.dependencies = {
     'saadparwaiz1/cmp_luasnip',
     'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-path',
-    'onsails/lspkind.nvim',
 }
 
 function M.config()
@@ -19,20 +18,9 @@ function M.config()
 
     -- Load copilot-cmp before cmp loads
     require('lazy').load { plugins = { 'copilot-cmp' } }
-    local lspkind = require 'lspkind'
 
     ---@diagnostic disable-next-line: redundant-parameter
     cmp.setup {
-        formatting = {
-            format = lspkind.cmp_format {
-                mode = 'symbol', -- show only symbol annotations
-                maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-                ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-                symbol_map = {
-                    Copilot = '', -- NOTE: depends on copilot
-                },
-            },
-        },
         cospletion = {
             completeopt = 'menu,menuone,preview',
         },
