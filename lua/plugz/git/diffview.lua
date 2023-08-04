@@ -189,7 +189,7 @@ Diffview.config = function()
                 {
                     'n',
                     'q',
-                    actions.close
+                    actions.close,
                 },
                 {
                     'n',
