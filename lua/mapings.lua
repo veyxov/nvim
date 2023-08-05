@@ -36,3 +36,8 @@ map('d<Space>', '<nop>')
 -- fix spelling errors
 map('fl', '1z=') -- Fix Word Under Cursor
 map('<Esc>', ':nohl<CR>:echo<CR>') -- Clear
+
+-- quick-fix window navigation
+-- TODO: This is sub-optimal
+map('<leader>jn', '<cmd>cnext<cr>')
+map('<leader>jp', '<cmd>cnext<cr>')
