@@ -43,13 +43,6 @@ return {
             '<Plug>(YankyCycleBackward)',
             mode = nx,
         },
-        {
-            'HH',
-            function()
-                require('telescope').load_extension 'yank_history'
-                require('telescope').extensions.yank_history.yank_history()
-            end,
-        },
     },
     config = function()
         local utils = require 'yanky.utils'
