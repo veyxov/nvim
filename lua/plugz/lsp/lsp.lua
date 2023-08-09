@@ -72,7 +72,7 @@ function M.config()
         { 'n', 'v' }
     )
 
-    map('<F5>', vim.lsp.buf.code_action, { 'n', 'v' })
+    map('<leader>ca', vim.lsp.buf.code_action, { 'n', 'v' })
     map('<leader>f', vim.lsp.buf.format)
     map('<leader>r', vim.lsp.buf.rename)
     map('<C-E>', vim.lsp.buf.signature_help, 'i')
