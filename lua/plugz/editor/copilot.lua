@@ -14,7 +14,7 @@ Copilot.config = function()
             enabled = true,
             auto_trigger = true,
             keymap = {
-                accept = '<Right>',
+                accept = '<A-Right>',
             },
         },
     }
