@@ -15,7 +15,7 @@ function M.config()
     local cmp = require 'cmp'
 
     -- Load copilot-cmp before cmp loads
-    require('lazy').load { plugins = { 'copilot-cmp' } }
+    require('lazy').load { plugins = { 'copilot.lua', 'copilot-cmp' } }
 
     ---@diagnostic disable-next-line: redundant-parameter
     cmp.setup {
