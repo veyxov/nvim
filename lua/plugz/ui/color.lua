@@ -233,5 +233,5 @@ local Nordic = {
 }
 
 return {
-    Sonokay,
+    Gruvbox,
 }
