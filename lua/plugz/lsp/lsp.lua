@@ -77,6 +77,8 @@ function M.config()
     map('<leader>r', vim.lsp.buf.rename)
     map('<C-E>', vim.lsp.buf.signature_help, 'i')
 
+    map('<leader>lss', "<cmd> echo 'starting lsp server...' | LspStart<cr>")
+
     map('<leader>k', vim.lsp.buf.hover)
 end
 
