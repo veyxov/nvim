@@ -15,11 +15,6 @@ local M = {
             end,
         },
         {
-            'S',
-            mode = { 'n', 'o', 'x' },
-            function() require('flash').treesitter() end,
-        },
-        {
             'r',
             mode = 'o',
             function()
@@ -29,7 +24,7 @@ local M = {
             desc = 'Remote Flash',
         },
         {
-            'R',
+            'S',
             mode = { 'n', 'o', 'x' },
             function()
                 -- show labeled treesitter nodes around the search matches
