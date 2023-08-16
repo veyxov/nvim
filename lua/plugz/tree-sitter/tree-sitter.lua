@@ -9,6 +9,11 @@ M.dependencies = {
 }
 
 local opts = {
+    -- tree setter
+    tree_setter = {
+        enable = true,
+    },
+
     ensure_installed = {
         'lua',
         'vim',
