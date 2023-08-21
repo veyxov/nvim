@@ -41,3 +41,6 @@ map('<Esc>', ':nohl<CR>:echo<CR>') -- Clear
 -- TODO: This is sub-optimal
 map('<leader>jn', '<cmd>cnext<cr>')
 map('<leader>jp', '<cmd>cnext<cr>')
+
+-- Quickfix mappings
+map( '<leader>cn', ':cnext<cr>zz')
