@@ -4,6 +4,9 @@ return {
     'gbprod/yanky.nvim',
     keys = {
         {
+            'he',
+        },
+        {
             'h',
             '<Plug>(YankyYank)',
             mode = nx,
