@@ -5,13 +5,13 @@ return {
     config = function()
         local opts = {
             restricted_keys = {
-                ['<Up>'] = { '', 'i' },
-                ['<Down>'] = { '', 'i' },
-                ['<Left>'] = { '', 'i' },
-                ['<Right>'] = { '', 'i' },
-                ['e'] = { '', 'i' },
-                ['w'] = { '', 'i' },
-                ['b'] = { '', 'i' },
+                ['<Up>'] = { 'n' },
+                ['<Down>'] = { 'n' },
+                ['<Left>'] = { 'n' },
+                ['<Right>'] = { 'n' },
+                ['e'] = { 'n' },
+                ['w'] = { 'n' },
+                ['b'] = { 'n' },
                 ['-'] = {},
             },
             disabled_keys = {
