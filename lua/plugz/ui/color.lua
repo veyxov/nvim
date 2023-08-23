@@ -8,7 +8,10 @@ local Moonlify = {
 local Gruvbox = {
     'ellisonleao/gruvbox.nvim',
     event = 'VeryLazy',
-    config = function() vim.cmd.colorscheme 'gruvbox' end,
+    config = function() 
+        vim.cmd.colorscheme 'gruvbox'
+        vim.cmd [[hi Normal guibg=#000000]] -- colors like ThePrimeagen
+    end,
 }
 
 local Poimandres = {
