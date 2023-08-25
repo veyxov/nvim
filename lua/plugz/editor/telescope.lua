@@ -137,7 +137,11 @@ local function project_files()
 end
 
 M.keys = {
-    { '<leader>n', function() project_files() end },
+    { '<leader>N', function() project_files() end },
+    {
+        '<leader>n',
+        function() require('telescope.builtin').find_files() end,
+    },
     { '<leader>gc', '<cmd>Telescope grep_string theme=ivy<cr>' },
     {
         '<leader>g',
