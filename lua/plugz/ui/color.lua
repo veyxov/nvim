@@ -236,5 +236,5 @@ local Nordic = {
 }
 
 return {
-    Gruvbox,
+    Kanagawa,
 }
