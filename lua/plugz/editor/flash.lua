@@ -6,10 +6,7 @@ local M = {
         {
             's',
             mode = { 'n', 'x', 'o' },
-            function()
-                require('flash').jump {
-                }
-            end,
+            function() require('flash').jump {} end,
         },
         {
             'r',
