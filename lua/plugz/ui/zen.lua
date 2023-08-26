@@ -8,15 +8,6 @@ local M = {
             },
         },
     },
-    {
-        'folke/twilight.nvim',
-        config = function()
-            require('twilight').setup {
-                context = -1,
-                treesitter = true,
-            }
-        end,
-    },
 }
 
 local function toggle_fullscreen()
