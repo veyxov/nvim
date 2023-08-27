@@ -24,9 +24,6 @@ NVIM_APPNAME=veyxov/nvim/ nvim
 
 ## Plugins
 
-### color
-
-+ [folke/twilight.nvim](https://dotfyle.com/plugins/folke/twilight.nvim)
 ### colorscheme
 
 + [folke/tokyonight.nvim](https://dotfyle.com/plugins/folke/tokyonight.nvim)
