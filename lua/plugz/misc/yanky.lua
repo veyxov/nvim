@@ -7,6 +7,12 @@ return {
             'he',
         },
         {
+            'hi',
+        },
+        {
+            'ha',
+        },
+        {
             'h',
             '<Plug>(YankyYank)',
             mode = nx,
