@@ -6,7 +6,7 @@ return {
         local gs = require 'gitsigns'
         local map = require('globals').Map
 
-        gs.setup { yadm = { enable = true } }
+        gs.setup {}
 
         -- Add/reset
         map('jj', gs.stage_hunk)
