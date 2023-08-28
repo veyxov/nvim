@@ -2,7 +2,7 @@ local M = {
     'folke/zen-mode.nvim',
     keys = {
         {
-            '<leader>c',
+            '<leader>,',
             function() require('zen-mode').toggle {} end,
         },
     },
