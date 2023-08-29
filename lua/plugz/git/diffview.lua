@@ -22,12 +22,12 @@ Diffview.config = function()
                 { 'n', 'f', actions.focus_files },
                 {
                     'n',
-                    'q',
+                    'qu',
                     '<cmd>DiffviewClose<cr>',
                 },
                 {
                     'n',
-                    'qu',
+                    'q',
                     '<cmd>DiffviewClose<cr>',
                 },
                 {
