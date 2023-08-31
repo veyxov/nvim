@@ -203,6 +203,7 @@ Diffview.config = function()
             },
         },
         hooks = {
+            ---@diagnostic disable-next-line: unused-local
             diff_buf_read = function(bufnr)
                 -- Change local options in diff buffers
                 vim.opt_local.list = false
