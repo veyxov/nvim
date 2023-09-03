@@ -1,16 +1,16 @@
 return {
     'gbprod/substitute.nvim',
     keys = {
-        { 'k', function() require('substitute').operator() end },
+        { '<leader>r', function() require('substitute').operator() end },
         { 'kk', function() require('substitute').line() end },
         { 'k$', function() require('substitute').eol() end },
         { 'k', function() require('substitute').visual() end, mode = 'x' },
         {
-            '<leader>r',
+            '<leader>rs',
             function() require('substitute.range').operator() end,
         },
         {
-            '<leader>r',
+            '<leader>rs',
             function() require('substitute.range').visual() end,
             mode = 'x',
         },
