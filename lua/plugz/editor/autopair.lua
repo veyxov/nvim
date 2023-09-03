@@ -18,8 +18,8 @@ return {
             --enable/disable multiline
             bs = { -- *ultimate-autopair-map-backspace-config*
                 enable = true,
-                map = '<bs>', --string or table
-                cmap = '<bs>', --string or table
+                map = '<C-H>', --string or table
+                cmap = '<C-H>', --string or table
                 overjumps = true,
                 --(|foo) > bs > |foo
                 space = true, --false, true or 'balance'
