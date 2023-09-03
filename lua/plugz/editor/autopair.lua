@@ -72,7 +72,7 @@ return {
                 enable_reverse = true,
                 hopout = false,
                 --{(|)} > fastwarp > {(}|)
-                map = '<A-e>', --string or table
+                map = '<space>x', --string or table
                 rmap = '<A-E>', --string or table
                 cmap = '<A-e>', --string or table
                 rcmap = '<A-E>', --string or table
@@ -153,11 +153,6 @@ return {
                 { '<!--', '-->', ft = { 'markdown', 'html' } },
                 { '"""',  '"""', newline = true,        ft = { 'python' } },
                 { "'''",  "'''", newline = true,        ft = { 'python' } },
-            },
-            config_internal_pairs = { -- *ultimate-autopair-pairs-configure-default-pairs*
-                --configure internal pairs
-                --example:
-                --{'{','}',suround=true},
             },
         }
     end
