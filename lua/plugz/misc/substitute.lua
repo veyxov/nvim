@@ -4,7 +4,11 @@ return {
         { 'r', function() require('substitute').operator() end },
         { 'r', function() require('substitute').visual() end, mode = 'x' },
         {
-            '<leader>r',
+            '<leader>rw',
+            function() require('substitute.range').word() end,
+        },
+        {
+            '<leader>ri',
             function() require('substitute.range').operator() end,
         },
         {
