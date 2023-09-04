@@ -72,7 +72,7 @@ return {
                 enable_reverse = true,
                 hopout = false,
                 --{(|)} > fastwarp > {(}|)
-                map = '<space>x', --string or table
+                map = '<C-a>', --string or table
                 rmap = '<A-E>', --string or table
                 cmap = '<A-e>', --string or table
                 rcmap = '<A-E>', --string or table
