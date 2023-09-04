@@ -12,6 +12,11 @@ local M = {
 
 M.keys = {
     {
+        'ag',
+        "<cmd>lua require('various-textobjs').entireBuffer()<CR>",
+        mode = ox,
+    },
+    {
         'ii',
         "<cmd>lua require('various-textobjs').indentation(true, true)<CR>",
         mode = ox,
