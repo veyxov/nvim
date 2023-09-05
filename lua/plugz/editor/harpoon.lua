@@ -9,10 +9,10 @@ local M = {
             '<leader><C-H>',
             function() require('harpoon.ui').toggle_quick_menu() end,
         },
-        '1',
-        '2',
-        '3',
-        '4',
+        '<leader>da',
+        '<leader>de',
+        '<leader>di',
+        '<leader>dh',
     },
 }
 
@@ -25,9 +25,11 @@ M.config = function()
 
     local map = require('globals').Map
 
-    for i = 1, 4, 1 do
-        local i_str = tostring(i)
-        map(i_str, '<cmd>lua require"harpoon.ui".nav_file(' .. i_str .. ')<cr>')
+    local chars = { '<leader>da', '<leader>de', '<leader>di', '<leader>dh' }
+    local i = 1
+    for _, char in ipairs(chars) do
+        map(char, '<cmd>lua require"harpoon.ui".nav_file(' .. i .. ')<cr>')
+        i = i + 1
     end
 end
 
