@@ -31,6 +31,7 @@ M.config = function()
             ['<C-p>'] = 'actions.preview',
             ['n'] = 'actions.parent',
             ['qu'] = 'actions.close',
+            ['<C-h>'] = 'actions.close',
             ['<C-l>'] = 'actions.refresh',
             --["h"] = "actions.open_cwd",
             ['cd'] = 'actions.cd',
