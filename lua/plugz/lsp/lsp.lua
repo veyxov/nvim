@@ -49,7 +49,15 @@ function M.config()
     }
 
     -- Rust
-    lsp.rust_analyzer.setup {}
+    lsp.rust_analyzer.setup {
+        settings = {
+            ['rust-analyzer'] = {
+                check = {
+                    command = "clippy"
+                }
+            }
+        }
+    }
 
     -- Golang
     lsp.gopls.setup {}
