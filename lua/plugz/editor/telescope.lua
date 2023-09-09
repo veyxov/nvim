@@ -144,7 +144,7 @@ M.keys = {
     },
     { '<leader>gc', '<cmd>Telescope grep_string theme=ivy<cr>' },
     {
-        '<leader>g',
+        '<leader>gg',
         function() live_grep_from_project_git_root() end,
     },
     {

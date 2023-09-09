@@ -13,7 +13,7 @@ opt.splitkeep = 'screen'
 opt.virtualedit = 'block'
 
 -- Need to type chords fast
-opt.timeoutlen = 250
+opt.timeoutlen = 1600
 
 -- Visual clutter
 opt.wrap = false
