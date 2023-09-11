@@ -14,9 +14,7 @@ local opts = {
         'vim',
         'json',
         'vimdoc',
-        'c_sharp',
         'regex',
-        'bash',
         'markdown',
         'markdown_inline',
     },
@@ -31,7 +29,7 @@ local opts = {
     incremental_selection = {
         enable = true,
         keymaps = {
-            init_selection = ',,',
+            init_selection = ',,', -- TODO: play around with this more
             scope_incremental = ',,',
             node_incremental = ',m',
             node_decremental = ',n',
@@ -41,24 +39,18 @@ local opts = {
     textobjects = {
         select = {
             enable = true,
-            -- Automatically jump forward to textobj
             lookahead = true,
             keymaps = {
                 ['af'] = '@function.outer',
                 ['if'] = '@function.inner',
-                -- ['aif'] = '@conditional.outer',
-                -- ['iif'] = '@conditional.inner',
                 ['al'] = '@loop.outer',
                 ['il'] = '@loop.inner',
                 ['ac'] = '@class.outer',
-                ['a/'] = '@comment.outer',
                 ['ic'] = '@class.inner',
-                ['AA'] = '@parameter.inner',
+                ['a/'] = '@comment.outer',
+                ['i/'] = '@comment.inner',
+                ['au'] = '@parameter.inner',
                 ['aa'] = '@parameter.outer',
-                ['a=='] = '@assignment.outer',
-                ['i=='] = '@assignment.inner',
-                ['i=r'] = '@assignment.lhs',
-                ['i=d'] = '@assignment.rhs',
             },
             include_surrounding_whitespace = false,
         },
