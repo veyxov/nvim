@@ -33,8 +33,8 @@ local Kanagawa = {
     event = 'VeryLazy',
     config = function()
         require('kanagawa').setup {
-            compile = true, -- enable compiling the colorscheme
-            undercurl = true, -- enable undercurls
+            compile = true,     -- enable compiling the colorscheme
+            undercurl = true,   -- enable undercurls
             dimInactive = true, -- dim inactive window `:h hl-NormalNC`
             overrides = function(colors)
                 local theme = colors.theme
@@ -235,10 +235,15 @@ local Nordic = {
     config = function() require('nordic').load() end,
 }
 
-return {
-    'Mofiqul/vscode.nvim',
-    lazy = false,
-    config = function ()
-        vim.cmd.colorscheme "vscode"
-    end
+local Github = {
+    'projekt0n/github-nvim-theme',
+    lazy = false,  -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+        require('github-theme').setup()
+
+        vim.cmd('colorscheme github_dark')
+    end,
 }
+
+return { Citruszest }
