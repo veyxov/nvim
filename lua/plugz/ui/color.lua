@@ -246,4 +246,4 @@ local Github = {
     end,
 }
 
-return { Citruszest }
+return { Gruvbox }

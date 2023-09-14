@@ -5,7 +5,6 @@ local function autocmd(event, callback)
     vim.api.nvim_create_autocmd(event, { callback = callback, group = GROUP })
 end
 
--- :)
 -- Highlight on yank
 autocmd('TextYankPost', function() vim.highlight.on_yank() end)
 
