@@ -253,7 +253,9 @@ local Bamboo = {
     priority = 1000,
     config = function()
         require('bamboo').setup {
-            -- optional configuration here
+            style = 'multiplex',
+            transparent = true,
+            ending_tildes = false
         }
         require('bamboo').load()
     end,
