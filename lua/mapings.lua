@@ -45,5 +45,5 @@ map('<leader>jp', '<cmd>cnext<cr>')
 -- Quickfix mappings
 map('<leader>cn', ':cnext<cr>zz')
 
-map('<leader>gh', '$')
-map('<leader>ga', '0')
+map('<leader>gh', '$', {'n', 'x'})
+map('<leader>ga', '0', {'n', 'o'})
