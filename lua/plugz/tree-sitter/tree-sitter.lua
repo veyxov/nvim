@@ -29,8 +29,8 @@ local opts = {
     incremental_selection = {
         enable = true,
         keymaps = {
-            init_selection = ',,', -- TODO: play around with this more
-            scope_incremental = ',,',
+            init_selection = '<leader>k', -- TODO: play around with this more
+            scope_incremental = '<leader>kk',
             node_incremental = ',m',
             node_decremental = ',n',
         },
@@ -58,19 +58,19 @@ local opts = {
             enable = true,
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
-                ['['] = '@function.outer',
+                ['kf'] = '@function.outer',
                 ['gc'] = '@class.outer',
             },
             goto_next_end = {
-                ['('] = '@function.outer',
+                ['kF'] = '@function.outer',
                 ['Gc'] = '@class.outer',
             },
             goto_previous_start = {
-                [']'] = '@function.outer',
+                ['Kf'] = '@function.outer',
                 ['gC'] = '@class.outer',
             },
             goto_previous_end = {
-                ['GC'] = '@class.outer',
+                ['KF'] = '@class.outer',
                 [')'] = '@function.outer',
             },
         },
