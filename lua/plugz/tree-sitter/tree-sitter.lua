@@ -59,20 +59,18 @@ local opts = {
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
                 ['kf'] = '@function.outer',
+                ['ka'] = '@parameter.outer',
+                ['kl'] = '@loop.outer',
                 ['gc'] = '@class.outer',
             },
             goto_next_end = {
                 ['kF'] = '@function.outer',
                 ['Gc'] = '@class.outer',
             },
-            goto_previous_start = {
-                ['Kf'] = '@function.outer',
-                ['gC'] = '@class.outer',
-            },
-            goto_previous_end = {
-                ['KF'] = '@class.outer',
-                [')'] = '@function.outer',
-            },
+
+            -- NOTE: No need for these becase repeating with ; and ,
+            goto_previous_start = {},
+            goto_previous_end = {},
         },
         swap = {
             enable = true,
