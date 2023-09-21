@@ -261,4 +261,4 @@ local Bamboo = {
     end,
 }
 
-return { Rose }
+return { Gruvbox }
