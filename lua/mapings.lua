@@ -1,6 +1,7 @@
 local map = require('globals').Map
 
 map('<leader>s', '<cmd>wall<cr>') -- Save file
+map('<C-H>', '<cmd>q<cr>') -- fast quit
 
 -- Quitting made easy
 map('qu', '<cmd>wq<cr>')
