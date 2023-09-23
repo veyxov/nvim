@@ -35,11 +35,6 @@ map('d<Space>', '<nop>')
 map('fl', '1z=') -- Fix Word Under Cursor
 map('<Esc>', ':nohl<CR>:echo<CR>') -- Clear
 
--- quick-fix window navigation
--- TODO: This is sub-optimal
-map('<leader>jn', '<cmd>cnext<cr>')
-map('<leader>jp', '<cmd>cnext<cr>')
-
 -- Quickfix mappings
 map('<leader>cn', ':cnext<cr>zz')
 
