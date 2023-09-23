@@ -2,7 +2,7 @@ local M = {
     'ThePrimeagen/harpoon',
     keys = {
         {
-            '<C-a>',
+            'y<Space>',
             function() require('harpoon.mark').add_file() end,
         },
         {
@@ -25,7 +25,7 @@ M.config = function()
 
     local map = require('globals').Map
 
-    local chars = { '<leader>da', '<leader>de', '<leader>di', '<leader>dh' }
+    local chars = { 'yu', 'yo', 'yy', 'yk' }
     local i = 1
     for _, char in ipairs(chars) do
         map(char, '<cmd>lua require"harpoon.ui".nav_file(' .. i .. ')<cr>')
