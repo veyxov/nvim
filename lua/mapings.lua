@@ -5,8 +5,6 @@ map('<leader>s', '<cmd>wall<cr>') -- Save file
 -- Quitting made easy
 map('qu', '<cmd>wq<cr>')
 map('<leader>q', '<cmd>qall!<cr>')
-map('<C-H>', '<C-W>', 'i')
-map('<C-H>', '<cmd>q<cr>')
 
 -- Window navigation
 map('<C-Down>', '<C-w><Down>')
@@ -21,10 +19,9 @@ map(';', ';<c-g>u', 'i')
 
 map('<leader>v', '<C-V>') -- Visual block mode
 
--- Insert a semicolon at the end of the line and create a new one
-map('<F5>', '<esc>A;<esc>o', 'i')
-
 map('H', 'y$')
+
+-- TODO: add some mappings to the now unused u
 
 -- better indenting
 map('<', '<gv', 'v')

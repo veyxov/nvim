@@ -13,7 +13,7 @@ opt.splitkeep = 'screen'
 opt.virtualedit = 'block'
 
 -- Need to type chords fast
-opt.timeoutlen = 1600
+opt.timeoutlen = 500
 
 -- Visual clutter
 opt.wrap = false
@@ -51,8 +51,6 @@ opt.smartcase = true
 
 -- Fast completion and diagnostic.
 opt.updatetime = 500
-opt.wildmode = 'longest:full,full'
-opt.completeopt = 'menu,menuone,preview'
 
 -- Tabs or spaces?
 local tabs = 4

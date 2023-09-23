@@ -29,8 +29,8 @@ local opts = {
     incremental_selection = {
         enable = true,
         keymaps = {
-            init_selection = '<leader>k', -- TODO: play around with this more
-            scope_incremental = '<leader>kk',
+            init_selection = '<leader><leader>k', -- TODO: play around with this more
+            scope_incremental = '<leader><leader>kk',
             node_incremental = ',m',
             node_decremental = ',n',
         },

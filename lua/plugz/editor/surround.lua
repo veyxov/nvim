@@ -15,7 +15,6 @@ M.config = function()
             visual_line = 'L',
             delete = 'ds',
             change = 'cs',
-            change_line = 'cl',
         },
     }
 end
