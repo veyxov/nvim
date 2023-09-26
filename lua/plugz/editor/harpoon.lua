@@ -9,10 +9,10 @@ local M = {
             '<leader><C-H>',
             function() require('harpoon.ui').toggle_quick_menu() end,
         },
-        '<leader>da',
-        '<leader>de',
-        '<leader>di',
-        '<leader>dh',
+        'yu',
+        'yo',
+        'yy',
+        'yk',
     },
 }
 
