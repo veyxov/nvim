@@ -8,9 +8,6 @@ end
 -- Highlight on yank
 autocmd('TextYankPost', function() vim.highlight.on_yank() end)
 
--- Resize splits if window got resized
-autocmd('VimResized', function() vim.cmd 'tabdo wincmd =' end)
-
 -- Go to last loc when opening a buffer
 autocmd('BufReadPost', function()
     local mark = vim.api.nvim_buf_get_mark(0, '"')
