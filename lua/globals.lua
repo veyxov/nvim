@@ -1,10 +1,8 @@
 local M = {}
 
--- Mapping helper
--- :)
-M.Map = function(lhs, rhs, mode)
-    mode = mode or 'n' -- normal, most of the time
-    vim.keymap.set(mode, lhs, rhs)
+M.Map = function(l, r, mode)
+    mode = mode or 'n'
+    vim.keymap.set(mode, l, r)
 end
 
 return M
