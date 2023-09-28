@@ -1,25 +1,23 @@
-local opt = vim.opt
+local o = vim.opt
 
--- Spaceship
 vim.g.mapleader = ' '
 
--- Nice terminal colors.
-opt.termguicolors = true
+o.termguicolors = true
 
 -- Nice splitting
-opt.splitkeep = 'screen'
+o.splitkeep = 'screen'
 
 -- Allow empty-space selection in v-block mode
-opt.virtualedit = 'block'
+o.virtualedit = 'block'
 
 -- Need to type chords fast
-opt.timeoutlen = 500
+o.timeoutlen = 500
 
 -- Visual clutter
-opt.wrap = false
+o.wrap = false
 
-opt.list = true
-opt.listchars = {
+o.list = true
+o.listchars = {
     tab = '→ ',
     trail = '·',
     extends = '▶',
@@ -28,36 +26,36 @@ opt.listchars = {
 }
 
 -- Nice diff chars, for diffview.nvim
-opt.fillchars:append { diff = '╱' }
+o.fillchars:append { diff = '╱' }
 
-opt.hlsearch = true
+o.hlsearch = true
 
-opt.swapfile = false
-opt.undolevels = 1000
-opt.undofile = true
+o.swapfile = false
+o.undolevels = 1000
+o.undofile = true
 
 -- Minimal status line
-opt.cmdheight = 0
-opt.laststatus = 3
+o.cmdheight = 0
+o.laststatus = 3
 
-opt.formatoptions = 'jcroqlnt'
+o.formatoptions = 'jcroqlnt'
 
 -- Short, sweet and to the point.
-opt.shortmess = 'aoOtTWAIqF'
+o.shortmess = 'aoOtTWAIqF'
 
 -- Work smarter not harder.
-opt.ignorecase = true
-opt.smartcase = true
+o.ignorecase = true
+o.smartcase = true
 
 -- Fast completion and diagnostic.
-opt.updatetime = 500
+o.updatetime = 500
 
 -- Tabs or spaces?
 local tabs = 4
-opt.expandtab = true
-opt.tabstop = tabs
-opt.shiftwidth = tabs
-opt.softtabstop = tabs
+o.expandtab = true
+o.tabstop = tabs
+o.shiftwidth = tabs
+o.softtabstop = tabs
 
 -- Beautiful circle for buggy situations.
 vim.diagnostic.config { virtual_text = { prefix = '●' } }
