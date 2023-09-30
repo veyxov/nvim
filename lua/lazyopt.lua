@@ -14,10 +14,10 @@ end
 -- Add lazyness to the runtime
 vim.opt.runtimepath:prepend(lazypath)
 
+---@diagnostic disable-next-line: undefined-field
 require('lazy').setup('plugz', {
     defaults = { lazy = true },
     lockfile = vim.fn.stdpath 'data' .. '/lazy-lock.json', -- hide lockfile away
-    ui = { size = { width = 1, height = 1 } }, -- full screen
     performance = {
         rtp = {
             disabled_plugins = {
