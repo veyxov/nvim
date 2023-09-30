@@ -2,16 +2,13 @@ local M = {
     'stevearc/oil.nvim',
     keys = {
         {
-            '<C-n>',
-            function() require('oil').open_float() end,
-        },
-        {
             '-',
             function() require('oil').open() end,
         },
     },
 }
 
+-- TODO: Revisit and read the docs for this plugin
 M.config = function()
     require('oil').setup {
         columns = {
