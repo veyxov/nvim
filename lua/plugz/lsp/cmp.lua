@@ -18,6 +18,16 @@ function M.config()
     ---@diagnostic disable-next-line: undefined-field
     require('lazy').load { plugins = { 'copilot.lua', 'copilot-cmp' } }
 
+    local cmp_acccept_function = cmp.mapping(function(fallback)
+        if cmp.visible() then
+            cmp.confirm { select = true }
+        elseif luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
+        else
+            fallback()
+        end
+    end, { 'i', 's' })
+
     ---@diagnostic disable-next-line: redundant-parameter
     cmp.setup {
         completion = {
@@ -27,18 +37,9 @@ function M.config()
             expand = function(args) require('luasnip').lsp_expand(args.body) end,
         },
         mapping = cmp.mapping.preset.insert {
-            ['<Tab>'] = cmp.mapping(function(fallback)
-                if cmp.visible() then
-                    cmp.confirm { select = true }
-                elseif luasnip.expand_or_jumpable() then
-                    luasnip.expand_or_jump()
-                else
-                    fallback()
-                end
-            end, { 'i', 's' }),
+            ['<Tab>'] = cmp_acccept_function,
+            ['<Right>'] = cmp_acccept_function,
             ['<C-q>'] = cmp.mapping.close(),
-            -- NOTE: Take a look the the keyboard configuration
-            ['<Right>'] = function(_) cmp.confirm { select = true } end
         },
         sources = cmp.config.sources {
             { name = 'copilot',  group_index = 2 },
