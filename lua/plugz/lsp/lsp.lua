@@ -81,9 +81,12 @@ function M.config()
     )
 
     map('<leader>ca', vim.lsp.buf.code_action, { 'n', 'v' })
-    map('yt', vim.lsp.buf.code_action, { 'n', 'v' })
     map('<leader>f', vim.lsp.buf.format)
+
+    map('ya', vim.lsp.buf.code_action, { 'n', 'v' })
+    map('yt', vim.lsp.buf.code_action, { 'n', 'v' })
     map('yr', vim.lsp.buf.rename) -- TODO
+
     map('<C-E>', vim.lsp.buf.signature_help, 'i')
 
     map('<leader>lss', "<cmd> echo 'starting lsp server...' | LspStart<cr>")
