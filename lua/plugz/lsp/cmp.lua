@@ -15,11 +15,12 @@ function M.config()
     local cmp = require 'cmp'
 
     -- Load copilot-cmp before cmp loads
+    ---@diagnostic disable-next-line: undefined-field
     require('lazy').load { plugins = { 'copilot.lua', 'copilot-cmp' } }
 
     ---@diagnostic disable-next-line: redundant-parameter
     cmp.setup {
-        cospletion = {
+        completion = {
             completeopt = 'menu,menuone,preview',
         },
         snippet = {
@@ -36,9 +37,11 @@ function M.config()
                 end
             end, { 'i', 's' }),
             ['<C-q>'] = cmp.mapping.close(),
+            -- NOTE: Take a look the the keyboard configuration
+            ['<Right>'] = function(_) cmp.confirm { select = true } end
         },
         sources = cmp.config.sources {
-            { name = 'copilot', group_index = 2 },
+            { name = 'copilot',  group_index = 2 },
             { name = 'nvim_lsp', keyword_length = 2 },
             { name = 'luasnip' },
             {
