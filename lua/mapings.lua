@@ -22,7 +22,7 @@ map('<leader>v', '<C-V>') -- Visual block mode
 
 map('H', 'y$')
 
--- TODO: add some mappings to the now unused u
+-- TODO: add some mappings to the now unused y
 
 -- better indenting
 map('<', '<gv', 'v')

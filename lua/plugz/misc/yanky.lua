@@ -1,17 +1,9 @@
 local nx = { 'n', 'x' }
 
+-- TODO: Check out the new last-put text object
 return {
     'gbprod/yanky.nvim',
     keys = {
-        {
-            'he',
-        },
-        {
-            'hi',
-        },
-        {
-            'ha',
-        },
         {
             'h',
             '<Plug>(YankyYank)',
