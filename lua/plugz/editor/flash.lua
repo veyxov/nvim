@@ -104,11 +104,7 @@ M.opts = {
             enabled = false, -- enable flash for search
         },
         char = {
-            enabled = true,
-            keys = { 'f', 'F', 't', 'T', ';', ',' },
-            search = { wrap = false },
-            highlight = { backdrop = true },
-            jump = { register = false },
+            enabled = false,
         },
         treesitter = {
             labels = lbls,
