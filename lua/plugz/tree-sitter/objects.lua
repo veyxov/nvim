@@ -7,6 +7,24 @@ local M = {
 
             lookForwardBig = 15,
         }
+
+        vim.keymap.set("n", "dsi", function()
+            -- select inner indentation
+            require("various-textobjs").indentation(true, true)
+
+            -- plugin only switches to visual mode when a textobj has been found
+            local notOnIndentedLine = vim.fn.mode():find("V") == nil
+            if notOnIndentedLine then return end
+
+            -- dedent indentation
+            vim.cmd.normal { "<", bang = true }
+
+            -- delete surrounding lines
+            local endBorderLn = vim.api.nvim_buf_get_mark(0, ">")[1] + 1
+            local startBorderLn = vim.api.nvim_buf_get_mark(0, "<")[1] - 1
+            vim.cmd(tostring(endBorderLn) .. " delete") -- delete end first so line index is not shifted
+            vim.cmd(tostring(startBorderLn) .. " delete")
+        end, { desc = "Delete surrounding indentation" })
     end,
 }
 
