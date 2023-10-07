@@ -13,11 +13,11 @@ Diffview.config = function()
     local actions = require 'diffview.actions'
 
     require('diffview').setup {
-        enhanced_diff_hl = true, -- See ':h diffview-config-enhanced_diff_hl'
-        use_icons = true, -- Requires nvim-web-devicons
-        show_help_hints = true, -- Show hints for how to open the help panel
+        enhanced_diff_hl = true,             -- See ':h diffview-config-enhanced_diff_hl'
+        use_icons = true,                    -- Requires nvim-web-devicons
+        show_help_hints = true,              -- Show hints for how to open the help panel
         keymaps = {
-            disable_defaults = true, -- Disable the default keymaps
+            disable_defaults = true,         -- Disable the default keymaps
             view = {
                 { 'n', 'f', actions.focus_files },
                 {
@@ -118,6 +118,46 @@ Diffview.config = function()
                     actions.conflict_choose_all 'none',
                 },
             },
+            -- TODO: Change these
+            file_history_panel = {
+                { "n", "g!",            actions.options,                    { desc = "Open the option panel" } },
+                { "n", "<C-A-d>",       actions.open_in_diffview,
+                                                                                { desc =
+                    "Open the entry under the cursor in a diffview" } },
+                { "n", "y",             actions.copy_hash,
+                                                                                { desc =
+                    "Copy the commit hash of the entry under the cursor" } },
+                { "n", "L",             actions.open_commit_log,            { desc = "Show commit details" } },
+                { "n", "zR",            actions.open_all_folds,             { desc = "Expand all folds" } },
+                { "n", "zM",            actions.close_all_folds,            { desc = "Collapse all folds" } },
+                { "n", "j",             actions.next_entry,                 { desc =
+                "Bring the cursor to the next file entry" } },
+                { "n", "<down>",        actions.next_entry,                 { desc =
+                "Bring the cursor to the next file entry" } },
+                { "n", "k",             actions.prev_entry,                 { desc =
+                "Bring the cursor to the previous file entry." } },
+                { "n", "<up>",          actions.prev_entry,                 { desc =
+                "Bring the cursor to the previous file entry." } },
+                { "n", "<cr>",          actions.select_entry,               { desc =
+                "Open the diff for the selected entry." } },
+                { "n", "o",             actions.select_entry,               { desc =
+                "Open the diff for the selected entry." } },
+                { "n", "<2-LeftMouse>", actions.select_entry,               { desc =
+                "Open the diff for the selected entry." } },
+                { "n", "<c-b>",         actions.scroll_view(-0.25),         { desc = "Scroll the view up" } },
+                { "n", "<c-f>",         actions.scroll_view(0.25),          { desc = "Scroll the view down" } },
+                { "n", "<tab>",         actions.select_next_entry,          { desc = "Open the diff for the next file" } },
+                { "n", "<s-tab>",       actions.select_prev_entry,          { desc =
+                "Open the diff for the previous file" } },
+                { "n", "gf",            actions.goto_file_edit,             { desc =
+                "Open the file in the previous tabpage" } },
+                { "n", "<C-w><C-f>",    actions.goto_file_split,            { desc = "Open the file in a new split" } },
+                { "n", "<C-w>gf",       actions.goto_file_tab,              { desc = "Open the file in a new tabpage" } },
+                { "n", "<leader>e",     actions.focus_files,                { desc = "Bring focus to the file panel" } },
+                { "n", "<leader>b",     actions.toggle_files,               { desc = "Toggle the file panel" } },
+                { "n", "g<C-x>",        actions.cycle_layout,               { desc = "Cycle available layouts" } },
+                { "n", "g?",            actions.help("file_history_panel"), { desc = "Open the help panel" } },
+            },
             file_panel = {
                 {
                     'n',
@@ -178,7 +218,7 @@ Diffview.config = function()
                 },
             },
             help_panel = {
-                { 'n', 'qu', actions.close },
+                { 'n', 'qu',    actions.close },
                 { 'n', '<esc>', actions.close },
             },
         },
