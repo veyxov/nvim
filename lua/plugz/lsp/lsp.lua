@@ -87,6 +87,8 @@ function M.config()
     map('<C-E>', vim.lsp.buf.signature_help, 'i')
 
     map('<leader>k', vim.lsp.buf.hover)
+
+    map('ko', vim.diagnostic.goto_next)
 end
 
 return M
