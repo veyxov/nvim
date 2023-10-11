@@ -1,6 +1,12 @@
 return {
     'altermo/ultimate-autopair.nvim',
-    event = { 'InsertEnter', 'CmdlineEnter' },
+    keys = {
+        { '(', mode = 'i' },
+        { '{', mode = 'i' },
+        { '[', mode = 'i' },
+        { '"', mode = 'i' },
+        { "'", mode = 'i' },
+    },
     branch = 'v0.6',
     opts = {
         bs = {
