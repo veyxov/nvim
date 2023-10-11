@@ -1,45 +1,29 @@
 return {
     'lewis6991/gitsigns.nvim',
-    keys = { 'j' },
-    event = 'VeryLazy',
-    config = function()
-        local gs = require 'gitsigns'
-        local map = require('globals').Map
+    keys = {
+        { 'ja', '<cmd>Gitsigns stage_hunk<cr>' },
+        { 'jA', '<cmd>Gitsigns stage_buffer<cr>' },
 
-        gs.setup {}
+        { 'ju', '<cmd>Gitsigns reset_hunk<cr>' },
+        { 'jU', '<cmd>Gitsigns reset_buffer<cr>' },
 
-        -- Add/reset
-        map('jj', gs.stage_hunk)
-        map('js', gs.preview_hunk)
-        map('ju', gs.reset_hunk)
-        map('jJ', gs.stage_buffer)
-        map('jU', gs.reset_buffer)
+        { 'jn', '<cmd>Gitsigns next_hunk<cr>' },
+        { 'jp', '<cmd>Gitsigns prev_hunk<cr>' },
 
-        -- Toggles
-        map('jtw', gs.toggle_word_diff)
-        map('jtt', gs.toggle_signs)
+        { 'jb', '<cmd>Gitsigns blame_line<cr>' },
 
-        -- Blaming
-        map('jb', gs.blame_line)
-
-        -- Diffing
-        map('jD', gs.diffthis)
-
-        map('gh', gs.next_hunk)
-
-        map(
+        {
             'ju',
-            function() gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end,
-            'v'
-        )
-
-        -- Visual mode mappings
-        map(
-            'jj',
-            function() gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' } end,
-            'v'
-        )
-
-        map('jb', function() gs.blame_line { full = true } end, { 'v' })
+            function() require 'gitsigns'.reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end,
+            mode = 'v'
+        },
+        {
+            'ja',
+            function() require 'gitsigns'.stage_hunk { vim.fn.line '.', vim.fn.line 'v' } end,
+            mode = 'v'
+        }
+    },
+    config = function()
+        require 'gitsigns'.setup {}
     end,
 }
