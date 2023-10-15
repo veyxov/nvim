@@ -18,6 +18,7 @@ o.list = true
 o.listchars = {
     trail = '·',
     nbsp = '␣',
+    tab = '->',
 }
 
 o.swapfile = false
