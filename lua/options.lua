@@ -5,15 +5,13 @@ vim.g.mapleader = ' '
 o.termguicolors = true
 o.hlsearch = false
 o.wrap = false
+o.breakindent = true
 
 -- Nice splitting
 o.splitkeep = 'screen'
 
 -- Allow empty-space selection in v-block mode
 o.virtualedit = 'block'
-
--- Need to type chords fast
-o.timeoutlen = 350
 
 o.list = true
 o.listchars = {
@@ -34,7 +32,8 @@ o.laststatus = 0
 o.ignorecase = true
 o.smartcase = true
 
-o.updatetime = 1000
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
 
 -- Tabs or spaces?
 local tabs = 4
