@@ -86,65 +86,19 @@ local function live_grep_from_project_git_root()
     require('telescope.builtin').live_grep(opts)
 end
 
-local function project_files()
-    local no_preview = function()
-        return require('telescope.themes').get_dropdown {
-            borderchars = {
-                { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
-                prompt = {
-                    '─',
-                    '│',
-                    ' ',
-                    '│',
-                    '┌',
-                    '┐',
-                    '│',
-                    '│',
-                },
-                results = {
-                    '─',
-                    '│',
-                    '─',
-                    '│',
-                    '├',
-                    '┤',
-                    '┘',
-                    '└',
-                },
-                preview = {
-                    '─',
-                    '│',
-                    '─',
-                    '│',
-                    '┌',
-                    '┐',
-                    '┘',
-                    '└',
-                },
-            },
-            width = 0.8,
-            previewer = false,
-            prompt_title = false,
-        }
-    end
-    vim.fn.system 'git rev-parse --is-inside-work-tree'
-    if vim.v.shell_error == 0 then
-        require('telescope.builtin').git_files(no_preview())
-    else
-        require('telescope.builtin').find_files(no_preview())
-    end
-end
-
 M.keys = {
-    { '<leader>N', function() project_files() end },
     {
         '<leader>n',
         function() require('telescope.builtin').find_files() end,
     },
     { '<leader>gc', '<cmd>Telescope grep_string theme=ivy<cr>' },
     {
-        '<leader>gg',
+        '<leader>G',
         function() live_grep_from_project_git_root() end,
+    },
+    {
+        '<leader>gg',
+        function() require('telescope.builtin.').live_grep() end,
     },
     {
         '<leader>/',
