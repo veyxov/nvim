@@ -106,7 +106,7 @@ M.keys = {
     },
     {
         '<leader>gg',
-        function() require('telescope.builtin.').live_grep() end,
+        function() require('telescope.builtin').live_grep() end,
     },
     {
         '<leader>/',
