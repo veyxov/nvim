@@ -14,31 +14,7 @@ function M.config()
 
     telescope.setup {
         defaults = {
-            borderchars = {
-                '─',
-                '│',
-                '─',
-                '│',
-                '┌',
-                '┐',
-                '┘',
-                '└',
-            },
-            mappings = {
-                i = {
-                    -- ['<esc>'] = actions.close,
-                    ['<C-H>'] = false,
-                    ['<C-U>'] = false,
-                },
-            },
-            layout_strategy = 'horizontal',
-            layout_config = {
-                prompt_position = 'bottom',
-            },
             sorting_strategy = 'ascending',
-            prompt_prefix = ' ',
-            selection_caret = ' ',
-            winblend = 0,
         },
     }
 
