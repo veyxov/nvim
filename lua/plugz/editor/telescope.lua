@@ -13,26 +13,6 @@ function M.config()
     local telescope = require 'telescope'
 
     telescope.setup {
-        extensions = {
-            advanced_git_search = {
-                diff_plugin = 'diffview',
-                show_builtin_git_pickers = false,
-            },
-            undo = {
-                use_delta = true,
-                -- Big side by side view
-                side_by_side = true,
-                layout_strategy = 'vertical',
-                layout_config = {
-                    preview_height = 0.8,
-                },
-            },
-            fzf = {
-                fuzzy = true,
-                override_generic_sorter = true,
-                override_file_sorter = true,
-            },
-        },
         defaults = {
             borderchars = {
                 '─',
