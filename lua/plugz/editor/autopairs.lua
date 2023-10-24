@@ -12,6 +12,6 @@ return {
         bs = {
             map = '<C-h>',
             cmap = '<C-h>',
-        }
+        },
     },
 }

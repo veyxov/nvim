@@ -15,16 +15,24 @@ return {
 
         {
             'ju',
-            function() require 'gitsigns'.reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end,
-            mode = 'v'
+            function()
+                require('gitsigns').reset_hunk {
+                    vim.fn.line '.',
+                    vim.fn.line 'v',
+                }
+            end,
+            mode = 'v',
         },
         {
             'ja',
-            function() require 'gitsigns'.stage_hunk { vim.fn.line '.', vim.fn.line 'v' } end,
-            mode = 'v'
-        }
+            function()
+                require('gitsigns').stage_hunk {
+                    vim.fn.line '.',
+                    vim.fn.line 'v',
+                }
+            end,
+            mode = 'v',
+        },
     },
-    config = function()
-        require 'gitsigns'.setup {}
-    end,
+    config = function() require('gitsigns').setup {} end,
 }

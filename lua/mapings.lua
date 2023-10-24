@@ -38,7 +38,7 @@ map('<Esc>', ':nohl<CR>:echo<CR>') -- Clear
 -- Quickfix mappings
 map('<leader>cn', ':cnext<cr>zz')
 
-map('<leader>gh', '$', {'n', 'x'})
-map('<leader>ga', '0', {'n', 'o'})
+map('<leader>gh', '$', { 'n', 'x' })
+map('<leader>ga', '0', { 'n', 'o' })
 
 map('yw', '<C-W>', 'i')

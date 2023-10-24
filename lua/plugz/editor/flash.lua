@@ -39,7 +39,7 @@ local M = {
                 require('flash').jump {
                     matcher = function(win)
                         return vim.tbl_map(
-                        ---@param diag Diagnostic
+                            ---@param diag Diagnostic
                             function(diag)
                                 return {
                                     pos = { diag.lnum + 1, diag.col },
