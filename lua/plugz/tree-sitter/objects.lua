@@ -51,16 +51,6 @@ M.keys = {
         mode = ox,
     },
     {
-        [[t']],
-        "<cmd>lua require('various-textobjs').toNextQuotationMark()<CR>",
-        mode = ox,
-    },
-    {
-        'ax',
-        "<cmd>lua require('various-textobjs').lineCharacterwise(false)<CR>",
-        mode = ox,
-    },
-    {
         'ar',
         "<cmd>lua require('various-textobjs').value(false)<CR>",
         mode = ox,
@@ -91,11 +81,6 @@ M.keys = {
     {
         'am',
         "<cmd>lua require('various-textobjs').chainMember(false)<CR>",
-        mode = ox,
-    },
-    {
-        'gw',
-        "<cmd>lua require('various-textobjs').visibleInWindow()<CR>",
         mode = ox,
     },
 }
