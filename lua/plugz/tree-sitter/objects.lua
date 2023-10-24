@@ -1,14 +1,13 @@
 local ox = { 'o', 'x' }
 local M = {
     'chrisgrieser/nvim-various-textobjs',
-    config = function()
-        require('various-textobjs').setup {
-            lookForwardSmall = 25,
+    opts = {},
+}
 
-            lookForwardBig = 15,
-        }
-
-        vim.keymap.set('n', 'dsi', function()
+M.keys = {
+    {
+        'dsi',
+        function()
             -- select inner indentation
             require('various-textobjs').indentation(true, true)
 
@@ -22,13 +21,10 @@ local M = {
             -- delete surrounding lines
             local endBorderLn = vim.api.nvim_buf_get_mark(0, '>')[1] + 1
             local startBorderLn = vim.api.nvim_buf_get_mark(0, '<')[1] - 1
-            vim.cmd(tostring(endBorderLn) .. ' delete') -- delete end first so line index is not shifted
+            vim.cmd(tostring(endBorderLn) .. ' delete')
             vim.cmd(tostring(startBorderLn) .. ' delete')
-        end, { desc = 'Delete surrounding indentation' })
-    end,
-}
-
-M.keys = {
+        end,
+    },
     {
         'ag',
         "<cmd>lua require('various-textobjs').entireBuffer()<CR>",
@@ -45,12 +41,12 @@ M.keys = {
         mode = ox,
     },
     {
-        'ah',
+        'ih',
         "<cmd>lua require('various-textobjs').subword(true)<CR>",
         mode = ox,
     },
     {
-        'ih',
+        'ah',
         "<cmd>lua require('various-textobjs').subword(false)<CR>",
         mode = ox,
     },
