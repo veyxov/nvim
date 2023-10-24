@@ -28,9 +28,6 @@ map('H', 'y$')
 map('<', '<gv', 'v')
 map('>', '>gv', 'v')
 
--- Wierd bug, when toggling symbol layer, continues to delete
-map('d<Space>', '<nop>')
-
 -- fix spelling errors
 map('fl', '1z=') -- Fix Word Under Cursor
 map('<Esc>', ':nohl<CR>:echo<CR>') -- Clear
@@ -38,7 +35,7 @@ map('<Esc>', ':nohl<CR>:echo<CR>') -- Clear
 -- Quickfix mappings
 map('<leader>cn', ':cnext<cr>zz')
 
-map('<leader>gh', '$', { 'n', 'x' })
-map('<leader>ga', '0', { 'n', 'o' })
+map('gh', '$', { 'x', 'o' })
+map('ga', '0', { 'x', 'o' })
 
 map('yw', '<C-W>', 'i')
