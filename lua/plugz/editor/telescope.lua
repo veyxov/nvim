@@ -88,6 +88,14 @@ end
 
 M.keys = {
     {
+        '<leader>?',
+        function() require('telescope.builtin').oldfiles() end,
+    },
+    {
+        '<leader>sb',
+        function() require('telescope.builtin').buffers() end,
+    },
+    {
         '<leader>n',
         function() require('telescope.builtin').find_files() end,
     },
