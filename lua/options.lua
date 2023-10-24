@@ -3,6 +3,7 @@ local o = vim.opt
 vim.g.mapleader = ' '
 
 o.termguicolors = true
+o.hlsearch = false
 o.wrap = false
 
 -- Nice splitting
