@@ -7,7 +7,6 @@ o.hlsearch = false
 o.wrap = false
 o.breakindent = true
 
--- Nice splitting
 o.splitkeep = 'screen'
 
 -- Allow empty-space selection in v-block mode
@@ -21,8 +20,8 @@ o.listchars = {
 }
 
 o.swapfile = false
-o.undolevels = 1000
 o.undofile = true
+o.undolevels = 1000
 
 -- Minimal status line
 o.cmdheight = 0

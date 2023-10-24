@@ -1,7 +1,7 @@
 return {
     'lewis6991/gitsigns.nvim',
+    event = "VeryLazy",
     keys = {
-        'jj',
         { 'ja', '<cmd>Gitsigns stage_hunk<cr>' },
         { 'jA', '<cmd>Gitsigns stage_buffer<cr>' },
 
