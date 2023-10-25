@@ -41,9 +41,7 @@ local opts = {
                 ['il'] = '@loop.inner',
                 ['ac'] = '@class.outer',
                 ['ic'] = '@class.inner',
-                ['a/'] = '@comment.outer',
-                ['i/'] = '@comment.inner',
-                ['au'] = '@parameter.inner',
+                ['au'] = '@parameter.inner', -- TODO: Train with this
                 ['aa'] = '@parameter.outer',
             },
             include_surrounding_whitespace = false,
@@ -53,13 +51,13 @@ local opts = {
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
                 ['kf'] = '@function.outer',
-                ['ka'] = '@parameter.outer',
+                ['ka'] = '@parameter.inner',
                 ['kl'] = '@loop.outer',
-                ['gc'] = '@class.outer',
+                ['kc'] = '@class.outer',
             },
             goto_next_end = {
                 ['kF'] = '@function.outer',
-                ['Gc'] = '@class.outer',
+                ['kC'] = '@class.outer',
             },
 
             -- NOTE: No need for these becase repeating with ; and ,
