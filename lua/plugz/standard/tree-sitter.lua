@@ -75,9 +75,10 @@ function M.config()
 
     -- Repeat movement with ; and ,
     -- ensure ; goes forward and , goes backward regardless of the last direction
-    vim.keymap.set({ 'n', 'x', 'o' }, ';', ts_repeat_move.repeat_last_move_next)
+    local nxo = { 'n', 'x', 'o' }
+    vim.keymap.set(nxo, ';', ts_repeat_move.repeat_last_move_next)
     vim.keymap.set(
-        { 'n', 'x', 'o' },
+        nxo,
         ',',
         ts_repeat_move.repeat_last_move_previous
     )
