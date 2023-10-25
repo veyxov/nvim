@@ -20,11 +20,9 @@ return {
     config = function()
         require('dressing').setup {
             input = {
-                default_prompt = '> ',
-                border = 'single',
-                prompt_align = 'center',
-                relative = 'win',
-            },
+                start_in_insert = false,
+                border = "solid"
+            }
         }
     end,
 }
