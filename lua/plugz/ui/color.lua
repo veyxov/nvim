@@ -1,7 +1,12 @@
 return {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
+    'ellisonleao/gruvbox.nvim',
     event = 'VeryLazy',
-    config = function() vim.cmd.colorscheme 'onedark' end,
+    priority = 1000,
+    config = function()
+        -- Default options:
+        require('gruvbox').setup {
+            transparent_mode = false,
+        }
+        vim.cmd 'colorscheme gruvbox'
+    end,
 }
