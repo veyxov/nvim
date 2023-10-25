@@ -12,19 +12,13 @@ local opts = {
     ensure_installed = {
         'lua',
         'vim',
-        'json',
         'vimdoc',
-        'regex',
         'markdown',
         'markdown_inline',
     },
-    -- highlight
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = { 'markdown' },
-    },
-    autotag = {
-        enable = true,
     },
     incremental_selection = {
         enable = true,
