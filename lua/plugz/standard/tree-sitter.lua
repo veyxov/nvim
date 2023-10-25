@@ -64,15 +64,8 @@ local opts = {
             goto_previous_start = {},
             goto_previous_end = {},
         },
-        swap = {
-            enable = true,
-            swap_next = {
-                ['<leader>a'] = '@parameter.inner',
-            },
-            swap_previous = {
-                ['<leader>A'] = '@parameter.inner',
-            },
-        },
+        -- TODO: play around with this
+        swap = {},
     },
 }
 
