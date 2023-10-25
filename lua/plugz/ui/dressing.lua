@@ -22,6 +22,9 @@ return {
             input = {
                 start_in_insert = false,
                 border = "solid"
+            },
+            select = {
+                backend = { "telescope" }
             }
         }
     end,
