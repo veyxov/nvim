@@ -24,9 +24,9 @@ local opts = {
         enable = true,
         keymaps = {
             init_selection = 'kk', -- TODO: play around with this more
-            scope_incremental = 'kk',
-            node_incremental = ',m',
-            node_decremental = ',n',
+            scope_incremental = ',m',
+            node_incremental = 'kk',
+            node_decremental = 'kx',
         },
     },
 
