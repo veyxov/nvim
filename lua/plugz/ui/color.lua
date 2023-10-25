@@ -1,12 +1,15 @@
 return {
     'ellisonleao/gruvbox.nvim',
     event = 'VeryLazy',
-    priority = 1000,
     config = function()
-        -- Default options:
         require('gruvbox').setup {
             transparent_mode = false,
+            overrides = {
+                Normal = {
+                    bg = '#000000',
+                },
+            },
         }
-        vim.cmd 'colorscheme gruvbox'
+        vim.cmd.colorscheme 'gruvbox'
     end,
 }
