@@ -1,4 +1,5 @@
 return {
+    { import = 'plugz.standard' },
     { import = 'plugz.git' },
     { import = 'plugz.ui' },
     { import = 'plugz.tree-sitter' },
