@@ -50,5 +50,5 @@ return {
             mode = nx,
         },
     },
-    opts = {}
+    opts = {},
 }

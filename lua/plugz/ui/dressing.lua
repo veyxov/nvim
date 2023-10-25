@@ -21,11 +21,11 @@ return {
         require('dressing').setup {
             input = {
                 start_in_insert = false,
-                border = "solid"
+                border = 'solid',
             },
             select = {
-                backend = { "telescope" }
-            }
+                backend = { 'telescope' },
+            },
         }
     end,
 }

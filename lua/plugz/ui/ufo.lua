@@ -6,7 +6,7 @@ return {
     config = function()
         vim.o.foldcolumn = '0'
         vim.o.foldlevel = 99
-        vim.o.foldlevelstart = 3
+        vim.o.foldlevelstart = 6
         vim.o.foldenable = true
 
         vim.keymap.set('n', '<leader>fa', 'za')
