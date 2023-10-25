@@ -5,6 +5,11 @@ return {
     'gbprod/yanky.nvim',
     keys = {
         {
+            'hl',
+            '<cmd>YankyRingHistory<cr>',
+            mode = nx,
+        },
+        {
             'h',
             '<Plug>(YankyYank)',
             mode = nx,
