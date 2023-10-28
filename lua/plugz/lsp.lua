@@ -82,7 +82,7 @@ function M.config()
 
     map('yf', vim.lsp.buf.format)
     map('ya', vim.lsp.buf.code_action, { 'n', 'v' })
-    map('yr', vim.lsp.buf.rename) -- TODO
+    map('yr', vim.lsp.buf.rename)
 
     map('<C-E>', vim.lsp.buf.signature_help, 'i')
 

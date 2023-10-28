@@ -8,7 +8,6 @@ local M = {
     },
 }
 
--- TODO: Revisit and read the docs for this plugin
 M.config = function()
     require('oil').setup {
         columns = {
