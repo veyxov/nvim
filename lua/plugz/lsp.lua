@@ -10,7 +10,6 @@ function M.config()
     -- C#
     lsp.csharp_ls.setup {
         cmd = { 'csharp-ls' },
-        filetypes = { 'cs', 'solution' },
         on_attach = on_attach,
         root_dir = lsp.util.root_pattern('.git', '.sln')
             or vim.loop.os_homedir(),

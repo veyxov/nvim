@@ -6,6 +6,9 @@ local M = {
             'nvim-telescope/telescope-fzf-native.nvim',
             build = 'make',
         },
+        {
+            'nvim-telescope/telescope-ui-select.nvim',
+        }
     },
 }
 
@@ -19,6 +22,7 @@ function M.config()
     }
 
     telescope.load_extension 'fzf'
+    telescope.load_extension 'ui-select'
 end
 
 M.keys = {
