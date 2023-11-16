@@ -19,6 +19,11 @@ function M.config()
         defaults = {
             sorting_strategy = 'ascending',
         },
+        extensions = {
+            ['ui-select'] = {
+                require('telescope.themes').get_dropdown {}
+            }
+        }
     }
 
     telescope.load_extension 'fzf'
