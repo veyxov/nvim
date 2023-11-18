@@ -29,7 +29,12 @@ map('<', '<gv', 'v')
 map('>', '>gv', 'v')
 
 -- fix spelling errors
+
+-- TODO: Use this more
 map('fl', '1z=') -- Fix Word Under Cursor
+
+-- TODO: Find a way to eliminate the "hit enter" prompts
+-- NOTE: noice.nvim solves this problem, but installing a plugin for this...
 map('<Esc>', ':nohl<CR>:echo<CR>') -- Clear
 
 -- Quickfix mappings
