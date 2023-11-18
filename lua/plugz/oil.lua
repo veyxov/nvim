@@ -2,8 +2,12 @@ local M = {
     'stevearc/oil.nvim',
     keys = {
         {
-            '-',
+            '+',
             function() require('oil').open() end,
+        },
+        {
+            '-',
+            function() require('oil').open_float() end,
         },
     },
     opts = {
