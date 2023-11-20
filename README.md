@@ -78,9 +78,7 @@ NVIM_APPNAME=veyxov/nvim/ nvim
 ### plugin-manager
 
 + [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
-### snippet
 
-+ [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
 ### syntax
 
 + [kylechui/nvim-surround](https://dotfyle.com/plugins/kylechui/nvim-surround)

@@ -6,12 +6,9 @@ local M = {
 M.dependencies = {
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
-    'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip',
 }
 
 function M.config()
-    local luasnip = require 'luasnip'
     local cmp = require 'cmp'
 
     -- Load copilot-cmp before cmp loads
@@ -21,8 +18,8 @@ function M.config()
     local cmp_acccept_function = cmp.mapping(function(fallback)
         if cmp.visible() then
             cmp.confirm { select = true }
-        elseif luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
+        elseif vim.snippet.jumpable(1) then
+            vim.snippet.jump(1)
         else
             fallback()
         end
@@ -34,7 +31,9 @@ function M.config()
             completeopt = 'menu,menuone,preview',
         },
         snippet = {
-            expand = function(args) require('luasnip').lsp_expand(args.body) end,
+            expand = function(args)
+                vim.snippet.expand(args.body)
+            end
         },
         mapping = cmp.mapping.preset.insert {
             ['<Tab>'] = cmp_acccept_function,
@@ -42,7 +41,7 @@ function M.config()
             ['<C-q>'] = cmp.mapping.close(),
         },
         sources = cmp.config.sources {
-            { name = 'copilot', group_index = 2 },
+            { name = 'copilot',  group_index = 2 },
             { name = 'nvim_lsp', keyword_length = 2 },
             { name = 'luasnip' },
             {
