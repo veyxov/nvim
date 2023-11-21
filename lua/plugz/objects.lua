@@ -8,21 +8,12 @@ M.keys = {
     {
         'dsi',
         function()
-            -- select inner indentation
             require('various-textobjs').indentation(true, true)
+            if vim.fn.mode():find 'V' == nil then return end
 
-            -- plugin only switches to visual mode when a textobj has been found
-            local notOnIndentedLine = vim.fn.mode():find 'V' == nil
-            if notOnIndentedLine then return end
-
-            -- dedent indentation
             vim.cmd.normal { '<', bang = true }
-
-            -- delete surrounding lines
-            local endBorderLn = vim.api.nvim_buf_get_mark(0, '>')[1] + 1
-            local startBorderLn = vim.api.nvim_buf_get_mark(0, '<')[1] - 1
-            vim.cmd(tostring(endBorderLn) .. ' delete')
-            vim.cmd(tostring(startBorderLn) .. ' delete')
+            vim.cmd(tostring(vim.api.nvim_buf_get_mark(0, '>')[1] + 1) .. ' delete')
+            vim.cmd(tostring(vim.api.nvim_buf_get_mark(0, '<')[1] - 1) .. ' delete')
         end,
     },
     {
