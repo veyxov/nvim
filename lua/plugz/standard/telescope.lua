@@ -40,7 +40,7 @@ M.keys = {
         function() require('telescope.builtin').buffers() end,
     },
     {
-        '<leader>n',
+        '?',
         function() require('telescope.builtin').find_files() end,
     },
     { '<leader>gc', '<cmd>Telescope grep_string theme=ivy<cr>' },
