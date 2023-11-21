@@ -8,7 +8,7 @@ local M = {
         },
         {
             'nvim-telescope/telescope-ui-select.nvim',
-        }
+        },
     },
 }
 
@@ -21,9 +21,9 @@ function M.config()
         },
         extensions = {
             ['ui-select'] = {
-                require('telescope.themes').get_dropdown {}
-            }
-        }
+                require('telescope.themes').get_dropdown {},
+            },
+        },
     }
 
     telescope.load_extension 'fzf'

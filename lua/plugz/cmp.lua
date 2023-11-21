@@ -27,36 +27,17 @@ function M.config()
 
     ---@diagnostic disable-next-line: redundant-parameter
     cmp.setup {
-        completion = {
-            completeopt = 'menu,menuone,preview',
-        },
         snippet = {
-            expand = function(args)
-                vim.snippet.expand(args.body)
-            end
+            expand = function(args) vim.snippet.expand(args.body) end,
         },
         mapping = cmp.mapping.preset.insert {
-            ['<Tab>'] = cmp_acccept_function,
             ['<Right>'] = cmp_acccept_function,
-            ['<C-q>'] = cmp.mapping.close(),
+            ['<C-c>'] = cmp.mapping.close(),
         },
         sources = cmp.config.sources {
-            { name = 'copilot',  group_index = 2 },
-            { name = 'nvim_lsp', keyword_length = 2 },
-            { name = 'luasnip' },
-            {
-                name = 'buffer',
-                keyword_length = 3,
-                option = {
-                    get_bufnrs = function()
-                        local bufs = {}
-                        for _, win in ipairs(vim.api.nvim_list_wins()) do
-                            bufs[vim.api.nvim_win_get_buf(win)] = true
-                        end
-                        return vim.tbl_keys(bufs)
-                    end,
-                },
-            },
+            { name = 'copilot' },
+            { name = 'nvim_lsp' },
+            { name = 'buffer' },
             { name = 'path' },
         },
     }

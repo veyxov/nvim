@@ -13,9 +13,9 @@ local M = {
     opts = {
         skip_confirm_for_simple_edits = true,
         keymaps = {
-            ["<C-h>"] = "actions.close",
-        }
-    }
+            ['<C-h>'] = 'actions.close',
+        },
+    },
 }
 
 return M

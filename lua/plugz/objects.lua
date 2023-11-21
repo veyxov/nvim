@@ -12,8 +12,12 @@ M.keys = {
             if vim.fn.mode():find 'V' == nil then return end
 
             vim.cmd.normal { '<', bang = true }
-            vim.cmd(tostring(vim.api.nvim_buf_get_mark(0, '>')[1] + 1) .. ' delete')
-            vim.cmd(tostring(vim.api.nvim_buf_get_mark(0, '<')[1] - 1) .. ' delete')
+            vim.cmd(
+                tostring(vim.api.nvim_buf_get_mark(0, '>')[1] + 1) .. ' delete'
+            )
+            vim.cmd(
+                tostring(vim.api.nvim_buf_get_mark(0, '<')[1] - 1) .. ' delete'
+            )
         end,
     },
     {
