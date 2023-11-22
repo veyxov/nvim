@@ -14,6 +14,9 @@ local M = {
         skip_confirm_for_simple_edits = true,
         keymaps = {
             ['<C-h>'] = 'actions.close',
+            ['e'] = '<Down>',
+            ['i'] = '<Up>',
+            ['n'] = 'actions.select',
         },
     },
 }
