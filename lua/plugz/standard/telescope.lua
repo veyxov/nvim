@@ -43,6 +43,10 @@ M.keys = {
         '?',
         function() require('telescope.builtin').find_files() end,
     },
+    {
+        '<leader>n',
+        function() require('telescope.builtin').diagnostics() end,
+    },
     { '<leader>gc', '<cmd>Telescope grep_string theme=ivy<cr>' },
     {
         '<leader>gg',
