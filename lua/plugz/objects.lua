@@ -1,87 +1,34 @@
-local ox = { 'o', 'x' }
 local M = {
     'chrisgrieser/nvim-various-textobjs',
     opts = {},
 }
 
-local mp = function(x, y)
-    return string.format("<cmd>lua require('various-textobjs').%s(%s)<CR>", x, y)
+local key = function(rhs, x, y)
+    local ox = { 'o', 'x' }
+    return {
+        rhs,
+        string.format("<cmd>lua require('various-textobjs').%s(%s)<CR>", x, y),
+        mode = ox
+    }
 end
 
 M.keys = {
-    {
-        'dsi',
-        function()
-            require('various-textobjs').indentation(true, true)
-            if vim.fn.mode():find 'V' == nil then return end
+    key('ag', 'entireBuffer', ''),
 
-            vim.cmd.normal { '<', bang = true }
-            vim.cmd(
-                tostring(vim.api.nvim_buf_get_mark(0, '>')[1] + 1) .. ' delete'
-            )
-            vim.cmd(
-                tostring(vim.api.nvim_buf_get_mark(0, '<')[1] - 1) .. ' delete'
-            )
-        end,
-    },
-    {
-        'ag',
-        mp("entireBuffer", ""),
-        mode = ox,
-    },
-    {
-        'ii',
-        mp("indentation", "true, true"),
-        mode = ox,
-    },
-    {
-        'ai',
-        mp("indentation", "false, false"),
-        mode = ox,
-    },
-    {
-        'ih',
-        mp("subword", "true"),
-        mode = ox,
-    },
-    {
-        'ah',
-        mp("subword", "false"),
-        mode = ox,
-    },
-    {
-        'ar',
-        mp("value", "false"),
-        mode = ox,
-    },
-    {
-        'ir',
-        mp("value", "true"),
-        mode = ox,
-    },
-    {
+    key('ii', 'indentation', 'true, true'),
+    key('ai', 'indentation', 'true, false'),
 
-        'ak',
-        mp("key", "false"),
-        mode = ox,
-    },
-    {
+    key('ih', "subword", "true"),
+    key('ah', "subword", "false"),
 
-        'ik',
-        mp("key", "true"),
-        mode = ox,
-    },
-    {
+    key('ar', "value", "false"),
+    key('ir', "value", "true"),
 
-        'im',
-        mp("chainMember", "true"),
-        mode = ox,
-    },
-    {
-        'am',
-        mp("chainMember", "false"),
-        mode = ox,
-    },
+    key('ak', "key", "false"),
+    key('ik', "key", "true"),
+
+    key('im', "chainMember", "true"),
+    key('am', "chainMember", "false"),
 }
 
 return M
