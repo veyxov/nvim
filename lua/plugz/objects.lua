@@ -4,6 +4,10 @@ local M = {
     opts = {},
 }
 
+local mp = function(x, y)
+    return string.format("<cmd>lua require('various-textobjs').%s(%s)<CR>", x, y)
+end
+
 M.keys = {
     {
         'dsi',
@@ -22,60 +26,60 @@ M.keys = {
     },
     {
         'ag',
-        "<cmd>lua require('various-textobjs').entireBuffer()<CR>",
+        mp("entireBuffer", ""),
         mode = ox,
     },
     {
         'ii',
-        "<cmd>lua require('various-textobjs').indentation(true, true)<CR>",
+        mp("indentation", "true, true"),
         mode = ox,
     },
     {
         'ai',
-        "<cmd>lua require('various-textobjs').indentation(false, false)<CR>",
+        mp("indentation", "false, false"),
         mode = ox,
     },
     {
         'ih',
-        "<cmd>lua require('various-textobjs').subword(true)<CR>",
+        mp("subword", "true"),
         mode = ox,
     },
     {
         'ah',
-        "<cmd>lua require('various-textobjs').subword(false)<CR>",
+        mp("subword", "false"),
         mode = ox,
     },
     {
         'ar',
-        "<cmd>lua require('various-textobjs').value(false)<CR>",
+        mp("value", "false"),
         mode = ox,
     },
     {
         'ir',
-        "<cmd>lua require('various-textobjs').value(true)<CR>",
+        mp("value", "true"),
         mode = ox,
     },
     {
 
         'ak',
-        "<cmd>lua require('various-textobjs').key(false)<CR>",
+        mp("key", "false"),
         mode = ox,
     },
     {
 
         'ik',
-        "<cmd>lua require('various-textobjs').key(true)<CR>",
+        mp("key", "true"),
         mode = ox,
     },
     {
 
         'im',
-        "<cmd>lua require('various-textobjs').chainMember(true)<CR>",
+        mp("chainMember", "true"),
         mode = ox,
     },
     {
         'am',
-        "<cmd>lua require('various-textobjs').chainMember(false)<CR>",
+        mp("chainMember", "false"),
         mode = ox,
     },
 }
