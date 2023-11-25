@@ -1,23 +1,19 @@
 local Copilot = {
     'zbirenbaum/copilot.lua',
     cmd = 'Copilot',
+    opts = {
+        suggestion = {
+            auto_trigger = true,
+            keymap = {
+                accept = '<Right>',
+            },
+        },
+    }
 }
 
 local CmpSource = {
     'zbirenbaum/copilot-cmp',
-    config = function() require('copilot_cmp').setup() end,
+    opts = {}
 }
-
-Copilot.config = function()
-    require('copilot').setup {
-        suggestion = {
-            enabled = true,
-            auto_trigger = true,
-            keymap = {
-                accept = '<A-Right>',
-            },
-        },
-    }
-end
 
 return { Copilot, CmpSource }
