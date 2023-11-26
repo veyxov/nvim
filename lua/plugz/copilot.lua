@@ -8,12 +8,12 @@ local Copilot = {
                 accept = '<Right>',
             },
         },
-    }
+    },
 }
 
 local CmpSource = {
     'zbirenbaum/copilot-cmp',
-    opts = {}
+    opts = {},
 }
 
 return { Copilot, CmpSource }
