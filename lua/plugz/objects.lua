@@ -8,7 +8,7 @@ local key = function(rhs, x, y)
     return {
         rhs,
         string.format("<cmd>lua require('various-textobjs').%s(%s)<CR>", x, y),
-        mode = ox
+        mode = ox,
     }
 end
 
@@ -16,19 +16,19 @@ M.keys = {
     key('ag', 'entireBuffer', ''),
 
     key('ii', 'indentation', 'true, true'),
-    key('ai', 'indentation', 'true, false'),
+    key('ai', 'indentation', 'false, false'),
 
-    key('ih', "subword", "true"),
-    key('ah', "subword", "false"),
+    key('ih', 'subword', 'true'),
+    key('ah', 'subword', 'false'),
 
-    key('ar', "value", "false"),
-    key('ir', "value", "true"),
+    key('ar', 'value', 'false'),
+    key('ir', 'value', 'true'),
 
-    key('ak', "key", "false"),
-    key('ik', "key", "true"),
+    key('ak', 'key', 'false'),
+    key('ik', 'key', 'true'),
 
-    key('im', "chainMember", "true"),
-    key('am', "chainMember", "false"),
+    key('im', 'chainMember', 'true'),
+    key('am', 'chainMember', 'false'),
 }
 
 return M
