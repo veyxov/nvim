@@ -1,22 +1,34 @@
 local M = {
     'kylechui/nvim-surround',
-    keys = { 'L', { 'l', mode = 'n' }, 'll', 'cs', 'ds', { 'l', mode = 'v' } },
-}
-
-M.config = function()
-    require('nvim-surround').setup {
-        move_cursor = false,
-        keymaps = {
-            normal = 'l',
-            normal_cur = 'll',
-            normal_line = 'L',
-            normal_cur_line = 'LL',
-            visual = 'l',
-            visual_line = 'L',
-            delete = 'ds',
-            change = 'cs',
+    keys = {
+        { 'l', '<Plug>(nvim-surround-normal)' },
+        {
+            'L',
+            '<Plug>(nvim-surround-normal-line)',
         },
-    }
-end
+        {
+            'll',
+            '<Plug>(nvim-surround-normal-cur)',
+        },
+        {
+            'LL',
+            '<Plug>(nvim-surround-normal-cur-line)',
+        },
+        {
+            'l',
+            "<Esc><Cmd>lua require'nvim-surround'.visual_surround({ line_mode = false })<CR>",
+            mode = { 'x' }
+        },
+        {
+            'ds',
+            '<Plug>(nvim-surround-delete)',
+        },
+        {
+            'cs',
+            '<Plug>(nvim-surround-change)',
+        },
+    },
+    opts = {},
+}
 
 return M
