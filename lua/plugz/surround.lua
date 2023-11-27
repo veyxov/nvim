@@ -1,31 +1,23 @@
+local function m(rhs, x)
+    return {
+        rhs,
+        string.format('<Plug>(nvim-surround-%s)', x),
+    }
+end
+
 local M = {
     'kylechui/nvim-surround',
     keys = {
-        { 'l', '<Plug>(nvim-surround-normal)' },
-        {
-            'L',
-            '<Plug>(nvim-surround-normal-line)',
-        },
-        {
-            'll',
-            '<Plug>(nvim-surround-normal-cur)',
-        },
-        {
-            'LL',
-            '<Plug>(nvim-surround-normal-cur-line)',
-        },
+        m('l', 'normal'),
+        m('L', 'normal-line'),
+        m('ll', 'normal-cur'),
+        m('LL', 'normal-cur-line'),
+        m('ds', 'delete'),
+        m('cs', 'change'),
         {
             'l',
             "<Esc><Cmd>lua require'nvim-surround'.visual_surround({ line_mode = false })<CR>",
-            mode = { 'x' }
-        },
-        {
-            'ds',
-            '<Plug>(nvim-surround-delete)',
-        },
-        {
-            'cs',
-            '<Plug>(nvim-surround-change)',
+            mode = 'x',
         },
     },
     opts = {},
