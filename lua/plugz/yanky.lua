@@ -1,19 +1,21 @@
 local nx = { 'n', 'x' }
-
+local function m(r, x)
+    return {
+        r,
+        '<Plug>(Yanky' .. x .. ')',
+        mode = nx
+    }
+end
 -- TODO: Check out the new last-put text object
 return {
     'gbprod/yanky.nvim',
     keys = {
-        {
-            'hl',
-            '<cmd>YankyRingHistory<cr>',
-            mode = nx,
-        },
-        {
-            'h',
-            '<Plug>(YankyYank)',
-            mode = nx,
-        },
+        m('hl', 'RingHistory'),
+        m('h', 'Yank'),
+        m('p', 'PutAfter'),
+        m('P', 'PutBefore'),
+        m('hn', 'CycleForward'),
+        m('hp', 'CycleBackward'),
         {
             'hh',
             'yy',
@@ -27,26 +29,6 @@ return {
         {
             '<leader>hh',
             '"+yy',
-            mode = nx,
-        },
-        {
-            'p',
-            '<Plug>(YankyPutAfter)',
-            mode = nx,
-        },
-        {
-            'P',
-            '<Plug>(YankyPutBefore)',
-            mode = nx,
-        },
-        {
-            'hn',
-            '<Plug>(YankyCycleForward)',
-            mode = nx,
-        },
-        {
-            'hp',
-            '<Plug>(YankyCycleBackward)',
             mode = nx,
         },
     },
