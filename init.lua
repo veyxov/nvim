@@ -1,6 +1,8 @@
 -- The Big Bang
 local o = vim.opt
-vim.g.mapleader = ' '
+local g = vim.g
+g.mapleader = ' '
+g.editorconfig = false
 o.wrap = false
 o.virtualedit = 'block'
 o.list = true
@@ -14,8 +16,8 @@ o.cmdheight = 0
 o.laststatus = 3
 o.ignorecase = true
 o.smartcase = true
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+o.updatetime = 250
+o.timeoutlen = 300
 local tabs = 4
 o.expandtab = true
 o.tabstop = tabs
