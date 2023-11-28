@@ -1,13 +1,9 @@
 local o = vim.opt
 
+---@diagnostic disable-next-line: inject-field
 vim.g.mapleader = ' '
 
-o.termguicolors = true
-o.hlsearch = false
 o.wrap = false
-o.breakindent = true
-
-o.splitkeep = 'screen'
 
 -- Allow empty-space selection in v-block mode
 o.virtualedit = 'block'
@@ -20,14 +16,10 @@ o.listchars = {
 }
 
 o.swapfile = false
-o.undofile = true
-o.undolevels = 1000
 
--- Minimal status line
 o.cmdheight = 0
-o.laststatus = 0
+o.laststatus = 3
 
--- smartcase
 o.ignorecase = true
 o.smartcase = true
 
