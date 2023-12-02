@@ -1,14 +1,9 @@
 local M = {
     'ThePrimeagen/harpoon',
+    branch = "harpoon2",
     keys = {
-        {
-            'y<Space>',
-            function() require('harpoon.mark').add_file() end,
-        },
-        {
-            '<leader><C-H>',
-            function() require('harpoon.ui').toggle_quick_menu() end,
-        },
+        '<leader>a',
+        '<C-e>',
         'yu',
         'yo',
         'yy',
@@ -17,20 +12,17 @@ local M = {
 }
 
 M.config = function()
-    require('harpoon').setup {
-        menu = {
-            width = vim.api.nvim_win_get_width(0) - 4,
-        },
-    }
+    local harpoon = require("harpoon")
+    local map = require("globals").Map
+    harpoon:setup()
 
-    local map = require('globals').Map
+    map("<leader>a", function() harpoon:list():append() end)
+    map("<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
-    local chars = { 'yu', 'yo', 'yy', 'yk' }
-    local i = 1
-    for _, char in ipairs(chars) do
-        map(char, '<cmd>lua require"harpoon.ui".nav_file(' .. i .. ')<cr>')
-        i = i + 1
-    end
+    map("yu", function() harpoon:list():select(1) end)
+    map("yo", function() harpoon:list():select(2) end)
+    map("yy", function() harpoon:list():select(3) end)
+    map("yk", function() harpoon:list():select(4) end)
 end
 
 return M
