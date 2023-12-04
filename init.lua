@@ -24,7 +24,6 @@ o.tabstop = tabs
 o.shiftwidth = tabs
 o.softtabstop = tabs
 
-
 local GROUP = vim.api.nvim_create_augroup('VEYXOV_GROUP', {})
 local function autocmd(event, callback)
     vim.api.nvim_create_autocmd(event, { callback = callback, group = GROUP })
@@ -54,7 +53,6 @@ map(',', ',<c-g>u', 'i')
 map('.', '.<c-g>u', 'i')
 map(';', ';<c-g>u', 'i')
 map('<leader>v', '<C-V>') -- Visual block mode
-map('H', 'y$')
 -- better indenting
 map('<', '<gv', 'v')
 map('>', '>gv', 'v')
@@ -65,8 +63,5 @@ map('fl', '1z=') -- Fix Word Under Cursor
 map('<Esc>', ':nohl<CR>:echo<CR>') -- Clear
 -- Quickfix mappings
 map('<leader>cn', ':cnext<cr>zz')
-map('gh', '$', { 'x', 'o' })
-map('ga', '0', { 'x', 'o' })
-map('yw', '<C-W>', 'i')
 
 require 'lazyopt'
