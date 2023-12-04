@@ -3,9 +3,10 @@ local function m(r, x)
     return {
         r,
         '<Plug>(Yanky' .. x .. ')',
-        mode = nx
+        mode = nx,
     }
 end
+local function _m(l, r) return { r, l, mode = nx } end
 -- TODO: Check out the new last-put text object
 return {
     'gbprod/yanky.nvim',
@@ -16,21 +17,10 @@ return {
         m('P', 'PutBefore'),
         m('hn', 'CycleForward'),
         m('hp', 'CycleBackward'),
-        {
-            'hh',
-            'yy',
-            mode = nx,
-        },
-        {
-            '<leader>h',
-            '"+y',
-            mode = nx,
-        },
-        {
-            '<leader>hh',
-            '"+yy',
-            mode = nx,
-        },
+        _m('H', 'y$'),
+        _m('hh', 'yy'),
+        _m('<leader>h', '"+y'),
+        _m('leader>hh', '"+yy'),
     },
     opts = {},
 }
