@@ -31,7 +31,7 @@ require('lazy').setup('plugz', {
                 'zipPlugin',
                 'spellfile',
                 'rplugin',
-                'editorconfig'
+                'editorconfig',
             },
         },
     },
