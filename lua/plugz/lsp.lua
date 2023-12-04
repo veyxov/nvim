@@ -7,12 +7,8 @@ M.event = 'InsertEnter'
 function M.config()
     local lsp = require 'lspconfig'
 
-    -- C#
-    lsp.csharp_ls.setup {
-        cmd = { 'csharp-ls' },
-        on_attach = on_attach,
-        root_dir = lsp.util.root_pattern('.git', '.sln')
-            or vim.loop.os_homedir(),
+    lsp.omnisharp.setup{
+        cmd = { "/usr/bin/omnisharp" },
     }
 
     -- Typescript
