@@ -19,5 +19,8 @@
         "/home/iz/.local/state/nvim/lazy/readme",
         "${3rd}/luv/library",
         "${3rd}/luassert/library"
+    ],
+    "diagnostics.disable": [
+        "inject-field"
     ]
 }
