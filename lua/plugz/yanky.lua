@@ -18,9 +18,19 @@ return {
         m('hn', 'CycleForward'),
         m('hp', 'CycleBackward'),
         _m('H', 'y$'),
+        _m('H', 'y$'),
         _m('hh', 'yy'),
         _m('<leader>h', '"+y'),
         _m('leader>hh', '"+yy'),
+        {
+            mode = {'o', 'x'},
+            'lp',
+            function() require("yanky.textobj").last_put() end
+        }
     },
-    opts = {},
+    opts = {
+        textobj = {
+            enabled = true
+        }
+    },
 }
