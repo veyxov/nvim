@@ -23,14 +23,14 @@ return {
         _m('<leader>h', '"+y'),
         _m('leader>hh', '"+yy'),
         {
-            mode = {'o', 'x'},
+            mode = { 'o', 'x' },
             'lp',
-            function() require("yanky.textobj").last_put() end
-        }
+            function() require('yanky.textobj').last_put() end,
+        },
     },
     opts = {
         textobj = {
-            enabled = true
-        }
+            enabled = true,
+        },
     },
 }
