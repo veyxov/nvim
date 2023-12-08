@@ -10,12 +10,7 @@ local M = {
             'nvim-telescope/telescope-ui-select.nvim',
         },
     },
-}
-
-function M.config()
-    local telescope = require 'telescope'
-
-    telescope.setup {
+    opts = {
         defaults = {
             sorting_strategy = 'ascending',
         },
@@ -25,37 +20,30 @@ function M.config()
             },
         },
     }
+}
+
+function M.config()
+    local telescope = require 'telescope'
 
     telescope.load_extension 'fzf'
     telescope.load_extension 'ui-select'
 end
 
+local function m(l, x)
+    return {
+        l,
+        string.format ('<cmd>Telescope %s<cr>', x),
+    }
+end
+
 M.keys = {
-    {
-        '<leader>?',
-        function() require('telescope.builtin').oldfiles() end,
-    },
-    {
-        '<leader>sb',
-        function() require('telescope.builtin').buffers() end,
-    },
-    {
-        '?',
-        function() require('telescope.builtin').find_files() end,
-    },
-    {
-        '<leader>n',
-        function() require('telescope.builtin').diagnostics() end,
-    },
-    { '<leader>gc', '<cmd>Telescope grep_string theme=ivy<cr>' },
-    {
-        '<leader>gg',
-        function() require('telescope.builtin').live_grep() end,
-    },
-    {
-        '<leader>/',
-        '<cmd>Telescope current_buffer_fuzzy_find theme=get_dropdown previewer=false<cr>',
-    },
+    m('<leader>?', 'oldfiles'),
+    m('<leader>sb', 'buffers'),
+    m('?', 'find_files'),
+    m('<leader>n', 'diagnostics'),
+    m('<leader>gc', 'grep_string theme=ivy'),
+    m('<leader>gg', 'live_grep'),
+    m('<leader>/', 'current_buffer_fuzzy_find theme=get_dropdown previewer=false<cr>'),
 }
 
 return M
