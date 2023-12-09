@@ -10,7 +10,10 @@ local M = {
             'nvim-telescope/telescope-ui-select.nvim',
         },
     },
-    opts = {
+}
+
+M.config = function()
+    require 'telescope'.setup {
         defaults = {
             sorting_strategy = 'ascending',
         },
@@ -20,7 +23,7 @@ local M = {
             },
         },
     }
-}
+end
 
 function M.config()
     local telescope = require 'telescope'
