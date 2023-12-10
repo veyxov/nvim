@@ -27,10 +27,6 @@ return {
         -- yanky.nvim integration
         require('substitute').setup {
             on_substitute = require('yanky.integration').substitute(),
-            highlight_substituted_text = {
-                enabled = true,
-                timer = 300,
-            },
         }
     end,
 }
