@@ -11,14 +11,11 @@ M.dependencies = {
 local opts = {
     ensure_installed = {
         'lua',
-        'vim',
-        'vimdoc',
         'markdown',
         'markdown_inline',
     },
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = { 'markdown' },
     },
     incremental_selection = {
         enable = true,
