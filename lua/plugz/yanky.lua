@@ -7,7 +7,6 @@ local function m(r, x)
     }
 end
 local function _m(r, l) return { r, l, mode = nx } end
--- TODO: Check out the new last-put text object
 return {
     'gbprod/yanky.nvim',
     keys = {

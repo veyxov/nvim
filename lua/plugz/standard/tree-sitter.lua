@@ -38,7 +38,7 @@ local opts = {
                 ['il'] = '@loop.inner',
                 ['ac'] = '@class.outer',
                 ['ic'] = '@class.inner',
-                ['au'] = '@parameter.inner', -- TODO: Train with this
+                ['au'] = '@parameter.inner',
                 ['aa'] = '@parameter.outer',
             },
             include_surrounding_whitespace = false,

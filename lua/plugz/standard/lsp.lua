@@ -7,10 +7,6 @@ M.event = 'InsertEnter'
 function M.config()
     local lsp = require 'lspconfig'
 
-    lsp.omnisharp.setup {
-        cmd = { '/usr/bin/omnisharp' },
-    }
-
     -- Typescript
     lsp.tsserver.setup {}
 
