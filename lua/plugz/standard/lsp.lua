@@ -13,6 +13,9 @@ function M.config()
     -- C++
     lsp.clangd.setup {}
 
+    -- TODO: play around with roslyn.nvim
+    lsp.omnisharp.setup { cmd = { '/usr/bin/omnisharp' } }
+
     -- Tailwind
     lsp.tailwindcss.setup {}
 

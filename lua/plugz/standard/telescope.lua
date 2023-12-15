@@ -13,7 +13,7 @@ local M = {
 }
 
 M.config = function()
-    require 'telescope'.setup {
+    require('telescope').setup {
         defaults = {
             sorting_strategy = 'ascending',
         },
@@ -35,7 +35,7 @@ end
 local function m(l, x)
     return {
         l,
-        string.format ('<cmd>Telescope %s<cr>', x),
+        string.format('<cmd>Telescope %s<cr>', x),
     }
 end
 
@@ -46,7 +46,10 @@ M.keys = {
     m('<leader>n', 'diagnostics'),
     m('<leader>gc', 'grep_string theme=ivy'),
     m('<leader>gg', 'live_grep'),
-    m('<leader>/', 'current_buffer_fuzzy_find theme=get_dropdown previewer=false<cr>'),
+    m(
+        '<leader>/',
+        'current_buffer_fuzzy_find theme=get_dropdown previewer=false<cr>'
+    ),
 }
 
 return M
