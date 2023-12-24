@@ -21,6 +21,9 @@ M.keys = {
     key('ih', 'subword', 'true'),
     key('ah', 'subword', 'false'),
 
+    key('ab', 'anyBracket', "'outer'"),
+    key('ib', 'anyBracket', "'inner'"),
+
     key('ar', 'value', 'false'),
     key('ir', 'value', 'true'),
 
