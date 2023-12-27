@@ -20,7 +20,7 @@ return {
         _m('H', 'y$'),
         _m('hh', 'yy'),
         _m('<leader>h', '"+y'),
-        _m('leader>hh', '"+yy'),
+        _m('<leader>hh', '"+yy'),
         {
             mode = { 'o', 'x' },
             'lp',
