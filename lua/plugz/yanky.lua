@@ -23,7 +23,7 @@ return {
         _m('<leader>hh', '"+yy'),
         {
             mode = { 'o', 'x' },
-            'lp',
+            'ly',
             function() require('yanky.textobj').last_put() end,
         },
     },

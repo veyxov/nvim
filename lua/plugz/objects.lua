@@ -30,6 +30,8 @@ M.keys = {
     key('ak', 'key', 'false'),
     key('ik', 'key', 'true'),
 
+    key('lp', 'lastChange', ''),
+
     key('im', 'chainMember', 'true'),
     key('am', 'chainMember', 'false'),
 }
