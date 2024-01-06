@@ -38,6 +38,7 @@ autocmd('BufReadPost', function()
 end)
 
 local map = require('globals').Map
+map('ge', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 map('<leader>s', '<cmd>wall<cr>') -- Save file
 map('<C-H>', '<cmd>q<cr>') -- fast quit
 -- Quitting made easy
