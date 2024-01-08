@@ -24,10 +24,6 @@ local M = {
             end,
             desc = 'Treesitter Search',
         },
-        {
-            '<leader>w',
-            function() require('flash').jump {} end,
-        },
     },
 }
 
