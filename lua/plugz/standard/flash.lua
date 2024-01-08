@@ -3,9 +3,10 @@ local lbls = 'netsidarhol/m?f;cu,w'
 local M = {
     'folke/flash.nvim',
     keys = {
+        '/',
         {
             's',
-            mode = { 'n', 'x', 'o' },
+            mode = 'n',
             function()
                 require('flash').jump {
                     search = {
@@ -18,10 +19,8 @@ local M = {
             'r',
             mode = 'o',
             function()
-                -- jump to a remote location to execute the operator
                 require('flash').remote()
             end,
-            desc = 'Remote Flash',
         },
         {
             'S',
@@ -72,48 +71,11 @@ local M = {
 M.opts = {
     labels = lbls,
     search = {
-        multi_window = true,
-        forward = true,
-        wrap = true,
-        mode = 'exact',
-        incremental = false,
-        filetype_exclude = { 'notify', 'noice' },
-        trigger = '',
-    },
-    jump = {
-        jumplist = true,
-        pos = 'start', ---@type "start" | "end" | "range"
-        history = false,
-        register = false,
-        nohlsearch = false,
-        autojump = true,
-    },
-    highlight = {
-        backdrop = true,
-        matches = true,
-        priority = 5000,
-        groups = {
-            match = 'FlashMatch',
-            current = 'FlashCurrent',
-            backdrop = 'FlashBackdrop',
-            label = 'FlashLabel',
-        },
+        mode = "fuzzy"
     },
     modes = {
-        search = {
-            enabled = false, -- enable flash for search
-        },
-        char = {
-            enabled = false,
-        },
         treesitter = {
             labels = lbls,
-            jump = { pos = 'range' },
-            highlight = {
-                label = { before = true, after = true, style = 'inine' },
-                backdrop = false,
-                matches = false,
-            },
         },
     },
 }
