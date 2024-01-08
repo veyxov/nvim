@@ -30,7 +30,7 @@ local M = {
 M.opts = {
     labels = lbls,
     search = {
-        mode = "fuzzy"
+        mode = 'fuzzy',
     },
     modes = {
         treesitter = {
