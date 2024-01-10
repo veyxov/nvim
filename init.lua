@@ -65,4 +65,8 @@ map('<Esc>', ':nohl<CR>:echo<CR>') -- Clear
 -- Quickfix mappings
 map('<leader>cn', ':cnext<cr>zz')
 
+-- switch between multiple quickfix lists
+map('<leader>co', ':colder<cr>zz')
+map('<leader>cn', ':cnewer<cr>zz')
+
 require 'lazyopt'
