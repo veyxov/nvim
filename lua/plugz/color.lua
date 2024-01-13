@@ -1,5 +1,10 @@
 return {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    config = function() vim.cmd.colorscheme 'tokyonight' end,
+  'crispybaccoon/evergarden',
+  event = "VeryLazy",
+  opts = {
+    contrast_dark = 'hard',
+  },
+  config = function ()
+      vim.cmd.colorscheme 'evergarden'
+  end
 }
