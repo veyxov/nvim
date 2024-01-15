@@ -21,6 +21,7 @@ require('lazy').setup('plugz', {
     performance = {
         rtp = {
             disabled_plugins = {
+                'osc52',
                 'gzip',
                 'matchit',
                 'matchparen',
