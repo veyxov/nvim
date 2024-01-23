@@ -62,9 +62,10 @@ map('fl', '1z=') -- Fix Word Under Cursor
 -- TODO: Find a way to eliminate the "hit enter" prompts
 -- NOTE: noice.nvim solves this problem, but installing a plugin for this...
 map('<Esc>', ':nohl<CR>:echo<CR>') -- Clear
--- Quickfix mappings
-map('<leader>cn', ':cnext<cr>zz')
 
+-- Quickfix mappings
+map('<leader>n', '<cmd>cnext<cr>zz')
+map('<leader>N', '<cmd>cprev<cr>zz')
 -- switch between multiple quickfix lists
 map('<leader>co', ':colder<cr>zz')
 map('<leader>cn', ':cnewer<cr>zz')
