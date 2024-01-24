@@ -2,25 +2,39 @@ local M = {
     'neovim/nvim-lspconfig',
 }
 
-M.event = 'InsertEnter'
+M.event = 'VeryLazy'
+
+local function configure_mappings()
+    local map = require('globals').Map
+    map(
+        '<leader>t',
+        '<cmd>Telescope lsp_definitions theme=dropdown<cr>',
+        { 'n', 'v' }
+    )
+    map(
+        '<leader>u', -- semantic for usages
+        '<cmd>Telescope lsp_references theme=dropdown<cr>',
+        { 'n', 'v' }
+    )
+    map(
+        '<leader><leader>',
+        '<cmd>Telescope lsp_implementations theme=dropdown<cr>',
+        { 'n', 'v' }
+    )
+
+    map('yf', vim.lsp.buf.format)
+    map('ya', vim.lsp.buf.code_action, { 'n', 'v' })
+    map('yr', vim.lsp.buf.rename)
+
+    map('<C-E>', vim.lsp.buf.signature_help, 'i')
+
+    map('<leader>k', vim.lsp.buf.hover)
+
+    map('ko', vim.diagnostic.goto_next)
+end
 
 function M.config()
     local lsp = require 'lspconfig'
-
-    -- Typescript
-    lsp.tsserver.setup {}
-
-    -- C++
-    lsp.clangd.setup {}
-
-    -- TODO: play around with roslyn.nvim
-    lsp.omnisharp.setup { cmd = { '/usr/bin/omnisharp' } }
-
-    -- Tailwind
-    lsp.tailwindcss.setup {}
-
-    -- Svelte
-    lsp.svelte.setup {}
 
     -- Lua
     require('lspconfig').lua_ls.setup {
@@ -55,34 +69,18 @@ function M.config()
 
     -- Golang
     lsp.gopls.setup {}
+    -- Typescript
+    lsp.tsserver.setup {}
+    -- C++
+    lsp.clangd.setup {}
+    -- TODO: play around with roslyn.nvim
+    lsp.omnisharp.setup { cmd = { '/usr/bin/omnisharp' } }
+    -- Tailwind
+    lsp.tailwindcss.setup {}
+    -- Svelte
+    lsp.svelte.setup {}
 
-    local map = require('globals').Map
-
-    map(
-        '<leader>t',
-        '<cmd>Telescope lsp_definitions theme=dropdown<cr>',
-        { 'n', 'v' }
-    )
-    map(
-        '<leader>u', -- semantic for usages
-        '<cmd>Telescope lsp_references theme=dropdown<cr>',
-        { 'n', 'v' }
-    )
-    map(
-        '<leader><leader>',
-        '<cmd>Telescope lsp_implementations theme=dropdown<cr>',
-        { 'n', 'v' }
-    )
-
-    map('yf', vim.lsp.buf.format)
-    map('ya', vim.lsp.buf.code_action, { 'n', 'v' })
-    map('yr', vim.lsp.buf.rename)
-
-    map('<C-E>', vim.lsp.buf.signature_help, 'i')
-
-    map('<leader>k', vim.lsp.buf.hover)
-
-    map('ko', vim.diagnostic.goto_next)
+    configure_mappings()
 end
 
 return M
