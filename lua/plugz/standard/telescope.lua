@@ -43,6 +43,7 @@ M.keys = {
     m('<leader>?', 'oldfiles'),
     m('<leader>sb', 'buffers'),
     m('?', 'find_files'),
+    m('<leader>m', 'search_history'),
     m('<leader>d', 'diagnostics'),
     m('<leader>gc', 'grep_string theme=ivy'),
     m('<leader>gg', 'live_grep'),

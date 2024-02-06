@@ -57,7 +57,6 @@ map('<leader>v', '<C-V>') -- Visual block mode
 -- better indenting
 map('<', '<gv', 'v')
 map('>', '>gv', 'v')
--- TODO: Use this more
 map('fl', '1z=') -- Fix Word Under Cursor
 -- TODO: Find a way to eliminate the "hit enter" prompts
 -- NOTE: noice.nvim solves this problem, but installing a plugin for this...
