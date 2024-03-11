@@ -22,22 +22,21 @@ local function configure_mappings()
         { 'n', 'v' }
     )
 
-    map('yf', vim.lsp.buf.format)
-    map('ya', vim.lsp.buf.code_action, { 'n', 'v' })
-    map('yr', vim.lsp.buf.rename)
+    local bf = vim.lsp.buf
+    map('yf', bf.format)
+    map('ya', bf.code_action, { 'n', 'v' })
+    map('yr', bf.rename)
 
-    map('<C-E>', vim.lsp.buf.signature_help, 'i')
+    map('<C-E>', bf.signature_help, 'i')
 
-    map('<leader>k', vim.lsp.buf.hover)
+    map('<leader>k', bf.hover)
 
     map('ko', vim.diagnostic.goto_next)
 end
 
-function M.config()
-    local lsp = require 'lspconfig'
-
+local function configure_servers(lsp)
     -- Lua
-    require('lspconfig').lua_ls.setup {
+    lsp.lua_ls.setup {
         settings = {
             Lua = {
                 runtime = {
@@ -67,19 +66,14 @@ function M.config()
         },
     }
 
-    -- Golang
-    lsp.gopls.setup {}
-    -- Typescript
-    lsp.tsserver.setup {}
-    -- C++
-    lsp.clangd.setup {}
     -- TODO: play around with roslyn.nvim
     lsp.omnisharp.setup { cmd = { '/usr/bin/omnisharp' } }
-    -- Tailwind
-    lsp.tailwindcss.setup {}
-    -- Svelte
-    lsp.svelte.setup {}
+end
 
+function M.config()
+    local lsp = require 'lspconfig'
+
+    configure_servers(lsp)
     configure_mappings()
 end
 
