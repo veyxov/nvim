@@ -1,7 +1,7 @@
 local nx = { 'n', 'x' }
 
-local function _m(r, l) return { r, l, mode = nx } end
-local function m(r, x) return _m(r, '<Plug>(Yanky' .. x .. ')') end
+local function _m(key, lhs) return { key, lhs, mode = nx } end
+local function m(key, cmd) return _m(key, '<Plug>(Yanky' .. cmd .. ')') end
 
 return {
     'gbprod/yanky.nvim',
