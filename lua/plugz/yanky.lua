@@ -1,12 +1,8 @@
 local nx = { 'n', 'x' }
-local function m(r, x)
-    return {
-        r,
-        '<Plug>(Yanky' .. x .. ')',
-        mode = nx,
-    }
-end
+
 local function _m(r, l) return { r, l, mode = nx } end
+local function m(r, x) return _m(r, '<Plug>(Yanky' .. x .. ')') end
+
 return {
     'gbprod/yanky.nvim',
     keys = {
@@ -21,15 +17,6 @@ return {
         _m('hh', 'yy'),
         _m('<leader>h', '"+y'),
         _m('<leader>hh', '"+yy'),
-        {
-            mode = { 'o', 'x' },
-            'ly',
-            function() require('yanky.textobj').last_put() end,
-        },
     },
-    opts = {
-        textobj = {
-            enabled = true,
-        },
-    },
+    opts = {},
 }
