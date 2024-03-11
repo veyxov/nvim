@@ -13,7 +13,10 @@ local M = {
 }
 
 M.config = function()
-    require('telescope').setup {
+    local telescope = require 'telescope'
+    telescope.load_extension 'fzf'
+    telescope.load_extension 'ui-select'
+    telescope.setup {
         defaults = {
             sorting_strategy = 'ascending',
         },
@@ -25,13 +28,6 @@ M.config = function()
     }
 end
 
-function M.config()
-    local telescope = require 'telescope'
-
-    telescope.load_extension 'fzf'
-    telescope.load_extension 'ui-select'
-end
-
 local function m(l, x)
     return {
         l,
@@ -40,11 +36,12 @@ local function m(l, x)
 end
 
 M.keys = {
-    m('<leader>?', 'oldfiles'),
-    m('<leader>sb', 'buffers'),
     m('?', 'find_files'),
-    m('<leader>m', 'search_history'),
+    m('<leader>?', 'oldfiles'),
+
+    m('<leader>sb', 'buffers'),
     m('<leader>d', 'diagnostics'),
+
     m('<leader>gc', 'grep_string theme=ivy'),
     m('<leader>gg', 'live_grep'),
     m(
