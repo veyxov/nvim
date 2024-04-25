@@ -27,7 +27,6 @@ NVIM_APPNAME=veyxov/nvim/ nvim
 ### completion
 
 + [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
-+ [zbirenbaum/copilot.lua](https://dotfyle.com/plugins/zbirenbaum/copilot.lua)
 ### editing-support
 
 + [altermo/ultimate-autopair.nvim](https://dotfyle.com/plugins/altermo/ultimate-autopair.nvim)
