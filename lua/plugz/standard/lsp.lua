@@ -35,39 +35,12 @@ local function configure_mappings()
 end
 
 local function configure_servers(lsp)
-    -- Lua
-    lsp.lua_ls.setup {
-        settings = {
-            Lua = {
-                runtime = {
-                    version = 'LuaJIT',
-                },
-                diagnostics = {
-                    globals = { 'vim' },
-                },
-                workspace = {
-                    library = vim.api.nvim_get_runtime_file('', true),
-                },
-                telemetry = {
-                    enable = false,
-                },
-            },
-        },
+    lsp.csharp_ls.setup {
+        cmd = { 'csharp-ls' },
+        on_attach = on_attach,
+        root_dir = lsp.util.root_pattern('.git', '.sln')
+        or vim.loop.os_homedir(),
     }
-
-    -- Rust
-    lsp.rust_analyzer.setup {
-        settings = {
-            ['rust-analyzer'] = {
-                check = {
-                    command = 'clippy',
-                },
-            },
-        },
-    }
-
-    -- TODO: play around with roslyn.nvim
-    lsp.omnisharp.setup { cmd = { '/usr/bin/omnisharp' } }
 end
 
 function M.config()
