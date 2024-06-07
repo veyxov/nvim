@@ -37,6 +37,17 @@ autocmd('BufReadPost', function()
     end
 end)
 
+vim.api.nvim_create_autocmd("BufRead", {
+  callback = function(ev)
+    if vim.bo[ev.buf].buftype == "quickfix" then
+      vim.schedule(function()
+        vim.cmd([[cclose]])
+        vim.cmd([[Trouble qflist open]])
+      end)
+    end
+  end,
+})
+
 local map = require('globals').Map
 map('ge', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 map('<leader>s', '<cmd>wall<cr>') -- Save file
