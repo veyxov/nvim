@@ -1,5 +1,5 @@
 return {
-    'altermo/ultimate-autopair.nvim',
+    'windwp/nvim-autopairs',
     keys = {
         { '(', mode = 'i' },
         { '{', mode = 'i' },
@@ -7,10 +7,5 @@ return {
         { '"', mode = 'i' },
         { "'", mode = 'i' },
     },
-    opts = {
-        bs = {
-            map = '<C-h>',
-            cmap = '<C-h>',
-        },
-    },
+    opts = { map_c_h = true }
 }
