@@ -18,8 +18,8 @@ M.keys = {
     key('ii', 'indentation', 'true, true'),
     key('ai', 'indentation', 'false, false'),
 
-    key('ih', 'subword', 'true'),
-    key('ah', 'subword', 'false'),
+    key('ih', 'subword', 'inner'),
+    key('ah', 'subword', 'outer'),
 
     key('ab', 'anyBracket', "'outer'"),
     key('ib', 'anyBracket', "'inner'"),
