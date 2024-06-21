@@ -1,72 +1,51 @@
--- The Big Bang
-local o = vim.opt
-local g = vim.g
-g.mapleader = ' '
-g.editorconfig = false
-o.wrap = false
-o.virtualedit = 'block'
-o.list = true
-o.listchars = {
-    trail = '·',
-    nbsp = '␣',
-    tab = '->',
-}
-o.swapfile = false
-o.cmdheight = 0
-o.laststatus = 3
-o.ignorecase = true
-o.smartcase = true
-o.updatetime = 250
-o.timeoutlen = 300
-local tabs = 4
-o.expandtab = true
-o.tabstop = tabs
-o.shiftwidth = tabs
-o.softtabstop = tabs
-
-local GROUP = vim.api.nvim_create_augroup('VEYXOV_GROUP', {})
-local function autocmd(event, callback)
-    vim.api.nvim_create_autocmd(event, { callback = callback, group = GROUP })
+-- Clone 'mini.nvim' manually in a way that it gets managed by 'mini.deps'
+local path_package = vim.fn.stdpath('data') .. '/site/'
+local mini_path = path_package .. 'pack/deps/start/mini.nvim'
+if not vim.loop.fs_stat(mini_path) then
+  vim.cmd('echo "Installing `mini.nvim`" | redraw')
+  local clone_cmd = { 'git', 'clone', '--filter=blob:none', 'https://github.com/echasnovski/mini.nvim', mini_path }
+  vim.fn.system(clone_cmd)
+  vim.cmd('packadd mini.nvim | helptags ALL')
+  vim.cmd('echo "Installed `mini.nvim`" | redraw')
 end
-autocmd('TextYankPost', function() vim.highlight.on_yank() end)
--- Go to last loc when opening a buffer
-autocmd('BufReadPost', function()
-    local mark = vim.api.nvim_buf_get_mark(0, '"')
-    if mark[1] > 0 and mark[1] <= vim.api.nvim_buf_line_count(0) then
-        pcall(vim.api.nvim_win_set_cursor, 0, mark)
-    end
+
+-- Set up 'mini.deps' (customize to your liking)
+require('mini.deps').setup({ path = { package = path_package } })
+
+-- Use 'mini.deps'. `now()` and `later()` are helpers for a safe two-stage
+-- startup and are optional.
+local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+
+-- Safely execute immediately
+now(function()
+  vim.o.termguicolors = true
+  vim.cmd('colorscheme retrobox')
 end)
 
-local map = require('globals').Map
-map('ge', '<cmd>lua vim.diagnostic.goto_next()<cr>')
-map('<leader>s', '<cmd>wall<cr>') -- Save file
-map('<C-H>', '<cmd>q<cr>') -- fast quit
--- Quitting made easy
-map('qu', '<cmd>wq<cr>')
-map('<leader>q', '<cmd>qall!<cr>')
--- Window navigation
-map('<C-Down>', '<C-w><Down>')
-map('<C-Left>', '<C-w><Left>')
-map('<C-Right>', '<C-w><Right>')
-map('<C-Up>', '<C-w><Up>')
--- Add undo break-points
-map(',', ',<c-g>u', 'i')
-map('.', '.<c-g>u', 'i')
-map(';', ';<c-g>u', 'i')
-map('<leader>v', '<C-V>') -- Visual block mode
--- better indenting
-map('<', '<gv', 'v')
-map('>', '>gv', 'v')
-map('fl', '1z=') -- Fix Word Under Cursor
--- TODO: Find a way to eliminate the "hit enter" prompts
--- NOTE: noice.nvim solves this problem, but installing a plugin for this...
-map('<Esc>', ':nohl<CR>:echo<CR>') -- Clear
+-- Safely execute later
+later(function() require('mini.ai').setup() end)
+later(function() require('mini.comment').setup() end)
+later(function() require('mini.pick').setup() end)
+later(function() require('mini.surround').setup() end)
 
--- Quickfix mappings
-map('<leader>n', '<cmd>cnext<cr>zz')
-map('<leader>N', '<cmd>cprev<cr>zz')
--- switch between multiple quickfix lists
-map('<leader>co', ':colder<cr>zz')
-map('<leader>cn', ':cnewer<cr>zz')
+-- Use external plugins with `add()`
+now(function()
+  -- Add to current session (install if absent)
+  add('nvim-tree/nvim-web-devicons')
+  require('nvim-web-devicons').setup()
+end)
 
-require 'lazyopt'
+now(function()
+  -- Supply dependencies near target plugin
+  add({ source = 'neovim/nvim-lspconfig' })
+end)
+
+later(function()
+  add({
+    source = 'nvim-treesitter/nvim-treesitter',
+    hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
+  })
+  require('nvim-treesitter.configs').setup({
+    highlight = { enable = true },
+  })
+end)
