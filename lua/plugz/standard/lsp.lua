@@ -41,6 +41,11 @@ local function configure_servers(lsp)
         root_dir = lsp.util.root_pattern('.git', '.sln')
         or vim.loop.os_homedir(),
     }
+
+    lsp.tsserver.setup{}
+
+    lsp.gopls.setup {
+    }
 end
 
 function M.config()
