@@ -1,7 +1,9 @@
-local function m(rhs, x)
+local function m(rhs, x, mode)
+    mode = mode or "n"
     return {
         rhs,
         string.format('<Plug>(nvim-surround-%s)', x),
+        mode = mode
     }
 end
 
@@ -14,11 +16,7 @@ local M = {
         m('LL', 'normal-cur-line'),
         m('ds', 'delete'),
         m('cs', 'change'),
-        {
-            'l',
-            "<Esc><Cmd>lua require'nvim-surround'.visual_surround({ line_mode = false })<CR>",
-            mode = 'x',
-        },
+        m('l', 'visual', {'v'})
     },
     opts = {},
 }
