@@ -27,13 +27,11 @@ function M.config()
             expand = function(args) vim.snippet.expand(args.body) end,
         },
         mapping = cmp.mapping.preset.insert {
-            ['<Right>'] = cmp_acccept_function,
-            ['<C-c>'] = cmp.mapping.close(),
+            ['<Right>'] = cmp_acccept_function
         },
         sources = cmp.config.sources {
             { name = 'nvim_lsp' },
-            { name = 'buffer' },
-            { name = 'path' },
+            { name = 'buffer' }
         },
     }
 end
