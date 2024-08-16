@@ -19,6 +19,9 @@ M.config = function()
     telescope.setup {
         defaults = {
             sorting_strategy = 'ascending',
+            preview = {
+                treesitter = false
+            }
         },
         extensions = {
             ['ui-select'] = {
@@ -37,13 +40,11 @@ end
 
 M.keys = {
     m('?', 'find_files'),
-    m('<leader>?', 'oldfiles'),
+    m('<leader>?', 'live_grep'),
 
-    m('<leader>sb', 'buffers'),
     m('<leader>d', 'diagnostics'),
 
     m('<leader>gc', 'grep_string theme=ivy'),
-    m('<leader>gg', 'live_grep'),
     m(
         '<leader>/',
         'current_buffer_fuzzy_find theme=get_dropdown previewer=false<cr>'
