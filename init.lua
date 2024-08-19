@@ -4,13 +4,8 @@ local g = vim.g
 g.mapleader = ' '
 g.editorconfig = false
 o.wrap = false
-o.virtualedit = 'block'
 o.list = true
-o.listchars = {
-    trail = '·',
-    nbsp = '␣',
-    tab = '->',
-}
+o.listchars = { trail = '·', nbsp = '␣', tab = '->' }
 o.swapfile = false
 o.cmdheight = 0
 o.laststatus = 3
@@ -18,6 +13,7 @@ o.ignorecase = true
 o.smartcase = true
 o.updatetime = 250
 o.timeoutlen = 300
+
 local tabs = 4
 o.expandtab = true
 o.tabstop = tabs
@@ -40,8 +36,8 @@ end)
 local map = require('globals').Map
 map('ge', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 map('<leader>s', '<cmd>wall<cr>') -- Save file
-map('<C-H>', '<cmd>q<cr>') -- fast quit
 -- Quitting made easy
+map('<C-H>', '<cmd>q<cr>') -- fast quit
 map('qu', '<cmd>wq<cr>')
 map('<leader>q', '<cmd>qall!<cr>')
 -- Window navigation
@@ -50,21 +46,12 @@ map('<C-Left>', '<C-w><Left>')
 map('<C-Right>', '<C-w><Right>')
 map('<C-Up>', '<C-w><Up>')
 -- Add undo break-points
-map(',', ',<c-g>u', 'i')
-map('.', '.<c-g>u', 'i')
-map(';', ';<c-g>u', 'i')
 map('<leader>v', '<C-V>') -- Visual block mode
 -- better indenting
-map('<', '<gv', 'v')
-map('>', '>gv', 'v')
-map('fl', '1z=') -- Fix Word Under Cursor
--- TODO: Find a way to eliminate the "hit enter" prompts
--- NOTE: noice.nvim solves this problem, but installing a plugin for this...
 map('<Esc>', ':nohl<CR>:echo<CR>') -- Clear
 
 -- Quickfix mappings
 map('<leader>n', '<cmd>cnext<cr>zz')
-map('<leader>N', '<cmd>cprev<cr>zz')
 -- switch between multiple quickfix lists
 map('<leader>co', ':colder<cr>zz')
 map('<leader>cn', ':cnewer<cr>zz')
