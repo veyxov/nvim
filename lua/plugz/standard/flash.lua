@@ -3,40 +3,24 @@ local lbls = 'netsidarhol/m?f;cu,w'
 local M = {
     'folke/flash.nvim',
     keys = {
-        '/',
         {
-            's',
-            mode = 'n',
-            function()
-                require('flash').jump {
-                    search = {
-                        mode = function(str) return '\\<' .. str end,
-                    },
-                }
-            end,
+            's', mode = 'n',
+            function() require('flash').jump { } end,
         },
         {
-            'S',
-            mode = { 'n', 'o', 'x' },
-            function()
-                -- show labeled treesitter nodes around the search matches
-                require('flash').treesitter_search()
-            end,
-            desc = 'Treesitter Search',
+            'S', mode = { 'n', 'o', 'x' },
+            function() require('flash').treesitter() end,
+        },
+        {
+            "r", mode = "o",
+            function() require("flash").remote() end
         },
     },
 }
 
 M.opts = {
     labels = lbls,
-    search = {
-        mode = 'fuzzy',
-    },
-    modes = {
-        treesitter = {
-            labels = lbls,
-        },
-    },
+    modes = { treesitter = { labels = lbls } }
 }
 
 return M
