@@ -8,7 +8,7 @@ local M = {
             function() require('flash').jump { } end,
         },
         {
-            'S', mode = { 'n', 'o', 'x' },
+            'm', mode = { 'n', 'o', 'x' },
             function() require('flash').treesitter() end,
         },
         {
