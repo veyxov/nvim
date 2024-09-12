@@ -42,8 +42,6 @@ local function configure_servers(lsp)
         or vim.loop.os_homedir(),
     }
 
-    lsp.tsserver.setup{}
-
     lsp.gopls.setup {
     }
 end
