@@ -14,7 +14,7 @@ function M.config()
     local cmp_acccept_function = cmp.mapping(function(fallback)
         if cmp.visible() then
             cmp.confirm { select = true }
-        elseif vim.snippet.jumpable(1) then
+        elseif vim.snippet.active() then
             vim.snippet.jump(1)
         else
             fallback()
