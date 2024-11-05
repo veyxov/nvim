@@ -35,15 +35,20 @@ local function configure_mappings()
 end
 
 local function configure_servers(lsp)
-    lsp.csharp_ls.setup {
-        cmd = { 'csharp-ls' },
-        on_attach = on_attach,
-        root_dir = lsp.util.root_pattern('.git', '.sln')
-        or vim.loop.os_homedir(),
+    lsp.omnisharp.setup {
+    cmd = { "/usr/bin/omnisharp"},
+    settings = {
+      FormattingOptions = {
+        EnableEditorConfigSupport = false,
+      },
+      RoslynExtensionsOptions = {
+        EnableImportCompletion = true,
+      },
+      Sdk = {
+        IncludePrereleases = true,
+      },
     }
-
-    lsp.gopls.setup {
-    }
+}
 end
 
 function M.config()
