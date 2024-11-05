@@ -1,4 +1,4 @@
-return {
+local gitsigns = {
     'lewis6991/gitsigns.nvim',
     event = 'VeryLazy',
     keys = {
@@ -32,4 +32,20 @@ return {
         },
     },
     config = function() require('gitsigns').setup {} end,
+}
+
+local fugitive = {
+    'tpope/vim-fugitive',
+    cmd = 'G',
+    keys = {
+
+    },
+    config = function()
+
+    end
+}
+
+return {
+    gitsigns,
+    fugitive
 }
