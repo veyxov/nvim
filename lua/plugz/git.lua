@@ -45,7 +45,19 @@ local fugitive = {
     end
 }
 
+local diff = {
+    'sindrets/diffview.nvim',
+    cmd = 'Diffview',
+    keys = {
+
+    },
+    config = function()
+
+    end
+}
+
 return {
     gitsigns,
-    fugitive
+    fugitive,
+    diff
 }
