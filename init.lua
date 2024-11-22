@@ -30,6 +30,13 @@ map('<C-Down>', '<C-w><Down>');map('<C-Left>', '<C-w><Left>');map('<C-Right>', '
 map('<leader>v', '<C-V>')
 map('<Esc>', ':nohl<CR>:echo<CR>')
 
+map('h', 'y', { 'n', 'v'})
+map('hh', 'yy')
+map('H', 'y$')
+map('<leader>h', '"+y', {'n', 'v'})
+map('<leader>hh', '"+yy')
+map('<leader>H', '"+y$')
+
 map('<leader>n', '<cmd>cnext<cr>zz')
 
 require 'lazyopt'
