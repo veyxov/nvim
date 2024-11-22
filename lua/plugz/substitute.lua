@@ -24,9 +24,6 @@ return {
         },
     },
     config = function()
-        -- yanky.nvim integration
-        require('substitute').setup {
-            on_substitute = require('yanky.integration').substitute(),
-        }
+        require('substitute').setup { }
     end,
 }
