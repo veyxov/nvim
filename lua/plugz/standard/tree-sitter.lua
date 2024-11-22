@@ -17,6 +17,18 @@ local M = {
                 end,
             },
         }
-    end
+    end,
+
+    dependencies = {
+        {
+            'nvim-treesitter/nvim-treesitter-context',
+            config = function()
+                require'treesitter-context'.setup{
+                    multiline_threshold = 1, -- don't show every constructor parameter
+                    mode = 'topline', -- too noisy when moving cursor
+                }
+            end
+        }
+    },
 }
 return M
