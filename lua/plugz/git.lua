@@ -34,17 +34,6 @@ local gitsigns = {
     config = function() require('gitsigns').setup {} end,
 }
 
-local fugitive = {
-    'tpope/vim-fugitive',
-    cmd = 'G',
-    keys = {
-
-    },
-    config = function()
-
-    end
-}
-
 local diff = {
     'sindrets/diffview.nvim',
     cmd = 'Diffview',
@@ -58,6 +47,5 @@ local diff = {
 
 return {
     gitsigns,
-    fugitive,
     diff
 }

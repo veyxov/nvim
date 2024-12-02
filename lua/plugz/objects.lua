@@ -16,7 +16,7 @@ return {
                     keymaps = {
                         ["af"] = "@function.outer",
                         ["if"] = "@function.inner",
-                        ["aa"] = "@parameter.inner",
+                        ["aa"] = "@parameter.outer",
                         ["ia"] = "@parameter.inner",
                         ["as"] = { query = "@local.scope", query_group = "locals", desc = "Select language scope" },
                     },
@@ -51,6 +51,17 @@ return {
                     },
                 },
             },
+
+            lsp_interop = {
+                enable = true,
+                border = 'none',
+                floating_preview_opts = {},
+                peek_definition_code = {
+                    ["<leader>,,"] = "@function.outer",
+                    ["<leader>dF"] = "@class.outer",
+                },
+            },
+
         }
     end
 }
