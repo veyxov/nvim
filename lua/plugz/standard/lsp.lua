@@ -1,5 +1,6 @@
 local M = {
     'neovim/nvim-lspconfig',
+    dependencies = { 'saghen/blink.cmp' },
 }
 
 M.event = 'VeryLazy'
@@ -35,7 +36,9 @@ local function configure_mappings()
 end
 
 local function configure_servers(lsp)
+    local capabilities = require('blink.cmp').get_lsp_capabilities()
     lsp.omnisharp.setup {
+    capabilities = capabilities,
     cmd = { "/usr/bin/omnisharp"},
     settings = {
       FormattingOptions = {

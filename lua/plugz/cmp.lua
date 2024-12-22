@@ -1,40 +1,26 @@
-local M = {
-    'hrsh7th/nvim-cmp',
+return {
+    'saghen/blink.cmp',
+
     event = 'InsertEnter',
+    version = '*',
+    opts = {
+        keymap = {
+            preset = 'none',
+
+            ['<Right>'] = { function(cmp) cmp.accept() end },
+            ['<Up>'] = { 'select_prev', 'fallback' },
+            ['<Down>'] = { 'select_next', 'fallback' },
+            ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+        },
+        completion = {
+            documentation = { auto_show = true, auto_show_delay_ms = 500 },
+        },
+        signature = { enabled = true },
+        fuzzy = {
+            prebuilt_binaries = {
+                force_version = 'v0.8.1',
+            }
+        }
+
+    },
 }
-
-M.dependencies = {
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-}
-
-function M.config()
-    local cmp = require 'cmp'
-
-    local cmp_acccept_function = cmp.mapping(function(fallback)
-        if cmp.visible() then
-            cmp.confirm { select = true }
-        elseif vim.snippet.active() then
-            vim.snippet.jump(1)
-        else
-            fallback()
-        end
-    end, { 'i', 's' })
-
-    ---@diagnostic disable-next-line: redundant-parameter
-    cmp.setup {
-        snippet = {
-            expand = function(args) vim.snippet.expand(args.body) end,
-        },
-        mapping = cmp.mapping.preset.insert {
-            ['<Right>'] = cmp_acccept_function
-        },
-        sources = cmp.config.sources {
-            { name = 'nvim_lsp' },
-            { name = 'buffer' },
-            { name = "codeium" }
-        },
-    }
-end
-
-return M
