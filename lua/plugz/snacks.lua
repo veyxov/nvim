@@ -16,6 +16,7 @@ return {
             enabled = true,
             timeout = 3000,
         },
+        explorer = { enabled = true, replace_netrw = true },
         picker = { enabled = true },
         quickfile = { enabled = true },
         scroll = { enabled = true },
