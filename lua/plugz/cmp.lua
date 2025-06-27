@@ -2,7 +2,7 @@ return {
     'saghen/blink.cmp',
 
     event = 'InsertEnter',
-    version = '*',
+    version = '1.*',
     opts = {
         keymap = {
             preset = 'none',
@@ -16,5 +16,6 @@ return {
             documentation = { auto_show = true, auto_show_delay_ms = 500 },
         },
         signature = { enabled = true },
+        fuzzy = { implementation = "prefer_rust_with_warning" }
     },
 }

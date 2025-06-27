@@ -35,29 +35,12 @@ local function configure_mappings()
     map('ko', vim.diagnostic.goto_next)
 end
 
-local function configure_servers(lsp)
-    local capabilities = require('blink.cmp').get_lsp_capabilities()
-    lsp.omnisharp.setup {
-    capabilities = capabilities,
-    cmd = { "/usr/bin/omnisharp"},
-    settings = {
-      FormattingOptions = {
-        EnableEditorConfigSupport = false,
-      },
-      RoslynExtensionsOptions = {
-        EnableImportCompletion = true,
-      },
-      Sdk = {
-        IncludePrereleases = true,
-      },
-    }
-}
+local function configure_servers()
+    vim.lsp.enable({"omnisharp"})
 end
 
 function M.config()
-    local lsp = require 'lspconfig'
-
-    configure_servers(lsp)
+    configure_servers()
     configure_mappings()
 end
 
