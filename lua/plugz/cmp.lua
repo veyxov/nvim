@@ -49,12 +49,16 @@ return {
             documentation = { auto_show = true, auto_show_delay_ms = 500 },
         },
         signature = { enabled = true },
-        fuzzy = { implementation = "prefer_rust_with_warning" }
-    },
-    sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'codeium' },
-        providers = {
-            codeium = { name = 'Codeium', module = 'codeium.blink', async = true },
+        fuzzy = { implementation = "prefer_rust_with_warning" },
+        sources = {
+            default = { 'lsp', 'path', 'snippets', 'buffer', 'codeium' },
+            per_filetype = {
+                sql = { 'snippets', 'dadbod', 'buffer' },
+            },
+            providers = {
+                codeium = { name = 'Codeium', module = 'codeium.blink', async = true },
+                dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+            },
         },
     },
 }
