@@ -13,7 +13,6 @@ local function autocmd(event, callback)
     vim.api.nvim_create_autocmd(event, { callback = callback, group = GROUP })
 end
 autocmd('TextYankPost', function() vim.highlight.on_yank() end)
-
 -- Go to last loc when opening a buffer
 autocmd('BufReadPost', function()
     local mark = vim.api.nvim_buf_get_mark(0, '"')
