@@ -4,7 +4,7 @@ vim.g.mapleader = ' '
 o.list = true;o.listchars = { trail = '·', nbsp = '␣', tab = '->' }
 o.swapfile = false
 o.wrap = false
-o.cmdheight = 0;o.laststatus = 3
+o.cmdheight = 0;o.laststatus = 0
 o.ignorecase = true;o.smartcase = true
 local tabs = 4;o.expandtab = true;o.tabstop = tabs;o.shiftwidth = tabs;o.softtabstop = tabs
 
