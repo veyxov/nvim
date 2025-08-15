@@ -41,7 +41,7 @@ local function configure_mappings()
 end
 
 local function configure_servers()
-    vim.lsp.enable({'gopls', 'omnisharp'})
+    vim.lsp.enable({'omnisharp'})
 end
 
 function M.config()
