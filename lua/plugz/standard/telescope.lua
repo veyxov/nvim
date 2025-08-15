@@ -44,7 +44,6 @@ M.keys = {
 
     m('<leader>d', 'diagnostics'),
 
-    m('<leader>gc', 'grep_string theme=ivy'),
     m(
         '<leader>/',
         'current_buffer_fuzzy_find theme=get_dropdown previewer=false<cr>'

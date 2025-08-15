@@ -47,7 +47,19 @@ local diff = {
 
 local neogit = {
     "NeogitOrg/neogit",
-    lazy = false
+    keys = {
+        {
+            "gc",
+            function()
+                require("neogit").action("commit", "commit")()
+            end,
+            desc = "Git commit",
+        },
+    },
+    cmd = { "Neogit" },
+    opts = {
+        graph_style = "kitty",
+    },
 }
 
 return {
