@@ -64,12 +64,12 @@ local neogit = {
             function()
                 require("neogit").action("push", "to_upstream")()
             end,
-            desc = "Git commit",
+            desc = "Git push",
         },
         {
             "<leader>gs",
             "<cmd>Neogit<cr>",
-            desc = "Git commit",
+            desc = "Git status",
         },
     },
     cmd = { "Neogit" },
