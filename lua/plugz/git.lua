@@ -56,6 +56,13 @@ local neogit = {
             desc = "Git commit",
         },
         {
+            "<leader>gp",
+            function()
+                require("neogit").action("push", "to_upstream")()
+            end,
+            desc = "Git commit",
+        },
+        {
             "<leader>gs",
             "<cmd>Neogit<cr>",
             desc = "Git commit",
