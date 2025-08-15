@@ -2,13 +2,17 @@ local gitsigns = {
     'lewis6991/gitsigns.nvim',
     event = 'VeryLazy',
     keys = {
-        { 'ju', '<cmd>Gitsigns reset_hunk<cr>' },
-        { 'jU', '<cmd>Gitsigns reset_buffer<cr>' },
+        { 'ja', '<cmd>Gitsigns stage_hunk<cr>', mode = 'n' },
+        { 'jA', '<cmd>Gitsigns stage_buffer<cr>', mode = 'n' },
+        { 'jr', '<cmd>Gitsigns undo_stage_hunk<cr>', mode = 'n' },
 
-        { 'jn', '<cmd>Gitsigns next_hunk<cr>' },
-        { 'jp', '<cmd>Gitsigns prev_hunk<cr>' },
+        { 'ju', '<cmd>Gitsigns reset_hunk<cr>', mode = 'n' },
+        { 'jU', '<cmd>Gitsigns reset_buffer<cr>', mode = 'n' },
 
-        { 'jb', '<cmd>Gitsigns blame_line<cr>' },
+        { 'jn', '<cmd>Gitsigns next_hunk<cr>', mode = 'n' },
+        { 'jp', '<cmd>Gitsigns preview_hunk<cr>', mode = 'n' },
+
+        { 'jb', '<cmd>Gitsigns blame_line<cr>', mode = 'n' },
 
         {
             'ju',
