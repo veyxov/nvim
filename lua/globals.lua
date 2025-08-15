@@ -1,6 +1,6 @@
 return {
     Map = function(l, r, m)
         m = m or 'n'
-        vim.keymap.set(m, l, r)
+        vim.keymap.set(m, l, r, { noremap = true })
     end,
 }
