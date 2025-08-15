@@ -45,7 +45,13 @@ local diff = {
     end
 }
 
+local neogit = {
+    "NeogitOrg/neogit",
+    lazy = false
+}
+
 return {
     gitsigns,
-    diff
+    diff,
+    neogit
 }
