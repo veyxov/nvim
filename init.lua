@@ -18,6 +18,8 @@ map('<C-Down>', '<C-w><Down>');map('<C-Left>', '<C-w><Left>');map('<C-Right>', '
 map('<leader>v', '<C-V>')
 map('<Esc>', ':nohl<CR>:echo<CR>')
 
+map('<leader>cc', '<cmd>tabclose<cr>')
+
 map('h', 'y', { 'n', 'v'})
 map('hh', 'yy')
 map('H', 'y$')
