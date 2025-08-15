@@ -49,10 +49,15 @@ local neogit = {
     "NeogitOrg/neogit",
     keys = {
         {
-            "gc",
+            "<leader>gc",
             function()
                 require("neogit").action("commit", "commit")()
             end,
+            desc = "Git commit",
+        },
+        {
+            "<leader>gs",
+            "<cmd>Neogit<cr>",
             desc = "Git commit",
         },
     },
