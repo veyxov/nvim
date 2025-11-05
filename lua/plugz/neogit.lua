@@ -31,8 +31,7 @@ local neogit = {
         },
 
         commit_editor = {
-            ["qu"]         = "Close",
-            ["<c-c><c-c>"] = "Submit",
+            ["qu"]         = "Submit",
             ["<c-c><c-k>"] = "Abort",
         },
         commit_editor_I = {
