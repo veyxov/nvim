@@ -2,21 +2,21 @@ local neogit = {
     "NeogitOrg/neogit",
     keys = {
         {
-            "<leader>gc",
+            "<leader>ga",
             function()
                 require("neogit").action("commit", "commit")()
             end,
             desc = "Git commit",
         },
         {
-            "<leader>gp",
+            "<leader>gc",
             function()
                 require("neogit").action("push", "to_upstream")()
             end,
             desc = "Git push",
         },
         {
-            "<leader>gs",
+            "<leader>gg",
             "<cmd>Neogit<cr>",
             desc = "Git status",
         },
