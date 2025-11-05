@@ -1,19 +1,23 @@
-local lbls = 'netsidarhol/m?f;cu,w'
+local lbls = 'hiearndst:,./?kyouxglcwvplfj'
 
 local M = {
     'folke/flash.nvim',
     keys = {
         {
-            's', mode = 'n',
+            's', mode = { 'n', 'o', 'x' },
             function() require('flash').jump { } end,
         },
         {
-            'm', mode = { 'n', 'o', 'x' },
+            'S', mode = { 'n', 'o', 'x' },
             function() require('flash').treesitter() end,
         },
         {
             "r", mode = "o",
             function() require("flash").remote() end
+        },
+        {
+            "R", mode = {"o", "x"},
+            function() require("flash").treesitter_search() end
         },
     },
 }
