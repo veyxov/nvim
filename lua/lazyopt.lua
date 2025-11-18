@@ -8,16 +8,7 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require('lazy').setup('plugz', {
+    change_detection = { enabled = false },
     defaults = { lazy = true },
-    lockfile = vim.fn.stdpath 'data' .. '/lazy-lock.json', -- hide lockfile away
-    performance = {
-        rtp = {
-            disabled_plugins = {
-                'osc52', 'gzip', 'matchit',
-                'matchparen', 'netrwPlugin', 'tarPlugin',
-                'tohtml', 'tutor', 'zipPlugin', 'spellfile',
-                'rplugin', 'editorconfig',
-            }
-        }
-    }
+    lockfile = vim.fn.stdpath 'data' .. '/lazy-lock.json' -- hide lockfile away
 })
