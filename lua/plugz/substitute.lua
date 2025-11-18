@@ -24,6 +24,9 @@ return {
         },
     },
     config = function()
-        require('substitute').setup { }
+        require("substitute").setup({
+            on_substitute = require("tiny-glimmer.support.substitute").substitute_cb,
+            highlight_substituted_text = { enabled = false },
+        })
     end,
 }

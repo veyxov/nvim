@@ -9,7 +9,7 @@ local tabs = 4;o.expandtab = true;o.tabstop = tabs;o.shiftwidth = tabs;o.softtab
 local function autocmd(event, callback)
     vim.api.nvim_create_autocmd(event, { callback = callback, group = vim.api.nvim_create_augroup('xyz', {}) })
 end
-autocmd('TextYankPost', function() vim.highlight.on_yank() end)
+-- autocmd('TextYankPost', function() vim.highlight.on_yank() end)
 
 local map = require('globals').Map
 map('<leader>s', '<cmd>wall<cr>')
