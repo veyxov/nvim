@@ -40,9 +40,10 @@ local gitsigns = {
 
 local diff = {
     'sindrets/diffview.nvim',
-    cmd = 'Diffview',
+    cmd = 'DiffviewOpen',
     keys = {
-
+        { 'do', '<cmd>DiffviewOpen<cr>', mode = 'n' },
+        { 'dc', '<cmd>DiffviewClose<cr>', mode = 'n' },
     },
     config = function()
 
