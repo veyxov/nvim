@@ -13,6 +13,7 @@ local M = {
             ['e'] = '<Down>',
             ['i'] = '<Up>',
             ['n'] = 'actions.select',
+            ['<Return>'] = '<Down>',
         },
     },
 }
