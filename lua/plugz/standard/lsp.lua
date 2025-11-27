@@ -2,9 +2,6 @@ local M = {
     'neovim/nvim-lspconfig',
     dependencies = { 
         'saghen/blink.cmp',
-        {
-            'Hoffs/omnisharp-extended-lsp.nvim'
-        }
     },
 }
 
@@ -14,19 +11,22 @@ local function configure_mappings()
     local map = require('globals').Map
     map(
         '<leader>t',
-        "<cmd>lua require('omnisharp_extended').telescope_lsp_definition({ jump_type = 'vsplit' })<cr>",
+        "<cmd>Telescope lsp_definitions theme=dropdown<cr>",
         { 'n', 'v' }
     )
+
     map(
-        '<leader>u', -- semantic for usages
-        "<cmd>lua require('omnisharp_extended').telescope_lsp_references()<cr>",
+        '<leader>u',
+        "<cmd>Telescope lsp_references theme=dropdown<cr>",
         { 'n', 'v' }
     )
+
     map(
         '<leader><leader>',
-        "<cmd>lua require('omnisharp_extended').telescope_lsp_implementation()<cr>",
+        "<cmd>Telescope lsp_implementations theme=dropdown<cr>",
         { 'n', 'v' }
     )
+
 
     local bf = vim.lsp.buf
     map('yf', bf.format)
@@ -41,7 +41,7 @@ local function configure_mappings()
 end
 
 local function configure_servers()
-    vim.lsp.enable({'omnisharp'})
+    vim.lsp.enable({'csharp_ls'})
 end
 
 function M.config()
