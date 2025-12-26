@@ -3,30 +3,17 @@ local M = {
     dependencies = { 
         'saghen/blink.cmp',
     },
+    keys = {
+        { "<leader>t", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
+        { "<leader>u", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
+        { "<leader><leader>", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
+    }
 }
 
 M.event = 'VeryLazy'
 
 local function configure_mappings()
     local map = require('globals').Map
-    map(
-        '<leader>t',
-        "<cmd>Telescope lsp_definitions theme=dropdown<cr>",
-        { 'n', 'v' }
-    )
-
-    map(
-        '<leader>u',
-        "<cmd>Telescope lsp_references theme=dropdown<cr>",
-        { 'n', 'v' }
-    )
-
-    map(
-        '<leader><leader>',
-        "<cmd>Telescope lsp_implementations theme=dropdown<cr>",
-        { 'n', 'v' }
-    )
-
 
     local bf = vim.lsp.buf
     map('yf', bf.format)
@@ -41,7 +28,7 @@ local function configure_mappings()
 end
 
 local function configure_servers()
-    vim.lsp.enable({'csharp_ls'})
+    -- vim.lsp.enable({'csharp_ls'})
 end
 
 function M.config()
