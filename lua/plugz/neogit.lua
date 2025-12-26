@@ -27,7 +27,6 @@ local neogit = {
         graph_style = "kitty",
         integrations = {
             diffview = true,
-            telescope = true
         },
 
         commit_editor = {
