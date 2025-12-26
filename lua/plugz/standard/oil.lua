@@ -1,5 +1,6 @@
 local M = {
     'stevearc/oil.nvim',
+    lazy = false,
     keys = {
         {
             '-',
