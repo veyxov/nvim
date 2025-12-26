@@ -8,7 +8,7 @@ return {
                 frecency = true,
                 cwd_bonus = true,
             },
-        }
+        },
         scroll = { enabled =  true },
         words = { enabled = false },
         statuscolumn = { enabled = false },
