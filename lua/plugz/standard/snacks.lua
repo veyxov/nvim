@@ -15,7 +15,7 @@ return {
     },
     keys = {
         { "?s", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
-        { "?g", function() Snacks.picker.grep() end, desc = "Grep" },
+        { "?gw", function() Snacks.picker.grep() end, desc = "Grep" },
         { "?f", function() Snacks.explorer() end, desc = "File Explorer" },
         { "?r", function() Snacks.picker.recent() end, desc = "Recent" },
         { "?d", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },

@@ -19,7 +19,7 @@ return {
     dap.listeners.before.event_exited.dapui_config = function() dapui.close() end
 
     -- Existing keymaps
-    vim.keymap.set("n", "q", function() dap.terminate(); dap.clear_breakpoints() end, { desc = "Terminate" })
+    vim.keymap.set("n", "<leader>dQ", function() dap.terminate(); dap.clear_breakpoints() end, { desc = "DAP: Terminate" })
     vim.keymap.set("n", "<leader>ds", dap.continue, { desc = "Start/continue" })
     vim.keymap.set("n", "<leader>dc", dap.step_over, { desc = "Step over" })
     vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "Step into" })
@@ -29,9 +29,9 @@ return {
     vim.keymap.set("n", "<leader>du", dapui.toggle, { desc = "Toggle DAP UI" })
 
     -- THE NEW KEYMAP FOR FLOATING WINDOW
-    vim.keymap.set({"n", "v"}, "<leader>k", function()
+    vim.keymap.set({"n", "v"}, "<leader>dk", function()
       widgets.hover()
-    end, { desc = "Debugger: Hover variable" })
+    end, { desc = "DAP: Hover variable" })
 
   end,
 }
