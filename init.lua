@@ -12,21 +12,18 @@ end
 autocmd('TextYankPost', function() vim.highlight.on_yank() end)
 
 local map = require('globals').Map
-map('<leader>s', '<cmd>wall<cr>')
+map('<leader>w', '<cmd>wall<cr>')
 map('<Backspace>', '<cmd>q<cr>');map('qu', '<cmd>wq<cr>');map('<leader>q', '<cmd>qall!<cr>')
 map('<C-Down>', '<C-w><Down>');map('<C-Left>', '<C-w><Left>');map('<C-Right>', '<C-w><Right>');map('<C-Up>', '<C-w><Up>')
 map('<leader>v', '<C-V>')
 map('<Esc>', ':nohl<CR>:echo<CR>')
 
-map('<leader>cc', '<cmd>tabclose<cr>')
-
 map('h', 'y', { 'n', 'v'})
 map('hh', 'yy')
 map('H', 'y$')
+
 map('<leader>h', '"+y', {'n', 'v'})
 map('<leader>hh', '"+yy')
 map('<leader>H', '"+y$')
-
-map('<leader>n', '<cmd>cnext<cr>zz')
 
 require 'lazyopt'
