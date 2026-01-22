@@ -26,4 +26,9 @@ map('<leader>h', '"+y', {'n', 'v'})
 map('<leader>hh', '"+yy')
 map('<leader>H', '"+y$')
 
+map('<leader>n', ':cnext<cr>');
+map('<leader>p', ':cprev<cr>');
+
 require 'lazyopt'
+
+vim.diagnostic.config({ virtual_lines = true })
