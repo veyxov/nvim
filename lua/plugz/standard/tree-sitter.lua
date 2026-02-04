@@ -71,4 +71,12 @@ local objects = {
     }
 }
 
-return { tree, objects }
+local context = {
+    "nvim-treesitter/nvim-treesitter-context",
+    lazy = false,
+    keys = {
+        { 'kc', function() require 'treesitter-context'.go_to_context(vim.v.count1) end, desc = "goto context" },
+    }
+}
+
+return { tree, objects, context }
