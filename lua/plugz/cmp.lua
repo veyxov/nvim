@@ -35,7 +35,7 @@ return {
     },
 
     event = 'InsertEnter',
-    version = '1.*',
+    version = '*',
     opts = {
         keymap = {
             preset = 'none',
@@ -60,11 +60,10 @@ return {
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer', 'codeium' },
             per_filetype = {
-                sql = { 'snippets', 'dadbod', 'buffer' },
+                sql = { 'snippets', 'buffer' },
             },
             providers = {
                 codeium = { name = 'Codeium', module = 'codeium.blink', async = true },
-                dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
             },
         },
     },

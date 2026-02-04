@@ -28,4 +28,4 @@ local tokyonight = {
   end
 }
 
-return tokyonight
+return catppuccin
