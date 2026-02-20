@@ -37,3 +37,18 @@ vim.diagnostic.config {
   virtual_lines = true,
   jump = { float = true },
 }
+
+vim.filetype.add({
+  extension = {
+    ['http'] = 'http',
+  },
+})
+
+vim.g.loaded_gzip = true
+vim.g.loaded_matchit = true
+vim.g.loaded_netrwPlugin = true
+vim.g.loaded_tarPlugin = true
+vim.g.loaded_zipPlugin = true
+vim.g.loaded_man = true
+vim.g.loaded_2html_plugin = true
+vim.g.loaded_remote_plugins = true
