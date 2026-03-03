@@ -4,6 +4,23 @@ return {
     lazy = false,
     opts = {
         picker = {
+            sources = {
+                explorer = {
+                    win = {
+                        input = {
+                            keys = {
+                            },
+                        },
+                        list = {
+                            keys = {
+                                ["e"] = { "list_down", mode = "n" },
+                                ["i"] = { "list_up", mode = {"n", "i"} },
+                            },
+                        },
+                    },
+                },
+
+            },
             matcher = {
                 frecency = true,
                 cwd_bonus = true,
