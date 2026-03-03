@@ -12,8 +12,8 @@ local M = {
     keys = {
         m('l', 'normal'),
         m('L', 'normal-line'),
-        m('ll', 'normal-cur'),
-        m('LL', 'normal-cur-line'),
+        m('LL', 'normal-cur'),
+        m('ll', 'normal-cur-line'),
         m('ds', 'delete'),
         m('cs', 'change'),
         m('l', 'visual', {'v'})
