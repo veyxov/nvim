@@ -27,12 +27,7 @@ local function configure_mappings()
     map('ko', vim.diagnostic.goto_next)
 end
 
-local function configure_servers()
-    -- vim.lsp.enable({'csharp_ls'})
-end
-
 function M.config()
-    configure_servers()
     configure_mappings()
 end
 
