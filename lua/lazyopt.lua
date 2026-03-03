@@ -10,5 +10,9 @@ vim.opt.runtimepath:prepend(lazypath)
 require('lazy').setup('plugz', {
     change_detection = { enabled = false },
     defaults = { lazy = true },
-    lockfile = vim.fn.stdpath 'data' .. '/lazy-lock.json' -- hide lockfile away
+    lockfile = vim.fn.stdpath 'data' .. '/lazy-lock.json', -- hide lockfile away
+    performance = {
+        cache = { enabled = true },
+        rtp = { disabled_plugins = { "gzip", "netrwPlugin", "tarPlugin", "tohtml", "tutor", "zipPlugin" } }
+    }
 })
