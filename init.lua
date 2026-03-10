@@ -32,7 +32,7 @@ autocmd('TextYankPost', function() vim.highlight.on_yank() end)
 -- [[ maps
 local map = require('globals').Map
 map('<leader>w', '<cmd>wall<cr>')
-map('<Backspace>', '<cmd>q<cr>');map('qu', '<cmd>wq<cr>')
+map('<C-W><C-W>', '<cmd>q<cr>');map('qu', '<cmd>wq<cr>')
 map('<C-Down>', '<C-w><Down>');map('<C-Left>', '<C-w><Left>');map('<C-Right>', '<C-w><Right>');map('<C-Up>', '<C-w><Up>')
 map('<leader>v', '<C-V>')
 map('<Esc>', '<cmd>nohl<cr>')
