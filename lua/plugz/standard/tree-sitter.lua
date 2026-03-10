@@ -36,18 +36,8 @@ local objects = {
 
         -- Repeat movement with ; and ,
         -- ensure ; goes forward and , goes backward regardless of the last direction
-        vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
-        vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
-
-        -- vim way: ; goes to the direction you were moving.
-        -- vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
-        -- vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)
-
-        -- Optionally, make builtin f, F, t, T also repeatable with ; and ,
-        vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f_expr, { expr = true })
-        vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F_expr, { expr = true })
-        vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t_expr, { expr = true })
-        vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T_expr, { expr = true })
+        vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_next)
+        vim.keymap.set({ "n", "x", "o" }, "|", ts_repeat_move.repeat_last_move_previous)
     end,
     keys = {
         { "a<CR>", select "@return.outer", mode = { "x", "o" }, desc = "↩ outer return" },
@@ -63,19 +53,20 @@ local objects = {
         { "ao", select "@conditional.outer", mode = { "x", "o" }, desc = "󱕆 outer condition" },
         { "io", select "@conditional.inner", mode = { "x", "o" }, desc = "󱕆 inner condition" },
 
-        { "kf", move "@function.outer", mode = { "n", "x", "o" }, desc = "󰡱 next function" },
-        { "kF", move "@function.outer", mode = { "n", "x", "o" }, desc = "󰡱 prev function" },
-        { "kl", move "@loop.outer", mode = { "n", "x", "o" }, desc = "󰛤 next loop" },
-        { "kL", move "@loop.outer", mode = { "n", "x", "o" }, desc = "󰛤 prev loop" },
-        { "ko", move "@conditional.outer", mode = { "n", "x", "o" }, desc = "󱕆 next condition" },
+        { "<Left>f", move "@function.outer", mode = { "n", "x", "o" }, desc = "󰡱 next function" },
+        { "<Left>F", move "@function.outer", mode = { "n", "x", "o" }, desc = "󰡱 prev function" },
+        { "<Left>l", move "@loop.outer", mode = { "n", "x", "o" }, desc = "󰛤 next loop" },
+        { "<Left>L", move "@loop.outer", mode = { "n", "x", "o" }, desc = "󰛤 prev loop" },
+        { "<Left>o", move "@conditional.outer", mode = { "n", "x", "o" }, desc = "󱕆 next condition" },
     }
 }
 
 local context = {
     "nvim-treesitter/nvim-treesitter-context",
-    lazy = false,
+    event = "VeryLazy",
     keys = {
-        { 'kc', function() require 'treesitter-context'.go_to_context(vim.v.count1) end, desc = "goto context" },
+        { '<Left>c', function() require 'treesitter-context'.go_to_context(vim.v.count1) end, desc = "goto context" },
+        { '<Left>C', function() require 'treesitter-context'.toggle() end, desc = "toggle" },
     }
 }
 
