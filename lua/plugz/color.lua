@@ -28,4 +28,13 @@ local tokyonight = {
   end
 }
 
-return catppuccin
+local techbase = {
+    'mcauley-penney/techbase.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+        vim.cmd.colorscheme 'techbase'
+    end
+}
+
+return techbase
