@@ -1,6 +1,6 @@
+-- [[ options
 local o = vim.opt
 
--- [[ options
 o.cursorline = true
 
 o.undofile = true
@@ -27,14 +27,10 @@ o.shiftround = true
 -- ]]
 
 -- [[ autocmds
-local g = vim.api.nvim_create_augroup('xyz', { clear = true })
-local function autocmd(event, callback)
-  vim.api.nvim_create_autocmd(event, {
-    callback = callback,
-    group = g,
-  })
-end
-autocmd('TextYankPost', function() vim.highlight.on_yank() end)
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = vim.api.nvim_create_augroup('xyz', { clear = true }),
+  callback = function() vim.highlight.on_yank() end,
+})
 --]]
 
 -- [[ maps
@@ -47,11 +43,22 @@ map('<C-W><C-W>', '<cmd>q<cr>');map('qu', '<cmd>wq<cr>')
 map('<leader>v', '<C-V>')
 
 -- yank key y -> h
-map('h', 'y', { 'n', 'v', 'x'})
-map('hh', 'yy')
-map('H', 'y$')
-map('<leader>h', '"+y', {'n', 'v', 'x'})
-map('<leader>hh', '"+yy')
+map('h', 'y', { 'n', 'v', 'x'}); map('hh', 'yy')
+map('<leader>h', '"+y', {'n', 'v', 'x'}); map('<leader>hh', '"+yy')
+
+map('<C-d>', '<C-d>zz')
+map('<C-u>', '<C-u>zz')
+map('n', 'nzzzv')
+map('N', 'Nzzzv')
+
+map('<A-Up>', ':m .-2<cr>==')
+map('<A-Down>', ':m .+1<cr>==')
+map('<A-Down>', ":m '>+1<cr>gv=gv", {'v'})
+map('<A-Up>', ":m '<-2<cr>gv=gv", {'v'})
+
+map('<', '<gv', {'v'})
+map('>', '>gv', {'v'})
+
 map('==', function() vim.fn.system(string.format('wl-copy --type text/uri-list "file://%s"', vim.fn.expand('%:p'))) end)
 --]]
 
