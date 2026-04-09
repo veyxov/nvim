@@ -4,7 +4,6 @@ local o = vim.opt
 o.cursorline = true
 
 o.undofile = true
-o.writebackup = false
 o.swapfile = false
 
 o.cmdheight = 0;
@@ -12,21 +11,18 @@ o.laststatus = 3
 
 o.ignorecase = true;
 o.smartcase = true
-o.hlsearch = false
 
 o.wrap = false
 o.showmode = false
 
 o.updatetime = 225
 o.timeoutlen = 225
-o.redrawtime = 10000
 
 local tabs = 4
 o.tabstop = tabs
 o.shiftwidth = tabs
 o.softtabstop = tabs
 o.expandtab = true
-o.autoindent = true
 o.shiftround = true
 -- ]]
 
@@ -56,6 +52,7 @@ map('hh', 'yy')
 map('H', 'y$')
 map('<leader>h', '"+y', {'n', 'v', 'x'})
 map('<leader>hh', '"+yy')
+map('==', function() vim.fn.system(string.format('wl-copy --type text/uri-list "file://%s"', vim.fn.expand('%:p'))) end)
 --]]
 
 vim.diagnostic.config {
