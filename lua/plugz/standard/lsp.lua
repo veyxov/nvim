@@ -1,16 +1,12 @@
 local M = {
     'neovim/nvim-lspconfig',
-    dependencies = { 
-        'saghen/blink.cmp',
-    },
     keys = {
         { "<leader>t", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
         { "<leader>u", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
         { "<leader><leader>", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
-    }
+    },
+    event = 'VeryLazy'
 }
-
-M.event = 'VeryLazy'
 
 local function configure_mappings()
     local map = require('globals').Map
