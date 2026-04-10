@@ -22,15 +22,5 @@ return {
             function() require('substitute.exchange').visual() end,
             mode = 'x',
         },
-    },
-    config = function()
-        local on_substitute
-        local ok, glimmer = pcall(require, "tiny-glimmer.support.substitute")
-        if ok then on_substitute = glimmer.substitute_cb end
-
-        require("substitute").setup({
-            on_substitute = on_substitute,
-            highlight_substituted_text = { enabled = false },
-        })
-    end,
+    }
 }

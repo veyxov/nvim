@@ -37,4 +37,4 @@ local techbase = {
     end
 }
 
-return techbase
+return gruvbox
