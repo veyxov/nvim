@@ -59,6 +59,9 @@ map('<A-Up>', ":m '<-2<cr>gv=gv", {'v'})
 map('<', '<gv', {'v'})
 map('>', '>gv', {'v'})
 
+map('<leader>n', '<cmd>cnext<cr>zz')
+map('<leader>N', '<cmd>cprev<cr>zz')
+
 map('==', function() vim.fn.system(string.format('wl-copy --type text/uri-list "file://%s"', vim.fn.expand('%:p'))) end)
 --]]
 
