@@ -1,12 +1,3 @@
-function _G.map(l, r, m, o)
-    m = m or 'n'
-    o = o or { silent = true }
-    vim.keymap.set(m, l, r, o)
-end
-
-vim.g.mapleader = ' '
-map('<space>', '<Nop>')
-
 map('<leader>w', '<cmd>wall<cr>')
 map('qu', '<cmd>q<cr>')
 
