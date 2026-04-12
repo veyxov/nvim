@@ -1,21 +1,16 @@
 vim.pack.add({'https://github.com/nvim-mini/mini.nvim'})
-require 'mini.basics'.setup({
-	options = {
-		extra_ui = true
-	}
-})
-
+require 'mini.basics'.setup()
 require 'mini.icons'.setup()
 
 require 'mini.files'.setup({
-    mappings = {
-        close       = 'qu',
-        go_in       = '',
-        go_in_plus  = '<right>',
-        go_out      = '<left>',
-        go_out_plus = '',
-        synchronize = '<cr>',
-    },
+  mappings = {
+    close       = 'qu',
+    go_in       = '',
+    go_in_plus  = '<right>',
+    go_out      = '<left>',
+    go_out_plus = '',
+    synchronize = '<cr>',
+  },
 }
 )
 map('-', function() MiniFiles.open() end)
@@ -54,7 +49,7 @@ miniclue.setup({
     { mode = 'i', keys = '<C-x>' },
 
     -- `g` key
---
+    --
     { mode = { 'n', 'x' }, keys = 'g' },
 
     -- Marks
@@ -84,6 +79,4 @@ miniclue.setup({
   },
 })
 
-
--- vim.pack.add({'https://github.com/folke/flash.nvim'})
--- map('s', function() require 'flash'.jump() end)
+require 'plugs.mini.jump2d'
