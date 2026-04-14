@@ -68,14 +68,20 @@ map('<S-Tab>', '<cmd>bprevious<cr>')
 map('==', function() vim.fn.system(string.format("wl-copy --type text/uri-list 'file://%s'", vim.fn.expand('%:p'))) end)
 
 -- C-o is hard, maybe gl to go back?
-map('gl', '<C-O>')
-map('gs', '<C-I>')
+-- map('gl', '<C-O>')
+-- map('gs', '<C-I>')
 
 
 local lsp = vim.lsp
 map('th', function() lsp.buf.hover() end)
-map('ta', function() lsp.buf.code_action() end)
 map('tr', function() lsp.buf.rename() end)
-map('tt', function() lsp.buf.implementation() end)
-map('tn', function() vim.diagnostic.goto_next() end)
+map('td', function() lsp.buf.definition() end)
 map('tu', function() lsp.buf.references() end)
+map('ta', function() lsp.buf.code_action() end)
+map('tn', function() vim.diagnostic.goto_next() end)
+map('t<space>', function() lsp.buf.implementation() end)
+
+vim.keymap.set("n", "<leader>lg", function()
+  vim.cmd("tabnew | terminal lazygit")
+  vim.cmd("startinsert")
+end, { desc = "Open LazyGit" })
