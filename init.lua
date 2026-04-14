@@ -8,5 +8,13 @@ require 'options'
 require 'plugins'
 require 'keymaps'
 
-require 'vim._core.ui2'.enable({})
+vim.diagnostic.config({
+  virtual_text = {
+    severity = { min = vim.diagnostic.severity.WARN },
+    source = "if_many",
+    prefix = "●",
+    virt_text_pos = "eol",
+    hl_mode = "combine",
+  },
+})
 vim.cmd 'colorscheme retrobox'

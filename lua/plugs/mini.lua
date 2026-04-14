@@ -1,5 +1,7 @@
 vim.pack.add({'https://github.com/nvim-mini/mini.nvim'})
+
 require 'mini.basics'.setup()
+
 require 'mini.icons'.setup()
 
 require 'mini.files'.setup({
@@ -10,9 +12,8 @@ require 'mini.files'.setup({
     go_out      = '<left>',
     go_out_plus = '',
     synchronize = '<cr>',
-  },
-}
-)
+  }
+})
 map('-', function() MiniFiles.open() end)
 
 require 'mini.pick'.setup()
@@ -20,7 +21,9 @@ map('<leader>t', function() MiniPick.builtin.files() end)
 map('<leader>g', function() MiniPick.builtin.grep_live() end)
 
 require 'mini.ai'.setup()
+
 require 'mini.pairs'.setup()
+
 require 'mini.surround'.setup({
   mappings = {
     add = 'ya',
@@ -33,50 +36,14 @@ require 'mini.surround'.setup({
   }
 })
 
-
-
-local miniclue = require('mini.clue')
-miniclue.setup({
-  triggers = {
-    -- Leader triggers
-    { mode = { 'n', 'x' }, keys = '<Leader>' },
-
-    -- `[` and `]` keys
-    { mode = 'n', keys = '[' },
-    { mode = 'n', keys = ']' },
-
-    -- Built-in completion
-    { mode = 'i', keys = '<C-x>' },
-
-    -- `g` key
-    --
-    { mode = { 'n', 'x' }, keys = 'g' },
-
-    -- Marks
-    { mode = { 'n', 'x' }, keys = "'" },
-    { mode = { 'n', 'x' }, keys = '`' },
-
-    -- Registers
-    { mode = { 'n', 'x' }, keys = '"' },
-    { mode = { 'i', 'c' }, keys = '<C-r>' },
-
-    -- Window commands
-    { mode = 'n', keys = '<C-w>' },
-
-    -- `z` key
-    { mode = { 'n', 'x' }, keys = 'z' },
-  },
-
-  clues = {
-    -- Enhance this by adding descriptions for <Leader> mapping groups
-    miniclue.gen_clues.square_brackets(),
-    miniclue.gen_clues.builtin_completion(),
-    miniclue.gen_clues.g(),
-    miniclue.gen_clues.marks(),
-    miniclue.gen_clues.registers(),
-    miniclue.gen_clues.windows(),
-    miniclue.gen_clues.z(),
-  },
+require('mini.jump2d').setup({
+  labels = "etaoinshrdlcumwfgypbvkjxqz",
+  view = {
+    dim = true,
+    n_steps_ahead = 2,
+  }
 })
-
-require 'plugs.mini.jump2d'
+map('s', function()
+  MiniJump2d.start(MiniJump2d.builtin_opts.single_character)
+  end, { 'o', 'x', 'n' }
+)
