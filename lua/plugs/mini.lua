@@ -47,3 +47,16 @@ map('s', function()
   MiniJump2d.start(MiniJump2d.builtin_opts.single_character)
   end, { 'o', 'x', 'n' }
 )
+
+require 'mini.operators'.setup({
+  replace = {
+    prefix = 'r'
+  },
+  multiply = {
+    prefix = 'gl'
+  },
+  exchange = {
+    prefix = 'gt'
+  }
+})
+
