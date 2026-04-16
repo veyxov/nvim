@@ -1,29 +1,32 @@
+-- vim: foldmethod=marker
 vim.pack.add({'https://github.com/nvim-mini/mini.nvim'})
 
 require 'mini.basics'.setup()
-
 require 'mini.icons'.setup()
 
+--{{{ files
 require 'mini.files'.setup({
   mappings = {
     close       = 'qu',
-    go_in       = '',
     go_in_plus  = '<right>',
-    go_out      = '<left>',
-    go_out_plus = '',
+    go_out_plus = '<left>',
     synchronize = '<cr>',
   }
 })
 map('-', function() MiniFiles.open() end)
+--}}}
 
+--{{{ picker
 require 'mini.pick'.setup()
 map('<leader>t', function() MiniPick.builtin.files() end)
 map('<leader>g', function() MiniPick.builtin.grep_live() end)
+--}}}
 
 require 'mini.ai'.setup()
 
 require 'mini.pairs'.setup()
 
+--{{{surround
 require 'mini.surround'.setup({
   mappings = {
     add = 'ya',
@@ -35,7 +38,9 @@ require 'mini.surround'.setup({
     highlight = 'yh'
   }
 })
+--}}}
 
+--{{{ jump2d
 require('mini.jump2d').setup({
   labels = 'etaioshrdlc',
   view = {
@@ -47,7 +52,9 @@ map('s', function()
   MiniJump2d.start(MiniJump2d.builtin_opts.single_character)
   end, { 'o', 'x', 'n' }
 )
+--}}}
 
+--{{{jump
 require 'mini.jump'.setup({
   mappings = {
     forward = 'f',
@@ -57,16 +64,15 @@ require 'mini.jump'.setup({
     backward_till = '',
   },
 })
+--}}}
 
+--{{{operators
 require 'mini.operators'.setup({
   replace = { prefix = 'r' },
   multiply = { prefix = 'gl' },
   exchange = { prefix = 'gt' }
 })
-
--- currently slow...
--- require 'mini.animate'.setup()
-
+--}}}
 
 require 'mini.statusline'.setup()
 require 'mini.tabline'.setup()
@@ -80,19 +86,6 @@ require 'mini.starter'.setup()
 require 'mini.splitjoin'.setup({mappings = {toggle = 'S'}})
 
 require 'mini.bracketed'.setup()
-
-local hipatterns = require('mini.hipatterns')
-hipatterns.setup({
-  highlighters = {
-    -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
-    fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
-    todo  = { pattern = '%f[%w]()TODO()%f[%W]',  group = 'MiniHipatternsTodo'  },
-    note  = { pattern = '%f[%w]()NOTE()%f[%W]',  group = 'MiniHipatternsNote'  },
-
-    -- Highlight hex color strings (`#rrggbb`) using that color
-    hex_color = hipatterns.gen_highlighter.hex_color(),
-  },
-})
 
 require 'mini.cmdline'.setup();
 
