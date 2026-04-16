@@ -1,8 +1,10 @@
--- vim: foldmethod=marker
+-- vim: foldmethod=marker foldlevel=0
 vim.pack.add({'https://github.com/nvim-mini/mini.nvim'})
 
+--{{{basics
 require 'mini.basics'.setup()
 require 'mini.icons'.setup()
+--}}}
 
 --{{{ files
 require 'mini.files'.setup({
@@ -22,9 +24,12 @@ map('<leader>t', function() MiniPick.builtin.files() end)
 map('<leader>g', function() MiniPick.builtin.grep_live() end)
 --}}}
 
+--{{{edit
 require 'mini.ai'.setup()
-
 require 'mini.pairs'.setup()
+require 'mini.splitjoin'.setup({mappings = {toggle = 'S'}})
+require 'mini.bracketed'.setup()
+--}}}
 
 --{{{surround
 require 'mini.surround'.setup({
@@ -74,24 +79,18 @@ require 'mini.operators'.setup({
 })
 --}}}
 
+--{{{ui
+require 'mini.starter'.setup()
 require 'mini.statusline'.setup()
 require 'mini.tabline'.setup()
 require 'mini.indentscope'.setup()
-
 require 'mini.trailspace'.setup()
 map('<leader>ds', function() MiniTrailspace.trim(); MiniTrailspace.trim_last_lines(); end)
-
-require 'mini.starter'.setup()
-
-require 'mini.splitjoin'.setup({mappings = {toggle = 'S'}})
-
-require 'mini.bracketed'.setup()
-
 require 'mini.cmdline'.setup();
-
 require 'mini.diff'.setup {
   view = {
       style = 'sign',
       signs = {add = '│', change = '│', delete = '_'},
   }
 }
+--}}}
