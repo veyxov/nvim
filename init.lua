@@ -8,13 +8,4 @@ require 'options'
 require 'plugins'
 require 'keymaps'
 
-vim.diagnostic.config({
-  virtual_text = {
-    severity = { min = vim.diagnostic.severity.WARN },
-    source = "if_many",
-    prefix = "●",
-    virt_text_pos = "eol",
-    hl_mode = "combine",
-  },
-})
-vim.cmd 'colorscheme retrobox'
+vim.cmd 'colorscheme minicyan'

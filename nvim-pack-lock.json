@@ -1,27 +1,31 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "456d38d1cd3743926f329204c2340f3e7840aad6",
+      "rev": "37c96dc06032b3f128b230b5fb193706535b3811",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "easy-dotnet.nvim": {
-      "rev": "6b92080c6c4d2550645783f1cd1926482090a495",
+      "rev": "6514092611cdaed337a90c29f47dd4e62abbaef8",
       "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
     },
     "flash.nvim": {
       "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
       "src": "https://github.com/folke/flash.nvim"
     },
+    "kitty-scrollback.nvim": {
+      "rev": "9342a0e0e5556ce0b7f9dc41c4bdd39ae9dc85dd",
+      "src": "https://github.com/mikesmithgh/kitty-scrollback.nvim"
+    },
     "kulala.nvim": {
       "rev": "6656c9d332735ca6a27725e0fb45a1715c4372d9",
       "src": "https://github.com/mistweaverco/kulala.nvim"
     },
     "mini.nvim": {
-      "rev": "c67822c53e8e282fe863343e88aa0a8ca3534059",
+      "rev": "27a3e747a4e603b4121f5759e74020430ec7b7d5",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "8a9378a822719346a0288fa004dab302ca3c0a8f",
+      "rev": "b80f82f59544f0770981b5a6c7d129ca276dab36",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {

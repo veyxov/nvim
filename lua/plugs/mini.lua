@@ -49,14 +49,25 @@ map('s', function()
 )
 
 require 'mini.operators'.setup({
-  replace = {
-    prefix = 'r'
-  },
-  multiply = {
-    prefix = 'gl'
-  },
-  exchange = {
-    prefix = 'gt'
-  }
+  replace = { prefix = 'r' },
+  multiply = { prefix = 'gl' },
+  exchange = { prefix = 'gt' }
 })
 
+-- currently slow...
+-- require 'mini.animate'.setup()
+
+require 'mini.diff'.setup()
+
+require 'mini.statusline'.setup()
+require 'mini.tabline'.setup()
+require 'mini.indentscope'.setup()
+
+require 'mini.trailspace'.setup()
+map('<leader>ds', function() MiniTrailspace.trim(); MiniTrailspace.trim_last_lines(); end)
+
+require 'mini.starter'.setup()
+
+require 'mini.splitjoin'.setup({mappings = {toggle = 'S'}})
+
+-- next: mini-extra, mini-misc and todo highlight also bracketed
