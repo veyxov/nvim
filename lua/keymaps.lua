@@ -81,7 +81,14 @@ map('ta', function() lsp.buf.code_action() end)
 map('tn', function() vim.diagnostic.goto_next() end)
 map('t<space>', function() lsp.buf.implementation() end)
 
-vim.keymap.set("n", "<leader>lg", function()
-  vim.cmd("tabnew | terminal lazygit")
-  vim.cmd("startinsert")
-end, { desc = "Open LazyGit" })
+vim.keymap.set('n', '<leader>lg', function()
+  vim.cmd 'tabnew'
+  vim.fn.termopen('lazygit', {
+    on_exit = function(_, code)
+      if code == 0 then
+        vim.cmd 'tabclose'
+      end
+    end,
+  })
+  vim.cmd 'startinsert'
+end)
