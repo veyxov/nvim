@@ -2,7 +2,10 @@
 vim.pack.add({'https://github.com/nvim-mini/mini.nvim'})
 
 --{{{basics
-require 'mini.basics'.setup()
+require('mini.basics').setup({
+  options = { extra_ui = true, win_borders = 'solid' },
+  autocommands = { basic = false } -- disable startinsert on term for kitty
+})
 require 'mini.icons' .setup()
 --}}}
 
