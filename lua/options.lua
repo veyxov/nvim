@@ -15,3 +15,18 @@ o.swapfile = false
 o.foldmethod = 'expr'
 o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 o.foldlevel = 3
+
+local disabled_builtins = {
+  'gzip',    'tar',           'tarPlugin',     'zip',               'zipPlugin',    'getscript', 'getscriptPlugin',
+  'vimball', 'vimballPlugin', 'matchit',       'matchparen',        '2html_plugin', 'logiPat',   'rrhelper',
+  'netrw',   'netrwPlugin',   'netrwSettings', 'netrwFileHandlers', 'spellfile_plugin', 'tutor_mode_plugin',
+  'remote_plugins', 'nvim_net_plugin', 'man', 'clipboard_provider'
+}
+-- still there: treesitter, shada_plugin
+
+require 'vim._core.ui2'.enable()
+for _, plugin in ipairs(disabled_builtins) do
+  print(vim.g['loaded_' .. plugin])
+  vim.g['loaded_' .. plugin] = 1
+end
+
