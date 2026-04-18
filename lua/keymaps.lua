@@ -1,4 +1,4 @@
-map('<leader>w', '<cmd>wall<cr>')
+map('<leader>w', '<cmd>wa<cr>')
 map('qu', '<cmd>q<cr>')
 
 map('<', '<gv', 'v')
@@ -81,7 +81,7 @@ map('ta', function() lsp.buf.code_action() end)
 map('tn', function() vim.diagnostic.goto_next() end)
 map('t<space>', function() lsp.buf.implementation() end)
 
-vim.keymap.set('n', '<leader>lg', function()
+map('<leader>lg', function()
   vim.cmd 'tabnew'
   vim.fn.termopen('lazygit', {
     on_exit = function(_, code)
@@ -91,4 +91,9 @@ vim.keymap.set('n', '<leader>lg', function()
     end,
   })
   vim.cmd 'startinsert'
+end)
+
+map('<leader>rr', function()
+  vim.cmd 'wa'
+  vim.cmd 'restart'
 end)
