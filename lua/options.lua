@@ -24,9 +24,13 @@ local disabled_builtins = {
 }
 -- still there: treesitter, shada_plugin, 'clipboard_provider'
 
-require 'vim._core.ui2'.enable()
 for _, plugin in ipairs(disabled_builtins) do
   print(vim.g['loaded_' .. plugin])
   vim.g['loaded_' .. plugin] = 1
 end
 
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})

@@ -102,4 +102,5 @@ require 'mini.trailspace' .setup()
 require 'mini.cmdline'    .setup()
 require 'mini.diff'       .setup()
 map('<leader>ds', function() MiniTrailspace.trim(); MiniTrailspace.trim_last_lines(); end)
+require 'mini.map'.setup()
 --}}}

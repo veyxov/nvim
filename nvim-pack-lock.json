@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "easy-dotnet.nvim": {
+      "rev": "06cc3c7ffd02ef6c62dffea46d4f6e53f1962ef2",
+      "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
+    },
     "kitty-scrollback.nvim": {
       "rev": "9342a0e0e5556ce0b7f9dc41c4bdd39ae9dc85dd",
       "src": "https://github.com/mikesmithgh/kitty-scrollback.nvim"

@@ -1,3 +1,5 @@
+require 'vim._core.ui2'.enable()
+
 function _G.map(l, r, m, o)
     m = m or 'n'
     o = o or { silent = true }
