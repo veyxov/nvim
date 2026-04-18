@@ -60,17 +60,6 @@ require 'mini.surround'.setup({
 --}}}
 
 --{{{ jump2d
-require('mini.jump2d').setup({
-  labels = 'etaioshrdlc',
-  view = {
-    dim = true,
-    n_steps_ahead = 1,
-  }
-})
-map('s', function()
-  MiniJump2d.start(MiniJump2d.builtin_opts.single_character)
-  end, { 'o', 'x', 'n' }
-)
 --}}}
 
 --{{{jump

@@ -1,27 +1,14 @@
+local map = Cfg.map
+-- Paste linewise before/after current line
+-- Usage: `yiw` to yank a word and `]p` to put it on the next line.
+map('[p', '<Cmd>exe "iput! " . v:register<CR>')
+map(']p', '<Cmd>exe "iput "  . v:register<CR>')
+
 map('<leader>w', '<cmd>wa<cr>')
 map('qu', '<cmd>q<cr>')
 
 map('<', '<gv', 'v')
 map('>', '>gv', 'v')
-
-map('<leader>xl', function()
-  local success, err = pcall(vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 and vim.cmd.lclose or vim.cmd.lopen)
-  if not success and err then
-    vim.notify(err, vim.log.levels.ERROR)
-  end
-end, { desc = 'Location List' })
-
-
-
-map('<leader>xq', function()
-  local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
-  if not success and err then
-    vim.notify(err, vim.log.levels.ERROR)
-  end
-end, { desc = 'Quickfix List' })
-
-map('[q', vim.cmd.cprev)
-map(']q', vim.cmd.cnext)
 
 map('zv', 'zMzvzz', { desc = 'Close all folds except the current one' })
 map('z<Down>', 'zcjzOzz', { desc = 'Close current fold when open. Always open next fold.' })
@@ -41,9 +28,6 @@ map('<C-d>', '<C-d>zz')
 map('<C-u>', '<C-u>zz')
 map('n', 'nzzzv')
 map('N', 'Nzzzv')
-
-map('<', '<gv', 'v')
-map('>', '>gv', 'v')
 
 map('<leader>n', '<cmd>cnext<cr>zz')
 map('<leader>N', '<cmd>cprev<cr>zz')
@@ -91,9 +75,4 @@ map('<leader>lg', function()
     end,
   })
   vim.cmd 'startinsert'
-end)
-
-map('<leader>rr', function()
-  vim.cmd 'wa'
-  vim.cmd 'restart'
 end)
