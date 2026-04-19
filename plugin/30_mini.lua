@@ -29,7 +29,8 @@ later(function()
                         choose_marked     = '<C-d>',
 
                         mark   = '<C-s>',
-                        refine = '<C-n>'
+                        refine = '<C-n>',
+                        move_down = '' -- clashes with the above
                 },
                 options = { use_cache = true }
         }
