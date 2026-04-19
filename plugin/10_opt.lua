@@ -9,6 +9,7 @@ end)
 
 o.swapfile = false
 o.undofile = true
+o.shada = "'20,<50,s10,h"
 
 o.cmdheight = 0
 o.laststatus = 3

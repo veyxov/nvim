@@ -1,6 +1,6 @@
-_G.Cfg = {}
+vim.loader.enable()
 
-require 'vim._core.ui2'.enable()
+_G.Cfg = {}
 
 vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
 vim.pack.add({ 'https://github.com/nvim-lua/plenary.nvim' })

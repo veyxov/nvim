@@ -56,14 +56,13 @@ map('==', function() vim.fn.system(string.format("wl-copy --type text/uri-list '
 -- map('gs', '<C-I>')
 
 
-local lsp = vim.lsp
-map('th', function() lsp.buf.hover() end)
-map('tr', function() lsp.buf.rename() end)
-map('td', function() lsp.buf.definition() end)
-map('tu', function() lsp.buf.references() end)
-map('ta', function() lsp.buf.code_action() end)
+map('th', function() vim.lsp.buf.hover() end)
+map('tr', function() vim.lsp.buf.rename() end)
+map('td', function() vim.lsp.buf.definition() end)
+map('tu', function() vim.lsp.buf.references() end)
+map('ta', function() vim.lsp.buf.code_action() end)
 map('tn', function() vim.diagnostic.goto_next() end)
-map('t<space>', function() lsp.buf.implementation() end)
+map('t<space>', function() vim.lsp.buf.implementation() end)
 
 map('<leader>lg', function()
   vim.cmd 'tabnew'

@@ -2,21 +2,23 @@
 local now, later, lnmap, map, now_if_args = Cfg.now, Cfg.later, Cfg.lnmap, Cfg.map, Cfg.now_if_args
 
 --{{{files
-now(function()
-        require 'mini.files'.setup({
-                mappings = {
-                        close       = 'qu',
-                        go_in_plus  = '<right>',
-                        go_out_plus = '<left>',
-                        synchronize = '<cr>',
-                }
-        })
+map('-', function()
+        if not MiniFiles then
+                require('mini.files').setup({
+                        mappings = {
+                                close       = 'qu',
+                                go_in_plus  = '<right>',
+                                go_out_plus = '<left>',
+                                synchronize = '<cr>',
+                        }
+                })
+        end
+        MiniFiles.open()
 end)
-map('-', '<Cmd>lua MiniFiles.open()<CR>')
 --}}}
 
 --{{{sessions
-now(function() require('mini.sessions').setup() end)
+later(function() require('mini.sessions').setup() end)
 lnmap('rr', '<Cmd>lua MiniSessions.restart()<CR>')
 --}}}
 
