@@ -1,7 +1,6 @@
-local now = Cfg.now
 local o = vim.o
 
-now(function()
+Cfg.now(function()
         require 'mini.basics'.setup({
                 options = { extra_ui = true },
                 autocommands = { basic = false }
@@ -26,8 +25,4 @@ for _, plugin in ipairs(disabled_builtins) do
         vim.g['loaded_' .. plugin] = 1
 end
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-        callback = function()
-                vim.highlight.on_yank()
-        end,
-})
+Cfg.new_autocmd('TextYankPost', '*', function() vim.highlight.on_yank() end)

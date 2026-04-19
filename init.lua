@@ -3,6 +3,7 @@ _G.Cfg = {}
 require 'vim._core.ui2'.enable()
 
 vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
+vim.pack.add({ 'https://github.com/nvim-lua/plenary.nvim' })
 
 _G.Cfg.map = function(l, r, m, o)
     m = m or 'n'
