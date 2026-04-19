@@ -82,3 +82,42 @@ lnmap('bs', function()
         vim.api.nvim_win_set_buf(0, vim.api.nvim_create_buf(true, true))
 end)
 
+--{{{lsp
+cmap('t?', 'lua vim.diagnostic.open_float()')
+cmap('ta', 'lua vim.lsp.buf.code_action()')
+cmap('ti', 'lua vim.lsp.buf.implementation()')
+cmap('th', 'lua vim.lsp.buf.hover()')
+cmap('tl', 'lua vim.lsp.codelens.run()')
+cmap('tc', 'lua vim.lsp.buf.rename()')
+cmap('tR', 'lua vim.lsp.buf.references()')
+cmap('ts', 'lua vim.lsp.buf.definition()')
+cmap('td', 'lua vim.lsp.buf.type_definition()')
+
+cmap('tr', 'Pick lsp scope="references"')
+
+--}}}
+--
+
+local pick_added_hunks_buf = 'Pick git_hunks path="%" scope="staged"'
+local pick_workspace_symbols_live = 'Pick lsp scope="workspace_symbol_live"'
+
+cmap('?b', 'Pick buffers')
+cmap('?a', 'Pick git_hunks scope="staged"')
+cmap('?A', pick_added_hunks_buf)
+cmap('?c', 'Pick git_commits')
+cmap('?d', 'Pick diagnostic scope="all"')
+cmap('?D', 'Pick diagnostic scope="current"')
+cmap('?f', 'Pick files')
+--cmap('?G', 'Pick grep pattern="')
+cmap('?h', 'Pick help')
+cmap('?H', 'Pick hl_groups')
+cmap('?r', 'Pick resume')
+cmap('?/', 'Pick lsp scope="document_symbol"')
+-- nmap_leader('fC', '<Cmd>Pick git_commits path="%"<CR>',         'Commits (buf)')
+-- nmap_leader('fl', '<Cmd>Pick buf_lines scope="all"<CR>',        'Lines (all)')
+-- nmap_leader('fL', '<Cmd>Pick buf_lines scope="current"<CR>',    'Lines (buf)')
+cmap('?gg', 'Pick git_hunks')
+-- nmap_leader('fM', '<Cmd>Pick git_hunks path="%"<CR>',           'Modified hunks (buf)')
+-- nmap_leader('fs', pick_workspace_symbols_live,                  'Symbols workspace (live)')
+-- nmap_leader('fv', '<Cmd>Pick visit_paths cwd=""<CR>',           'Visit paths (all)')
+-- nmap_leader('fV', '<Cmd>Pick visit_paths<CR>',                  'Visit paths (cwd)')
