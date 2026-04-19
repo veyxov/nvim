@@ -1,11 +1,7 @@
-local now, later, lnmap, map = Cfg.now, Cfg.later, Cfg.lnmap, Cfg.map
+-- vim: foldmethod=marker foldlevel=0
+local now, later, lnmap, map, now_if_args = Cfg.now, Cfg.later, Cfg.lnmap, Cfg.map, Cfg.now_if_args
 
-local new_scratch_buffer = function()
-        vim.api.nvim_win_set_buf(0, vim.api.nvim_create_buf(true, true))
-end
-lnmap('ba', '<Cmd>b#<CR>')
-lnmap('bs', new_scratch_buffer)
-
+--{{{files
 now(function()
         require 'mini.files'.setup({
                 mappings = {
@@ -17,10 +13,14 @@ now(function()
         })
 end)
 map('-', '<Cmd>lua MiniFiles.open()<CR>')
+--}}}
 
+--{{{sessions
 now(function() require('mini.sessions').setup() end)
 lnmap('rr', '<Cmd>lua MiniSessions.restart()<CR>')
+--}}}
 
+--{{{pick
 later(function()
         require 'mini.pick'.setup {
                 mappings = {
@@ -37,7 +37,9 @@ later(function()
 end)
 lnmap('t', '<cmd>lua MiniPick.builtin.files()<cr>')
 lnmap('g', '<cmd>lua MiniPick.builtin.grep_live()<cr>')
+--}}}
 
+--{{{jump2d
 later(function()
         require('mini.jump2d').setup({
                 labels = 'etaioshrdlc',
@@ -47,8 +49,119 @@ later(function()
                 }
         })
 end)
-
 map('s', function()
-  MiniJump2d.start(MiniJump2d.builtin_opts.single_character)
-  end, { 'o', 'x', 'n' }
+        MiniJump2d.start(MiniJump2d.builtin_opts.single_character)
+end, { 'o', 'x', 'n' }
 )
+--}}}
+
+--{{{ui
+later(function() require 'mini.icons'       .setup() end)
+later(function() require('mini.tabline')    .setup() end)
+later(function() require('mini.statusline') .setup() end)
+later(function() require('mini.indentscope').setup() end)
+--}}}
+
+
+--{{{extra
+later(function() require('mini.extra').setup() end)
+later(function() require('mini.align').setup() end)
+
+later(function()
+        require('mini.bracketed').setup()
+end)
+
+later(function()
+        require 'mini.splitjoin'.setup({mappings = {toggle = 'S'}})
+end)
+later(function() require 'mini.trailspace'.setup() end)
+lnmap('ds', function() MiniTrailspace.trim(); MiniTrailspace.trim_last_lines(); end)
+--}}}
+
+--{{{objects
+later(function()
+        local ai = require('mini.ai')
+        ai.setup({
+                custom_textobjects = {
+                        B = MiniExtra.gen_ai_spec.buffer(),
+                        F = ai.gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }),
+                },
+
+                -- 'mini.ai' by default mostly mimics built-in search behavior: first try
+                -- to find textobject covering cursor, then try to find to the right.
+                -- Although this works in most cases, some are confusing. It is more robust to
+                -- always try to search only covering textobject and explicitly ask to search
+                -- for next (`an`/`in`) or last (`al`/`il`).
+                -- Try this. If you don't like it - delete next line and this comment.
+                search_method = 'cover',
+        })
+end)
+--}}}
+
+--{{{completion
+now_if_args(function()
+        -- Customize post-processing of LSP responses for a better user experience.
+        -- Don't show 'Text' suggestions (usually noisy) and show snippets last.
+        local process_items_opts = { kind_priority = { Text = -1, Snippet = 99 } }
+        local process_items = function(items, base)
+                return MiniCompletion.default_process_items(items, base, process_items_opts)
+        end
+        require('mini.completion').setup({
+                lsp_completion = {
+                        -- Without this config autocompletion is set up through `:h 'completefunc'`.
+                        -- Although not needed, setting up through `:h 'omnifunc'` is cleaner
+                        -- (sets up only when needed) and makes it possible to use `<C-u>`.
+                        source_func = 'omnifunc',
+                        auto_setup = false,
+                        process_items = process_items,
+                },
+        })
+
+        -- Set 'omnifunc' for LSP completion only when needed.
+        local on_attach = function(ev)
+                vim.bo[ev.buf].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
+        end
+        Cfg.new_autocmd('LspAttach', nil, on_attach, "Set 'omnifunc'")
+
+        -- Advertise to servers that Neovim now supports certain set of completion and
+        -- signature features through 'mini.completion'.
+        vim.lsp.config('*', { capabilities = MiniCompletion.get_lsp_capabilities() })
+end)
+later(function() require('mini.cmdline').setup() end)
+later(function()
+        require('mini.pairs').setup({ modes = { command = true } })
+        -- fix: I use C-Bs all the time, by default only bs removes pair braces
+        map('<C-w>', 'v:lua.MiniPairs.bs("\23")', 'i', { expr = true, replace_keycodes = false})
+end)
+--}}}
+
+--{{{surround
+later(function()
+        require 'mini.surround'.setup({
+                mappings    = {
+                        add       = 'ya',
+                        delete    = 'ds',
+                        replace   = 'cs',
+
+                        find      = 'yn',
+                        find_left = 'yp',
+                        highlight = 'yh'
+                }
+        })
+end)
+--}}}
+
+--{{{operators
+later(
+        function()
+                require 'mini.operators'.setup({
+                        replace  = { prefix = 'r' },
+                        multiply = { prefix = 'gl' },
+                        exchange = { prefix = 'gt' }
+                })
+
+                map('(', 'gtiagtila', 'n', { remap = true })
+                map(')', 'gtiagtina', 'n', { remap = true })
+                -- function(aa, bb): stay on an 'a' and exchange
+                end)
+                --}}}

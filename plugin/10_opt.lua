@@ -22,7 +22,6 @@ local disabled_builtins = {
         'netrw',   'netrwPlugin',   'netrwSettings', 'netrwFileHandlers', 'spellfile_plugin', 'tutor_mode_plugin',
         'remote_plugins', 'nvim_net_plugin', 'man'
 } -- still there: treesitter, shada_plugin, 'clipboard_provider'
-
 for _, plugin in ipairs(disabled_builtins) do
         vim.g['loaded_' .. plugin] = 1
 end

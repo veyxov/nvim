@@ -1,6 +1,0 @@
-require 'plugs.mini'
-require 'plugs.treesitter'
-require 'plugs.lsp'
-require 'plugs.kulala'
-require 'plugs.kitty'
-require 'plugs.whichkey'
