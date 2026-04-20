@@ -1,4 +1,13 @@
 vim.loader.enable()
+local disabled_builtins = {
+        'gzip',    'tar',           'tarPlugin',     'zip',               'zipPlugin',    'getscript', 'getscriptPlugin',
+        'vimball', 'vimballPlugin', 'matchit',       'matchparen',        '2html_plugin', 'logiPat',   'rrhelper',
+        'netrw',   'netrwPlugin',   'netrwSettings', 'netrwFileHandlers', 'spellfile_plugin', 'tutor_mode_plugin',
+        'remote_plugins', 'nvim_net_plugin', 'man'
+} -- still there: treesitter, shada_plugin, 'clipboard_provider'
+for _, plugin in ipairs(disabled_builtins) do
+        vim.g['loaded_' .. plugin] = 1
+end
 
 _G.Cfg = {}
 
