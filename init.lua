@@ -21,20 +21,9 @@ Cfg.on_event = function(ev, f) misc.safely('event:' .. ev, f) end
 Cfg.on_filetype = function(ft, f) misc.safely('filetype:' .. ft, f) end
 Cfg.now_if_args = vim.fn.argc(-1) > 0 and Cfg.now or Cfg.later
 
-local gr = vim.api.nvim_create_augroup('custom-config', {})
-Cfg.new_autocmd = function(ev, p, f)
-  local opts = { group = gr, pattern = p, callback = f }
-  vim.api.nvim_create_autocmd(ev, opts)
-end
-
-Cfg.on_packchanged = function(plugin_name, kinds, callback)
-  local f = function(ev)
-    local name, kind = ev.data.spec.name, ev.data.kind
-    if not (name == plugin_name and vim.tbl_contains(kinds, kind)) then return end
-    if not ev.data.active then vim.cmd.packadd(plugin_name) end
-    callback(ev.data)
-  end
-  Cfg.new_autocmd('PackChanged', '*', f)
+Cfg.gr = vim.api.nvim_create_augroup('xyz', {})
+Cfg.au = function(ev, opts)
+  vim.api.nvim_create_autocmd(ev, vim.tbl_extend('keep', opts, { group = Cfg.gr }))
 end
 
 vim.cmd 'colorscheme miniwinter'

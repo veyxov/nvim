@@ -26,4 +26,4 @@ for _, plugin in ipairs(disabled_builtins) do
         vim.g['loaded_' .. plugin] = 1
 end
 
-Cfg.new_autocmd('TextYankPost', '*', function() vim.highlight.on_yank() end)
+Cfg.au('TextYankPost', { pattern = '*', callback = function() vim.highlight.on_yank() end })

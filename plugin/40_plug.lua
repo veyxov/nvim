@@ -2,7 +2,11 @@ local add = vim.pack.add
 local now_if_args, on_filetype, later = Cfg.now_if_args, Cfg.on_filetype, Cfg.later
 
 now_if_args(function()
-        Cfg.on_packchanged('nvim-treesitter', { 'update' }, function() vim.cmd 'TSUpdate' end)
+        Cfg.au('PackChanged', { callback = function(ev)
+                if ev.data.spec.name ~= 'nvim-treesitter' or ev.data.kind ~= 'update' then return end
+                if not ev.data.active then vim.cmd.packadd 'nvim-treesitter' end
+                vim.cmd 'TSUpdate'
+        end })
 
         add({'https://github.com/nvim-treesitter/nvim-treesitter'})
 
@@ -20,7 +24,7 @@ now_if_args(function()
                 end
         end
 
-        Cfg.new_autocmd('FileType', filetypes, function(ev) vim.treesitter.start(ev.buf) end)
+        Cfg.au('FileType', { pattern = filetypes, callback = function(ev) vim.treesitter.start(ev.buf) end })
 end)
 
 on_filetype('cs', function()

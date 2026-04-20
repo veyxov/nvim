@@ -125,7 +125,7 @@ now_if_args(function()
         local on_attach = function(ev)
                 vim.bo[ev.buf].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
         end
-        Cfg.new_autocmd('LspAttach', nil, on_attach)
+        Cfg.au('LspAttach', { callback = on_attach })
 
         -- Advertise to servers that Neovim now supports certain set of completion and
         -- signature features through 'mini.completion'.
