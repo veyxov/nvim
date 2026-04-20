@@ -60,7 +60,7 @@ end, { 'o', 'x', 'n' }
 
 --{{{ui
 later(function() require 'mini.icons'       .setup() end)
-later(function() require('mini.tabline')    .setup() end)
+-- later(function() require('mini.tabline')    .setup() end)
 later(function() require('mini.statusline') .setup() end)
 later(function() require('mini.indentscope').setup() end)
 later(function() require('mini.diff').setup() end)
