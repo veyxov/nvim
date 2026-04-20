@@ -9,14 +9,14 @@ now_if_args(function()
                 'https://github.com/nvim-treesitter/nvim-treesitter-textobjects',
         })
 
-        local languages = {'c_sharp'}
+        local languages = {'c_sharp', 'sql'}
         local isnt_installed = function(lang)
                 return #vim.api.nvim_get_runtime_file('parser/' .. lang .. '.*', false) == 0
         end
         local to_install = vim.tbl_filter(isnt_installed, languages)
         if #to_install > 0 then require('nvim-treesitter').install(to_install) end
 
-        local filetypes = { 'cs', 'markdown' }
+        local filetypes = { 'cs', 'sql', 'markdown' }
         for _, lang in ipairs(languages) do
                 for _, ft in ipairs(vim.treesitter.language.get_filetypes(lang)) do
                         table.insert(filetypes, ft)
@@ -41,6 +41,8 @@ on_filetype('cs', function()
                         handler = false
                 }
         })
+        -- FIX: don't override sql injections with comment sematic tokens
+        vim.api.nvim_set_hl(0, '@lsp.type.string.cs', {})
 end)
 
 Cfg.on_event('TermOpen', function()
