@@ -1,5 +1,5 @@
 -- vim: foldmethod=marker foldlevel=0
-local now, later, lnmap, map, now_if_args = Cfg.now, Cfg.later, Cfg.lnmap, Cfg.map, Cfg.now_if_args
+local now, later, lnmap, map, cmap, lncmap, now_if_args = Cfg.now, Cfg.later, Cfg.lnmap, Cfg.map, Cfg.cmap, Cfg.lncmap, Cfg.now_if_args
 
 --{{{files
 map('-', function()
@@ -169,3 +169,27 @@ later(
                 -- function(aa, bb): stay on an 'a' and exchange
                 end)
 --}}}
+
+later(function()
+        require 'mini.visits'.setup()
+end)
+later(function()require 'mini.jump'.setup() end)
+
+-- v is for 'Visits'. Common usage:
+-- - `<Leader>vv` - add    "core" label to current file.
+-- - `<Leader>vV` - remove "core" label to current file.
+-- - `<Leader>vc` - pick among all files with "core" label.
+local make_pick_core = function(cwd, desc)
+  return function()
+    local sort_latest = MiniVisits.gen_sort.default({ recency_weight = 1 })
+    local local_opts = { cwd = cwd, filter = 'core', sort = sort_latest }
+    MiniExtra.pickers.visit_paths(local_opts, { source = { name = desc } })
+  end
+end
+
+lnmap('vc', make_pick_core('',  'Core visits (all)'))
+lnmap('vC', make_pick_core(nil, 'Core visits (cwd)'))
+lncmap('vv', 'lua MiniVisits.add_label("core")')
+lncmap('vV', 'lua MiniVisits.remove_label("core")')
+lncmap('vl', 'lua MiniVisits.add_label()')
+lncmap('vL', 'lua MiniVisits.remove_label()')

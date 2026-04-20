@@ -12,6 +12,7 @@ _G.Cfg.map = function(l, r, m, o)
 end
 _G.Cfg.lnmap = function(l, r) _G.Cfg.map('<leader>' .. l, r) end
 _G.Cfg.cmap = function(l, r) _G.Cfg.map(l, '<cmd>' .. r .. '<cr>') end
+_G.Cfg.lncmap = function(l, r) _G.Cfg.cmap('<leader>' .. l, r) end
 
 local misc = require 'mini.misc'
 Cfg.now = function(f) misc.safely('now', f) end
@@ -21,19 +22,19 @@ Cfg.on_filetype = function(ft, f) misc.safely('filetype:' .. ft, f) end
 Cfg.now_if_args = vim.fn.argc(-1) > 0 and Cfg.now or Cfg.later
 
 local gr = vim.api.nvim_create_augroup('custom-config', {})
-Cfg.new_autocmd = function(event, pattern, callback, desc)
-  local opts = { group = gr, pattern = pattern, callback = callback, desc = desc }
-  vim.api.nvim_create_autocmd(event, opts)
+Cfg.new_autocmd = function(ev, p, f)
+  local opts = { group = gr, pattern = p, callback = f }
+  vim.api.nvim_create_autocmd(ev, opts)
 end
 
-Cfg.on_packchanged = function(plugin_name, kinds, callback, desc)
+Cfg.on_packchanged = function(plugin_name, kinds, callback)
   local f = function(ev)
     local name, kind = ev.data.spec.name, ev.data.kind
     if not (name == plugin_name and vim.tbl_contains(kinds, kind)) then return end
     if not ev.data.active then vim.cmd.packadd(plugin_name) end
     callback(ev.data)
   end
-  Cfg.new_autocmd('PackChanged', '*', f, desc)
+  Cfg.new_autocmd('PackChanged', '*', f)
 end
 
 vim.cmd 'colorscheme miniwinter'

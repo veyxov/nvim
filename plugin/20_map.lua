@@ -8,14 +8,9 @@ cmap('qu', 'wq')
 map('<', '<gv', 'v')
 map('>', '>gv', 'v')
 
-map('zv', 'zMzvzz', { desc = 'Close all folds except the current one' })
-map('z<Down>', 'zcjzOzz', { desc = 'Close current fold when open. Always open next fold.' })
-map('z<Up>', 'zckzOzz', { desc = 'Close current fold when open. Always open previous fold.' })
-map('z0', '1z=', { desc = 'Fix word under cursor' })
-
 cmap('<C-W><C-W>', 'q');
 -- ctrl+v is for paste in my terminal, so this is how to enter the block-visual mode
-map('<leader>v', '<C-V>')
+map('<leader>vv', '<C-V>')
 
 -- yank key y -> h
 map('h', 'y', { 'n', 'v', 'x'}); map('hh', 'yy')

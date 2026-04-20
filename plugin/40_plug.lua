@@ -4,10 +4,7 @@ local now_if_args, on_filetype, later = Cfg.now_if_args, Cfg.on_filetype, Cfg.la
 now_if_args(function()
         Cfg.on_packchanged('nvim-treesitter', { 'update' }, function() vim.cmd('TSUpdate') end, ':TSUpdate')
 
-        add({
-                'https://github.com/nvim-treesitter/nvim-treesitter',
-                'https://github.com/nvim-treesitter/nvim-treesitter-textobjects',
-        })
+        add({'https://github.com/nvim-treesitter/nvim-treesitter'})
 
         local languages = {'c_sharp', 'sql'}
         local isnt_installed = function(lang)
@@ -23,7 +20,7 @@ now_if_args(function()
                 end
         end
 
-        Cfg.new_autocmd('FileType', filetypes, function(ev) vim.treesitter.start(ev.buf) end, 'Start tree-sitter')
+        Cfg.new_autocmd('FileType', filetypes, function(ev) vim.treesitter.start(ev.buf) end)
 end)
 
 on_filetype('cs', function()
@@ -31,9 +28,6 @@ on_filetype('cs', function()
 
         local dotnet = require 'easy-dotnet'
         dotnet.setup({
-                lsp = {
-                        set_fold_expr = true,
-                },
                 fsproj_mappings = false,
                 picker = "basic",
                 background_scanning = true,
