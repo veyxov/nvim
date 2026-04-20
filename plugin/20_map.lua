@@ -1,6 +1,4 @@
 local map, cmap, lnmap = Cfg.map, Cfg.cmap, Cfg.lnmap
--- Paste linewise before/after current line
--- Usage: `yiw` to yank a word and `]p` to put it on the next line.
 cmap('[p', 'exe "iput! " . v:register')
 cmap(']p', 'exe "iput "  . v:register')
 
@@ -15,7 +13,6 @@ map('z<Down>', 'zcjzOzz', { desc = 'Close current fold when open. Always open ne
 map('z<Up>', 'zckzOzz', { desc = 'Close current fold when open. Always open previous fold.' })
 map('z0', '1z=', { desc = 'Fix word under cursor' })
 
--- [[ maps
 cmap('<C-W><C-W>', 'q');
 -- ctrl+v is for paste in my terminal, so this is how to enter the block-visual mode
 map('<leader>v', '<C-V>')
@@ -93,9 +90,6 @@ cmap('ts', 'lua vim.lsp.buf.definition()')
 cmap('td', 'lua vim.lsp.buf.type_definition()')
 
 cmap('tr', 'Pick lsp scope="references"')
-
---}}}
---
 
 local pick_added_hunks_buf = 'Pick git_hunks path="%" scope="staged"'
 local pick_workspace_symbols_live = 'Pick lsp scope="workspace_symbol_live"'

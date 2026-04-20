@@ -26,28 +26,6 @@ now_if_args(function()
         Cfg.new_autocmd('FileType', filetypes, function(ev) vim.treesitter.start(ev.buf) end, 'Start tree-sitter')
 end)
 
--- Language servers ===========================================================
-
--- Language Server Protocol (LSP) is a set of conventions that power creation of
--- language specific tools. It requires two parts:
--- - Server - program that performs language specific computations.
--- - Client - program that asks server for computations and shows results.
---
--- Here Neovim itself is a client (see `:h vim.lsp`). Language servers need to
--- be installed separately based on your OS, CLI tools, and preferences.
--- See note about 'mason.nvim' at the bottom of the file.
---
--- Neovim's team collects commonly used configurations for most language servers
--- inside 'neovim/nvim-lspconfig' plugin.
---
--- Add it now if file (and not 'mini.starter') is shown after startup.
---
--- Troubleshooting:
--- - Run `:checkhealth vim.lsp` to see potential issues.
-now_if_args(function()
-        add({ 'https://github.com/neovim/nvim-lspconfig' })
-end)
-
 on_filetype('cs', function()
         vim.pack.add({ 'https://github.com/GustavEikaas/easy-dotnet.nvim' })
 
@@ -57,15 +35,15 @@ on_filetype('cs', function()
                         set_fold_expr = true,
                 },
                 fsproj_mappings = false,
-                -- choose which picker to use with the plugin
-                -- possible values are "telescope" | "fzf" | "snacks" | "basic"
-                -- if no picker is specified, the plugin will determine
-                -- the available one automatically with this priority:
-                --  snacks -> fzf -> telescope ->  basic
                 picker = "basic",
                 background_scanning = true,
                 notifications = {
                         handler = false
                 }
         })
+end)
+
+Cfg.on_event('TermOpen', function()
+        vim.pack.add({ 'https://github.com/mikesmithgh/kitty-scrollback.nvim' })
+        require('kitty-scrollback').setup()
 end)
