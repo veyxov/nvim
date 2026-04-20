@@ -2,7 +2,7 @@ local add = vim.pack.add
 local now_if_args, on_filetype, later = Cfg.now_if_args, Cfg.on_filetype, Cfg.later
 
 now_if_args(function()
-        Cfg.on_packchanged('nvim-treesitter', { 'update' }, function() vim.cmd('TSUpdate') end, ':TSUpdate')
+        Cfg.on_packchanged('nvim-treesitter', { 'update' }, function() vim.cmd 'TSUpdate' end)
 
         add({'https://github.com/nvim-treesitter/nvim-treesitter'})
 
