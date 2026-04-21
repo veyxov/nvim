@@ -9,6 +9,7 @@ now_if_args(function()
         end })
 
         add({'https://github.com/nvim-treesitter/nvim-treesitter'})
+        add({'https://github.com/nvim-treesitter/nvim-treesitter-textobjects'})
 
         local languages = {'c_sharp', 'sql'}
         local isnt_installed = function(lang)
