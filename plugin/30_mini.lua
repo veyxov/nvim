@@ -181,10 +181,3 @@ later(
                 -- function(aa, bb): stay on an 'a' and exchange
                 end)
 --}}}
-
-later(function()
-        vim.pack.add({ 'https://github.com/folke/which-key.nvim' })
-        require 'which-key'.setup({
-                delay = function() return 0 end
-        })
-end)
