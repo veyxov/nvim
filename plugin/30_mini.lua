@@ -1,27 +1,6 @@
 -- vim: foldmethod=marker foldlevel=0
 local now, later, lnmap, map, cmap, lncmap, now_if_args = Cfg.now, Cfg.later, Cfg.lnmap, Cfg.map, Cfg.cmap, Cfg.lncmap, Cfg.now_if_args
 
---{{{files
-map('-', function()
-        if not MiniFiles then
-                require('mini.files').setup({
-                        mappings = {
-                                close       = 'qu',
-                                go_in_plus  = '<right>',
-                                go_out_plus = '<left>',
-                                synchronize = '<cr>',
-                        }
-                })
-        end
-        MiniFiles.open()
-end)
---}}}
-
---{{{sessions
-later(function() require('mini.sessions').setup() end)
-lnmap('rr', '<Cmd>lua MiniSessions.restart()<CR>')
---}}}
-
 --{{{pick
 later(function()
         require 'mini.pick'.setup {
@@ -43,6 +22,7 @@ lnmap('g', '<cmd>lua MiniPick.builtin.grep_live()<cr>')
 --}}}
 
 --{{{jump2d
+later(function()require 'mini.jump'.setup() end)
 later(function()
         require('mini.jump2d').setup({
                 labels = 'etaioshrdlc',
@@ -56,6 +36,28 @@ map('s', function()
         MiniJump2d.start(MiniJump2d.builtin_opts.single_character)
 end, { 'o', 'x', 'n' }
 )
+--}}}
+
+--{{{files
+map('-', function()
+        if not MiniFiles then
+                require('mini.files').setup({
+                        mappings = {
+                                close       = 'qu',
+                                go_in_plus  = '<right>',
+                                go_out_plus = '<left>',
+                                synchronize = '<cr>',
+                        }
+                })
+        end
+        MiniFiles.open()
+end)
+--}}}
+
+--{{{sessions
+later(function() require('mini.sessions').setup() end)
+lncmap('sr', 'lua MiniSessions.restart()')
+lncmap('sw', 'lua MiniSessions.write()')
 --}}}
 
 --{{{ui
@@ -72,7 +74,7 @@ later(function() require('mini.extra').setup() end)
 later(function() require('mini.align').setup() end)
 
 later(function()
-        require('mini.bracketed').setup()
+        require('mini.bracketed').setup( {quickfix   = { suffix = '<Leader>', options = {} },})
 end)
 
 later(function()
@@ -88,15 +90,25 @@ later(function()
         ai.setup({
                 custom_textobjects = {
                         B = MiniExtra.gen_ai_spec.buffer(),
-                        F = ai.gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }),
+                        x = MiniExtra.gen_ai_spec.number(),
+                        m = ai.gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }),
+                        c = ai.gen_spec.treesitter({ a = '@class.outer', i = '@class.inner' }),
+                        l = ai.gen_spec.treesitter({ a = '@loop.outer', i = '@loop.inner' }),
+                        ['?'] = ai.gen_spec.treesitter({ a = '@conditional.outer', i = '@conditional.inner' }),
+                        P = ai.gen_spec.treesitter({ a = '@parameter.outer', i = '@parameter.inner' }),
+                        R = ai.gen_spec.treesitter({ a = '@return.outer', i = '@return.inner' }),
+                        k = ai.gen_spec.treesitter({ a = '@block.outer', i = '@block.inner' }),
+
+                        ['/'] = ai.gen_spec.treesitter({
+                                a = '@assignment.outer',
+                                i = '@assignment.inner'
+                        }),
+                        ['='] = ai.gen_spec.treesitter({
+                                a = '@assignment.lhs',
+                                i = '@assignment.rhs'
+                        }),
                 },
 
-                -- 'mini.ai' by default mostly mimics built-in search behavior: first try
-                -- to find textobject covering cursor, then try to find to the right.
-                -- Although this works in most cases, some are confusing. It is more robust to
-                -- always try to search only covering textobject and explicitly ask to search
-                -- for next (`an`/`in`) or last (`al`/`il`).
-                -- Try this. If you don't like it - delete next line and this comment.
                 search_method = 'cover',
         })
 end)
@@ -171,25 +183,8 @@ later(
 --}}}
 
 later(function()
-        require 'mini.visits'.setup()
+        vim.pack.add({ 'https://github.com/folke/which-key.nvim' })
+        require 'which-key'.setup({
+                delay = function() return 0 end
+        })
 end)
-later(function()require 'mini.jump'.setup() end)
-
--- v is for 'Visits'. Common usage:
--- - `<Leader>vv` - add    "core" label to current file.
--- - `<Leader>vV` - remove "core" label to current file.
--- - `<Leader>vc` - pick among all files with "core" label.
-local make_pick_core = function(cwd, desc)
-  return function()
-    local sort_latest = MiniVisits.gen_sort.default({ recency_weight = 1 })
-    local local_opts = { cwd = cwd, filter = 'core', sort = sort_latest }
-    MiniExtra.pickers.visit_paths(local_opts, { source = { name = desc } })
-  end
-end
-
-lnmap('vc', make_pick_core('',  'Core visits (all)'))
-lnmap('vC', make_pick_core(nil, 'Core visits (cwd)'))
-lncmap('vv', 'lua MiniVisits.add_label("core")')
-lncmap('vV', 'lua MiniVisits.remove_label("core")')
-lncmap('vl', 'lua MiniVisits.add_label()')
-lncmap('vL', 'lua MiniVisits.remove_label()')
