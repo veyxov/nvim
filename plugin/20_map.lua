@@ -42,6 +42,7 @@ cmap('tR', 'lua vim.lsp.buf.references()')
 cmap('ts', 'lua vim.lsp.buf.definition()')
 cmap('td', 'lua vim.lsp.buf.type_definition()')
 cmap('tr', 'Pick lsp scope="references"')
+cmap('tf', 'lua vim.lsp.buf.format({ async = true })')
 
 cmap('[p', 'exe "iput! " . v:register')
 cmap(']p', 'exe "iput "  . v:register')
