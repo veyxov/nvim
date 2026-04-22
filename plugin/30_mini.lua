@@ -65,9 +65,7 @@ later(function() require 'mini.icons'       .setup() end)
 -- later(function() require('mini.tabline')    .setup() end)
 later(function() require('mini.statusline') .setup() end)
 later(function() require('mini.indentscope').setup() end)
-later(function() require('mini.diff').setup() end)
 --}}}
-
 
 --{{{extra
 later(function() require('mini.extra').setup() end)
@@ -180,4 +178,14 @@ later(
                 map(')', 'gtiagtina', 'n', { remap = true })
                 -- function(aa, bb): stay on an 'a' and exchange
                 end)
+--}}}
+
+--{{{git
+later(function() require('mini.git').setup() end)
+later(function() require('mini.diff').setup() end)
+vim.keymap.set('n', '<leader>lg', function()
+  vim.cmd('enew')
+  vim.fn.termopen('lazygit', { on_exit = function() vim.cmd('bd!') vim.cmd('checktime') end })
+  vim.cmd('startinsert')
+end)
 --}}}
