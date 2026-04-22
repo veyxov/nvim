@@ -18,7 +18,7 @@ later(function()
 
 end)
 lnmap('t', '<cmd>lua MiniPick.builtin.files()<cr>')
-lnmap('g', '<cmd>lua MiniPick.builtin.grep_live()<cr>')
+lnmap('??', '<cmd>lua MiniPick.builtin.grep_live()<cr>')
 --}}}
 
 --{{{jump2d
@@ -65,6 +65,7 @@ later(function() require 'mini.icons'       .setup() end)
 -- later(function() require('mini.tabline')    .setup() end)
 later(function() require('mini.statusline') .setup() end)
 later(function() require('mini.indentscope').setup() end)
+later(function() require('mini.notify').setup() end)
 --}}}
 
 --{{{extra
