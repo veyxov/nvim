@@ -175,8 +175,8 @@ later(
                         exchange = { prefix = 'gt' }
                 })
 
-                map('(', 'gtiagtila', 'n', { remap = true })
-                map(')', 'gtiagtina', 'n', { remap = true })
+                map('(', 'gtiagtina', 'n', { remap = true })
+                map(')', 'gtiagtila', 'n', { remap = true })
                 -- function(aa, bb): stay on an 'a' and exchange
                 end)
 --}}}
