@@ -62,12 +62,6 @@ map('-', function()
 end)
 --}}}
 
---{{{sessions
-later(function() require('mini.sessions').setup() end)
-lncmap('sr', 'lua MiniSessions.restart()')
-lncmap('sw', 'lua MiniSessions.write()')
---}}}
-
 --{{{ui
 later(function() require 'mini.icons'       .setup() end)
 -- later(function() require('mini.tabline')    .setup() end)
@@ -121,32 +115,6 @@ later(function()
 end)
 --}}}
 
---{{{completion
-now_if_args(function()
-        require('mini.completion').setup({
-                lsp_completion = {
-                        source_func = 'omnifunc',
-                        auto_setup = false,
-                        process_items = function(items, base)
-                                return MiniCompletion.default_process_items(items, base, { kind_priority = { Text = -1, Snippet = 99 } })
-                        end,
-                },
-        })
-
-        Cfg.au('LspAttach', { callback = function(ev)
-                vim.bo[ev.buf].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
-        end })
-
-        vim.lsp.config('*', { capabilities = MiniCompletion.get_lsp_capabilities() })
-end)
-later(function() require('mini.cmdline').setup() end)
-later(function()
-        require('mini.pairs').setup({ modes = { command = true } })
-        -- fix: I use C-Bs all the time, by default only bs removes pair braces
-        map('<C-w>', 'v:lua.MiniPairs.bs("\23")', 'i', { expr = true, replace_keycodes = false})
-end)
---}}}
-
 --{{{surround
 later(function()
         require 'mini.surround'.setup({
@@ -188,5 +156,31 @@ vim.keymap.set('n', '<leader>lg', function()
   vim.cmd('enew')
   vim.fn.termopen('lazygit', { on_exit = function() vim.cmd('bd!') vim.cmd('checktime') end })
   vim.cmd('startinsert')
+end)
+--}}}
+
+--{{{completion
+now_if_args(function()
+        require('mini.completion').setup({
+                lsp_completion = {
+                        source_func = 'omnifunc',
+                        auto_setup = false,
+                        process_items = function(items, base)
+                                return MiniCompletion.default_process_items(items, base, { kind_priority = { Text = -1, Snippet = 99 } })
+                        end,
+                },
+        })
+
+        Cfg.au('LspAttach', { callback = function(ev)
+                vim.bo[ev.buf].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
+        end })
+
+        vim.lsp.config('*', { capabilities = MiniCompletion.get_lsp_capabilities() })
+end)
+later(function() require('mini.cmdline').setup() end)
+later(function()
+        require('mini.pairs').setup({ modes = { command = true } })
+        -- fix: I use C-Bs all the time, by default only bs removes pair braces
+        map('<C-w>', 'v:lua.MiniPairs.bs("\23")', 'i', { expr = true, replace_keycodes = false})
 end)
 --}}}
