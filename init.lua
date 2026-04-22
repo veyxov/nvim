@@ -35,4 +35,4 @@ Cfg.au = function(ev, opts)
   vim.api.nvim_create_autocmd(ev, vim.tbl_extend('keep', opts, { group = Cfg.gr }))
 end
 
-vim.cmd 'colorscheme miniwinter'
+vim.cmd 'colorscheme retrobox'
