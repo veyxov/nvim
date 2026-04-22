@@ -183,6 +183,9 @@ later(
 --{{{git
 later(function() require('mini.git').setup() end)
 later(function() require('mini.diff').setup() end)
+lncmap('gc', 'Git commit')
+lncmap('gac', 'Git commit --amend')
+lncmap('g<Leader>', 'Git push')
 vim.keymap.set('n', '<leader>lg', function()
   vim.cmd('enew')
   vim.fn.termopen('lazygit', { on_exit = function() vim.cmd('bd!') vim.cmd('checktime') end })
