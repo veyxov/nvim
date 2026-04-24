@@ -8,7 +8,8 @@
      .
      (argument
        [(raw_string_literal (raw_string_content) @injection.content)
-        (string_literal (string_literal_content) @injection.content)])))
+        (string_literal (string_literal_content) @injection.content)
+        (interpolated_string_expression (string_content) @injection.content)])))
  (#any-of? @_method
    "Query" "QueryAsync"
    "QueryFirst" "QueryFirstAsync"
@@ -29,7 +30,8 @@
      .
      (argument
        [(raw_string_literal (raw_string_content) @injection.content)
-        (string_literal (string_literal_content) @injection.content)])))
+        (string_literal (string_literal_content) @injection.content)
+        (interpolated_string_expression (string_content) @injection.content)])))
  (#eq? @_type "CommandDefinition")
  (#set! injection.language "sql")
  (#set! injection.include-children)
@@ -41,7 +43,8 @@
      (variable_declarator
        (identifier) @_name
        [(raw_string_literal (raw_string_content) @injection.content)
-        (string_literal (string_literal_content) @injection.content)])))
+        (string_literal (string_literal_content) @injection.content)
+        (interpolated_string_expression (string_content) @injection.content)])))
  (#any-of? @_name
    "sql" "Sql" "SQL"
    "query" "Query"
