@@ -1,12 +1,6 @@
 local o = vim.o
 
-Cfg.now(function()
-        require 'mini.basics'.setup({
-                options = { extra_ui = true },
-                autocommands = { basic = false }
-        })
-end)
-
+vim.g.mapleader = ' '
 o.swapfile = false
 o.undofile = true
 o.shada = "'20,<50,s10,h"
