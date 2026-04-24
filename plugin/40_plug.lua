@@ -42,6 +42,7 @@ on_filetype('cs', function()
         })
         -- FIX: don't override sql injections with comment sematic tokens
         vim.api.nvim_set_hl(0, '@lsp.type.string.cs', {})
+        vim.api.nvim_set_hl(0, '@sql.embedded.c_sharp', { link = 'CursorLine' })
 end)
 
 Cfg.on_event('TermOpen', function()

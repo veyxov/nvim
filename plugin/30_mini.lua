@@ -1,14 +1,6 @@
 -- vim: foldmethod=marker foldlevel=0
 local now, later, lnmap, map, cmap, lncmap, now_if_args = Cfg.now, Cfg.later, Cfg.lnmap, Cfg.map, Cfg.cmap, Cfg.lncmap, Cfg.now_if_args
 
---{{{sessions
-now(function() require('mini.sessions').setup() end)
-lncmap('sr', 'lua MiniSessions.restart()')
-lncmap('ss', 'lua MiniSessions.select()')
-lncmap('sd', 'lua MiniSessions.select("delete")')
-lncmap('sn', 'lua vim.ui.input({ prompt = "Session name: " }, MiniSessions.write)')
---}}}
-
 --{{{pick
 later(function()
         require 'mini.pick'.setup {
@@ -64,7 +56,6 @@ end)
 
 --{{{ui
 later(function() require 'mini.icons'       .setup() end)
--- later(function() require('mini.tabline')    .setup() end)
 later(function() require('mini.statusline') .setup() end)
 later(function() require('mini.indentscope').setup() end)
 now(function() require('mini.notify').setup() end)
