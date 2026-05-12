@@ -33,7 +33,7 @@ map('>', '>gv', 'v')
 
 -- C-o is hard, maybe gl to go back?
 cmap('t?', 'lua vim.diagnostic.open_float()')
-cmap('ta', 'lua vim.lsp.buf.code_action()')
+cmap('ta', 'lua vim.lsp.buf.code_action()', { 'n', 'v' })
 cmap('ti', 'lua vim.lsp.buf.implementation()')
 cmap('th', 'lua vim.lsp.buf.hover()')
 cmap('tl', 'lua vim.lsp.codelens.run()')

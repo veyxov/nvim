@@ -20,7 +20,7 @@ _G.Cfg.map = function(l, r, m, o)
     vim.keymap.set(m, l, r, o)
 end
 _G.Cfg.lnmap = function(l, r) _G.Cfg.map('<leader>' .. l, r) end
-_G.Cfg.cmap = function(l, r) _G.Cfg.map(l, '<cmd>' .. r .. '<cr>') end
+_G.Cfg.cmap = function(l, r, m) _G.Cfg.map(l, '<cmd>' .. r .. '<cr>', m) end
 _G.Cfg.lncmap = function(l, r) _G.Cfg.cmap('<leader>' .. l, r) end
 
 local misc = require 'mini.misc'
