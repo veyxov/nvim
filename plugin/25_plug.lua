@@ -1,5 +1,5 @@
 local add = vim.pack.add
-local now_if_args, later = Cfg.now_if_args, Cfg.later
+local now_if_args = Cfg.now_if_args
 
 now_if_args(function()
         Cfg.au('PackChanged', { callback = function(ev)
@@ -33,16 +33,6 @@ Cfg.on_event('TermOpen', function()
         require('kitty-scrollback').setup()
 end)
 
-vim.pack.add ({
-    "https://github.com/mistweaverco/kulala.nvim"
-})
-
-require 'kulala'.setup {
-        global_keymaps = true,
-        global_keymaps_prefix = "<leader>R",
-        kulala_keymaps_prefix = ""
-}
-
-vim.pack.add({
-    'https://github.com/github/copilot.vim'
-})
+Cfg.later(function()
+        vim.pack.add({ 'https://github.com/github/copilot.vim' })
+end)

@@ -18,5 +18,4 @@ o.smartcase = true
 
 o.updatetime = 250
 o.timeoutlen = 225
-
-Cfg.au('TextYankPost', { pattern = '*', callback = function() vim.highlight.on_yank() end })
+-- TextYankPost yank highlight is in nvim default config since 0.10

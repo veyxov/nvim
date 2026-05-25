@@ -27,7 +27,6 @@ local misc = require 'mini.misc'
 Cfg.now = function(f) misc.safely('now', f) end
 Cfg.later = function(f) misc.safely('later', f) end
 Cfg.on_event = function(ev, f) misc.safely('event:' .. ev, f) end
-Cfg.on_filetype = function(ft, f) misc.safely('filetype:' .. ft, f) end
 Cfg.now_if_args = vim.fn.argc(-1) > 0 and Cfg.now or Cfg.later
 
 Cfg.gr = vim.api.nvim_create_augroup('xyz', {})
