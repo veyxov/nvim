@@ -47,3 +47,21 @@ cmap('tf', 'lua vim.lsp.buf.format({ async = true })')
 cmap('[p', 'exe "iput! " . v:register')
 cmap(']p', 'exe "iput "  . v:register')
 map('==', function() vim.fn.system(string.format("wl-copy --type text/uri-list 'file://%s'", vim.fn.expand('%:p'))) end)
+
+vim.keymap.set("n", "<leader>yy", function()
+  local file = vim.fn.expand("%:.")
+  local line = vim.fn.line(".")
+  local col = vim.fn.col(".")
+  local text = vim.api.nvim_get_current_line()
+
+  local result = string.format(
+    "%s:%d:%d\n%s",
+    file,
+    line,
+    col,
+    text
+  )
+
+  vim.fn.setreg("+", result)
+  print("Copied location + line to clipboard")
+end, { desc = "Copy file location and current line" })

@@ -81,15 +81,15 @@ later(function()
         local ai = require('mini.ai')
         ai.setup({
                 custom_textobjects = {
-                        B = MiniExtra.gen_ai_spec.buffer(),
-                        x = MiniExtra.gen_ai_spec.number(),
-                        m = ai.gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }),
-                        c = ai.gen_spec.treesitter({ a = '@class.outer', i = '@class.inner' }),
-                        l = ai.gen_spec.treesitter({ a = '@loop.outer', i = '@loop.inner' }),
+                        B     = MiniExtra.gen_ai_spec.buffer(),
+                        x     = MiniExtra.gen_ai_spec.number(),
+                        m     = ai.gen_spec.treesitter({ a = '@function.outer', i    = '@function.inner' }),
+                        c     = ai.gen_spec.treesitter({ a = '@class.outer', i       = '@class.inner' }),
+                        l     = ai.gen_spec.treesitter({ a = '@loop.outer', i        = '@loop.inner' }),
                         ['?'] = ai.gen_spec.treesitter({ a = '@conditional.outer', i = '@conditional.inner' }),
-                        P = ai.gen_spec.treesitter({ a = '@parameter.outer', i = '@parameter.inner' }),
-                        R = ai.gen_spec.treesitter({ a = '@return.outer', i = '@return.inner' }),
-                        k = ai.gen_spec.treesitter({ a = '@block.outer', i = '@block.inner' }),
+                        P     = ai.gen_spec.treesitter({ a = '@parameter.outer', i   = '@parameter.inner' }),
+                        R     = ai.gen_spec.treesitter({ a = '@return.outer', i      = '@return.inner' }),
+                        k     = ai.gen_spec.treesitter({ a = '@block.outer', i       = '@block.inner' }),
 
                         ['/'] = ai.gen_spec.treesitter({
                                 a = '@assignment.outer',
@@ -101,7 +101,7 @@ later(function()
                         }),
                 },
 
-                search_method = 'cover',
+                search_method = 'cover_or_next',
         })
 end)
 --}}}
