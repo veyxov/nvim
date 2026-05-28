@@ -272,21 +272,6 @@ now_if_args(function()
         })
         MiniSnippets.start_lsp_server()
 
-        local feed = function(k) vim.api.nvim_feedkeys(vim.keycode(k), 'n', false) end
-        local tab = function(dir)
-                return function()
-                        if MiniSnippets.session.get() then
-                                MiniSnippets.session.jump(dir)
-                        elseif vim.fn.pumvisible() == 1 then
-                                feed(dir == 'next' and '<C-n>' or '<C-p>')
-                        else
-                                feed(dir == 'next' and '<Tab>' or '<S-Tab>')
-                        end
-                end
-        end
-        map('<Tab>',   tab('next'), 'i')
-        map('<S-Tab>', tab('prev'), 'i')
-
         vim.o.completeopt = 'menuone,noselect,fuzzy,popup'
         require('mini.completion').setup({
                 delay = { completion = 100, info = 100, signature = 50 },
@@ -311,5 +296,25 @@ later(function()
         require('mini.pairs').setup({ modes = { command = true } })
         -- fix: I use C-Bs all the time, by default only bs removes pair braces
         map('<C-w>', 'v:lua.MiniPairs.bs("\23")', 'i', { expr = true, replace_keycodes = false})
+end)
+--}}}
+
+--{{{keymap
+later(function()
+        local km = require('mini.keymap')
+        km.setup()
+
+        km.map_multistep('i', '<Tab>', {
+                'minisnippets_next', 'minisnippets_expand', 'pmenu_next',
+        })
+        km.map_multistep('i', '<S-Tab>', {
+                'minisnippets_prev', 'pmenu_prev',
+        })
+        km.map_multistep('i', '<CR>', { 'pmenu_accept', 'minipairs_cr' })
+        km.map_multistep('i', '<BS>', { 'minipairs_bs' })
+
+        km.map_combo({ 'n', 'i', 'x', 'c' }, '<Esc><Esc>', function()
+                vim.cmd('nohlsearch')
+        end)
 end)
 --}}}
