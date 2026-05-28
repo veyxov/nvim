@@ -14,7 +14,7 @@ now_if_args(function()
         local languages = {
                 'c_sharp', 'sql', 'http', 'go',
                 'lua', 'markdown', 'markdown_inline',
-                'json', 'jsonc', 'yaml', 'toml',
+                'json', 'yaml', 'toml',
                 'vim', 'vimdoc', 'bash',
                 'regex', 'diff', 'gitcommit',
         }
@@ -26,7 +26,7 @@ now_if_args(function()
 
         local filetypes = {
                 'cs', 'sql', 'markdown', 'go', 'http',
-                'lua', 'json', 'jsonc', 'yaml', 'toml',
+                'lua', 'json', 'yaml', 'toml',
                 'vim', 'help', 'sh', 'bash', 'zsh',
                 'gitcommit', 'diff',
         }
@@ -44,19 +44,20 @@ now_if_args(function()
         })
         local move = require('nvim-treesitter-textobjects.move')
         local rm   = require('nvim-treesitter-textobjects.repeatable_move')
-        local pair = function(cap)
-                return rm.make_repeatable_move_pair(
-                        function() move.goto_next_start(cap, 'textobjects') end,
-                        function() move.goto_previous_start(cap, 'textobjects') end
-                )
+        local mk = function(cap)
+                return rm.make_repeatable_move(function(opts)
+                        if opts.forward then move.goto_next_start(cap, 'textobjects')
+                        else                 move.goto_previous_start(cap, 'textobjects') end
+                end)
         end
-        local nf, pf = pair('@function.outer')
-        local na, pa = pair('@parameter.outer')
-        local nk, pk = pair('@class.outer')
+        local fn_m, pa_m, kl_m = mk('@function.outer'), mk('@parameter.outer'), mk('@class.outer')
         local m = { 'n', 'x', 'o' }
-        Cfg.map(']m', nf, m); Cfg.map('[m', pf, m)
-        Cfg.map(']a', na, m); Cfg.map('[a', pa, m)
-        Cfg.map(']k', nk, m); Cfg.map('[k', pk, m)
+        Cfg.map(']m', function() fn_m({ forward = true  }) end, m)
+        Cfg.map('[m', function() fn_m({ forward = false }) end, m)
+        Cfg.map(']a', function() pa_m({ forward = true  }) end, m)
+        Cfg.map('[a', function() pa_m({ forward = false }) end, m)
+        Cfg.map(']k', function() kl_m({ forward = true  }) end, m)
+        Cfg.map('[k', function() kl_m({ forward = false }) end, m)
         Cfg.map(';',  rm.repeat_last_move,          m)
         Cfg.map(',',  rm.repeat_last_move_opposite, m)
 end)
