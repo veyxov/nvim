@@ -183,6 +183,9 @@ later(function()
         require 'mini.splitjoin'.setup({mappings = {toggle = 'S'}})
 end)
 later(function() require 'mini.trailspace'.setup() end)
+later(function() require 'mini.cursorword'.setup() end)
+later(function() require 'mini.bufremove'.setup() end)
+lncmap('q', 'lua MiniBufremove.delete()')
 lnmap('ds', function() MiniTrailspace.trim(); MiniTrailspace.trim_last_lines(); end)
 --}}}
 
