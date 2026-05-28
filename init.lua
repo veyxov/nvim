@@ -14,14 +14,14 @@ _G.Cfg = {}
 vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
 vim.pack.add({ 'https://github.com/nvim-lua/plenary.nvim' })
 
-_G.Cfg.map = function(l, r, m, o)
+Cfg.map = function(l, r, m, o)
     m = m or 'n'
     o = o or { silent = true }
     vim.keymap.set(m, l, r, o)
 end
-_G.Cfg.lnmap = function(l, r) _G.Cfg.map('<leader>' .. l, r) end
-_G.Cfg.cmap = function(l, r, m) _G.Cfg.map(l, '<cmd>' .. r .. '<cr>', m) end
-_G.Cfg.lncmap = function(l, r) _G.Cfg.cmap('<leader>' .. l, r) end
+Cfg.lnmap = function(l, r) Cfg.map('<leader>' .. l, r) end
+Cfg.cmap = function(l, r, m) Cfg.map(l, '<cmd>' .. r .. '<cr>', m) end
+Cfg.lncmap = function(l, r) Cfg.cmap('<leader>' .. l, r) end
 
 local misc = require 'mini.misc'
 Cfg.now = function(f) misc.safely('now', f) end
