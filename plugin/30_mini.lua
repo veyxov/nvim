@@ -16,7 +16,7 @@ later(function()
                 },
                 options = { use_cache = true }
         }
-
+        vim.ui.select = MiniPick.ui_select
 end)
 do
         local real_paste = vim.paste
@@ -111,7 +111,10 @@ later(function()
         })
 end)
 later(function() require('mini.indentscope').setup() end)
-now(function() require('mini.notify').setup() end)
+now(function()
+        require('mini.notify').setup()
+        vim.notify = MiniNotify.make_notify()
+end)
 later(function()
         local misc = require('mini.misc')
         misc.setup_restore_cursor()
