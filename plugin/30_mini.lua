@@ -20,6 +20,8 @@ end)
 lncmap('t', 'Pick files')
 cmap('??', 'Pick grep_live')
 lncmap('e', 'Pick diagnostic')
+lncmap('r', 'Pick resume')
+lnmap('*', function() MiniPick.builtin.grep({ pattern = vim.fn.expand('<cword>') }) end)
 --}}}
 
 --{{{jump2d
