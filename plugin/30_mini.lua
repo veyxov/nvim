@@ -193,6 +193,7 @@ later(function()
                 },
 
                 search_method = 'cover_or_next',
+                n_lines = 500,
         })
 end)
 --}}}
@@ -208,7 +209,10 @@ later(function()
                         find      = 'yn',
                         find_left = 'yp',
                         highlight = 'yh'
-                }
+                },
+                n_lines = 500,
+                respect_selection_type = true,
+                search_method = 'cover_or_next',
         })
 end)
 --}}}
