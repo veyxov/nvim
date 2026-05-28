@@ -19,6 +19,7 @@ later(function()
 end)
 lncmap('t', 'Pick files')
 cmap('??', 'Pick grep_live')
+lncmap('e', 'Pick diagnostic')
 --}}}
 
 --{{{jump2d
@@ -73,8 +74,12 @@ later(function()
         hi.setup({
                 highlighters = {
                         fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+                        bug   = { pattern = '%f[%w]()BUG()%f[%W]',   group = 'MiniHipatternsFixme' },
+                        xxx   = { pattern = '%f[%w]()XXX()%f[%W]',   group = 'MiniHipatternsFixme' },
                         hack  = { pattern = '%f[%w]()HACK()%f[%W]',  group = 'MiniHipatternsHack'  },
+                        warn  = { pattern = '%f[%w]()WARN()%f[%W]',  group = 'MiniHipatternsHack'  },
                         todo  = { pattern = '%f[%w]()TODO()%f[%W]',  group = 'MiniHipatternsTodo'  },
+                        perf  = { pattern = '%f[%w]()PERF()%f[%W]',  group = 'MiniHipatternsTodo'  },
                         note  = { pattern = '%f[%w]()NOTE()%f[%W]',  group = 'MiniHipatternsNote'  },
                         hex_color = hi.gen_highlighter.hex_color(),
                 },
