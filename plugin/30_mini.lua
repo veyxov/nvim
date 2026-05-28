@@ -17,12 +17,12 @@ later(function()
         }
 
 end)
-lncmap('t', 'lua MiniPick.builtin.files()')
-cmap('??', 'lua MiniPick.builtin.grep_live()')
+lncmap('t', 'Pick files')
+cmap('??', 'Pick grep_live')
 --}}}
 
 --{{{jump2d
-later(function()require 'mini.jump'.setup() end)
+later(function() require 'mini.jump'.setup )
 later(function()
         require('mini.jump2d').setup({
                 labels = 'etaioshrdlc',
