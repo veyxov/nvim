@@ -22,7 +22,7 @@ cmap('??', 'Pick grep_live')
 --}}}
 
 --{{{jump2d
-later(function() require 'mini.jump'.setup )
+later(function() require('mini.jump').setup() end)
 later(function()
         require('mini.jump2d').setup({
                 labels = 'etaioshrdlc',
@@ -55,10 +55,58 @@ end)
 --}}}
 
 --{{{ui
-later(function() require 'mini.icons'       .setup() end)
+later(function()
+        require('mini.icons').setup()
+        MiniIcons.tweak_lsp_kind()
+end)
 later(function() require('mini.statusline') .setup() end)
 later(function() require('mini.indentscope').setup() end)
 now(function() require('mini.notify').setup() end)
+later(function() require('mini.misc').setup_restore_cursor() end)
+later(function()
+        local hi = require('mini.hipatterns')
+        hi.setup({
+                highlighters = {
+                        fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+                        hack  = { pattern = '%f[%w]()HACK()%f[%W]',  group = 'MiniHipatternsHack'  },
+                        todo  = { pattern = '%f[%w]()TODO()%f[%W]',  group = 'MiniHipatternsTodo'  },
+                        note  = { pattern = '%f[%w]()NOTE()%f[%W]',  group = 'MiniHipatternsNote'  },
+                        hex_color = hi.gen_highlighter.hex_color(),
+                },
+        })
+end)
+later(function()
+        local clue = require('mini.clue')
+        clue.setup({
+                triggers = {
+                        { mode = 'n', keys = '<Leader>' },
+                        { mode = 'x', keys = '<Leader>' },
+                        { mode = 'n', keys = 'g' },
+                        { mode = 'x', keys = 'g' },
+                        { mode = 'n', keys = "'" },
+                        { mode = 'n', keys = '`' },
+                        { mode = 'n', keys = '"' },
+                        { mode = 'i', keys = '<C-r>' },
+                        { mode = 'c', keys = '<C-r>' },
+                        { mode = 'n', keys = '<C-w>' },
+                        { mode = 'n', keys = 'z' },
+                        { mode = 'x', keys = 'z' },
+                        { mode = 'n', keys = '[' },
+                        { mode = 'n', keys = ']' },
+                },
+                clues = {
+                        clue.gen_clues.builtin_completion(),
+                        clue.gen_clues.g(),
+                        clue.gen_clues.marks(),
+                        clue.gen_clues.registers(),
+                        clue.gen_clues.windows(),
+                        clue.gen_clues.z(),
+                        { mode = 'n', keys = '<Leader>g', desc = '+git' },
+                        { mode = 'n', keys = '<Leader>l', desc = '+lazy/lsp' },
+                },
+                window = { config = { width = 'auto' } },
+        })
+end)
 --}}}
 
 --{{{extra
@@ -152,13 +200,38 @@ end)
 
 --{{{completion
 now_if_args(function()
+        local snippets = require('mini.snippets')
+        snippets.setup({
+                snippets = { snippets.gen_loader.from_lang() },
+                mappings = { expand = '', jump_next = '', jump_prev = '' },
+        })
+        MiniSnippets.start_lsp_server()
+
+        local feed = function(k) vim.api.nvim_feedkeys(vim.keycode(k), 'n', false) end
+        local tab = function(dir)
+                return function()
+                        if MiniSnippets.session.get() then
+                                MiniSnippets.session.jump(dir)
+                        elseif vim.fn.pumvisible() == 1 then
+                                feed(dir == 'next' and '<C-n>' or '<C-p>')
+                        else
+                                feed(dir == 'next' and '<Tab>' or '<S-Tab>')
+                        end
+                end
+        end
+        map('<Tab>',   tab('next'), 'i')
+        map('<S-Tab>', tab('prev'), 'i')
+
+        vim.o.completeopt = 'menuone,noselect,fuzzy,popup'
         require('mini.completion').setup({
+                delay = { completion = 100, info = 100, signature = 50 },
                 lsp_completion = {
                         source_func = 'omnifunc',
                         auto_setup = false,
                         process_items = function(items, base)
                                 return MiniCompletion.default_process_items(items, base, { kind_priority = { Text = -1, Snippet = 99 } })
                         end,
+                        snippet_insert = function(snippet) MiniSnippets.default_insert({ body = snippet }) end,
                 },
         })
 
