@@ -60,7 +60,38 @@ later(function()
         require('mini.icons').setup()
         MiniIcons.tweak_lsp_kind()
 end)
-later(function() require('mini.statusline') .setup() end)
+later(function()
+        local sl = require('mini.statusline')
+        sl.setup({
+                use_icons = true,
+                content = {
+                        active = function()
+                                local mode, mode_hl = sl.section_mode({ trunc_width = 120 })
+                                local git           = sl.section_git({ trunc_width = 40 })
+                                local diff          = sl.section_diff({ trunc_width = 75 })
+                                local diagnostics   = sl.section_diagnostics({ trunc_width = 75 })
+                                local lsp           = sl.section_lsp({ trunc_width = 75 })
+                                local filename      = sl.section_filename({ trunc_width = 140 })
+                                local fileinfo      = sl.section_fileinfo({ trunc_width = 120 })
+                                local search        = sl.section_searchcount({ trunc_width = 75 })
+                                local location      = '%2l:%-2v'
+                                local macro         = vim.fn.reg_recording()
+                                macro               = macro == '' and '' or ('rec @' .. macro)
+                                local cwd           = vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+
+                                return sl.combine_groups({
+                                        { hl = mode_hl,                  strings = { mode, macro } },
+                                        { hl = 'MiniStatuslineDevinfo',  strings = { git, diff, diagnostics, lsp } },
+                                        '%<',
+                                        { hl = 'MiniStatuslineFilename', strings = { filename } },
+                                        '%=',
+                                        { hl = 'MiniStatuslineFileinfo', strings = { cwd, fileinfo } },
+                                        { hl = mode_hl,                  strings = { search, location } },
+                                })
+                        end,
+                },
+        })
+end)
 later(function() require('mini.indentscope').setup() end)
 now(function() require('mini.notify').setup() end)
 later(function()
