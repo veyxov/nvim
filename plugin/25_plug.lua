@@ -37,6 +37,28 @@ now_if_args(function()
         end
 
         Cfg.au('FileType', { pattern = filetypes, callback = function(ev) vim.treesitter.start(ev.buf) end })
+
+        require('nvim-treesitter-textobjects').setup({
+                select = { lookahead = true },
+                move = { set_jumps = true },
+        })
+        local move = require('nvim-treesitter-textobjects.move')
+        local rm   = require('nvim-treesitter-textobjects.repeatable_move')
+        local pair = function(cap)
+                return rm.make_repeatable_move_pair(
+                        function() move.goto_next_start(cap, 'textobjects') end,
+                        function() move.goto_previous_start(cap, 'textobjects') end
+                )
+        end
+        local nf, pf = pair('@function.outer')
+        local na, pa = pair('@parameter.outer')
+        local nk, pk = pair('@class.outer')
+        local m = { 'n', 'x', 'o' }
+        Cfg.map(']m', nf, m); Cfg.map('[m', pf, m)
+        Cfg.map(']a', na, m); Cfg.map('[a', pa, m)
+        Cfg.map(']k', nk, m); Cfg.map('[k', pk, m)
+        Cfg.map(';',  rm.repeat_last_move,          m)
+        Cfg.map(',',  rm.repeat_last_move_opposite, m)
 end)
 
 Cfg.on_event('TermOpen', function()

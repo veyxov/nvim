@@ -8,10 +8,6 @@
       "rev": "e466cc59958c78c7c3a67f35cfe4797d04b8da33",
       "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
     },
-    "friendly-snippets": {
-      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
-      "src": "https://github.com/rafamadriz/friendly-snippets"
-    },
     "go.nvim": {
       "rev": "5c741a26f5df77c95d42d8f48e7008aea10e5f4f",
       "src": "https://github.com/ray-x/go.nvim"
@@ -71,10 +67,6 @@
     "vim-dadbod-ui": {
       "rev": "07e92e22114cc5b1ba4938d99897d85b58e20475",
       "src": "https://github.com/kristijanhusak/vim-dadbod-ui"
-    },
-    "which-key.nvim": {
-      "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
-      "src": "https://github.com/folke/which-key.nvim"
     }
   }
 }
