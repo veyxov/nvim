@@ -5,7 +5,7 @@
       "src": "https://github.com/github/copilot.vim"
     },
     "easy-dotnet.nvim": {
-      "rev": "5d5b3e2491a81efe252004e1876bd67af7dfc9c1",
+      "rev": "e466cc59958c78c7c3a67f35cfe4797d04b8da33",
       "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
     },
     "friendly-snippets": {
@@ -17,7 +17,7 @@
       "src": "https://github.com/ray-x/go.nvim"
     },
     "guihua.lua": {
-      "rev": "26e2e557f5b1a0c5cb25cab41d71ddba61523cba",
+      "rev": "f8e06bd8a26dee3377d63c2adf1e57cdb58ac474",
       "src": "https://github.com/ray-x/guihua.lua"
     },
     "kitty-scrollback.nvim": {
@@ -25,11 +25,11 @@
       "src": "https://github.com/mikesmithgh/kitty-scrollback.nvim"
     },
     "kulala.nvim": {
-      "rev": "aa05c854cc46e235aa24684d0521719570ea489e",
+      "rev": "77e5e949276e0b247f8f67575c42446750d164fa",
       "src": "https://github.com/mistweaverco/kulala.nvim"
     },
     "mini.nvim": {
-      "rev": "6791615e48801cbf5b2baefadcea77a7760de3f4",
+      "rev": "44657837c7338e52727facc85c1d95bec1f6bd7c",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nui.nvim": {
@@ -41,7 +41,7 @@
       "src": "https://github.com/kndndrj/nvim-dbee"
     },
     "nvim-lspconfig": {
-      "rev": "a4ed4e761c400849e8c9f8bda33e5083f890268c",
+      "rev": "6f76a3eeadc2ee235d74cd7d5319e95a261084af",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
