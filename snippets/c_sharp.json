@@ -1,0 +1,14 @@
+{
+  "controller route": {
+    "prefix": "route",
+    "body": [
+      "[Http${1|Get,Post,Put,Delete,Patch|}(\"${2:route}\")]",
+      "public async Task<IActionResult> ${3:Handler}(${4})",
+      "{",
+      "\t$0",
+      "\treturn Ok();",
+      "}"
+    ],
+    "description": "ASP.NET controller route"
+  }
+}
