@@ -1,0 +1,41 @@
+{
+  "select": {
+    "prefix": "sel",
+    "body": [ "SELECT ${1:*}", "FROM ${2:table}", "WHERE ${3:cond};$0" ]
+  },
+  "select join": {
+    "prefix": "selj",
+    "body": [
+      "SELECT ${1:*}",
+      "FROM ${2:t1} a",
+      "JOIN ${3:t2} b ON a.${4:id} = b.${5:id}",
+      "WHERE ${6:cond};$0"
+    ]
+  },
+  "with cte": {
+    "prefix": "cte",
+    "body": [
+      "WITH ${1:cte} AS (",
+      "\tSELECT ${2:*} FROM ${3:t}",
+      ")",
+      "SELECT * FROM $1;$0"
+    ]
+  },
+  "create table": {
+    "prefix": "ct",
+    "body": [
+      "CREATE TABLE ${1:name} (",
+      "\tid SERIAL PRIMARY KEY,",
+      "\t$0",
+      ");"
+    ]
+  },
+  "insert": {
+    "prefix": "ins",
+    "body": [ "INSERT INTO ${1:table} (${2:cols})", "VALUES (${3:vals});$0" ]
+  },
+  "update": {
+    "prefix": "upd",
+    "body": [ "UPDATE ${1:table}", "SET ${2:col} = ${3:val}", "WHERE ${4:cond};$0" ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "package main": {
+    "prefix": "pkgm",
+    "body": [ "package main", "", "import \"fmt\"", "", "func main() {", "\t$0", "}" ]
+  },
+  "func": {
+    "prefix": "fn",
+    "body": [ "func ${1:name}(${2}) ${3:error} {", "\t$0", "}" ]
+  },
+  "method": {
+    "prefix": "meth",
+    "body": [ "func (${1:r} *${2:T}) ${3:Name}(${4}) ${5:error} {", "\t$0", "}" ]
+  },
+  "if err": {
+    "prefix": "iferr",
+    "body": [ "if err != nil {", "\treturn ${1:err}", "}", "$0" ]
+  },
+  "struct": {
+    "prefix": "st",
+    "body": [ "type ${1:Name} struct {", "\t$0", "}" ]
+  },
+  "interface": {
+    "prefix": "iface",
+    "body": [ "type ${1:Name} interface {", "\t$0", "}" ]
+  },
+  "test func": {
+    "prefix": "tf",
+    "body": [ "func Test${1:Name}(t *testing.T) {", "\t$0", "}" ]
+  }
+}

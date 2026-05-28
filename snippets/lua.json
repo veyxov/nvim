@@ -1,0 +1,30 @@
+{
+  "function": {
+    "prefix": "fn",
+    "body": [ "function ${1:name}(${2})", "\t$0", "end" ]
+  },
+  "local function": {
+    "prefix": "lfn",
+    "body": [ "local function ${1:name}(${2})", "\t$0", "end" ]
+  },
+  "if": {
+    "prefix": "if",
+    "body": [ "if ${1:cond} then", "\t$0", "end" ]
+  },
+  "for ipairs": {
+    "prefix": "fori",
+    "body": [ "for ${1:i}, ${2:v} in ipairs(${3:t}) do", "\t$0", "end" ]
+  },
+  "for pairs": {
+    "prefix": "forp",
+    "body": [ "for ${1:k}, ${2:v} in pairs(${3:t}) do", "\t$0", "end" ]
+  },
+  "pcall require": {
+    "prefix": "preq",
+    "body": [ "local ok, ${1:mod} = pcall(require, '${2:$1}')", "if not ok then return end", "$0" ]
+  },
+  "vim.keymap.set": {
+    "prefix": "vmap",
+    "body": "vim.keymap.set('${1:n}', '${2:lhs}', ${3:rhs}, { silent = true })$0"
+  }
+}
