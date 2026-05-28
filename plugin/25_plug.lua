@@ -35,4 +35,8 @@ end)
 
 Cfg.later(function()
         vim.pack.add({ 'https://github.com/github/copilot.vim' })
+        vim.g.copilot_no_tab_map = true
+        vim.keymap.set('i', '<Right>', 'copilot#Accept("\\<Right>")', {
+                expr = true, replace_keycodes = false, silent = true,
+        })
 end)
