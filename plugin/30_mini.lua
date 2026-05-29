@@ -164,7 +164,6 @@ later(function()
                         clue.gen_clues.windows(),
                         clue.gen_clues.z(),
                         { mode = 'n', keys = '<Leader>g', desc = '+git' },
-                        { mode = 'n', keys = '<Leader>l', desc = '+lsp' },
                 },
                 window = { config = { width = 'auto' } },
         })
@@ -240,18 +239,17 @@ end)
 --}}}
 
 --{{{operators
-later(
-        function()
-                require 'mini.operators'.setup({
-                        replace  = { prefix = 'r' },
-                        multiply = { prefix = 'gl' },
-                        exchange = { prefix = 'gt' }
-                })
+later(function()
+        require 'mini.operators'.setup({
+                replace  = { prefix = 'r' },
+                multiply = { prefix = 'gl' },
+                exchange = { prefix = 'gt' }
+        })
 
-                map('(', 'gtiagtina', 'n', { remap = true })
-                map(')', 'gtiagtila', 'n', { remap = true })
-                -- function(aa, bb): stay on an 'a' and exchange
-                end)
+        map('(', 'gtiagtina', 'n', { remap = true })
+        map(')', 'gtiagtila', 'n', { remap = true })
+        -- function(aa, bb): stay on an 'a' and exchange
+end)
 --}}}
 
 --{{{git
