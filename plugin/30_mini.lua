@@ -164,7 +164,7 @@ later(function()
                         clue.gen_clues.windows(),
                         clue.gen_clues.z(),
                         { mode = 'n', keys = '<Leader>g', desc = '+git' },
-                        { mode = 'n', keys = '<Leader>l', desc = '+lazy/lsp' },
+                        { mode = 'n', keys = '<Leader>l', desc = '+lsp' },
                 },
                 window = { config = { width = 'auto' } },
         })

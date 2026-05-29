@@ -3,7 +3,7 @@ local map, cmap, lnmap = Cfg.map, Cfg.cmap, Cfg.lnmap
 cmap('<leader>w', 'wa')
 cmap('qu', 'wq')
 
-cmap('<C-W><C-W>', 'q');
+cmap('<C-W><C-W>', 'q')
 -- ctrl+v is for paste in my terminal, so this is how to enter the block-visual mode
 map('<leader>v', '<C-V>')
 
@@ -31,7 +31,6 @@ map('<A-Down>', "<cmd>execute 'move .+' . v:count1<cr>==")
 map('<', '<gv', 'v')
 map('>', '>gv', 'v')
 
--- C-o is hard, maybe gl to go back?
 cmap('t?', 'lua vim.diagnostic.open_float()')
 cmap('ta', 'lua vim.lsp.buf.code_action()', { 'n', 'v' })
 cmap('ti', 'lua vim.lsp.buf.implementation()')

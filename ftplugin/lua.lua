@@ -15,6 +15,10 @@ vim.lsp.config.lua_ls = {
                                         'MiniNotify', 'MiniBufremove', 'MiniSurround', 'MiniExtra',
                                         'MiniGit', 'MiniDiff', 'MiniTrailspace', 'MiniFiles',
                                         'MiniJump2d', 'MiniPairs', 'MiniStatusline',
+                                        'MiniKeymap', 'MiniOperators', 'MiniBracketed',
+                                        'MiniSplitjoin', 'MiniAlign', 'MiniClue',
+                                        'MiniHipatterns', 'MiniIndentscope', 'MiniCmdline',
+                                        'MiniJump', 'MiniMisc',
                                 },
                         },
                         workspace = {
