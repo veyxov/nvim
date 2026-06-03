@@ -18,4 +18,20 @@ o.smartcase = true
 
 o.updatetime = 250
 o.timeoutlen = 225
--- TextYankPost yank highlight is in nvim default config since 0.10
+
+vim.diagnostic.config({
+        signs = {
+                text = {
+                        [vim.diagnostic.severity.ERROR] = '',
+                        [vim.diagnostic.severity.WARN]  = '',
+                        [vim.diagnostic.severity.INFO]  = '',
+                        [vim.diagnostic.severity.HINT]  = '',
+                },
+        },
+        virtual_text = { prefix = '●' },
+        float = { border = 'rounded' },
+})
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+        callback = function() vim.highlight.on_yank() end,
+})
