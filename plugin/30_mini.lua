@@ -24,6 +24,16 @@ lncmap('r', 'Pick resume')
 lnmap('*', function() MiniPick.builtin.grep({ pattern = vim.fn.expand('<cword>') }) end)
 --}}}
 
+--{{{visits
+later(function() require('mini.visits').setup() end)
+-- frecency picker: most-used/recent files in cwd float to the top
+lnmap('f', function() MiniExtra.pickers.visit_paths({ recency_weight = 0.5 }) end)
+-- labels = manual bookmarks/tags (<leader>m = mark)
+lnmap('mm', function() MiniExtra.pickers.visit_labels() end)
+lnmap('ml', function() MiniVisits.add_label() end)
+lnmap('mL', function() MiniVisits.remove_label() end)
+--}}}
+
 --{{{jump2d
 later(function() require('mini.jump').setup() end)
 later(function()
@@ -168,6 +178,16 @@ later(function()
 end)
 later(function() require 'mini.trailspace'.setup() end)
 later(function() require 'mini.cursorword'.setup() end)
+later(function()
+        require('mini.move').setup({
+                mappings = {
+                        -- visual selection
+                        left = '<A-Left>', right = '<A-Right>', down = '<A-Down>', up = '<A-Up>',
+                        -- current line in normal mode
+                        line_left = '<A-Left>', line_right = '<A-Right>', line_down = '<A-Down>', line_up = '<A-Up>',
+                }
+        })
+end)
 later(function() require 'mini.bufremove'.setup() end)
 lncmap('q', 'lua MiniBufremove.delete()')
 lnmap('ds', function() MiniTrailspace.trim(); MiniTrailspace.trim_last_lines(); end)
@@ -180,7 +200,8 @@ later(function()
                 custom_textobjects = {
                         B     = MiniExtra.gen_ai_spec.buffer(),
                         x     = MiniExtra.gen_ai_spec.number(),
-                        m     = ai.gen_spec.treesitter({ a = '@function.outer', i    = '@function.inner' }),
+                        s     = ai.gen_spec.function_call(),
+                        f     = ai.gen_spec.treesitter({ a = '@function.outer', i    = '@function.inner' }),
                         c     = ai.gen_spec.treesitter({ a = '@class.outer', i       = '@class.inner' }),
                         l     = ai.gen_spec.treesitter({ a = '@loop.outer', i        = '@loop.inner' }),
                         ['?'] = ai.gen_spec.treesitter({ a = '@conditional.outer', i = '@conditional.inner' }),
