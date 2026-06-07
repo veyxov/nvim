@@ -4,6 +4,10 @@
       "rev": "a12fd5672110c8aa7e3c8419e28c96943ca179be",
       "src": "https://github.com/github/copilot.vim"
     },
+    "diffview.nvim": {
+      "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
+      "src": "https://github.com/sindrets/diffview.nvim"
+    },
     "easy-dotnet.nvim": {
       "rev": "44a8fe48a4e768db71e78f01380338775768f980",
       "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
@@ -55,6 +59,10 @@
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "vi-sql.nvim": {
+      "rev": "4b838d10a907414b85c752d9b54d794b5b1ebf51",
+      "src": "https://github.com/kopecmaciej/vi-sql.nvim"
     },
     "vim-dadbod": {
       "rev": "6d1d41da4873a445c5605f2005ad2c68c99d8770",
