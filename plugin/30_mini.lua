@@ -6,33 +6,17 @@ later(function()
         require 'mini.pick'.setup {
                 mappings = {
                         choose_in_split   = '<C-x>',
-                        choose_in_vsplit  = '<C-CR>',
+                        choose_in_vsplit  = '<C-v>',
                         choose_marked     = '<C-d>',
 
                         mark   = '<C-s>',
                         refine = '<C-n>',
-                        move_down = '', -- clashes with the above
-
+                        move_down = '' -- clashes with the above
                 },
                 options = { use_cache = true }
         }
         vim.ui.select = MiniPick.ui_select
 end)
-do
-        local real_paste = vim.paste
-        Cfg.au('User', { pattern = 'MiniPickStart', callback = function()
-                vim.paste = function(lines, _)
-                        local text = table.concat(lines, ' ')
-                        local q = MiniPick.get_picker_query() or {}
-                        for _, c in ipairs(vim.fn.split(text, '\\zs')) do table.insert(q, c) end
-                        MiniPick.set_picker_query(q)
-                        return true
-                end
-        end })
-        Cfg.au('User', { pattern = 'MiniPickStop', callback = function()
-                vim.paste = real_paste
-        end })
-end
 lncmap('t', 'Pick files')
 cmap('??', 'Pick grep_live')
 lncmap('e', 'Pick diagnostic')
