@@ -9,7 +9,10 @@ require('easy-dotnet').setup({
         background_scanning = true,
         notifications = { handler = false },
         codelens = { enabled = false },
-        lsp = { auto_refresh_codelens = false },
+        lsp = {
+            auto_refresh_codelens = false,
+            restart_roslyn_on_branch_change = false
+        },
         auto_bootstrap_namespace = { type = "file_scoped", enabled = true },
 })
 
