@@ -10,9 +10,10 @@ for _, plugin in ipairs(disabled_builtins) do
 end
 
 _G.Cfg = {}
+_G.gh = function(x) return 'https://github.com/' .. x end
 
-vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
-vim.pack.add({ 'https://github.com/nvim-lua/plenary.nvim' })
+vim.pack.add({ gh('nvim-mini/mini.nvim') })
+vim.pack.add({ gh('nvim-lua/plenary.nvim') })
 
 Cfg.map = function(l, r, m, o)
     m = m or 'n'

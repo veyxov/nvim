@@ -8,8 +8,8 @@ now_if_args(function()
                 vim.cmd 'TSUpdate'
         end })
 
-        add({'https://github.com/nvim-treesitter/nvim-treesitter'})
-        add({'https://github.com/nvim-treesitter/nvim-treesitter-textobjects'})
+        add({gh('nvim-treesitter/nvim-treesitter')})
+        add({gh('nvim-treesitter/nvim-treesitter-textobjects')})
 
         local languages = {
                 'c_sharp', 'sql', 'http', 'go',
@@ -63,12 +63,12 @@ now_if_args(function()
 end)
 
 Cfg.on_event('TermOpen', function()
-        vim.pack.add({ 'https://github.com/mikesmithgh/kitty-scrollback.nvim' })
+        vim.pack.add({ gh('mikesmithgh/kitty-scrollback.nvim') })
         require('kitty-scrollback').setup()
 end)
 
 Cfg.later(function()
-        vim.pack.add({ 'https://github.com/github/copilot.vim' })
+        vim.pack.add({ gh('github/copilot.vim') })
         vim.g.copilot_no_tab_map = true
         vim.keymap.set('i', '<Right>', 'copilot#Accept("\\<Right>")', {
                 expr = true, replace_keycodes = false, silent = true,

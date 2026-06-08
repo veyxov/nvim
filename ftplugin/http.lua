@@ -1,7 +1,7 @@
 if vim.g.loaded_http_ftplug then return end
 vim.g.loaded_http_ftplug = true
 
-vim.pack.add({ 'https://github.com/mistweaverco/kulala.nvim' })
+vim.pack.add({ gh('mistweaverco/kulala.nvim') })
 
 require('kulala').setup({
         global_keymaps = true,

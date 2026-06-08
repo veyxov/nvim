@@ -1,5 +1,5 @@
 Cfg.later(function()
-        vim.pack.add({ 'https://github.com/pwntester/octo.nvim' })
+        vim.pack.add({ gh('pwntester/octo.nvim') })
 
         require 'octo'.setup({
                 enable_builtin = true,

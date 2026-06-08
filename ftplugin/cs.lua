@@ -1,7 +1,7 @@
 if vim.g.loaded_cs_ftplug then return end
 vim.g.loaded_cs_ftplug = true
 
-vim.pack.add({ 'https://github.com/GustavEikaas/easy-dotnet.nvim' })
+vim.pack.add({ gh('GustavEikaas/easy-dotnet.nvim') })
 
 require('easy-dotnet').setup({
         fsproj_mappings = false,

@@ -1,6 +1,6 @@
 local cmap = Cfg.cmap
 Cfg.later(function()
-    vim.pack.add({'https://github.com/sindrets/diffview.nvim'})
+    vim.pack.add({gh('sindrets/diffview.nvim')})
 
     local actions = require("diffview.actions")
 
