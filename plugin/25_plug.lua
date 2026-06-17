@@ -24,12 +24,7 @@ now_if_args(function()
         local to_install = vim.tbl_filter(isnt_installed, languages)
         if #to_install > 0 then require('nvim-treesitter').install(to_install) end
 
-        local filetypes = {
-                'cs', 'sql', 'markdown', 'go', 'http',
-                'lua', 'json', 'yaml', 'toml',
-                'vim', 'help', 'sh', 'bash', 'zsh',
-                'gitcommit', 'diff',
-        }
+        local filetypes = {}
         for _, lang in ipairs(languages) do
                 for _, ft in ipairs(vim.treesitter.language.get_filetypes(lang)) do
                         table.insert(filetypes, ft)
