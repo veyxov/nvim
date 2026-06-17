@@ -295,6 +295,10 @@ now_if_args(function()
 
         Cfg.au('LspAttach', { callback = function(ev)
                 vim.bo[ev.buf].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
+                -- suppress 0.11 default keymaps that duplicate t* bindings
+                for _, key in ipairs({ 'grn', 'gra', 'grr', 'gri' }) do
+                        pcall(vim.keymap.del, 'n', key, { buffer = ev.buf })
+                end
         end })
 
         vim.lsp.config('*', { capabilities = MiniCompletion.get_lsp_capabilities() })
