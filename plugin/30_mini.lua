@@ -52,19 +52,17 @@ end, { 'o', 'x', 'n' }
 --}}}
 
 --{{{files
-map('-', function()
-        if not MiniFiles then
-                require('mini.files').setup({
-                        mappings = {
-                                close       = 'qu',
-                                go_in_plus  = '<right>',
-                                go_out_plus = '<left>',
-                                synchronize = '<cr>',
-                        }
-                })
-        end
-        MiniFiles.open(vim.api.nvim_buf_get_name(0))
+later(function()
+        require('mini.files').setup({
+                mappings = {
+                        close       = 'qu',
+                        go_in_plus  = '<right>',
+                        go_out_plus = '<left>',
+                        synchronize = '<cr>',
+                }
+        })
 end)
+map('-', function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end)
 --}}}
 
 --{{{ui
