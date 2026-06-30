@@ -1,27 +1,22 @@
-nmap("<Esc>", "<cmd>nohlsearch<cr>")
+map('<Esc>', cmd 'nohlsearch')
 
-nmap("<C-h>", "<C-w>h")
-nmap("<C-j>", "<C-w>j")
-nmap("<C-k>", "<C-w>k")
-nmap("<C-l>", "<C-w>l")
+map('J', ":m '>+1<cr>gv=gv", 'v')
+map('K', ":m '<-2<cr>gv=gv", 'v')
 
-vmap("J", ":m '>+1<cr>gv=gv")
-vmap("K", ":m '<-2<cr>gv=gv")
+map('<C-d>', '<C-d>zz')
+map('<C-u>', '<C-u>zz')
+map('n', 'nzzzv')
+map('N', 'Nzzzv')
 
-nmap("<C-d>", "<C-d>zz")
-nmap("<C-u>", "<C-u>zz")
-nmap("n", "nzzzv")
-nmap("N", "Nzzzv")
+map('<', '<gv', 'v')
+map('>', '>gv', 'v')
 
-vmap("<", "<gv")
-vmap(">", ">gv")
+lmap('w', cmd 'wa')
+lmap('q', cmd 'q')
 
-nmap("<leader>w", "<cmd>write<cr>")
-nmap("<leader>q", "<cmd>quit<cr>")
+map('<S-l>', cmd 'bnext')
+map('<S-h>', cmd 'bprevious')
 
-nmap("<S-l>", "<cmd>bnext<cr>")
-nmap("<S-h>", "<cmd>bprevious<cr>")
-
-nmap("<leader>e", vim.diagnostic.open_float)
-nmap("[d", function() vim.diagnostic.jump({ count = -1 }) end)
-nmap("]d", function() vim.diagnostic.jump({ count = 1 }) end)
+lmap('e', vim.diagnostic.open_float)
+map('[d', function() vim.diagnostic.jump({ count = -1 }) end)
+map(']d', function() vim.diagnostic.jump({ count = 1 }) end)

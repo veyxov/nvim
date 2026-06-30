@@ -1,11 +1,19 @@
--- vim.pack: update all `:lua vim.pack.update()`, one `:lua vim.pack.update({"name"})`
-vim.pack.add({
-  { src = "https://github.com/nvim-mini/mini.nvim", version = "main" },
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+autocmd('PackChanged', 'pack', {
+  callback = function(ev)
+    if ev.data.spec.name == 'nvim-treesitter' and ev.data.kind ~= 'delete' then
+      vim.cmd 'TSUpdate'
+    end
+  end,
 })
 
-require("plugins.mini")
-require("plugins.treesitter")
+vim.pack.add({
+  { src = gh('nvim-mini/mini.nvim') },
+  { src = gh('nvim-treesitter/nvim-treesitter') },
+  { src = gh('nvim-treesitter-textobjects') },
+})
 
--- mini.nvim ships these: minicyan miniwinter miniautumn minispring minisummer randomhue
-vim.cmd.colorscheme("miniwinter")
+require 'plugins.mini'
+require 'plugins.treesitter'
+require 'plugins.dotnet'
+
+vim.cmd.colorscheme 'miniwinter'

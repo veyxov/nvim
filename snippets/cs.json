@@ -1,0 +1,128 @@
+{
+  "API Controller": {
+    "prefix": "apicontroller",
+    "body": [
+      "[ApiController]",
+      "[Route(\"api/[controller]\")]",
+      "public class ${1:Name}Controller(${2:ILogger<${1:Name}Controller> logger}) : ControllerBase",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "ASP.NET Core API controller with primary constructor"
+  },
+  "HTTP GET": {
+    "prefix": "httpget",
+    "body": [
+      "[HttpGet(\"${1:id}\")]",
+      "[ProducesResponseType<${2:Response}>(StatusCodes.Status200OK)]",
+      "[ProducesResponseType(StatusCodes.Status404NotFound)]",
+      "public async Task<ActionResult<${2:Response}>> ${3:Get}(${4:int id}, CancellationToken ct)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "HTTP GET action"
+  },
+  "HTTP POST": {
+    "prefix": "httppost",
+    "body": [
+      "[HttpPost]",
+      "[ProducesResponseType<${1:Response}>(StatusCodes.Status201Created)]",
+      "[ProducesResponseType(StatusCodes.Status400BadRequest)]",
+      "public async Task<ActionResult<${1:Response}>> ${2:Create}([FromBody] ${3:Request} request, CancellationToken ct)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "HTTP POST action"
+  },
+  "HTTP PUT": {
+    "prefix": "httpput",
+    "body": [
+      "[HttpPut(\"{id}\")]",
+      "[ProducesResponseType(StatusCodes.Status204NoContent)]",
+      "[ProducesResponseType(StatusCodes.Status404NotFound)]",
+      "public async Task<IActionResult> ${1:Update}(${2:int id}, [FromBody] ${3:Request} request, CancellationToken ct)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "HTTP PUT action"
+  },
+  "HTTP DELETE": {
+    "prefix": "httpdelete",
+    "body": [
+      "[HttpDelete(\"{id}\")]",
+      "[ProducesResponseType(StatusCodes.Status204NoContent)]",
+      "public async Task<IActionResult> ${1:Delete}(${2:int id}, CancellationToken ct)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "HTTP DELETE action"
+  },
+  "Minimal API GET": {
+    "prefix": "mapget",
+    "body": [
+      "app.MapGet(\"${1:/route}\", async (${2:IService service}, CancellationToken ct) =>",
+      "{",
+      "\t$0",
+      "})",
+      ".WithName(\"${3:Name}\")",
+      ".Produces<${4:Response}>();"
+    ],
+    "description": "Minimal API GET endpoint"
+  },
+  "Minimal API POST": {
+    "prefix": "mappost",
+    "body": [
+      "app.MapPost(\"${1:/route}\", async (${2:Request} request, ${3:IService service}, CancellationToken ct) =>",
+      "{",
+      "\t$0",
+      "})",
+      ".WithName(\"${4:Name}\")",
+      ".Produces<${5:Response}>(StatusCodes.Status201Created);"
+    ],
+    "description": "Minimal API POST endpoint"
+  },
+  "Record DTO": {
+    "prefix": "record",
+    "body": ["public record ${1:Name}(${2:int Id, string Name});"],
+    "description": "Record DTO"
+  },
+  "Service interface + impl": {
+    "prefix": "service",
+    "body": [
+      "public interface I${1:Name}Service",
+      "{",
+      "\tTask<${2:Response}> ${3:GetAsync}(${4:int id}, CancellationToken ct);",
+      "}",
+      "",
+      "public class ${1:Name}Service : I${1:Name}Service",
+      "{",
+      "\tpublic async Task<${2:Response}> ${3:GetAsync}(${4:int id}, CancellationToken ct)",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Service interface and implementation"
+  },
+  "DI registration": {
+    "prefix": "addscoped",
+    "body": ["builder.Services.AddScoped<I${1:Name}Service, ${1:Name}Service>();"],
+    "description": "Register scoped service"
+  },
+  "EF DbContext": {
+    "prefix": "dbcontext",
+    "body": [
+      "public class ${1:App}DbContext(DbContextOptions<${1:App}DbContext> options) : DbContext(options)",
+      "{",
+      "\tpublic DbSet<${2:Entity}> ${3:Entities} => Set<${2:Entity}>();",
+      "$0",
+      "}"
+    ],
+    "description": "EF Core DbContext with primary constructor"
+  }
+}
