@@ -22,10 +22,16 @@ autocmd('FileType', 'dotnet', {
         },
       },
     })
+  end,
+})
 
-    lmap('dr', cmd 'Dotnet run')
-    lmap('db', cmd 'Dotnet build')
-    lmap('dt', cmd 'Dotnet test')
-    lmap('dw', cmd 'Dotnet watch')
+-- indent-based folding for C#: 1 fold level per 4-space step (shiftwidth=4),
+-- nesting capped at 4 deep. Files open unfolded; fold on demand with za / zM.
+vim.o.foldlevelstart = 99
+autocmd('FileType', 'csfold', {
+  pattern = 'cs',
+  callback = function()
+    vim.wo.foldmethod = 'indent'
+    vim.wo.foldnestmax = 4
   end,
 })

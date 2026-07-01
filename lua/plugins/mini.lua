@@ -11,7 +11,20 @@ MiniIcons.mock_nvim_web_devicons()
 
 -- deferred: everything else (vim.schedule runs before first keypress)
 later(function()
-  require 'mini.surround'.setup({ n_lines = 100, respect_selection_type = true })
+  require 'mini.surround'.setup({
+      n_lines = 169, respect_selection_type = true,
+      search_method = 'cover_or_next',
+
+      mappings = {
+          add = 'rt',
+          delete = 'rd',
+          find = 'rf',
+          find_left = 'rF',
+          highlight = 'rh',
+          replace = 'rn', -- n = new
+      },
+
+  })
   require 'mini.pairs'.setup()
   require 'mini.input'.setup()
 
@@ -48,8 +61,7 @@ later(function()
     })
   end
   require 'mini.completion'.setup({
-    lsp_completion = { source_func = 'omnifunc', process_items = process_items },
-    window = { info = { border = 'rounded' }, signature = { border = 'rounded' } },
+    lsp_completion = { source_func = 'omnifunc', process_items = process_items }
   })
   MiniIcons.tweak_lsp_kind() -- lsp kind icons in completion/symbols (loads vim.lsp, hence deferred)
   -- advertise snippet + auto-import (additionalTextEdits) support to every server
@@ -193,7 +205,7 @@ autocmd('BufWritePre', 'trim', {
 lmap('t', cmd 'Pick files')
 
 -- find cluster
-lmap('fg', cmd 'Pick grep_live')
+lmap('fl', cmd 'Pick grep_live')
 lmap('fw', cmd "Pick grep pattern='<cword>'")
 lmap('fb', cmd 'Pick buffers')
 lmap('fo', cmd 'Pick oldfiles')
@@ -206,7 +218,7 @@ lmap('fk', cmd 'Pick keymaps')
 lmap('fc', cmd 'Pick commands')
 lmap('fm', cmd 'Pick marks')
 lmap('f:', cmd 'Pick history')
-lmap('fl', cmd "Pick list scope='quickfix'")
+lmap('fq', cmd "Pick list scope='quickfix'")
 lmap('f/', cmd "Pick buf_lines scope='current'")
 
 -- lsp cluster (works once a server attaches)
@@ -223,7 +235,7 @@ lmap('go', function() MiniDiff.toggle_overlay() end)
 lmap('gs', function() MiniGit.show_at_cursor() end)
 lmap('n', function() MiniNotify.show_history() end)
 lmap('z', function() MiniMisc.zoom() end)
-lmap('s', function() MiniJump2d.start(MiniJump2d.builtin_opts.single_character) end, { 'n', 'x', 'o' })
+map('s', function() MiniJump2d.start(MiniJump2d.builtin_opts.single_character) end, { 'n', 'x', 'o' })
 
 -- visits: frecency (recency_weight 1=recent, 0.5=frecent, 0=frequent) + 'core' label workflow
 local function visit(global, weight, filter)

@@ -16,4 +16,4 @@ require 'plugins.mini'
 require 'plugins.treesitter'
 require 'plugins.dotnet'
 
-vim.cmd.colorscheme 'miniwinter'
+vim.cmd.colorscheme 'wildcharm'

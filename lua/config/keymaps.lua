@@ -1,7 +1,7 @@
 map('<Esc>', cmd 'nohlsearch')
 
-map('J', ":m '>+1<cr>gv=gv", 'v')
-map('K', ":m '<-2<cr>gv=gv", 'v')
+map('<A-Down>', ":m '>+1<cr>gv=gv", 'v')
+map('<A-Up>', ":m '<-2<cr>gv=gv", 'v')
 
 map('<C-d>', '<C-d>zz')
 map('<C-u>', '<C-u>zz')
@@ -14,9 +14,14 @@ map('>', '>gv', 'v')
 lmap('w', cmd 'wa')
 lmap('q', cmd 'q')
 
-map('<S-l>', cmd 'bnext')
-map('<S-h>', cmd 'bprevious')
+lmap('d', vim.diagnostic.open_float)
 
-lmap('e', vim.diagnostic.open_float)
-map('[d', function() vim.diagnostic.jump({ count = -1 }) end)
-map(']d', function() vim.diagnostic.jump({ count = 1 }) end)
+-- remaps based on my layout
+local kmp = function(a, b) vim.keymap.set({ 'n', 'x', 'o' }, a, b, { remap = true }) end
+-- jk -> []
+kmp('j', '[')
+kmp('k', ']')
+
+-- h -> y
+kmp('h', 'y')
+kmp('<leader>h', '"+y')
