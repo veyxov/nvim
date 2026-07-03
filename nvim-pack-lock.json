@@ -1,11 +1,23 @@
 {
   "plugins": {
+    "diffview.nvim": {
+      "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
+      "src": "https://github.com/sindrets/diffview.nvim"
+    },
     "easy-dotnet.nvim": {
       "rev": "07a41015af3bcbad7dff94191d5ad4b8a67fd202",
       "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
     },
+    "key-analyzer.nvim": {
+      "rev": "4e4bef34498e821bcbd5203f44db8b67e4f10e04",
+      "src": "https://github.com/meznaric/key-analyzer.nvim"
+    },
+    "kulala.nvim": {
+      "rev": "7fba542e4300c0d915f64da8a759f68ca1bd6b77",
+      "src": "https://github.com/mistweaverco/kulala.nvim"
+    },
     "mini.nvim": {
-      "rev": "7c2caf0ae915d819f2f39467d6bb9313c2b3e90a",
+      "rev": "dc8a9918c3b1bc18a5fcd04d39b6d658074c0886",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nvim-treesitter": {
