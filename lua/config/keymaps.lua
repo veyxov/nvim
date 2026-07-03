@@ -9,7 +9,7 @@ map('<', '<gv', 'v')
 map('>', '>gv', 'v')
 
 lmap('w', cmd 'wa')
-map('qu', cmd 'wqa')
+map('qu', cmd 'wq')
 
 lmap('?', vim.diagnostic.open_float)
 
