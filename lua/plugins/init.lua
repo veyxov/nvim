@@ -9,11 +9,15 @@ autocmd('PackChanged', 'pack', {
 vim.pack.add({
   { src = gh('nvim-mini/mini.nvim') },
   { src = gh('nvim-treesitter/nvim-treesitter') },
-  { src = gh('nvim-treesitter-textobjects') },
+  { src = gh('nvim-treesitter/nvim-treesitter-textobjects') },
+  { src = gh('sindrets/diffview.nvim') },
+  { src = gh('mistweaverco/kulala.nvim') },
 })
 
 require 'plugins.mini'
 require 'plugins.treesitter'
 require 'plugins.dotnet'
+require 'plugins.diffview'
+require 'plugins.kulala'
 
 vim.cmd.colorscheme 'wildcharm'
