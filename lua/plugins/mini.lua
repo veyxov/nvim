@@ -173,7 +173,27 @@ map('+', function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end)
 -- git / diff / jump / misc
 lmap('go', function() MiniDiff.toggle_overlay() end)
 lmap('z', function() MiniMisc.zoom() end)
-map('s', function() MiniJump2d.start(MiniJump2d.builtin_opts.single_character) end, { 'n', 'x', 'o' })
+local function case_insensitive_pattern(str)
+  return (vim.pesc(str):gsub('%a', function(c) return '[' .. c:lower() .. c:upper() .. ']' end))
+end
+
+map('s', function()
+  local opts = {
+    spotter = function() return {} end,
+    allowed_lines = { blank = false, fold = false },
+  }
+  opts.hooks = {
+    before_start = function()
+      local ok1, char1 = pcall(vim.fn.getcharstr)
+      if not ok1 or char1 == '\27' then return end
+      vim.cmd.echon(("'%s'"):format(char1))
+      local ok2, char2 = pcall(vim.fn.getcharstr)
+      local query = (ok2 and char2 ~= '\27') and (char1 .. char2) or char1
+      opts.spotter = MiniJump2d.gen_spotter.pattern(case_insensitive_pattern(query))
+    end,
+  }
+  MiniJump2d.start(opts)
+end, { 'n', 'x', 'o' })
 
 -- visits: frecency (recency_weight 1=recent, 0.5=frecent, 0=frequent) + 'core' label workflow
 local function visit(global, weight, filter)
