@@ -2,8 +2,9 @@ local function later(fn) vim.schedule(fn) end
 
 -- immediate: needed at first draw
 require 'mini.basics'.setup({
-  options = { basic = true, extra_ui = true, win_borders = 'auto' },
+  options = { basic = true, extra_ui = true, win_borders = 'none' },
   mappings = { basic = false },
+  autocommands = { basic = false }, -- no autostart-insert on term: breaks kitty-scrollback
 })
 
 require 'mini.icons'.setup()
@@ -49,11 +50,6 @@ later(function()
   })
 
   require 'mini.notify'.setup()
-  vim.notify = require 'mini.notify'.make_notify({
-    ERROR = { duration = 10000 },
-    WARN = { duration = 7000 },
-  })
-
   local process_items = function(items, base)
     return MiniCompletion.default_process_items(items, base, {
       filtersort = 'fuzzy',
@@ -71,64 +67,37 @@ later(function()
   local pick_win = function()
     local h, w = math.floor(0.618 * vim.o.lines), math.floor(0.618 * vim.o.columns)
     return {
-      border = 'rounded', height = h, width = w,
+      border = 'none', height = h, width = w,
       row = math.floor(0.5 * (vim.o.lines - h)), col = math.floor(0.5 * (vim.o.columns - w)),
     }
   end
   require 'mini.pick'.setup({ options = { use_cache = true }, window = { config = pick_win } })
 
-  require 'mini.files'.setup({
-    windows = { preview = true, width_focus = 30, width_preview = 50 },
-    options = { permanent_delete = false },
-  })
-  local files_split = function(buf, lhs, dir)
-    vim.keymap.set('n', lhs, function()
-      local cur = MiniFiles.get_explorer_state().target_window
-      local new = vim.api.nvim_win_call(cur, function()
-        vim.cmd(dir .. ' split')
-        return vim.api.nvim_get_current_win()
-      end)
-      MiniFiles.set_target_window(new)
-      MiniFiles.go_in({ close_on_file = true })
-    end, { buffer = buf })
-  end
-  local show_dot = false
-  autocmd('User', 'minifiles_keys', {
-    pattern = 'MiniFilesBufferCreate',
-    callback = function(args)
-      local b = args.data.buf_id
-      files_split(b, '<C-s>', 'belowright horizontal')
-      files_split(b, '<C-v>', 'belowright vertical')
-      vim.keymap.set('n', 'g.', function()
-        show_dot = not show_dot
-        local filter = show_dot and function() return true end
-          or function(e) return not vim.startswith(e.name, '.') end
-        MiniFiles.refresh({ content = { filter = filter } })
-      end, { buffer = b })
-      vim.keymap.set('n', 'gy', function()
-        local p = (MiniFiles.get_fs_entry() or {}).path
-        if p then vim.fn.setreg(vim.v.register, p) end
-      end, { buffer = b })
-    end,
-  })
-  autocmd('User', 'minifiles_marks', {
-    pattern = 'MiniFilesExplorerOpen',
-    callback = function()
-      MiniFiles.set_bookmark('c', vim.fn.stdpath 'config', { desc = 'Config' })
-      MiniFiles.set_bookmark('w', vim.fn.getcwd, { desc = 'cwd' })
-    end,
-  })
-
+  require 'mini.files'.setup()
   require 'mini.align'.setup()
   require 'mini.splitjoin'.setup()
   require 'mini.bracketed'.setup()
   require 'mini.jump2d'.setup({ view = { dim = true, n_steps_ahead = 2 }, mappings = { start_jumping = '' } })
-  require 'mini.operators'.setup({ replace = { prefix = 'cr' } }) -- 'gr' avoided (LSP grn/gra/grr/gri)
+  require 'mini.operators'.setup()
 
   require 'mini.diff'.setup({
     view = { style = 'sign', signs = { add = '▎', change = '▎', delete = '▁' } },
   })
+
   require 'mini.git'.setup()
+  lmap('gg', cmd 'lua MiniGit.show_at_cursor()')
+  lmap('gb', cmd 'vert Git blame -- %')
+  lmap('gc', cmd 'Git commit')
+  lmap('ga.', cmd 'Git add .')
+  lmap('gaa', cmd 'Git add %')
+  lmap('gp', cmd 'Git push')
+  lmap('gP', cmd 'Git push --fore')
+
+  lmap('gs', cmd 'Git status')
+  lmap('gl', cmd 'Git log --oneline --decorate --graph --all')
+  lmap('gm', cmd 'Git merge')
+  lmap('gh', cmd 'Git diff -- %')
+
   require 'mini.trailspace'.setup()
   require 'mini.visits'.setup({ silent = true })
 
@@ -150,7 +119,7 @@ later(function()
       hack = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
       todo = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
       note = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
-      hex = hi.gen_highlighter.hex_color({ style = 'inline' }),
+      hex = hi.gen_highlighter.hex_color(),
     },
   })
 
@@ -158,29 +127,6 @@ later(function()
   MiniMisc.setup_restore_cursor()
   MiniMisc.setup_auto_root({ '.git', '.sln', '*.csproj', 'Makefile' })
   MiniMisc.setup_termbg_sync()
-
-  local clue = require 'mini.clue'
-  clue.setup({
-    triggers = {
-      { mode = 'n', keys = '<Leader>' }, { mode = 'x', keys = '<Leader>' },
-      { mode = 'n', keys = 'g' }, { mode = 'x', keys = 'g' },
-      { mode = 'n', keys = "'" }, { mode = 'n', keys = '`' },
-      { mode = 'n', keys = '"' }, { mode = 'x', keys = '"' },
-      { mode = 'i', keys = '<C-r>' }, { mode = 'n', keys = '<C-w>' },
-      { mode = 'n', keys = 'z' }, { mode = 'x', keys = 'z' },
-      { mode = 'n', keys = '[' }, { mode = 'n', keys = ']' },
-    },
-    clues = {
-      clue.gen_clues.builtin_completion(),
-      clue.gen_clues.g(),
-      clue.gen_clues.marks(),
-      clue.gen_clues.registers(),
-      clue.gen_clues.square_brackets(),
-      clue.gen_clues.windows({ submode_move = true, submode_navigate = true, submode_resize = true }),
-      clue.gen_clues.z(),
-    },
-    window = { delay = 300 },
-  })
 
   -- fold git/diff buffers (e.g. :Git log --patch)
   autocmd('FileType', 'gitfold', {
@@ -207,24 +153,18 @@ lmap('t', cmd 'Pick files')
 -- find cluster
 lmap('fl', cmd 'Pick grep_live')
 lmap('fw', cmd "Pick grep pattern='<cword>'")
-lmap('fb', cmd 'Pick buffers')
 lmap('fo', cmd 'Pick oldfiles')
 lmap('fv', cmd 'Pick visit_paths')
-lmap('fG', cmd 'Pick git_files')
-lmap('fh', cmd 'Pick help')
 lmap('fd', cmd 'Pick diagnostic')
 lmap('fr', cmd 'Pick resume')
 lmap('fk', cmd 'Pick keymaps')
-lmap('fc', cmd 'Pick commands')
-lmap('fm', cmd 'Pick marks')
-lmap('f:', cmd 'Pick history')
 lmap('fq', cmd "Pick list scope='quickfix'")
 lmap('f/', cmd "Pick buf_lines scope='current'")
 
 -- lsp cluster (works once a server attaches)
-lmap('fs', cmd "Pick lsp scope='document_symbol'")
-lmap('fS', cmd "Pick lsp scope='workspace_symbol'")
-lmap('fR', cmd "Pick lsp scope='references'")
+lmap('ss', cmd "Pick lsp scope='document_symbol'")
+lmap('sa', cmd "Pick lsp scope='workspace_symbol'")
+lmap('r', cmd "Pick lsp scope='references'")
 
 -- explorer
 map('-', function() MiniFiles.open() end)
@@ -232,8 +172,6 @@ map('+', function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end)
 
 -- git / diff / jump / misc
 lmap('go', function() MiniDiff.toggle_overlay() end)
-lmap('gs', function() MiniGit.show_at_cursor() end)
-lmap('n', function() MiniNotify.show_history() end)
 lmap('z', function() MiniMisc.zoom() end)
 map('s', function() MiniJump2d.start(MiniJump2d.builtin_opts.single_character) end, { 'n', 'x', 'o' })
 

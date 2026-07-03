@@ -19,6 +19,8 @@ autocmd('FileType', 'dotnet', {
         enhanced_rename = true,         -- rename type -> rename its file too
         create_type_from_usage = true,  -- code action to generate missing types
         restart_roslyn_on_branch_change = true,
+        filewatching = 'off',           -- roslyn's own watcher burns CPU during init on big sln
+        background_analysis = { dotnet_analyzer_diagnostics_scope = 'openFiles' }, -- skip full-solution analysis pass
       },
     })
     -- easy-dotnet builds its own vim.lsp.config internally and ignores any

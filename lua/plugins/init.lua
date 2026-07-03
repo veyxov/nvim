@@ -12,6 +12,7 @@ vim.pack.add({
   { src = gh('nvim-treesitter/nvim-treesitter-textobjects') },
   { src = gh('sindrets/diffview.nvim') },
   { src = gh('mistweaverco/kulala.nvim') },
+  { src = gh('zbirenbaum/copilot.lua') },
 })
 
 require 'plugins.mini'
@@ -19,5 +20,6 @@ require 'plugins.treesitter'
 require 'plugins.dotnet'
 require 'plugins.diffview'
 require 'plugins.kulala'
+require 'plugins.copilot'
 
 vim.cmd.colorscheme 'wildcharm'

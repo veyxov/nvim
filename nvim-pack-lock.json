@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "copilot.lua": {
+      "rev": "760912b5992e1d6437378a9c7f2b0cb950966cf5",
+      "src": "https://github.com/zbirenbaum/copilot.lua"
+    },
     "diffview.nvim": {
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "src": "https://github.com/sindrets/diffview.nvim"
@@ -31,6 +35,10 @@
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "supermaven-nvim": {
+      "rev": "07d20fce48a5629686aefb0a7cd4b25e33947d50",
+      "src": "https://github.com/supermaven-inc/supermaven-nvim"
     }
   }
 }
