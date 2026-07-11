@@ -19,6 +19,7 @@ autocmd('FileType', 'dotnet', {
         enhanced_rename = true,         -- rename type -> rename its file too
         create_type_from_usage = true,  -- code action to generate missing types
         restart_roslyn_on_branch_change = true,
+        auto_refresh_codelens = false,  -- no "{n} references" virtual text
         filewatching = 'off',           -- roslyn's own watcher burns CPU during init on big sln
         background_analysis = { dotnet_analyzer_diagnostics_scope = 'openFiles' }, -- skip full-solution analysis pass
       },

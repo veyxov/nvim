@@ -71,7 +71,11 @@ later(function()
       row = math.floor(0.5 * (vim.o.lines - h)), col = math.floor(0.5 * (vim.o.columns - w)),
     }
   end
-  require 'mini.pick'.setup({ options = { use_cache = true }, window = { config = pick_win } })
+  require 'mini.pick'.setup({
+    options = { use_cache = true },
+    window = { config = pick_win },
+    mappings = { choose_marked = '<C-d>', mark = '<C-s>', mark_all = '<C-a>' },
+  })
 
   require 'mini.files'.setup()
   require 'mini.align'.setup()
