@@ -17,7 +17,7 @@ later(function()
       search_method = 'cover_or_next',
 
       mappings = {
-          add = 'rt',
+          add = 'ra',
           delete = 'rd',
           find = 'rf',
           find_left = 'rF',
@@ -74,10 +74,10 @@ later(function()
   require 'mini.pick'.setup({
     options = { use_cache = true },
     window = { config = pick_win },
-    mappings = { choose_marked = '<C-d>', mark = '<C-s>', mark_all = '<C-a>' },
+    mappings = { choose_marked = '<C-d>', mark = '<C-,>', mark_all = '<C-a>' },
   })
 
-  require 'mini.files'.setup()
+  require 'mini.files'.setup({ mappings = { go_in = '<Right>', go_out = '<Left>' } })
   require 'mini.align'.setup()
   require 'mini.splitjoin'.setup()
   require 'mini.bracketed'.setup()
