@@ -1,7 +1,7 @@
 {
   "plugins": {
     "copilot.lua": {
-      "rev": "d521d3959f81f4fa58870ed329754f1dd5057511",
+      "rev": "0f616b9a51cb9e2498834dfd99f6da6966158eba",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "diffview.nvim": {
@@ -9,7 +9,7 @@
       "src": "https://github.com/sindrets/diffview.nvim"
     },
     "easy-dotnet.nvim": {
-      "rev": "26b939e2e013ddfc137a8e6149cda1f0b62303ca",
+      "rev": "5823c50d0de015c01f591319f6e846506518165e",
       "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
     },
     "key-analyzer.nvim": {
@@ -17,19 +17,23 @@
       "src": "https://github.com/meznaric/key-analyzer.nvim"
     },
     "kulala.nvim": {
-      "rev": "91cf892008c773ce74ac392c4c12ddff775b7619",
+      "rev": "e4e8615dc07d9423f3dd52ad5af962db09d26a52",
       "src": "https://github.com/mistweaverco/kulala.nvim"
     },
     "mini.nvim": {
-      "rev": "fdc8b9701616863e44f7a7a0802cfe16bd866539",
+      "rev": "946ae64e0ee807ae3c41f382f0114b4ed4915b2c",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
+    "nvim": {
+      "rev": "79e2049a0fdf7ec840f8463fe1d962c94493196b",
+      "src": "https://github.com/catppuccin/nvim"
+    },
     "nvim-treesitter": {
-      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "rev": "61df84986b4b4ec469ee745a182e433d49f8c27e",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-treesitter-textobjects": {
-      "rev": "851e865342e5a4cb1ae23d31caf6e991e1c99f1e",
+      "rev": "898ee307df58f854d11cd7edd06472574d48014e",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
     },
     "plenary.nvim": {
