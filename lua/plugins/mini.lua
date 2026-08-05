@@ -10,6 +10,10 @@ require 'mini.basics'.setup({
 require 'mini.icons'.setup()
 MiniIcons.mock_nvim_web_devicons()
 
+-- mini.basics' autocommands.basic is off (its terminal auto-insert breaks
+-- kitty-scrollback), which also drops its yank highlight; restore just that
+autocmd('TextYankPost', 'yank', { callback = function() vim.hl.on_yank() end })
+
 -- deferred: everything else (vim.schedule runs before first keypress)
 later(function()
   require 'mini.surround'.setup({
@@ -28,6 +32,7 @@ later(function()
   })
   require 'mini.pairs'.setup()
   require 'mini.input'.setup()
+  require 'mini.cmdline'.setup()
 
   local gen_ai = require 'mini.extra'.gen_ai_spec
   local ai = require 'mini.ai'
