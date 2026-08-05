@@ -22,6 +22,18 @@ autocmd('FileType', 'dotnet', {
         auto_refresh_codelens = false,  -- no "{n} references" virtual text
         filewatching = 'off',           -- roslyn's own watcher burns CPU during init on big sln
         background_analysis = { dotnet_analyzer_diagnostics_scope = 'openFiles' }, -- skip full-solution analysis pass
+        config = {
+          settings = {
+            ['csharp|inlay_hints'] = {
+              csharp_enable_inlay_hints_for_types = true,
+              csharp_enable_inlay_hints_for_implicit_object_creation = true,
+              csharp_enable_inlay_hints_for_implicit_variable_types = true,
+              dotnet_enable_inlay_hints_for_parameters = true,
+              dotnet_enable_inlay_hints_for_literal_parameters = true,
+              dotnet_enable_inlay_hints_for_indexer_parameters = true,
+            },
+          },
+        },
       },
     })
     -- easy-dotnet builds its own vim.lsp.config internally and ignores any
@@ -33,6 +45,7 @@ autocmd('FileType', 'dotnet', {
         local client = vim.lsp.get_client_by_id(args.data.client_id)
         if client and client.name == 'easy_dotnet' then
           client.server_capabilities.semanticTokensProvider = nil
+          vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
         end
       end,
     })
