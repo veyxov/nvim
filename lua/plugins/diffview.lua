@@ -21,3 +21,5 @@ map('gd', function()
     vim.cmd 'DiffviewOpen'
   end
 end)
+
+lmap('gL', cmd 'DiffviewFileHistory %')
