@@ -18,6 +18,7 @@ vim.pack.add({
 require 'plugins.mini'
 require 'plugins.treesitter'
 require 'plugins.dotnet'
+require 'plugins.rust'
 require 'plugins.diffview'
 require 'plugins.kulala'
 require 'plugins.copilot'
