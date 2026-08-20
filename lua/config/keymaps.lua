@@ -24,10 +24,14 @@ kmp('k', ']')
 kmp('h', 'y')
 kmp('<leader>h', '"+y')
 
+-- C-e/C-i -> quickfix next/prev
+map('<C-e>', cmd 'cnext')
+map('<C-i>', cmd 'cprevious')
+
 map('<A-Down>', ":m '>+1<cr>gv=gv", 'v')
 map('<A-Up>', ":m '<-2<cr>gv=gv", 'v')
 
-map('ta',  cmd 'lua vim.lsp.buf.code_action()')
+map('ta',  cmd 'lua vim.lsp.buf.code_action()', { 'n', 'x' })
 map('tr',  cmd 'lua vim.lsp.buf.rename()')
 map('ti' , cmd 'lua vim.lsp.buf.implementation()')
 map('td' , cmd 'lua vim.lsp.buf.type_definition()')
@@ -35,4 +39,9 @@ map('tk' , cmd 'lua vim.lsp.buf.signature_help()')
 map('tw' , cmd 'lua vim.lsp.buf.workspace_symbol()')
 map('th' , cmd 'lua vim.lsp.buf.hover()')
 map('tf' , cmd "Pick lsp scope='references'")
-map('td' , cmd 'lua vim.lsp.buf.type_definition()')
+map('tF' , function()
+  vim.lsp.buf.references(nil, { on_list = function(list)
+    vim.fn.setqflist({}, ' ', list)
+    vim.cmd 'copen'
+  end })
+end)
