@@ -1,5 +1,3 @@
--- nvim 0.11+ tracks terminal/system background natively (OSC 11); just react to it,
--- don't set vim.o.background ourselves or it stops auto-tracking
 local function apply_system_colorscheme()
   vim.cmd.colorscheme(vim.o.background == 'dark' and 'wildcharm' or 'peachpuff')
 end

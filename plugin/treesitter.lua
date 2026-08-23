@@ -1,3 +1,16 @@
+vim.pack.add({
+  { src = gh('nvim-treesitter/nvim-treesitter') },
+  { src = gh('nvim-treesitter/nvim-treesitter-textobjects') },
+})
+
+autocmd('PackChanged', 'pack', {
+  callback = function(ev)
+    if ev.data.spec.name == 'nvim-treesitter' and ev.data.kind ~= 'delete' then
+      vim.cmd 'TSUpdate'
+    end
+  end,
+})
+
 vim.schedule(function()
   require 'nvim-treesitter'.install({
     'lua', 'luadoc', 'vim', 'vimdoc', 'query',
