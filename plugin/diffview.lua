@@ -2,7 +2,7 @@ vim.pack.add({ { src = gh('sindrets/diffview.nvim') } })
 
 -- e/i for down/up in the file panel: no hjk on this layout, and e/i mirror
 -- the physical keys that give down/up on the QMK NAV layer.
-vim.schedule(function()
+later(function()
   local actions = require 'diffview.actions'
   require 'diffview'.setup({
     keymaps = {

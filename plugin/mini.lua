@@ -1,7 +1,5 @@
 vim.pack.add({ { src = gh('nvim-mini/mini.nvim') } })
 
-local function later(fn) vim.schedule(fn) end
-
 -- immediate: needed at first draw
 require 'mini.basics'.setup({
   options = { basic = true, extra_ui = true, win_borders = 'none' },
