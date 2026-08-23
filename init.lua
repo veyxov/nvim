@@ -3,6 +3,6 @@ require 'globals'
 
 vim.g.mapleader = ' '
 
-require 'config.options'
-require 'config.keymaps'
+require 'options'
+require 'keymaps'
 require 'plugins'
