@@ -1,3 +1,5 @@
+vim.g.mapleader = ' '
+
 function _G.map(lhs, rhs, mode)
   vim.keymap.set(mode or 'n', lhs, rhs, { silent = true })
 end
