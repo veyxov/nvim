@@ -82,7 +82,33 @@ later(function()
     mappings = { choose_marked = '<C-d>', mark = '<C-,>', mark_all = '<C-a>' },
   })
 
-  require 'mini.files'.setup({ mappings = { go_in = '<Right>', go_out = '<Left>' } })
+  require 'mini.files'.setup({
+    mappings = { go_in = '<Right>', go_out = '<Left>' },
+    options = { permanent_delete = false }, -- delete = move to trash, not gone forever
+    windows = { preview = true, width_preview = 50 },
+  })
+  autocmd('User', 'files-bookmarks', {
+    pattern = 'MiniFilesExplorerOpen',
+    callback = function()
+      MiniFiles.set_bookmark('c', vim.fn.stdpath 'config', { desc = 'Config' })
+      MiniFiles.set_bookmark('w', vim.fn.getcwd, { desc = 'Working directory' })
+      MiniFiles.set_bookmark('~', '~', { desc = 'Home' })
+    end,
+  })
+  -- g. toggles dotfiles (mini.files shows everything by default)
+  local show_dotfiles = true
+  autocmd('User', 'files-dotfiles', {
+    pattern = 'MiniFilesBufferCreate',
+    callback = function(args)
+      local toggle = function()
+        show_dotfiles = not show_dotfiles
+        local filter = show_dotfiles and function() return true end
+          or function(entry) return not vim.startswith(entry.name, '.') end
+        MiniFiles.refresh({ content = { filter = filter } })
+      end
+      vim.keymap.set('n', 'g.', toggle, { buffer = args.data.buf_id })
+    end,
+  })
   require 'mini.align'.setup()
   require 'mini.splitjoin'.setup()
   require 'mini.bracketed'.setup()
