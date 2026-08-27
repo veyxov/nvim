@@ -8,45 +8,25 @@
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "src": "https://github.com/sindrets/diffview.nvim"
     },
-    "easy-dotnet.nvim": {
-      "rev": "0a8cfb96e40b985921e6613f31f75811e31b8edf",
-      "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
-    },
-    "key-analyzer.nvim": {
-      "rev": "4e4bef34498e821bcbd5203f44db8b67e4f10e04",
-      "src": "https://github.com/meznaric/key-analyzer.nvim"
-    },
-    "kulala.nvim": {
-      "rev": "232a9939919fe9bc88d573bce92de50f2f160c60",
-      "src": "https://github.com/mistweaverco/kulala.nvim"
+    "kitty-scrollback.nvim": {
+      "rev": "5a163bfeb789c1a2bfa143b0e78b02caa233bc43",
+      "src": "https://github.com/mikesmithgh/kitty-scrollback.nvim"
     },
     "mini.nvim": {
-      "rev": "e58ad4b0c9e9376096b9704f98fc00d4c9448870",
+      "rev": "0caecdd7408bc0a77697a83b931c742fcc5b0349",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
-    "nvim": {
-      "rev": "edefef779ab08ce1a4a404713e3012b0d202bd35",
-      "src": "https://github.com/catppuccin/nvim"
-    },
     "nvim-treesitter": {
-      "rev": "074aa4422bf029908338e855d0c0f71470a971bb",
+      "rev": "8b98b4470eb326f1c7b50dae79f8c963568e5720",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-treesitter-textobjects": {
       "rev": "898ee307df58f854d11cd7edd06472574d48014e",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
     },
-    "plenary.nvim": {
-      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
-      "src": "https://github.com/nvim-lua/plenary.nvim"
-    },
     "render-markdown.nvim": {
       "rev": "4663eb3ecd538bd5062628fb6d95bbe6bdca78f6",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
-    },
-    "supermaven-nvim": {
-      "rev": "07d20fce48a5629686aefb0a7cd4b25e33947d50",
-      "src": "https://github.com/supermaven-inc/supermaven-nvim"
     }
   }
 }
