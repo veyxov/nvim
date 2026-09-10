@@ -1,6 +1,6 @@
 vim.pack.add({ { src = gh('MeanderingProgrammer/render-markdown.nvim') } })
 
-autocmd('FileType', 'kulala', {
+autocmd('FileType', 'md', {
   pattern = 'md',
   once = true,
   callback = function()

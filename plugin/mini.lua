@@ -175,8 +175,8 @@ end)
 
 -- trim trailing whitespace + blank lines on save (mini.trailspace)
 autocmd('BufWritePre', 'trim', {
-  callback = function()
-    if _G.MiniTrailspace then
+  callback = function(args)
+    if vim.bo[args.buf].modifiable and _G.MiniTrailspace then
       MiniTrailspace.trim()
       MiniTrailspace.trim_last_lines()
     end

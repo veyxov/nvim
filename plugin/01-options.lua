@@ -29,4 +29,4 @@ autocmd({ 'FocusGained', 'BufEnter' }, 'autoread', { command = 'checktime' })
 
 -- experimental (0.12): kills "Press ENTER to continue", ephemeral msg window
 -- instead of the classic msg area -- fits cmdheight=0 better than the default
-require 'vim._core.ui2'.enable()
+pcall(function() require('vim._core.ui2').enable() end)
