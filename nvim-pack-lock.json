@@ -1,7 +1,7 @@
 {
   "plugins": {
     "copilot.lua": {
-      "rev": "bd8c2159660faccb40fb845b746cc9aad5881e76",
+      "rev": "b2b899f93544047ac94d452ecd5af1e63a94377a",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "diffview.nvim": {
@@ -9,7 +9,7 @@
       "src": "https://github.com/sindrets/diffview.nvim"
     },
     "easy-dotnet.nvim": {
-      "rev": "640612c3d1f691ed47074ae0b262670057b18445",
+      "rev": "bde7a1cf7c4dbad61d68b2ca41672bfe194b06f8",
       "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
     },
     "kitty-scrollback.nvim": {
@@ -17,11 +17,11 @@
       "src": "https://github.com/mikesmithgh/kitty-scrollback.nvim"
     },
     "mini.nvim": {
-      "rev": "455856f765c78220fe547fb0862708942b52c42c",
+      "rev": "ac5dffcc52b8378fbb15efeb0497a83e57a0b01c",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nvim-treesitter": {
-      "rev": "5cb0114e6242625db56dd6440e945ed1ece10bc7",
+      "rev": "9a168f6357ed21c3a636e1727bc7d382abc451b8",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-treesitter-textobjects": {
@@ -33,7 +33,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "render-markdown.nvim": {
-      "rev": "4663eb3ecd538bd5062628fb6d95bbe6bdca78f6",
+      "rev": "a778444a73080301a50c4a6f58c90d7e094dd59e",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     }
   }
