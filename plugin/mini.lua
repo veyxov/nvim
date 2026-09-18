@@ -7,14 +7,11 @@ require 'mini.basics'.setup({
   autocommands = { basic = false }, -- no autostart-insert on term: breaks kitty-scrollback
 })
 
-require 'mini.icons'.setup()
-MiniIcons.mock_nvim_web_devicons()
-
--- mini.basics' autocommands.basic is off (its terminal auto-insert breaks
--- kitty-scrollback), which also drops its yank highlight; restore just that
-autocmd('TextYankPost', 'yank', { callback = function() vim.hl.on_yank() end })
-
 -- deferred: everything else (vim.schedule runs before first keypress)
+later(function()
+  require 'config.mini.icons'.setup()
+end)
+
 later(function()
   require 'mini.surround'.setup({
       n_lines = 169, respect_selection_type = true,
@@ -55,18 +52,8 @@ later(function()
   })
 
   require 'mini.notify'.setup()
-  local process_items = function(items, base)
-    return MiniCompletion.default_process_items(items, base, {
-      filtersort = 'fuzzy',
-      kind_priority = { Text = -1, Snippet = 99 }, -- drop Text noise, snippets after real items
-    })
-  end
-  require 'mini.completion'.setup({
-    lsp_completion = { source_func = 'omnifunc', process_items = process_items }
-  })
-  MiniIcons.tweak_lsp_kind() -- lsp kind icons in completion/symbols (loads vim.lsp, hence deferred)
-  -- advertise snippet + auto-import (additionalTextEdits) support to every server
-  vim.lsp.config('*', { capabilities = MiniCompletion.get_lsp_capabilities() })
+
+  require 'config.mini.completion'.setup()
 
   require 'mini.extra'.setup()
   local pick_win = function()
@@ -82,33 +69,8 @@ later(function()
     mappings = { choose_marked = '<C-d>', mark = '<C-,>', mark_all = '<C-a>' },
   })
 
-  require 'mini.files'.setup({
-    mappings = { go_in = '<Right>', go_out = '<Left>' },
-    options = { permanent_delete = false }, -- delete = move to trash, not gone forever
-    windows = { preview = true, width_preview = 50 },
-  })
-  autocmd('User', 'files-bookmarks', {
-    pattern = 'MiniFilesExplorerOpen',
-    callback = function()
-      MiniFiles.set_bookmark('c', vim.fn.stdpath 'config', { desc = 'Config' })
-      MiniFiles.set_bookmark('w', vim.fn.getcwd, { desc = 'Working directory' })
-      MiniFiles.set_bookmark('~', '~', { desc = 'Home' })
-    end,
-  })
-  -- g. toggles dotfiles (mini.files shows everything by default)
-  local show_dotfiles = true
-  autocmd('User', 'files-dotfiles', {
-    pattern = 'MiniFilesBufferCreate',
-    callback = function(args)
-      local toggle = function()
-        show_dotfiles = not show_dotfiles
-        local filter = show_dotfiles and function() return true end
-          or function(entry) return not vim.startswith(entry.name, '.') end
-        MiniFiles.refresh({ content = { filter = filter } })
-      end
-      vim.keymap.set('n', 'g.', toggle, { buffer = args.data.buf_id })
-    end,
-  })
+  require 'config.mini.files'.setup()
+
   require 'mini.align'.setup()
   require 'mini.splitjoin'.setup()
   require 'mini.bracketed'.setup()
@@ -200,10 +162,6 @@ lmap('f/', cmd "Pick buf_lines scope='current'")
 lmap('ss', cmd "Pick lsp scope='document_symbol'")
 lmap('sa', cmd "Pick lsp scope='workspace_symbol'")
 lmap('r', cmd "Pick lsp scope='references'")
-
--- explorer
-map('-', function() MiniFiles.open() end)
-map('+', function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end)
 
 -- git / diff / jump / misc
 lmap('go', function() MiniDiff.toggle_overlay() end)

@@ -1,5 +1,5 @@
 local function apply_system_colorscheme()
-  vim.cmd.colorscheme(vim.o.background == 'dark' and 'wildcharm' or 'peachpuff')
+  vim.cmd.colorscheme(vim.o.background == 'dark' and 'catppuccin' or 'peachpuff')
 end
 
 apply_system_colorscheme()
