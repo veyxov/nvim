@@ -24,9 +24,8 @@ kmp('k', ']')
 kmp('h', 'y')
 kmp('<leader>h', '"+y')
 
--- C-e/C-i -> quickfix next/prev
 map('<C-e>', cmd 'cnext')
-map('<C-i>', cmd 'cprevious')
+map('<C-/>', cmd 'cprevious')
 
 map('<A-Down>', ":m '>+1<cr>gv=gv", 'v')
 map('<A-Up>', ":m '<-2<cr>gv=gv", 'v')
