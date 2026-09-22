@@ -29,6 +29,7 @@ map('<C-/>', cmd 'cprevious')
 
 map('<A-Down>', ":m '>+1<cr>gv=gv", 'v')
 map('<A-Up>', ":m '<-2<cr>gv=gv", 'v')
+lmap('v', '<C-V>')
 
 map('ta',  cmd 'lua vim.lsp.buf.code_action()', { 'n', 'x' })
 map('tr',  cmd 'lua vim.lsp.buf.rename()')
