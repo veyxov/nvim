@@ -1,7 +1,7 @@
 {
   "plugins": {
     "copilot.lua": {
-      "rev": "c0774241783717b2a26ef4becf08c00bfd05415d",
+      "rev": "f76a0a281de089e27b605ec8017093f1aab73b07",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "diffview.nvim": {
@@ -13,7 +13,7 @@
       "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
     },
     "kitty-scrollback.nvim": {
-      "rev": "5a163bfeb789c1a2bfa143b0e78b02caa233bc43",
+      "rev": "4994c85e0f291598d0748488653c83cb698fd281",
       "src": "https://github.com/mikesmithgh/kitty-scrollback.nvim"
     },
     "mini.nvim": {
