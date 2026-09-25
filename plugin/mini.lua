@@ -109,30 +109,10 @@ later(function()
   multistep('i', '<CR>', { 'pmenu_accept', 'minipairs_cr' })
   multistep('i', '<BS>', { 'minipairs_bs' })
 
-  local hi = require 'mini.hipatterns'
-  hi.setup({
-    highlighters = {
-      fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
-      hack = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
-      todo = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
-      note = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
-      hex = hi.gen_highlighter.hex_color(),
-    },
-  })
-
   require 'mini.misc'.setup()
   MiniMisc.setup_restore_cursor()
   MiniMisc.setup_auto_root({ '.git', '.sln', '*.csproj', 'Makefile' })
   MiniMisc.setup_termbg_sync()
-
-  -- fold git/diff buffers (e.g. :Git log --patch)
-  autocmd('FileType', 'gitfold', {
-    pattern = { 'git', 'diff' },
-    callback = function()
-      vim.wo.foldmethod = 'expr'
-      vim.wo.foldexpr = 'v:lua.MiniGit.diff_foldexpr()'
-    end,
-  })
 end)
 
 -- trim trailing whitespace + blank lines on save (mini.trailspace)
@@ -164,7 +144,7 @@ lmap('sa', cmd "Pick lsp scope='workspace_symbol'")
 lmap('r', cmd "Pick lsp scope='references'")
 
 -- git / diff / jump / misc
-lmap('go', function() MiniDiff.toggle_overlay() end)
+lmap('gd', function() MiniDiff.toggle_overlay() end)
 lmap('z', function() MiniMisc.zoom() end)
 local function case_insensitive_pattern(str)
   return (vim.pesc(str):gsub('%a', function(c) return '[' .. c:lower() .. c:upper() .. ']' end))
