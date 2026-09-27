@@ -10,6 +10,15 @@ function _G.cmd(s) return '<cmd>' .. s .. '<cr>' end
 
 function _G.gh(s) return 'https://github.com/' .. s end
 
+function _G.pack(repos, opts)
+  if type(repos) == 'string' then repos = { repos } end
+  local specs = {}
+  for _, repo in ipairs(repos) do
+    specs[#specs + 1] = { src = gh(repo) }
+  end
+  vim.pack.add(specs, opts)
+end
+
 -- defer fn past startup; errors inside are caught + traced instead of
 -- silently killing the rest of the deferred block (mini.misc.safely)
 function _G.later(fn)

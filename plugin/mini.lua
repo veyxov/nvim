@@ -1,4 +1,4 @@
-vim.pack.add { { src = gh('nvim-mini/mini.nvim') } }
+pack 'nvim-mini/mini.nvim'
 
 -- immediate: needed at first draw
 require 'mini.basics'.setup {

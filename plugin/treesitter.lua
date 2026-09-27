@@ -1,6 +1,6 @@
-vim.pack.add {
-  { src = gh('nvim-treesitter/nvim-treesitter') },
-  { src = gh('nvim-treesitter/nvim-treesitter-textobjects') },
+pack {
+  'nvim-treesitter/nvim-treesitter',
+  'nvim-treesitter/nvim-treesitter-textobjects',
 }
 
 autocmd('PackChanged', 'pack', {

@@ -6,9 +6,9 @@ autocmd('FileType', 'dotnet', {
     -- just for highlighting; don't spawn the whole dotnet toolchain for those.
     if dotnet_setup_done or vim.bo[args.buf].buftype ~= '' then return end
     dotnet_setup_done = true
-    vim.pack.add {
-      { src = gh('nvim-lua/plenary.nvim') },
-      { src = gh('GustavEikaas/easy-dotnet.nvim') },
+    pack {
+      'nvim-lua/plenary.nvim',
+      'GustavEikaas/easy-dotnet.nvim',
     }
     require 'easy-dotnet'.setup {
       picker = 'basic', -- mini.pick unsupported; basic avoids autodetect surprises

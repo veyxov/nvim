@@ -1,4 +1,4 @@
-vim.pack.add { { src = gh('folke/flash.nvim') } }
+pack 'folke/flash.nvim'
 
 local lbls = 'rsndwaeihtjfmpvxglcbuoyk./?\'_,:qz'
 

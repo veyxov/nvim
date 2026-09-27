@@ -1,4 +1,4 @@
-vim.pack.add { { src = gh 'sindrets/diffview.nvim' } }
+pack 'sindrets/diffview.nvim'
 
 later(function()
     local actions = require 'diffview.actions'

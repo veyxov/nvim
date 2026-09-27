@@ -1,4 +1,4 @@
-vim.pack.add { { src = gh('zbirenbaum/copilot.lua') } }
+pack 'zbirenbaum/copilot.lua'
 
 later(function()
   require 'copilot'.setup {
