@@ -1,9 +1,10 @@
-pack 'MeanderingProgrammer/render-markdown.nvim'
+pack('MeanderingProgrammer/render-markdown.nvim', { load = false })
 
-autocmd('FileType', 'md', {
-  pattern = 'md',
+autocmd('FileType', 'markdown', {
+  pattern = { 'markdown', 'md' },
   once = true,
   callback = function()
-      require'render-markdown'.setup {}
+      vim.cmd.packadd 'render-markdown.nvim'
+      require 'render-markdown'.setup {}
   end,
 })

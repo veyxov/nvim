@@ -1,6 +1,9 @@
-pack 'sindrets/diffview.nvim'
+pack('sindrets/diffview.nvim', { load = false })
 
-later(function()
+local loaded = false
+local function load_diffview()
+    if loaded then return end
+    vim.cmd.packadd 'diffview.nvim'
     local actions = require 'diffview.actions'
     require 'diffview'.setup {
         keymaps = {
@@ -10,11 +13,21 @@ later(function()
             },
         },
     }
-end)
+    loaded = true
+end
+
+autocmd('CmdUndefined', 'diffview', {
+    pattern = 'Diffview*',
+    callback = load_diffview,
+})
 
 map('gd', function()
+    load_diffview()
     local is_open = require 'diffview.lib'.get_current_view()
     vim.cmd(is_open and 'DiffviewClose' or 'DiffviewOpen')
 end)
 
-lmap('gL', cmd 'DiffviewFileHistory %')
+lmap('gL', function()
+    load_diffview()
+    vim.cmd 'DiffviewFileHistory %'
+end)
