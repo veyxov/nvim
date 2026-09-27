@@ -13,7 +13,7 @@ function _G.gh(s) return 'https://github.com/' .. s end
 -- defer fn past startup; errors inside are caught + traced instead of
 -- silently killing the rest of the deferred block (mini.misc.safely)
 function _G.later(fn)
-  vim.schedule(function() require('mini.misc').safely('now', fn) end)
+  vim.schedule(function() require 'mini.misc'.safely('now', fn) end)
 end
 
 function _G.augroup(name)

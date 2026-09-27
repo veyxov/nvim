@@ -1,11 +1,11 @@
-vim.pack.add({ { src = gh('nvim-mini/mini.nvim') } })
+vim.pack.add { { src = gh('nvim-mini/mini.nvim') } }
 
 -- immediate: needed at first draw
-require 'mini.basics'.setup({
+require 'mini.basics'.setup {
   options = { basic = true, extra_ui = true, win_borders = 'none' },
   mappings = { basic = false },
   autocommands = { basic = false }, -- no autostart-insert on term: breaks kitty-scrollback
-})
+}
 
 -- deferred: everything else (vim.schedule runs before first keypress)
 later(function()
@@ -13,7 +13,7 @@ later(function()
 end)
 
 later(function()
-  require 'mini.surround'.setup({
+  require 'mini.surround'.setup {
       n_lines = 169, respect_selection_type = true,
       search_method = 'cover_or_next',
 
@@ -26,30 +26,30 @@ later(function()
           replace = 'rn', -- n = new
       },
 
-  })
+  }
   require 'mini.pairs'.setup()
   require 'mini.input'.setup()
   require 'mini.cmdline'.setup()
 
   local gen_ai = require 'mini.extra'.gen_ai_spec
   local ai = require 'mini.ai'
-  ai.setup({
+  ai.setup {
     n_lines = 500,
     custom_textobjects = {
-      f = ai.gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }),
-      c = ai.gen_spec.treesitter({ a = '@class.outer', i = '@class.inner' }),
-      a = ai.gen_spec.treesitter({ a = '@parameter.outer', i = '@parameter.inner' }),
-      o = ai.gen_spec.treesitter({
+      f = ai.gen_spec.treesitter { a = '@function.outer', i = '@function.inner' },
+      c = ai.gen_spec.treesitter { a = '@class.outer', i = '@class.inner' },
+      a = ai.gen_spec.treesitter { a = '@parameter.outer', i = '@parameter.inner' },
+      o = ai.gen_spec.treesitter {
         a = { '@conditional.outer', '@loop.outer', '@block.outer' },
         i = { '@conditional.inner', '@loop.inner', '@block.inner' },
-      }),
+      },
       B = gen_ai.buffer(),
       D = gen_ai.diagnostic(),
       I = gen_ai.indent(),
       L = gen_ai.line(),
       N = gen_ai.number(),
     },
-  })
+  }
 
   require 'mini.notify'.setup()
 
@@ -63,23 +63,22 @@ later(function()
       row = math.floor(0.5 * (vim.o.lines - h)), col = math.floor(0.5 * (vim.o.columns - w)),
     }
   end
-  require 'mini.pick'.setup({
+  require 'mini.pick'.setup {
     options = { use_cache = true },
     window = { config = pick_win },
     mappings = { choose_marked = '<C-d>', mark = '<C-,>', mark_all = '<C-a>' },
-  })
+  }
 
   require 'config.mini.files'.setup()
 
   require 'mini.align'.setup()
   require 'mini.splitjoin'.setup()
   require 'mini.bracketed'.setup()
-  require 'mini.jump2d'.setup({ view = { dim = true, n_steps_ahead = 2 }, mappings = { start_jumping = '' } })
   require 'mini.operators'.setup()
 
-  require 'mini.diff'.setup({
+  require 'mini.diff'.setup {
     view = { style = 'sign', signs = { add = '▎', change = '▎', delete = '▁' } },
-  })
+  }
 
   require 'mini.git'.setup()
   lmap('gg', cmd 'lua MiniGit.show_at_cursor()')
@@ -96,10 +95,10 @@ later(function()
   lmap('gh', cmd 'Git diff -- %')
 
   require 'mini.trailspace'.setup()
-  require 'mini.visits'.setup({ silent = true })
+  require 'mini.visits'.setup { silent = true }
 
   local snippets = require 'mini.snippets'
-  snippets.setup({ snippets = { snippets.gen_loader.from_lang() } })
+  snippets.setup { snippets = { snippets.gen_loader.from_lang() } }
   snippets.start_lsp_server() -- show snippets in completion menu
 
   -- mini.keymap: smart <Tab>/<CR>/<BS> across snippets + completion + pairs
@@ -111,7 +110,7 @@ later(function()
 
   require 'mini.misc'.setup()
   MiniMisc.setup_restore_cursor()
-  MiniMisc.setup_auto_root({ '.git', '.sln', '*.csproj', 'Makefile' })
+  MiniMisc.setup_auto_root { '.git', '.sln', '*.csproj', 'Makefile' }
   MiniMisc.setup_termbg_sync()
 end)
 
@@ -129,53 +128,32 @@ lmap('t', cmd 'Pick files')
 
 -- find cluster
 lmap('fl', cmd 'Pick grep_live')
-lmap('fw', cmd "Pick grep pattern='<cword>'")
+lmap('fw', cmd 'Pick grep pattern=\'<cword>\'')
 lmap('fo', cmd 'Pick oldfiles')
 lmap('fv', cmd 'Pick visit_paths')
 lmap('fd', cmd 'Pick diagnostic')
 lmap('fr', cmd 'Pick resume')
 lmap('fk', cmd 'Pick keymaps')
-lmap('fq', cmd "Pick list scope='quickfix'")
-lmap('f/', cmd "Pick buf_lines scope='current'")
+lmap('fq', cmd 'Pick list scope=\'quickfix\'')
+lmap('f/', cmd 'Pick buf_lines scope=\'current\'')
 
 -- lsp cluster (works once a server attaches)
-lmap('ss', cmd "Pick lsp scope='document_symbol'")
-lmap('sa', cmd "Pick lsp scope='workspace_symbol'")
-lmap('r', cmd "Pick lsp scope='references'")
+lmap('ss', cmd 'Pick lsp scope=\'document_symbol\'')
+lmap('sa', cmd 'Pick lsp scope=\'workspace_symbol\'')
+lmap('r', cmd 'Pick lsp scope=\'references\'')
 
 -- git / diff / jump / misc
 lmap('gd', function() MiniDiff.toggle_overlay() end)
 lmap('z', function() MiniMisc.zoom() end)
-local function case_insensitive_pattern(str)
-  return (vim.pesc(str):gsub('%a', function(c) return '[' .. c:lower() .. c:upper() .. ']' end))
-end
-
-map('s', function()
-  local opts = {
-    spotter = function() return {} end,
-    allowed_lines = { blank = false, fold = false },
-  }
-  opts.hooks = {
-    before_start = function()
-      local ok1, char1 = pcall(vim.fn.getcharstr)
-      if not ok1 or char1 == '\27' then return end
-      vim.cmd.echon(("'%s'"):format(char1))
-      local ok2, char2 = pcall(vim.fn.getcharstr)
-      local query = (ok2 and char2 ~= '\27') and (char1 .. char2) or char1
-      opts.spotter = MiniJump2d.gen_spotter.pattern(case_insensitive_pattern(query))
-    end,
-  }
-  MiniJump2d.start(opts)
-end, { 'n', 'x', 'o' })
 
 -- visits: frecency (recency_weight 1=recent, 0.5=frecent, 0=frequent) + 'core' label workflow
 local function visit(global, weight, filter)
   return function()
-    MiniExtra.pickers.visit_paths({
+    MiniExtra.pickers.visit_paths {
       cwd = global and '' or vim.fn.getcwd(),
       recency_weight = weight,
       filter = filter,
-    })
+    }
   end
 end
 lmap('vr', visit(true, 1))

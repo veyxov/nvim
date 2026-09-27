@@ -1,4 +1,4 @@
-vim.pack.add({ { src = gh('MeanderingProgrammer/render-markdown.nvim') } })
+vim.pack.add { { src = gh('MeanderingProgrammer/render-markdown.nvim') } }
 
 autocmd('FileType', 'md', {
   pattern = 'md',

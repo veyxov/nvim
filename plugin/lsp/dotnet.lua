@@ -6,11 +6,11 @@ autocmd('FileType', 'dotnet', {
     -- just for highlighting; don't spawn the whole dotnet toolchain for those.
     if dotnet_setup_done or vim.bo[args.buf].buftype ~= '' then return end
     dotnet_setup_done = true
-    vim.pack.add({
+    vim.pack.add {
       { src = gh('nvim-lua/plenary.nvim') },
       { src = gh('GustavEikaas/easy-dotnet.nvim') },
-    })
-    require 'easy-dotnet'.setup({
+    }
+    require 'easy-dotnet'.setup {
       picker = 'basic', -- mini.pick unsupported; basic avoids autodetect surprises
       test_runner = { auto_start_testrunner = false },
       lsp = {
@@ -35,7 +35,7 @@ autocmd('FileType', 'dotnet', {
           },
         },
       },
-    })
+    }
     -- easy-dotnet builds its own vim.lsp.config internally and ignores any
     -- on_init we'd pass via lsp.config, so strip semantic tokens on attach
     -- instead: let treesitter own all highlighting (e.g. SQL injected into

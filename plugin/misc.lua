@@ -7,5 +7,5 @@ autocmd('OptionSet', 'system-appearance', { pattern = 'background', callback = a
 
 -- format on save with whatever lsp client attached (roslyn/easy-dotnet); no-op if none support it
 autocmd('BufWritePre', 'fmt', {
-  callback = function(a) vim.lsp.buf.format({ bufnr = a.buf, timeout_ms = 1000 }) end,
+  callback = function(a) vim.lsp.buf.format { bufnr = a.buf, timeout_ms = 1000 } end,
 })

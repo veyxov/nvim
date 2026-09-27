@@ -12,6 +12,10 @@
       "rev": "df600029a54754d90ac35fe284b3921bb7bf1023",
       "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
     },
+    "flash.nvim": {
+      "rev": "5f0f270fdc7c5b0c21d903ee85b9cb06f2ac636a",
+      "src": "https://github.com/folke/flash.nvim"
+    },
     "kitty-scrollback.nvim": {
       "rev": "4994c85e0f291598d0748488653c83cb698fd281",
       "src": "https://github.com/mikesmithgh/kitty-scrollback.nvim"
