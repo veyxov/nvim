@@ -7,7 +7,45 @@ require 'mini.basics'.setup {
   autocommands = { basic = false }, -- no autostart-insert on term: breaks kitty-scrollback
 }
 
--- deferred: everything else (vim.schedule runs before first keypress)
+local pick_loaded = false
+local function load_pick()
+  if pick_loaded then return end
+  require 'mini.extra'.setup()
+  local pick_win = function()
+    local h, w = math.floor(0.618 * vim.o.lines), math.floor(0.618 * vim.o.columns)
+    return {
+      border = 'none', height = h, width = w,
+      row = math.floor(0.5 * (vim.o.lines - h)), col = math.floor(0.5 * (vim.o.columns - w)),
+    }
+  end
+  require 'mini.pick'.setup {
+    options = { use_cache = true },
+    window = { config = pick_win },
+    mappings = { choose_marked = '<C-d>', mark = '<C-,>', mark_all = '<C-a>' },
+  }
+  pick_loaded = true
+end
+
+autocmd('CmdUndefined', 'mini-pick', { pattern = 'Pick', callback = load_pick })
+
+local files_loaded = false
+local function load_files()
+  if files_loaded then return end
+  require 'config.mini.files'.setup()
+  files_loaded = true
+end
+
+map('-', function()
+  load_files()
+  if MiniFiles.close() then return end
+  MiniFiles.open()
+end)
+map('+', function()
+  load_files()
+  MiniFiles.open(vim.api.nvim_buf_get_name(0))
+end)
+
+-- editing and background modules (vim.schedule runs before first keypress)
 later(function()
   require 'config.mini.icons'.setup()
 end)
@@ -54,22 +92,6 @@ later(function()
   require 'mini.notify'.setup()
 
   require 'config.mini.completion'.setup()
-
-  require 'mini.extra'.setup()
-  local pick_win = function()
-    local h, w = math.floor(0.618 * vim.o.lines), math.floor(0.618 * vim.o.columns)
-    return {
-      border = 'none', height = h, width = w,
-      row = math.floor(0.5 * (vim.o.lines - h)), col = math.floor(0.5 * (vim.o.columns - w)),
-    }
-  end
-  require 'mini.pick'.setup {
-    options = { use_cache = true },
-    window = { config = pick_win },
-    mappings = { choose_marked = '<C-d>', mark = '<C-,>', mark_all = '<C-a>' },
-  }
-
-  require 'config.mini.files'.setup()
 
   require 'mini.align'.setup()
   require 'mini.splitjoin'.setup()
@@ -149,6 +171,7 @@ lmap('z', function() MiniMisc.zoom() end)
 -- visits: frecency (recency_weight 1=recent, 0.5=frecent, 0=frequent) + 'core' label workflow
 local function visit(global, weight, filter)
   return function()
+    load_pick()
     MiniExtra.pickers.visit_paths {
       cwd = global and '' or vim.fn.getcwd(),
       recency_weight = weight,
@@ -161,6 +184,9 @@ lmap('vR', visit(false, 1))
 lmap('vy', visit(true, 0.5))
 lmap('vf', visit(true, 0))
 lmap('vc', visit(false, 0.5, 'core'))
-lmap('vl', function() MiniExtra.pickers.visit_labels() end)
+lmap('vl', function()
+  load_pick()
+  MiniExtra.pickers.visit_labels()
+end)
 lmap('vv', function() MiniVisits.add_label 'core' end)
 lmap('vd', function() MiniVisits.remove_label 'core' end)
