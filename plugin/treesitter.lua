@@ -14,7 +14,7 @@ autocmd('PackChanged', 'pack', {
 later(function()
   require 'nvim-treesitter'.install {
     'lua', 'luadoc', 'vim', 'vimdoc', 'query',
-    'c_sharp', 'rust', 'markdown', 'markdown_inline', 'html', 'latex',
+    'c_sharp', 'markdown', 'markdown_inline', 'html', 'latex',
     'json', 'yaml', 'toml', 'bash', 'diff', 'sql',
   }
 end)
