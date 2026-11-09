@@ -109,7 +109,7 @@ later(function()
   lmap('ga.', cmd 'Git add .')
   lmap('gaa', cmd 'Git add %')
   lmap('gp', cmd 'Git push')
-  lmap('gP', cmd 'Git push --fore')
+  lmap('gP', cmd 'Git push --force-with-lease')
 
   lmap('gs', cmd 'Git status')
   lmap('gl', cmd 'Git log --oneline --decorate --graph --all')
