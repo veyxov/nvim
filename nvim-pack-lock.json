@@ -5,7 +5,7 @@
       "src": "https://github.com/sindrets/diffview.nvim"
     },
     "easy-dotnet.nvim": {
-      "rev": "19974e83b046aee8e722d27adad06e9f9ccf6499",
+      "rev": "d8e5970cc3439fceb8ca4f6411ca516190784359",
       "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
     },
     "flash.nvim": {
@@ -17,11 +17,11 @@
       "src": "https://github.com/mikesmithgh/kitty-scrollback.nvim"
     },
     "mini.nvim": {
-      "rev": "e3f2349a65143ff062f0b70ee9d68d8ce35c7059",
+      "rev": "9b132c10d34675315327a7d58cc6684cb4e8faf2",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nvim-treesitter": {
-      "rev": "ca581c3436fc2b236847f5b739ebc263739e5ca6",
+      "rev": "915f2bd3d4e2a33704bfc476b5137e9befa82f3d",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-treesitter-textobjects": {
