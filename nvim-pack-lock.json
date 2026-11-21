@@ -1,40 +1,8 @@
 {
   "plugins": {
-    "diffview.nvim": {
-      "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
-      "src": "https://github.com/sindrets/diffview.nvim"
-    },
-    "easy-dotnet.nvim": {
-      "rev": "b44a8672706c14298876330bc405271220af6aa0",
-      "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
-    },
-    "flash.nvim": {
-      "rev": "5f0f270fdc7c5b0c21d903ee85b9cb06f2ac636a",
-      "src": "https://github.com/folke/flash.nvim"
-    },
-    "kitty-scrollback.nvim": {
-      "rev": "4994c85e0f291598d0748488653c83cb698fd281",
-      "src": "https://github.com/mikesmithgh/kitty-scrollback.nvim"
-    },
     "mini.nvim": {
       "rev": "b8a0af521530f8ee68c738657429eab59de6a2ae",
       "src": "https://github.com/nvim-mini/mini.nvim"
-    },
-    "nvim-treesitter": {
-      "rev": "37e52c733ada9d8d544d53a763140ef1ba404353",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
-    },
-    "nvim-treesitter-textobjects": {
-      "rev": "5c7b0263797dfd1bd6202f2b219f3b53a80b2187",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
-    },
-    "plenary.nvim": {
-      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
-      "src": "https://github.com/nvim-lua/plenary.nvim"
-    },
-    "render-markdown.nvim": {
-      "rev": "a67f826164c38c836fc6060f32b275c4c43317a7",
-      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     }
   }
 }
